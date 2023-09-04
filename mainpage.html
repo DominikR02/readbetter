@@ -7,12 +7,37 @@
 <style>
     .header{
         background-color: #4A5F47;
+        display: flex;
+    }
+
+    .menü{
+        font-size: 20px;
+        font-family: Bahnschrift;
+        margin: 40px 40px 40px 40px;
+    }
+
+    .divButtonHeader{
+
     }
 </style>
 <body>
-<header class="header">
+<header class="header" style="display: flex; justify-content: space-between; align-items: center;">
     <img src="pic/logo.jpeg" style="width: 100px; height: 100px">
-    <img src="pic/logoText.png" style="height: 100px; width: 200px">
+    <img src="pic/logoText.png" style="height: 100px; width: 200px; margin-right: 50px">
+    <div style="width: 50em"></div>
+    <div class="menü">
+        trending
+    </div>
+    <div class="menü">
+        neu
+    </div>
+    <div class="menü">
+        genre
+    </div>
+    <div class="divButtonHeader" style="text-align: right">
+        <img src="pic/login.png" style="width: 50px; height: 50px"><br>
+        <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px">
+    </div>
 </header>
 </body>
 </html>
