@@ -3,29 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>readbetter</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <script src="js/header.js"></script>
 </head>
-<style>
-    .header {
-        background-color: #4A5F47;
-        display: flex;
-    }
-
-    .menü {
-        font-size: 20px;
-        font-family: Bahnschrift;
-        margin: 40px;
-    }
-    .menü:hover {
-        text-decoration: underline; /* Text unterstreichen bei Hover */
-    }
-
-    .divButtonHeader {
-
-    }
-
-</style>
 <body>
-<header class="header" style="display: flex; justify-content: space-between; align-items: center;">
+<header class="header">
     <a href="mainpage.html"><img src="pic/logo.jpeg" style="width: 100px; height: 100px"></a>
     <a href="mainpage.html"><img src="pic/logoText.png" style="height: 100px; width: 200px;"></a>
     <div style="width: 50em"></div>
@@ -38,9 +20,40 @@
     <div class="menü">
         genre
     </div>
-    <div class="divButtonHeader" style="text-align: right">
-        <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
-        <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px">
+    <div class="navigation">
+        <div>
+            <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <!-- Hier können Sie das Burger-Menü einfügen -->
+            <!-- Zum Beispiel: -->
+            <img src="pic/menu.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <!-- Hier können Sie das Suchbild einfügen -->
+            <!-- Zum Beispiel: -->
+            <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px">
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenu">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">Trending</div>
+        <div class="popup-item">Neu</div>
+        <div class="popup-item">Genre</div>
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px">
+            </div>
+        </div>
     </div>
 </header>
 <a href="myprofil.html">Mein Profil</a>
