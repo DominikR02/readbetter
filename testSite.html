@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Registrierung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Weißer Hintergrund */
+            display: flex;
+            justify-content: center; /* Zentriert die Container horizontal */
+            align-items: center; /* Zentriert die Container vertikal */
+            min-height: 100vh;
+        }
+
+        .container-wrapper {
+            display: flex;
+            justify-content: space-between; /* Container nebeneinander */
+            width: 100%; /* Gesamte Seitenbreite nutzen */
+            max-width: 1200px; /* Maximale Breite der Container */
+        }
+
+        .container {
+            background-color: transparent; /* Transparenter Hintergrund */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(50% - 10px); /* 50% Breite abzüglich 10px Abstand zwischen den Containern */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: center; /* Überschriften mittig ausrichten */
+        }
+
+        .form-group input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%; /* 100% Breite */
+            font-size: 16px;
+            align-self: center; /* Vertikal zentrieren */
+        }
+
+        .form-group button {
+            background-color: #4A5F47; /* Grün */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            width: 100%; /* 100% Breite */
+        }
+
+        .form-group button:hover {
+            background-color: #374c3a; /* Dunkleres Grün beim Hover */
+        }
+
+        .separator {
+            width: 2px;
+            background-color: #4A5F47; /* Grüner Strich */
+        }
+    </style>
+</head>
+<body>
+<div class="container-wrapper">
+    <div class="container">
+        <div class="form-group">
+            <label for="loginEmail">E-Mail</label>
+            <input type="email" id="loginEmail" placeholder="E-Mail" required>
+        </div>
+        <div class="form-group">
+            <label for="loginPassword">Passwort</label>
+            <input type="password" id="loginPassword" placeholder="Passwort" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+    </div>
+
+    <div class="separator"></div> <!-- Grüner Strich -->
+
+    <div class="container">
+        <div class="form-group">
+            <label for="registerFirstName">Vorname</label>
+            <input type="text" id="registerFirstName" placeholder="Vorname" required>
+        </div>
+        <div class="form-group">
+            <label for="registerLastName">Nachname</label>
+            <input type="text" id="registerLastName" placeholder="Nachname" required>
+        </div>
+        <div class="form-group">
+            <label for="registerEmail">E-Mail</label>
+            <input type="email" id="registerEmail" placeholder="E-Mail" required>
+        </div>
+        <div class="form-group">
+            <label for="registerPassword">Passwort</label>
+            <input type="password" id="registerPassword" placeholder="Passwort" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Registrieren</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -113,4 +113,15 @@
     display: block; /* Element als Blockelement behandeln, um die horizontale Zentrierung zu ermöglichen */
 }
 
-/* Genre-Popup-Styling */
+/* Stil für das Input-Feld im Pop-up-Menü */
+.searchButton {
+    width: 80%; /* Breite des Input-Felds anpassen */
+    padding: 10px; /* Innenabstand hinzufügen */
+    font-size: 16px; /* Schriftgröße anpassen */
+    border: 2px solid #ccc; /* Randstil hinzufügen */
+    border-radius: 5px; /* Randradius hinzufügen */
+    margin: 40px auto 10px auto; /* Horizontal zentrieren und vertikal Abstand hinzufügen */
+    text-align: center; /* Text mittig ausrichten */
+    display: block; /* Element als Blockelement behandeln, um die horizontale Zentrierung zu ermöglichen */
+    background-color: #4A5F47;
+}
