@@ -23,3 +23,4 @@ function closePopupMenu() {
     popupMenu.style.right = '-300px';
     popupOverlay.style.display = 'none';
 }
+
