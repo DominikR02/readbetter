@@ -5,66 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Registrierung | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
-    <style>
-        body {
-            background-color: #ffffff;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #container {
-            justify-content: center;
-            align-items: center;
-            margin: 30px 0;
-        }
-
-        #login,
-        #signUp {
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        #login input,
-        #signUp input {
-            width: 30%;
-            text-align: center;
-        }
-
-        #login button,
-        #signUp button {
-            background-color: #4A5F47;
-            width: 30%;
-            height: 30px;
-            border-radius: 15px;
-            border-color: #4A5F47;
-        }
-
-        #trennerLoginSignUp {
-            background-color: #4A5F47;
-            height: 2px;
-            width: 100%;
-        }
-
-        @media (min-width: 768px){
-            #container {
-                display: flex;
-            }
-
-            #trennerLoginSignUp{
-                width: 2px;
-                height: 350px;
-            }
-
-            #login, #signUp {
-                width: 50%;
-            }
-        }
-    </style>
+    <script src="js/footer.js"></script>
 </head>
 <body>
 <header class="header">
@@ -181,5 +126,23 @@
         <button>Registrieren</button>
     </div>
 </div>
+
+<footer>
+    <div class="social-icons">
+        <!-- Links zu den Sozialen Medien mit Bildern -->
+        <a href="https://www.facebook.com/deinefacebookseite" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
+        <a href="https://www.twitter.com/deinetwitterseite" target="_blank"><img src="pic/Socials/x.png" alt="Twitter" class="sozial-icon"></a>
+        <a href="https://www.instagram.com/deineinstagramseite" target="_blank"><img src="pic/Socials/instagramm.png" alt="Instagram" class="sozial-icon"></a>
+    </div>
+    <br>
+    <!-- Link zum Datenschutz und Impressum -->
+    <div>
+        <a href="datenschutz.html" style="color: #000; text-decoration: none; margin-right: 20px;">Datenschutz</a>
+        <a href="impressum.html" style="color: #000; text-decoration: none;">Impressum</a>
+    </div>
+</footer>
+
+<!-- "nach oben"-Button -->
+<button class="scroll-top" onclick="scrollToTop()">↑</button>
 </body>
 </html>

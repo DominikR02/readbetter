@@ -6,183 +6,29 @@
     <title>Login / Registrierung</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-
-    <style>
-        body {
-            background-color: #ffffff;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #container {
-            justify-content: center;
-            align-items: center;
-            margin: 30px 0;
-        }
-
-        #login,
-        #signUp {
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        #login input,
-        #signUp input {
-            width: 30%;
-            text-align: center;
-        }
-
-        #login button,
-        #signUp button {
-            background-color: #4A5F47;
-            width: 30%;
-            height: 30px;
-            border-radius: 15px;
-            border-color: #4A5F47;
-        }
-
-        #trennerLoginSignUp {
-            background-color: #4A5F47;
-            height: 2px;
-            width: 100%;
-        }
-
-        @media (min-width: 768px){
-            #container {
-                display: flex;
-            }
-
-            #trennerLoginSignUp{
-                width: 2px;
-                height: 350px;
-            }
-
-            #login, #signUp {
-                width: 50%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </head>
 <body>
-<header class="header">
-    <a href="mainpage.html"><img src="pic/logo.jpeg" style="width: 100px; height: 100px"></a>
-    <a href="mainpage.html"><img src="pic/logoText.png" style="height: 100px; width: 200px;"></a>
-    <div style="width: 50em"></div>
-    <div class="menü">
-        <p class="p-menu">trending</p>
+<!-- Dein Footer -->
+<footer>
+    <div class="social-icons">
+        <!-- Links zu den Sozialen Medien mit Bildern -->
+        <a href="https://www.facebook.com/deinefacebookseite" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
+        <a href="https://www.twitter.com/deinetwitterseite" target="_blank"><img src="pic/Socials/x.png" alt="Twitter" class="sozial-icon"></a>
+        <a href="https://www.instagram.com/deineinstagramseite" target="_blank"><img src="pic/Socials/instagramm.png" alt="Instagram" class="sozial-icon"></a>
     </div>
-    <div class="menü">
-        <p class="p-menu">neu</p>
+    <br>
+    <!-- Link zum Datenschutz und Impressum -->
+    <div>
+        <a href="datenschutz.html" style="color: #000; text-decoration: none; margin-right: 20px;">Datenschutz</a>
+        <a href="impressum.html" style="color: #000; text-decoration: none;">Impressum</a>
     </div>
-    <div class="menü" id="genremenü" style="margin: 10px 0">
-        <p class="p-menu">genre</p>
-        <div class="genre-dropdown">
-            <div class="dropdown-item" style="color: black">Komödien</div>
-            <div class="sub-item" style="color: black">Krimis</div>
-            <div class="sub-item" style="color: black">Romane</div>
-            <div class="sub-item" style="color: black">Romane</div>
-            <div class="sub-item" style="color: black">Romane</div>
-            <div class="sub-item" style="color: black">Romane</div>
-            <div class="sub-item" style="color: black">Romane</div>
-        </div>
-    </div>
-    <div class="navigation">
-        <div>
-            <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
-        </div>
-        <div class="burgermenu">
-            <!-- Hier können Sie das Burger-Menü einfügen -->
-            <!-- Zum Beispiel: -->
-            <img src="pic/menu.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
-        </div>
-        <div class="search-icon">
-            <!-- Hier können Sie das Suchbild einfügen -->
-            <!-- Zum Beispiel: -->
-            <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()">
-        </div>
-    </div>
+</footer>
 
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlay"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenu">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">Trending</div>
-        <div class="popup-item">Neu</div>
-        <div class="popup-item" id="genreItem">
-            Genre
-            <div class="genre-submenu">
-                <div class="sub-item">Komödien</div>
-                <div class="sub-item">Krimis</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-            </div>
-        </div>
-        <div class="popup-item popup-icons">
-            <div class="popup-icon">
-                <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
-            </div>
-            <div class="popup-icon">
-                <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()">
-            </div>
-        </div>
-        <div class="popup-item">
-            <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a>
-        </div>
-    </div>
-
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlaySearch"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenuSearch">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">
-            <h4>Suche</h4>
-        </div>
-        <div class="popup-item">Titel</div>
-        <input style="text-align: center" placeholder="Titel" type="text">
-        <div class="popup-item">Autor</div>
-        <input style="text-align: center" placeholder="Autor" type="text">
-        <div class="popup-item">Ort</div>
-        <input style="text-align: center" placeholder="Ort" type="text">
-        <button class="searchButton">Suchen</button>
-    </div>
-</header>
-<div id="container">
-    <div id="login">
-        <p>Email</p>
-        <input placeholder="Email">
-        <p>Passwort</p>
-        <input placeholder="Passwort" type="password">
-        <br><br><br>
-        <button>Login</button>
-    </div>
-    <div id="trennerLoginSignUp"></div>
-    <div id="signUp">
-        <p>Vorname</p>
-        <input placeholder="Vorname">
-        <p>Nachname</p>
-        <input placeholder="Nachname">
-        <p>Email</p>
-        <input placeholder="Email">
-        <p>Passwort</p>
-        <input placeholder="Passwort" type="password">
-        <br><br><br>
-        <button>Registrieren</button>
-    </div>
-</div>
-
-
+<!-- "nach oben"-Button -->
+<button class="scroll-top" onclick="scrollToTop()">↑</button>
 
 </body>
 </html>

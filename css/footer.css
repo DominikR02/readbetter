@@ -1,0 +1,35 @@
+/* Stil für den Footer */
+footer {
+    background-color: #4A5F47;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Stil für die Sozialen-Medien-Icons */
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+/* Stil für den "nach oben"-Button */
+.scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4A5F47;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.sozial-icon {
+    height: 50px;
+    width: 50px;
+}

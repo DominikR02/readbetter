@@ -1,0 +1,56 @@
+body {
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+#login,
+#signUp {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#login input,
+#signUp input {
+    width: 30%;
+    text-align: center;
+}
+
+#login button,
+#signUp button {
+    background-color: #4A5F47;
+    width: 30%;
+    height: 30px;
+    border-radius: 15px;
+    border-color: #4A5F47;
+}
+
+#trennerLoginSignUp {
+    background-color: #4A5F47;
+    height: 2px;
+    width: 100%;
+}
+
+@media (min-width: 768px){
+    #container {
+        display: flex;
+    }
+
+    #trennerLoginSignUp{
+        width: 2px;
+        height: 350px;
+    }
+
+    #login, #signUp {
+        width: 50%;
+    }
+}
