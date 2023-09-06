@@ -3,120 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Registrierung</title>
+    <title>Login/Registrierung | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <script src="js/header.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff; /* Weißer Hintergrund */
-            display: flex;
-            justify-content: center; /* Zentriert die Container horizontal */
-            align-items: center; /* Zentriert die Container vertikal */
-            min-height: 100vh;
-        }
-
-        .container-wrapper {
-            display: flex;
-            justify-content: space-between; /* Container nebeneinander */
-            width: 100%; /* Gesamte Seitenbreite nutzen */
-            max-width: 1200px; /* Maximale Breite der Container */
-        }
-
-        .container {
-            background-color: transparent; /* Transparenter Hintergrund */
-            display: flex;
-            flex-direction: column;
+            background-color: #ffffff;
+            justify-content: center;
             align-items: center;
-            width: calc(50% - 10px); /* 50% Breite abzüglich 10px Abstand zwischen den Containern */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 10px;
+            height: 100vh;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin: 10px;
+        #container {
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
         }
 
-        .form-group label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            text-align: center; /* Überschriften mittig ausrichten */
+        #login,
+        #signUp {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
-        .form-group input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%; /* 100% Breite */
-            font-size: 16px;
-            align-self: center; /* Vertikal zentrieren */
+        #login input,
+        #signUp input {
+            width: 30%;
+            text-align: center;
         }
 
-        .form-group button {
-            background-color: #4A5F47; /* Grün */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-            width: 100%; /* 100% Breite */
+        #login button,
+        #signUp button {
+            background-color: #4A5F47;
+            width: 30%;
+            height: 30px;
+            border-radius: 15px;
+            border-color: #4A5F47;
         }
 
-        .form-group button:hover {
-            background-color: #374c3a; /* Dunkleres Grün beim Hover */
+        #trennerLoginSignUp {
+            background-color: #4A5F47;
+            height: 2px;
+            width: 100%;
         }
 
-        .separator {
-            width: 2px;
-            background-color: #4A5F47; /* Grüner Strich */
+        @media (min-width: 768px){
+            #container {
+                display: flex;
+            }
+
+            #trennerLoginSignUp{
+                width: 2px;
+                height: 350px;
+            }
+
+            #login, #signUp {
+                width: 50%;
+            }
         }
     </style>
 </head>
 <body>
-<div class="container-wrapper">
-    <div class="container">
-        <div class="form-group">
-            <label for="loginEmail">E-Mail</label>
-            <input type="email" id="loginEmail" placeholder="E-Mail" required>
+<header class="header">
+    <a href="mainpage.html"><img src="pic/logo.jpeg" style="width: 100px; height: 100px"></a>
+    <a href="mainpage.html"><img src="pic/logoText.png" style="height: 100px; width: 200px;"></a>
+    <div style="width: 50em"></div>
+    <div class="menü">
+        <p class="p-menu">trending</p>
+    </div>
+    <div class="menü">
+        <p class="p-menu">neu</p>
+    </div>
+    <div class="menü" id="genremenü" style="margin: 10px 0">
+        <p class="p-menu">genre</p>
+        <div class="genre-dropdown">
+            <div class="dropdown-item" style="color: black">Komödien</div>
+            <div class="sub-item" style="color: black">Krimis</div>
+            <div class="sub-item" style="color: black">Romane</div>
+            <div class="sub-item" style="color: black">Romane</div>
+            <div class="sub-item" style="color: black">Romane</div>
+            <div class="sub-item" style="color: black">Romane</div>
+            <div class="sub-item" style="color: black">Romane</div>
         </div>
-        <div class="form-group">
-            <label for="loginPassword">Passwort</label>
-            <input type="password" id="loginPassword" placeholder="Passwort" required>
+    </div>
+    <div class="navigation">
+        <div>
+            <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
         </div>
-        <div class="form-group">
-            <button type="submit">Login</button>
+        <div class="burgermenu">
+            <!-- Hier können Sie das Burger-Menü einfügen -->
+            <!-- Zum Beispiel: -->
+            <img src="pic/menu.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <!-- Hier können Sie das Suchbild einfügen -->
+            <!-- Zum Beispiel: -->
+            <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()">
         </div>
     </div>
 
-    <div class="separator"></div> <!-- Grüner Strich -->
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenu">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">Trending</div>
+        <div class="popup-item">Neu</div>
+        <div class="popup-item" id="genreItem">
+            Genre
+            <div class="genre-submenu">
+                <div class="sub-item">Komödien</div>
+                <div class="sub-item">Krimis</div>
+                <div class="sub-item">Romane</div>
+                <div class="sub-item">Romane</div>
+                <div class="sub-item">Romane</div>
+                <div class="sub-item">Romane</div>
+                <div class="sub-item">Romane</div>
+            </div>
+        </div>
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()">
+            </div>
+        </div>
+        <div class="popup-item">
+            <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a>
+        </div>
+    </div>
 
-    <div class="container">
-        <div class="form-group">
-            <label for="registerFirstName">Vorname</label>
-            <input type="text" id="registerFirstName" placeholder="Vorname" required>
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">
+            <h4>Suche</h4>
         </div>
-        <div class="form-group">
-            <label for="registerLastName">Nachname</label>
-            <input type="text" id="registerLastName" placeholder="Nachname" required>
-        </div>
-        <div class="form-group">
-            <label for="registerEmail">E-Mail</label>
-            <input type="email" id="registerEmail" placeholder="E-Mail" required>
-        </div>
-        <div class="form-group">
-            <label for="registerPassword">Passwort</label>
-            <input type="password" id="registerPassword" placeholder="Passwort" required>
-        </div>
-        <div class="form-group">
-            <button type="submit">Registrieren</button>
-        </div>
+        <div class="popup-item">Titel</div>
+        <input style="text-align: center" placeholder="Titel" type="text">
+        <div class="popup-item">Autor</div>
+        <input style="text-align: center" placeholder="Autor" type="text">
+        <div class="popup-item">Ort</div>
+        <input style="text-align: center" placeholder="Ort" type="text">
+        <button class="searchButton">Suchen</button>
+    </div>
+</header>
+<div id="container">
+    <div id="login">
+        <p>Email</p>
+        <input placeholder="Email">
+        <p>Passwort</p>
+        <input placeholder="Passwort" type="password">
+        <br><br><br>
+        <button>Login</button>
+    </div>
+    <div id="trennerLoginSignUp"></div>
+    <div id="signUp">
+        <p>Vorname</p>
+        <input placeholder="Vorname">
+        <p>Nachname</p>
+        <input placeholder="Nachname">
+        <p>Email</p>
+        <input placeholder="Email">
+        <p>Passwort</p>
+        <input placeholder="Passwort" type="password">
+        <br><br><br>
+        <button>Registrieren</button>
     </div>
 </div>
 </body>
