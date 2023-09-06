@@ -122,6 +122,10 @@
     font-weight: bold; /* Fetter Text */
     color: #4A5F47; /* Grüne Textfarbe */
 }
+#genremenü {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 #genremenü:hover .genre-dropdown {
     display: block;
