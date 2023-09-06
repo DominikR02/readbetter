@@ -11,7 +11,7 @@
     margin: 40px;
 }
 
-.menü:hover {
+.p-menu:hover {
     text-decoration: underline; /* Text unterstreichen bei Hover */
 }
 
@@ -77,6 +77,13 @@
     text-align: center;
 }
 
+/* Stil für Menüpunkte im Pop-up-Menü */
+.popup-menu .sub-item {
+    padding-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
 /* Stil für Icons im Pop-up-Menü */
 .popup-menu .popup-icons {
     display: flex; /* Flexbox-Container, um die Icons nebeneinander anzuordnen */
@@ -99,6 +106,30 @@
     cursor: pointer;
     font-size: 16px;
     color: #333; /* Textfarbe */
+}
+
+/* Stil für Genre-Submenü */
+.genre-submenu {
+    display: none;
+    font-size: 12px; /* Kleinere Schriftgröße */
+    font-weight: bold; /* Fetter Text */
+    color: #4A5F47; /* Grüne Textfarbe */
+}
+
+.genre-dropdown {
+    display: none;
+    font-size: 12px; /* Kleinere Schriftgröße */
+    font-weight: bold; /* Fetter Text */
+    color: #4A5F47; /* Grüne Textfarbe */
+}
+
+#genremenü:hover .genre-dropdown {
+    display: block;
+}
+
+/* Stil für Genre-Element */
+#genreItem:hover .genre-submenu {
+    display: block;
 }
 
 /* Stil für das Input-Feld im Pop-up-Menü */

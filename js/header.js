@@ -24,6 +24,14 @@ function closePopupMenu() {
     popupOverlay.style.display = 'none';
 }
 
+// JavaScript-Funktion zum Ein- und Ausblenden des Genre-Submenüs
+function toggleGenreSubmenu() {
+    var genreSubmenu = document.querySelector('.genre-submenu');
+    genreSubmenu.style.display = genreSubmenu.style.display === 'block' ? 'none' : 'block';
+}
+
+
+
 // JavaScript-Funktion zum Ein- und Ausblenden des Pop-up-Menüs
 function toggleSearchMenu() {
     var popupMenu = document.getElementById('popupMenuSearch');
