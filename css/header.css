@@ -20,7 +20,7 @@
 }
 
 /* Media Query für schmale Bildschirme (z.B. Mobilgeräte) */
-@media (max-width: 768px) {
+@media (max-width: 920px) {
     .menü {
         display: none; /* Verberge Menüpunkte */
     }
@@ -35,7 +35,7 @@
 }
 
 /* Media Query für ausreichend breite Bildschirme */
-@media (min-width: 769px) {
+@media (min-width: 921px) {
     .search-icon {
         display: inline-block; /* Zeige das Suchbild */
     }
