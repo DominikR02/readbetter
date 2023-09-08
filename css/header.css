@@ -19,8 +19,8 @@
     text-align: right;
 }
 
-/* Media Query für schmale Bildschirme (z.B. Mobilgeräte) */
-@media (max-width: 920px) {
+/* Media Query für schmale Bildschirme (z.B. Mobilgeräte) 920 */
+@media (max-width: 1045px) {
     .menü {
         display: none; /* Verberge Menüpunkte */
     }
@@ -35,7 +35,7 @@
 }
 
 /* Media Query für ausreichend breite Bildschirme */
-@media (min-width: 921px) {
+@media (min-width: 1046px) {
     .search-icon {
         display: inline-block; /* Zeige das Suchbild */
     }
