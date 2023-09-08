@@ -7,3 +7,13 @@ a:hover {
     color: #4A5F47;
     text-decoration: underline;
 }
+
+button {
+    background-color: #4A5F47;
+    color: black;
+}
+
+button:hover {
+    color: white;
+    text-decoration: underline;
+}
