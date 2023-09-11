@@ -1,0 +1,11 @@
+.profilepic {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+}
+
+.founder {
+    text-align: center;
+    margin: 20px;
+    width: 33.33%;
+}
