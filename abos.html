@@ -8,10 +8,44 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+    <style>
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px 5%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+
+        td {
+            width: 25%;
+        }
+
+        th {
+            background-color: #4A5F47;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        button {
+            border-radius: 18px;
+        }
+    </style>
 </head>
 <body>
 <h1><a href="mainpage.html">Header</a></h1>
-<table border="1"> <!-- 'border' fügt einen Rahmen zur Tabelle hinzu (nur zu Demonstrationszwecken) -->
+<table>
     <tr>
         <th></th>
         <th>Basic</th>
@@ -43,12 +77,23 @@
         <td>4 Wochen</td>
     </tr>
     <tr>
+        <td>Möglicher Umsatz</td>
+        <td>0€</td>
+        <td>2€</td>
+        <td>20€</td>
+    </tr>
+    <tr>
         <td>Kosten</td>
         <td>2,00€ / ausleihen + Pfand</td>
         <td>1,50€ / ausleihe + 9,99€/mtl.</td>
         <td>24,99 / mtl.</td>
     </tr>
-    <!-- Weitere Zeilen und Zellen können hier hinzugefügt werden -->
+    <tr>
+        <td></td>
+        <td><a href="signUp.html"><button>Registireren</button></a></td>
+        <td><a href="signUp.html"><button>Registireren</button></a></td>
+        <td><a href="signUp.html"><button>Registireren</button></a></td>
+    </tr>
 </table>
 <h1><a href="abos.html">Footer</a></h1>
 </body>

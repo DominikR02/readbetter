@@ -11,6 +11,7 @@ a:hover {
 button {
     background-color: #4A5F47;
     color: black;
+    padding: 10px;
 }
 
 button:hover {
