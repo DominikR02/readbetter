@@ -33,3 +33,18 @@ footer {
     height: 50px;
     width: 50px;
 }
+
+.footer-container {
+    font-size: 20px;
+    margin: 20px;
+}
+
+@media (min-width: 550px){
+    #footer-links {
+        display: flex;
+    }
+
+    .footer-container{
+        width: 25%;
+    }
+}
