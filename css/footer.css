@@ -39,6 +39,10 @@ footer {
     margin: 20px;
 }
 
+.footer-container a {
+    color: #ffffff;
+}
+
 @media (min-width: 550px){
     #footer-links {
         display: flex;

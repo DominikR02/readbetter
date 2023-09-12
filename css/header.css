@@ -9,6 +9,7 @@
     font-size: 20px;
     font-family: Bahnschrift;
     margin: 40px;
+    color: #fff;
 }
 
 .p-menu:hover {
@@ -120,7 +121,7 @@
     display: none;
     font-size: 12px; /* Kleinere Schriftgröße */
     font-weight: bold; /* Fetter Text */
-    color: #4A5F47; /* Grüne Textfarbe */
+    color: #fff; /* Grüne Textfarbe */
 }
 #genremenü {
     margin-top: 10px;
