@@ -43,12 +43,12 @@ footer {
     color: #ffffff;
 }
 
-@media (min-width: 550px){
+@media (min-width: 500px){
     #footer-links {
         display: flex;
     }
 
     .footer-container{
-        width: 25%;
+        width: 33%;
     }
 }

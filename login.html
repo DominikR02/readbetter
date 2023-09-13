@@ -51,7 +51,7 @@
         <div class="search-icon">
             <!-- Hier können Sie das Suchbild einfügen -->
             <!-- Zum Beispiel: -->
-            <img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()">
+            <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()"></a>
         </div>
     </div>
 
@@ -80,10 +80,10 @@
         <div class="popup-item" style="color: red"><a href="abos.html">Upgrade</a></div>
         <div class="popup-item popup-icons">
             <div class="popup-icon">
-                <a href="login.html"><img src="pic/login.png" style="width: 50px; height: 50px"></a><br>
+                <a href="login.html"><img src="pic/login.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
             </div>
             <div class="popup-icon">
-                <img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()">
+                <a href="#"><img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
             </div>
         </div>
         <div class="popup-item">
@@ -143,23 +143,23 @@
     </div>
     <br>
     <!-- Link zum Datenschutz und Impressum -->
-    <div id="footer-links" style="text-align: left">
+    <div id="footer-links" style="text-align: left; align-items: center">
     
         <div class="footer-container">
             <a href="mainpage.html">Startseite</a><br>
             <a href="AboutUs.html">Über Uns</a><br>
-            <a href="#">FAQ</a><br>
-            <a href="#">Kontakt</a>
+            <a href="#">Kontakt</a><br>
+            <a href="#">FAQ</a>
         </div>
         <div class="footer-container">
-            <a href="#">AGB</a><br>
             <a href="datenschutz.html">Datenschutz</a><br>
             <a href="impressum.html">Impressum</a><br>
-            <a onclick="print()">Drucken</a>
+            <a onclick="print()">Drucken</a><br>
+            <a href="#">AGB</a>
         </div>
         <div class="footer-container">
             <a href="login.html"><img src="pic/login-weiss.png" style="width: 45px; height: 45px; margin: 8px;"></a><br>
-            <img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px" onclick="toggleSearchMenu()">
+            <a href="#"><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px" onclick="toggleSearchMenu()"></a>
         </div>
     </div>
 </footer>
