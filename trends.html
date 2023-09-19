@@ -5,59 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trends | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/trends.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
+    <script src="js/trends.js"></script>
     <script src="js/footer.js"></script>
-    <style>
-        .trends {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .genre {
-            width: 48%;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .genre h2 {
-            text-align: center;
-        }
-
-        .genre a {
-            color: #000;
-        }
-
-        .books-container {
-            padding: 20px;
-        }
-
-        .book {
-            margin: 10px 20px;
-            text-align: center;
-        }
-
-        .general-trends {
-            width: 100%;
-            margin-top: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .img-books {
-            height: 285px;
-            width: 190px;
-        }
-
-        .ranking {
-            width: 50px;
-            height: 75px;
-        }
-    </style>
 </head>
 <body>
 <header class="header">
@@ -161,104 +114,123 @@
     <div class="books-container">
         <!-- Hier kannst du die allgemeinen Trends platzieren -->
     </div>
+</div>
 
-    <div class="trends">
-        <div class="genre">
-            <h2>Comics</h2>
-            <div class="books-container" style="display: flex">
-                <!-- Platz 1 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz1.jpg">
-                    <img class="img-books" src="pic/buecher/f97mmxdvd4781.jpg" alt="1. Comic">
-                    <div class="book-title">1. Platz</div>
-                </div>
-                <!-- Platz 2 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz2.jpg">
-                    <img class="img-books" src="pic/buecher/images.jpg" alt="2. Comic">
-                    <div class="book-title">2. Platz</div>
-                </div>
-                <!-- Platz 3 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz3.jpg">
-                    <img class="img-books" src="pic/buecher/30101546860.jpg" alt="3. Comic">
-                    <div class="book-title">3. Platz</div>
-                </div>
+<div class="trends">
+    <div class="genre">
+        <h2>Comics</h2>
+        <div class="books-container">
+            <!-- Platz 1 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz1.jpg">
+                <img class="img-books" src="pic/buecher/f97mmxdvd4781.jpg" alt="1. Comic">
+                <div class="book-title">1. Platz</div>
+            </div>
+            <!-- Platz 2 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz2.jpg">
+                <img class="img-books" src="pic/buecher/images.jpg" alt="2. Comic">
+                <div class="book-title">2. Platz</div>
+            </div>
+            <!-- Platz 3 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz3.jpg">
+                <img class="img-books" src="pic/buecher/30101546860.jpg" alt="3. Comic">
+                <div class="book-title">3. Platz</div>
             </div>
         </div>
-        <div class="genre">
-            <h2>Krimi</h2>
-            <div class="books-container" style="display: flex">
-                <!-- Platz 1 -->
-                <a href="books/9784040101194.html">
-                    <div class="book">
-                        <img class="ranking" src="pic/ranking/platz1.jpg">
-                        <img class="img-books" src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg"
-                             alt="1. Krimi">
-                        <h4>Das Leben mit dem Feind</h4>
-                    </div>
-                </a>
-                <!-- Platz 2 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz2.jpg">
-                    <img class="img-books" src="pic/buecher/im-wald.jpg" alt="2. Krimi">
-                    <div class="book-title">2. Platz</div>
-                </div>
-                <!-- Platz 3 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz3.jpg">
-                    <img class="img-books" src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="3. Krimi">
-                    <div class="book-title">3. Platz</div>
-                </div>
+        <button id="mehrButtonComics" onclick="showMoreComics()">Mehr</button>
+        <div class="books-container" id="weiterComics" style="display: none">
+            <!-- Platz 4 -->
+            <div class="book">
+                <img class="img-books" src="pic/buecher/f97mmxdvd4781.jpg" alt="1. Comic">
+                <div class="book-title">4. Platz</div>
+            </div>
+            <!-- Platz 5 -->
+            <div class="book">
+                <img class="img-books" src="pic/buecher/images.jpg" alt="2. Comic">
+                <div class="book-title">5. Platz</div>
+            </div>
+            <!-- Platz 6 -->
+            <div class="book">
+                <img class="img-books" src="pic/buecher/30101546860.jpg" alt="3. Comic">
+                <div class="book-title">6. Platz</div>
             </div>
         </div>
-
-        <div class="genre">
-            <h2>Kochbücher</h2>
-            <div class="books-container" style="display: flex">
-                <!-- Platz 1 -->
+        <button id="wenigerButtonComics" onclick="showLessComics()" style="display: none">Weniger</button>
+    </div>
+    <div class="genre">
+        <h2>Krimi</h2>
+        <div class="books-container">
+            <!-- Platz 1 -->
+            <a href="books/9784040101194.html">
                 <div class="book">
                     <img class="ranking" src="pic/ranking/platz1.jpg">
-                    <img class="img-books" src="pic/buecher/71y+wiFaIRL._AC_UF1000,1000_QL80_.jpg" alt="1. Kochbuch"
-                         height="285px"/>
-                    <h4>Backen für Anfänger</h4><br>
+                    <img class="img-books" src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg"
+                         alt="1. Krimi">
+                    <h4>Der Fall Bruno</h4>
                 </div>
-                <!-- Platz 2 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz2.jpg">
-                    <img class="img-books"
-                         src="pic/buecher/Rezeptbuch-selbst-gemacht-Hardcover-17x24r-sw-Kalligrafie-DIY-Rezepte-COVER-Rosa.jpg"
-                         alt="2. Kochbuch">
-                </div>
-                <!-- Platz 3 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz3.jpg">
-                    <img class="img-books" src="pic/buecher/8454.jpg" alt="3. Kochbuch">
-                </div>
+            </a>
+            <!-- Platz 2 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz2.jpg">
+                <img class="img-books" src="pic/buecher/im-wald.jpg" alt="2. Krimi">
+                <h4>Im Wald</h4>
+            </div>
+            <!-- Platz 3 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz3.jpg">
+                <img class="img-books" src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="3. Krimi">
+                <h4>Stinkender Verdacht</h4>
             </div>
         </div>
+    </div>
 
-        <div class="genre">
-            <h2>Romane</h2>
-            <div class="books-container" style="display: flex">
-                <!-- Platz 1 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz1.jpg">
-                    <img class="img-books" src="pic/buecher/images (1).jpg" alt="1. Roman">
-                    <div class="book-title">1. Platz</div>
-                </div>
-                <!-- Platz 2 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz2.jpg">
-                    <img class="img-books" src="pic/buecher/20220803_224434.jpg" alt="2. Roman">
-                    <div class="book-title">2. Platz</div>
-                </div>
-                <!-- Platz 3 -->
-                <div class="book">
-                    <img class="ranking" src="pic/ranking/platz3.jpg">
-                    <img class="img-books" src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="3. Roman">
-                    <div class="book-title">3. Platz</div>
-                </div>
+    <div class="genre">
+        <h2>Kochbücher</h2>
+        <div class="books-container">
+            <!-- Platz 1 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz1.jpg">
+                <img class="img-books" src="pic/buecher/71y+wiFaIRL._AC_UF1000,1000_QL80_.jpg" alt="1. Kochbuch"
+                     height="285px"/>
+                <h4>Backen für Anfänger</h4><br>
+            </div>
+            <!-- Platz 2 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz2.jpg">
+                <img class="img-books"
+                     src="pic/buecher/Rezeptbuch-selbst-gemacht-Hardcover-17x24r-sw-Kalligrafie-DIY-Rezepte-COVER-Rosa.jpg"
+                     alt="2. Kochbuch">
+            </div>
+            <!-- Platz 3 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz3.jpg">
+                <img class="img-books" src="pic/buecher/8454.jpg" alt="3. Kochbuch">
+            </div>
+        </div>
+    </div>
+
+    <div class="genre">
+        <h2>Romane</h2>
+        <div class="books-container">
+            <!-- Platz 1 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz1.jpg">
+                <img class="img-books" src="pic/buecher/images (1).jpg" alt="1. Roman">
+                <div class="book-title">1. Platz</div>
+            </div>
+            <!-- Platz 2 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz2.jpg">
+                <img class="img-books" src="pic/buecher/20220803_224434.jpg" alt="2. Roman">
+                <div class="book-title">2. Platz</div>
+            </div>
+            <!-- Platz 3 -->
+            <div class="book">
+                <img class="ranking" src="pic/ranking/platz3.jpg">
+                <img class="img-books" src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="3. Roman">
+                <div class="book-title">3. Platz</div>
             </div>
         </div>
     </div>
@@ -300,5 +272,8 @@
             </div>
         </div>
 </footer>
+
+<!-- "nach oben"-Button -->
+<button class="scroll-top" onclick="scrollToTop()">↑</button>
 </body>
 </html>
