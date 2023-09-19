@@ -16,7 +16,7 @@
     <a href="mainpage.html"><img src="pic/logo.jpeg" style="width: 100px; height: 100px"></a>
     <a href="mainpage.html"><img src="pic/logoText.png" style="height: 100px; width: 200px;"></a>
     <div class="menü" style="margin-left: 0">
-        <p class="p-menu">Startseite</p>
+        <a href="mainpage.html"><p class="p-menu">Startseite</p></a>
     </div>
     <div class="menü">
         <p class="p-menu">Trending</p>
@@ -27,12 +27,10 @@
     <div class="menü" id="genremenü">
         <p class="p-menu">Genre</p>
         <div class="genre-dropdown">
-            <div class="dropdown-item">Komödien</div>
+            <div class="dropdown-item">Comics
+            </div>
+            <div class="dropdown-item">Kochbücher</div>
             <div class="dropdown-item">Krimis</div>
-            <div class="dropdown-item">Romane</div>
-            <div class="dropdown-item">Romane</div>
-            <div class="dropdown-item">Romane</div>
-            <div class="dropdown-item">Romane</div>
             <div class="dropdown-item">Romane</div>
         </div>
     </div>
@@ -58,22 +56,19 @@
     <!-- Overlay für das Pop-up-Menü -->
     <div class="popup-overlay" id="popupOverlay"></div>
     <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenu">
+    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;color: #fff">
         <!-- Schließen-Button oben links -->
         <button class="popup-close-button" onclick="closePopupMenu()">X</button>
         <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
         <div class="popup-item">Startseite</div>
         <div class="popup-item">Trending</div>
         <div class="popup-item">Neu</div>
-        <div class="popup-item" id="genreItem">
+        <div class="popup-item" id="genreItem" >
             Genre
             <div class="genre-submenu">
-                <div class="sub-item">Komödien</div>
+                <div class="sub-item">Comics</div>
+                <div class="sub-item">Kochbücher</div>
                 <div class="sub-item">Krimis</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
                 <div class="sub-item">Romane</div>
             </div>
         </div>
