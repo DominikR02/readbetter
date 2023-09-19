@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Das Leben mit dem Feind | readbetter</title>
+    <title>Der Fall Bruno | readbetter</title>
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
@@ -111,24 +111,24 @@
 <div style="display: flex; margin: 20px;">
     <img src="../pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" style="width: 20%">
     <div style="margin: 0 20px">
-        <h1>Das Leben mit dem Feind</h1>
+        <h1>Der Fall Bruno</h1>
         <div style="display: flex">
             <div style="width: 300px">
-                <p>Autor: Tom Sillinski</p>
+                <p>Autor: Günter Macher</p>
                 <p>Genre: Krimis</p>
-                <p>Veröffentlichung: 20.01.2013</p>
+                <p>Veröffentlichung: 14.01.2013</p>
                 <p>ISBN: 9784040101194</p>
             </div>
             <div style="max-width: 800px">
                 <h4>Inhalt</h4>
-                <p>
-                    In Tom Sillinskis fesselndem Krimi 'Das Leben mit dem Feind' verweben sich Intrigen und Geheimnisse zu einem undurchdringlichen Netz.</p>
+                <p>„Und dann hat er sie tot gemacht…“ Bruno, ein aufgeweckter zwölfjähriger Junge mit Downsyndrom, wird Zeuge eines Mordes.</p>
                 <!-- Add the "Weiterlesen" button below the first sentence -->
                 <button id="weiterlesen-button">Weiterlesen</button>
                 <!-- Hidden text that will be displayed when the button is clicked -->
                 <div id="hidden-text" style="display: none;">
-                    <p>Als ein unerwarteter Mordfall eine erbitterte Feindschaft auf den Kopf stellt, müssen die Ermittler sich auf ihren größten Gegner verlassen, um die Wahrheit zu enthüllen. In einer Welt, in der Feinde zu Verbündeten werden und die dunkelsten Geheimnisse ans Licht kommen, werden die Grenzen zwischen Gut und Böse auf gefährliche Weise verschwommen. Tauchen Sie ein in ein packendes Katz-und-Maus-Spiel, bei dem nichts ist, wie es scheint.
-                    </p>
+                    <p>Die Idylle des Bayerischen Waldes, offenbart ein verstörendes Mosaik von Inzest und Tod.
+                        Obwohl eine Leiche nicht zu finden ist und trotz seiner Zweifel nimmt Kommissar Geißler die Ermittlungen auf.
+                        Er glaubt sich der Lösung schon nahe, als ein fundamentaler Irrtum beinahe zur Katastrophe führt.</p>
                 </div>
                 <!-- Add the "Zuklappen" button -->
                 <button id="zuklappen-button" style="display: none;">Zuklappen</button>
@@ -158,72 +158,165 @@
             }
         });
 </script>
-
-<title>Exemplare</title>
+<meta charset="UTF-8">
+<title>Tabmenü</title>
 <style>
         body {
             font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            text-align: left;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 97%;
-            margin: 20px auto;
             background-color: #f5f5f5;
-            border: 1px solid #ccc;
         }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
+        .tab-menu {
+            display: flex;
             background-color: #4A5F47;
-            color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            margin-bottom: 20px;
         }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        .tab-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        tr:hover {
-            background-color: #ddd;
+        .tab-item:hover {
+            background-color: #35483E;
         }
+
+        .tab-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+            table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    color: black; /* Schriftfarbe für Header-Zellen */
+    font-weight: bold; /* Fettschrift für Header-Zellen */
+    background-color: transparent; /* Hintergrundfarbe für Header-Zellen entfernen */
+}
+
+td {
+    background-color: white; /* Hintergrundfarbe für Datenzellen */
+    color: black; /* Schriftfarbe für Datenzellen */
+    transition: background-color 0.3s; /* Animation beim Hover-Effekt */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Hintergrundfarbe für gerade Zeilen */
+}
+
+/* Hover-Effekt */
+tr:hover td {
+    background-color: #A5F47; /* Hintergrundfarbe für Datenzellen beim Hover */
+}
+   .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4A5F47;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, text-decoration 0.3s;
+        }
+
+        .green-button:hover {
+            background-color: #35483E;
+            text-decoration: underline;
+        }
+
+        .grey-button:hover {
+            background-color: #999;
+            text-decoration: none;
+        }
+
+        /* Stil für den grünen Button "Jetzt ausleihen" */
+        .green-button {
+            background-color: #4A5F47;
+        }
+
+        /* Stil für den grauen Button "Jetzt ausleihen" */
+        .grey-button {
+            background-color: #999;
+        }
+
+
     </style>
 </head>
 <body>
-<h1>Exemplare</h1>
-<table>
-    <thead>
-    <tr>
-        <th>Mediennummer</th>
-        <th>Genre</th>
-        <th>Verleiher</th>
-        <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>12345</td>
-        <td>Krimis</td>
-        <td>Semanur Özdemir</td>
-        <td>Verfügbar</td>
-    </tr>
-    <tr>
-        <td>67890</td>
-        <td>Krimis</td>
-        <td>Dominik Richter</td>
-        <td>Ausgeliehen</td>
-    </tr>
-    </tbody>
-</table>
+<div class="tab-menu">
+    <div class="tab-item" onclick="showTab('exemplare')">Exemplare</div>
+    <div class="tab-item" onclick="showTab('bewertung')">Bewertung</div>
+</div>
 
+<div id="exemplare-content" class="tab-content">
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>Mediennummer</th>
+            <th>Verleiher</th>
+            <th>Status</th>
+            <th> </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>12345</td>
+            <td>Semanur Özdemir</td>
+            <td>Verfügbar</td>
+            <td>   <a href="" class="button green-button">Jetzt ausleihen</a></td>
+        </tr>
+        <tr>
+            <td>67890</td>
+            <td>Dominik Richter</td>
+            <td>
+                Ausgeliehen
+            </td>
+            <td>
+                <a class="button grey-button">Jetzt ausleihen</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="bewertung-content" class="tab-content hidden">
+
+    <!-- Fügen Sie hier den Inhalt für die Bewertung ein -->
+</div>
+
+<script>
+        function showTab(tabName) {
+            var tabs = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.add('hidden');
+            }
+            document.getElementById(tabName + '-content').classList.remove('hidden');
+        }
+    </script>
 
 
 <footer>
@@ -232,6 +325,7 @@
         <a href="https://www.facebook.com/readbetter" target="_blank"> <img src="../pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
         <a href="https://www.youtube.com/readbetter" target="_blank"><img src="../pic/Socials/youtube.png" alt="YouTube" class="sozial-icon"></a>
         <a href="https://www.instagram.com/readbetter" target="_blank"><img src="../pic/Socials/instagram.png" alt="Instagram" class="sozial-icon"></a>
+    </div>
     </div>
     <br>
     <!-- Link zum Datenschutz und Impressum -->
