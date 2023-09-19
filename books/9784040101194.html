@@ -10,9 +10,6 @@
     <script src="../js/footer.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
-<h1>Header</h1>
-=======
 <header class="header">
     <a href="../mainpage.html"><img src="../pic/logo.jpeg" style="width: 100px; height: 100px"></a>
     <a href="../mainpage.html"><img src="../pic/logoText.png" style="height: 100px; width: 200px;"></a>
@@ -126,8 +123,37 @@
             <div style="max-width: 800px">
                 <h4>Inhalt</h4>
                 <p>
-                    In Alexander Sagurkskis fesselndem Krimi 'Das Leben mit dem Feind' verweben sich Intrigen und Geheimnisse zu einem undurchdringlichen Netz. Als ein unerwarteter Mordfall eine erbitterte Feindschaft auf den Kopf stellt, müssen die Ermittler sich auf ihren größten Gegner verlassen, um die Wahrheit zu enthüllen. In einer Welt, in der Feinde zu Verbündeten werden und die dunkelsten Geheimnisse ans Licht kommen, werden die Grenzen zwischen Gut und Böse auf gefährliche Weise verschwommen. Tauchen Sie ein in ein packendes Katz-und-Maus-Spiel, bei dem nichts ist, wie es scheint.
-                </p>
+                    In Alexander Sagurkskis fesselndem Krimi 'Das Leben mit dem Feind' verweben sich Intrigen und Geheimnisse zu einem undurchdringlichen Netz.</p>
+                <!-- Add the "Weiterlesen" button below the first sentence -->
+                <button id="weiterlesen-button">Weiterlesen</button>
+                <!-- Hidden text that will be displayed when the button is clicked -->
+                <div id="hidden-text" style="display: none;">
+                    <p>
+                        Als ein unerwarteter Mordfall eine erbitterte Feindschaft auf den Kopf stellt, müssen die Ermittler sich auf ihren größten Gegner verlassen, um die Wahrheit zu enthüllen. In einer Welt, in der Feinde zu Verbündeten werden und die dunkelsten Geheimnisse ans Licht kommen, werden die Grenzen zwischen Gut und Böse auf gefährliche Weise verschwommen. Tauchen Sie ein in ein packendes Katz-und-Maus-Spiel, bei dem nichts ist, wie es scheint.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ... (your existing footer and other content) ... -->
+
+<script>
+        // JavaScript to show/hide the hidden text when the button is clicked
+        const weiterlesenButton = document.getElementById('weiterlesen-button');
+        const hiddenText = document.getElementById('hidden-text');
+
+        weiterlesenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'none') {
+                hiddenText.style.display = 'block';
+                weiterlesenButton.textContent = 'Weniger anzeigen';
+            } else {
+                hiddenText.style.display = 'none';
+                weiterlesenButton.textContent = 'Weiterlesen';
+            }
+        });
+    </script>
             </div>
         </div>
     </div>
@@ -143,7 +169,7 @@
     <br>
     <!-- Link zum Datenschutz und Impressum -->
     <div id="footer-links" style="text-align: left">
-    <div id="footer-links" style="text-align: left; align-items: center">
+
         <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
         <div class="footer-container" id="left-footer-container">
             <a href="mainpage.html">Startseite</a><br>
@@ -163,8 +189,6 @@
         </div>
     </div>
 </footer>
->>>>>>> c6b11ee5455340064dfae5803be404fef3838b41
-
 <!-- "nach oben"-Button -->
 <button class="scroll-top" onclick="scrollToTop()">↑</button>
 </body>
