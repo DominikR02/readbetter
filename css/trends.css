@@ -1,0 +1,68 @@
+.trends {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.genre {
+    width: 48%;
+    margin: 20px 0;
+    border: 2px solid #4A5F47; /* #ddd*/
+    border-radius: 30px;
+    box-shadow: 0 8px 8px rgba(74, 95, 71, 1);
+    text-align: center;
+}
+
+.genre h2 {
+    text-align: center;
+}
+
+.genre a {
+    color: #000;
+}
+
+.books-container {
+    padding: 20px;
+    display: flex;
+}
+
+.book {
+    margin: 10px 20px;
+    text-align: center;
+}
+
+.general-trends {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.img-books {
+    height: 285px;
+    width: 190px;
+}
+
+.ranking {
+    width: 50px;
+    height: 75px;
+}
+
+@media (min-width: 1500px) {
+    .trends {
+        display: flex;
+    }
+
+    .genre {
+        width: 48%;
+    }
+}
+
+@media (max-width: 1501px) {
+    .trends {
+        display: block;
+    }
+
+    .genre {
+        width: 98%;
+    }
+}
