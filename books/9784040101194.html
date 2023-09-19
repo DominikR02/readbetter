@@ -108,7 +108,6 @@
         <button class="searchButton">Suchen</button>
     </div>
 </header>
-
 <div style="display: flex; margin: 20px;">
     <img src="../pic/buecher/9784040101194.jpg" style="width: 20%">
     <div style="margin: 0 20px">
@@ -128,41 +127,44 @@
                 <button id="weiterlesen-button">Weiterlesen</button>
                 <!-- Hidden text that will be displayed when the button is clicked -->
                 <div id="hidden-text" style="display: none;">
-                    <p>
-                        Als ein unerwarteter Mordfall eine erbitterte Feindschaft auf den Kopf stellt, müssen die Ermittler sich auf ihren größten Gegner verlassen, um die Wahrheit zu enthüllen. In einer Welt, in der Feinde zu Verbündeten werden und die dunkelsten Geheimnisse ans Licht kommen, werden die Grenzen zwischen Gut und Böse auf gefährliche Weise verschwommen. Tauchen Sie ein in ein packendes Katz-und-Maus-Spiel, bei dem nichts ist, wie es scheint.
+                    <p>Als ein unerwarteter Mordfall eine erbitterte Feindschaft auf den Kopf stellt, müssen die Ermittler sich auf ihren größten Gegner verlassen, um die Wahrheit zu enthüllen. In einer Welt, in der Feinde zu Verbündeten werden und die dunkelsten Geheimnisse ans Licht kommen, werden die Grenzen zwischen Gut und Böse auf gefährliche Weise verschwommen. Tauchen Sie ein in ein packendes Katz-und-Maus-Spiel, bei dem nichts ist, wie es scheint.
                     </p>
                 </div>
+                <!-- Add the "Zuklappen" button -->
+                <button id="zuklappen-button" style="display: none;">Zuklappen</button>
             </div>
         </div>
     </div>
 </div>
-
-<!-- ... (your existing footer and other content) ... -->
-
 <script>
-        // JavaScript to show/hide the hidden text when the button is clicked
+        // JavaScript to show/hide the hidden text and toggle buttons
         const weiterlesenButton = document.getElementById('weiterlesen-button');
+        const zuklappenButton = document.getElementById('zuklappen-button');
         const hiddenText = document.getElementById('hidden-text');
 
         weiterlesenButton.addEventListener('click', () => {
             if (hiddenText.style.display === 'none') {
                 hiddenText.style.display = 'block';
-                weiterlesenButton.textContent = 'Weniger anzeigen';
-            } else {
-                hiddenText.style.display = 'none';
-                weiterlesenButton.textContent = 'Weiterlesen';
+                weiterlesenButton.style.display = 'none';
+                zuklappenButton.style.display = 'block';
             }
         });
-    </script>
-            </div>
-        </div>
-    </div>
-</div>
+
+        zuklappenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'block') {
+                hiddenText.style.display = 'none';
+                weiterlesenButton.style.display = 'block';
+                zuklappenButton.style.display = 'none';
+            }
+        });
+</script>
+
+
     
 <footer>
     <div class="social-icons">
         <!-- Links zu den Sozialen Medien mit Bildern -->
-        <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
+        <a href="https://www.facebook.com/readbetter" target="_blank"> <img src="pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
         <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png" alt="YouTube" class="sozial-icon"></a>
         <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png" alt="Instagram" class="sozial-icon"></a>
     </div>
