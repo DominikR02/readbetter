@@ -109,7 +109,7 @@
     </div>
 </header>
 <div style="display: flex; margin: 20px;">
-    <img src="../pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" style="width: 20%">
+    <img src="../pic/buecher/8454.jpg" style="width: 20%">
     <div style="margin: 0 20px">
         <h1>Mein Kochbuch</h1>
         <div style="display: flex">
@@ -122,13 +122,15 @@
             <div style="max-width: 800px">
                 <h4>Inhalt</h4>
                 <p>
-                    In Tom Sillinskis fesselndem Krimi 'Das Leben mit dem Feind' verweben sich Intrigen und Geheimnisse zu einem undurchdringlichen Netz.</p>
+                    „Alle essen, viele kochen, manche besonders gut. Zu denen gehöre ich nicht. Aber ich koche leidenschaftlich gern und mag auch Gäste und Feste. Meistens habe ich schrecklich wenig Zeit. Deshalb koche ich in der Regel relativ einfache Gerichte und oft dasselbe.“</p>
                 <!-- Add the "Weiterlesen" button below the first sentence -->
                 <button id="weiterlesen-button">Weiterlesen</button>
                 <!-- Hidden text that will be displayed when the button is clicked -->
                 <div id="hidden-text" style="display: none;">
-                    <p>Als ein unerwarteter Mordfall eine erbitterte Feindschaft auf den Kopf stellt, müssen die Ermittler sich auf ihren größten Gegner verlassen, um die Wahrheit zu enthüllen. In einer Welt, in der Feinde zu Verbündeten werden und die dunkelsten Geheimnisse ans Licht kommen, werden die Grenzen zwischen Gut und Böse auf gefährliche Weise verschwommen. Tauchen Sie ein in ein packendes Katz-und-Maus-Spiel, bei dem nichts ist, wie es scheint.
-                    </p>
+                    <p> Bei Einladungen gilt für Christiane Nüsslein-Volhard vor allem eines: Die Gäste und nicht die Speisenfolge stehen im Mittelpunkt. Ein gutes Essen soll Spaß machen. Und ein guter Gastgeber zeichnet sich auch dadurch aus, daß er sich ausgeruht seinen Gästen widmet und nicht panisch in der Küche letzte Vorbereitungen trifft.
+                        Mit pragmatischen Ratschlägen und anschaulichen Anleitungen erleichtert Christiane Nüsslein-Volhard das Kochen von über 200 köstlichen Gerichten, viele davon aus der Küche ihrer traditionsreichen Familie, aber auch bewährte Rezepte von Freunden und
+                        einfallsreiche Abwandlungen: von Käsewindbeuteln und Tomatensuppe über Spinatauflauf, Tafelspitz und Rösti bis zu Zimtsternenund Karamelläpfeln. Tips zum Zeitmanagement in der Küche, zur Vorbereitung und Zusammenstellung des Menüs sowie viele persönliche Beobachtungen aus langjähriger Kocherfahrung vermitteln auch weniger Geübten, daß Kochen keine Zauberei ist.
+                        Die Kochphilosophie von Christiane Nüsslein-Volhard ist einfach: Mit wenigen, aber guten Zutaten und vernünftiger Zeiteinteilung kann jeder köstliche Gerichte zubereiten und als Gastgeber den Überblick behalten.</p>
                 </div>
                 <!-- Add the "Zuklappen" button -->
                 <button id="zuklappen-button" style="display: none;">Zuklappen</button>
@@ -200,7 +202,7 @@
             display: none;
         }
             table {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
     margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
 }
@@ -246,6 +248,10 @@ tr:hover td {
             text-decoration: underline;
         }
 
+        .grey-button:hover {
+            background-color: #999;
+            text-decoration: none;
+        }
 
         /* Stil für den grünen Button "Jetzt ausleihen" */
         .green-button {
@@ -275,22 +281,24 @@ tr:hover td {
             <th>Mediennummer</th>
             <th>Verleiher</th>
             <th>Status</th>
+            <th> </th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>12345</td>
             <td>Semanur Özdemir</td>
-            <td>Verfügbar
-                <a href="#" class="button green-button">Jetzt ausleihen</a>
-            </td>
+            <td>Verfügbar</td>
+           <td>   <a href="" class="button green-button">Jetzt ausleihen</a></td>
         </tr>
         <tr>
             <td>67890</td>
             <td>Dominik Richter</td>
             <td>
                 Ausgeliehen
-                <a href="#" class="button grey-button">Jetzt ausleihen</a>
+            </td>
+            <td>
+                <a class="button grey-button">Jetzt ausleihen</a>
             </td>
         </tr>
         </tbody>
