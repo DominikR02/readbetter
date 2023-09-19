@@ -3,131 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <title>Header/ Footer</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 </head>
 <body>
 <header class="header">
-  <a href="mainpage.html"><img src="pic/logo.jpeg" style="width: 100px; height: 100px"></a>
-  <a href="mainpage.html"><img src="pic/logoText.png" style="height: 100px; width: 200px;"></a>
-  <div class="menü" style="margin-left: 0">
-    <a href="mainpage.html"><p class="p-menu">Startseite</p></a>
-  </div>
-  <div class="menü">
-    <p class="p-menu">Trending</p>
-  </div>
-  <div class="menü">
-    <p class="p-menu">Neu</p>
-  </div>
-  <div class="menü" id="genremenü">
-    <p class="p-menu">Genre</p>
-    <div class="genre-dropdown">
-      <div class="dropdown-item">Comics
-      </div>
-      <div class="dropdown-item">Kochbücher</div>
-      <div class="dropdown-item">Krimis</div>
-      <div class="dropdown-item">Romane</div>
+    <a href="mainpage.html"><img src="pic/logo.jpeg" style="width: 100px; height: 100px"></a>
+    <a href="mainpage.html"><img src="pic/logoText.png" style="height: 100px; width: 200px;"></a>
+    <div class="menü" style="margin-left: 0">
+        <a href="mainpage.html"><p class="p-menu">Startseite</p></a>
     </div>
-  </div>
-  <div class="menü">
-    <a href="abos.html"><p class="p-menu" style="color: red">Abos</p></a>
-  </div>
-  <div class="navigation">
-    <div>
-      <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+    <div class="menü">
+        <a href="trends.html"><p class="p-menu">Trending</p></a>
     </div>
-    <div class="burgermenu">
-      <!-- Hier können Sie das Burger-Menü einfügen -->
-      <!-- Zum Beispiel: -->
-      <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
+    <div class="menü">
+        <p class="p-menu">Neu</p>
     </div>
-    <div class="search-icon">
-      <!-- Hier können Sie das Suchbild einfügen -->
-      <!-- Zum Beispiel: -->
-      <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()"></a>
+    <div class="menü" id="genremenü">
+        <p class="p-menu">Genre</p>
+        <div class="genre-dropdown">
+            <div class="dropdown-item">Comics
+            </div>
+            <div class="dropdown-item">Kochbücher</div>
+            <div class="dropdown-item">Krimis</div>
+            <div class="dropdown-item">Romane</div>
+        </div>
     </div>
-  </div>
+    <div class="menü">
+        <a href="abos.html"><p class="p-menu" style="color: red">Abos</p></a>
+    </div>
+    <div class="navigation">
+        <div>
+            <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <!-- Hier können Sie das Burger-Menü einfügen -->
+            <!-- Zum Beispiel: -->
+            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
+                 onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <!-- Hier können Sie das Suchbild einfügen -->
+            <!-- Zum Beispiel: -->
+            <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                             onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
 
-  <!-- Overlay für das Pop-up-Menü -->
-  <div class="popup-overlay" id="popupOverlay"></div>
-  <!-- Pop-up-Menü -->
-  <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;color: #fff">
-    <!-- Schließen-Button oben links -->
-    <button class="popup-close-button" onclick="closePopupMenu()">X</button>
-    <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-    <div class="popup-item">Startseite</div>
-    <div class="popup-item">Trending</div>
-    <div class="popup-item">Neu</div>
-    <div class="popup-item" id="genreItem" >
-      Genre
-      <div class="genre-submenu">
-        <div class="sub-item">Comics</div>
-        <div class="sub-item">Kochbücher</div>
-        <div class="sub-item">Krimis</div>
-        <div class="sub-item">Romane</div>
-      </div>
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <a href="mainpage.html"><div class="popup-item">Startseite</div></a>
+        <a href="trends.html"><div class="popup-item">Trending</div></a>
+        <div class="popup-item">Neu</div>
+        <div class="popup-item" id="genreItem">
+            Genre
+            <div class="genre-submenu">
+                <div class="sub-item">Comics</div>
+                <div class="sub-item">Kochbücher</div>
+                <div class="sub-item">Krimis</div>
+                <div class="sub-item">Romane</div>
+            </div>
+        </div>
+        <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
+            </div>
+        </div>
+        <div class="popup-item">
+            <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a>
+        </div>
     </div>
-    <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
-    <div class="popup-item popup-icons">
-      <div class="popup-icon">
-        <a href="login.html"><img src="pic/login.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
-      </div>
-      <div class="popup-icon">
-        <a href="#"><img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
-      </div>
-    </div>
-    <div class="popup-item">
-      <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a>
-    </div>
-  </div>
 
-  <!-- Overlay für das Pop-up-Menü -->
-  <div class="popup-overlay" id="popupOverlaySearch"></div>
-  <!-- Pop-up-Menü -->
-  <div class="popup-menu" id="popupMenuSearch">
-    <!-- Schließen-Button oben links -->
-    <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
-    <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-    <div class="popup-item">
-      <h4>Suche</h4>
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">
+            <h4>Suche</h4>
+        </div>
+        <div class="popup-item">Titel</div>
+        <input style="text-align: center" placeholder="Titel" type="text">
+        <div class="popup-item">Autor</div>
+        <input style="text-align: center" placeholder="Autor" type="text">
+        <div class="popup-item">Ort</div>
+        <input style="text-align: center" placeholder="Ort" type="text">
+        <button class="searchButton">Suchen</button>
     </div>
-    <div class="popup-item">Titel</div>
-    <input style="text-align: center" placeholder="Titel" type="text">
-    <div class="popup-item">Autor</div>
-    <input style="text-align: center" placeholder="Autor" type="text">
-    <div class="popup-item">Ort</div>
-    <input style="text-align: center" placeholder="Ort" type="text">
-    <button class="searchButton">Suchen</button>
-  </div>
 </header>
 
 <footer>
-  <div class="social-icons">
-    <!-- Links zu den Sozialen Medien mit Bildern -->
-    <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
-    <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png" alt="YouTube" class="sozial-icon"></a>
-    <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png" alt="Instagram" class="sozial-icon"></a>
-  </div>
-  <br>
-  <!-- Link zum Datenschutz und Impressum -->
-  <div id="footer-links" style="text-align: left">
-    <div id="footer-links" style="text-align: left; align-items: center">
-      <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
-      <div class="footer-container" id="left-footer-container">
-        <a href="mainpage.html">Startseite</a><br>
-        <a href="AboutUs.html">Über Uns</a><br>
-        <a href="#">Kontakt</a><br>
-        <a href="#">FAQ</a>
-      </div>
-      <div class="footer-container">
-        <a href="datenschutz.html">Datenschutz</a><br>
-        <a href="impressum.html">Impressum</a><br>
-        <a onclick="print()">Drucken</a><br>
-        <a href="#">AGB</a>
-      </div>
-      <div class="footer-container">
-        <a href="login.html"><img src="pic/login-weiss.png" style="width: 45px; height: 45px; margin: 8px;"></a><br>
-        <a href="#"><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px" onclick="toggleSearchMenu()"></a>
-      </div>
+    <div class="social-icons">
+        <!-- Links zu den Sozialen Medien mit Bildern -->
+        <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook"
+                                                                           class="sozial-icon"></a>
+        <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png" alt="YouTube"
+                                                                          class="sozial-icon"></a>
+        <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png"
+                                                                            alt="Instagram" class="sozial-icon"></a>
     </div>
+    <br>
+    <!-- Link zum Datenschutz und Impressum -->
+    <div id="footer-links" style="text-align: left">
+        <div id="footer-links" style="text-align: left; align-items: center">
+            <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
+            <div class="footer-container" id="left-footer-container">
+                <a href="mainpage.html">Startseite</a><br>
+                <a href="AboutUs.html">Über Uns</a><br>
+                <a href="#">Kontakt</a><br>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-container">
+                <a href="datenschutz.html">Datenschutz</a><br>
+                <a href="impressum.html">Impressum</a><br>
+                <a onclick="print()">Drucken</a><br>
+                <a href="#">AGB</a>
+            </div>
+            <div class="footer-container">
+                <a href="login.html"><img src="pic/login-weiss.png" style="width: 45px; height: 45px; margin: 8px;"></a><br>
+                <a href="#"><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px"
+                                 onclick="toggleSearchMenu()"></a>
+            </div>
+        </div>
 </footer>
 
 <!-- "nach oben"-Button -->
