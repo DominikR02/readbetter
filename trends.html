@@ -42,6 +42,7 @@
             border: 1px solid #ddd;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .img-books {
             height: 285px;
             width: 190px;
@@ -81,12 +82,14 @@
         <div class="burgermenu">
             <!-- Hier können Sie das Burger-Menü einfügen -->
             <!-- Zum Beispiel: -->
-            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
+            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
+                 onclick="toggleBurgerMenu()">
         </div>
         <div class="search-icon">
             <!-- Hier können Sie das Suchbild einfügen -->
             <!-- Zum Beispiel: -->
-            <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()"></a>
+            <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                             onclick="toggleSearchMenu()"></a>
         </div>
     </div>
 
@@ -100,7 +103,7 @@
         <div class="popup-item">Startseite</div>
         <div class="popup-item">Trending</div>
         <div class="popup-item">Neu</div>
-        <div class="popup-item" id="genreItem" >
+        <div class="popup-item" id="genreItem">
             Genre
             <div class="genre-submenu">
                 <div class="sub-item">Comics</div>
@@ -115,7 +118,8 @@
                 <a href="login.html"><img src="pic/login.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
             </div>
             <div class="popup-icon">
-                <a href="#"><img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
+                <a href="#"><img src="pic/search.svg" style="width: 30px; height: 30px; margin: 8px"
+                                 onclick="toggleSearchMenu(); closePopupMenu()"></a>
             </div>
         </div>
         <div class="popup-item">
@@ -169,99 +173,110 @@
                 </div>
             </div>
         </div>
-    <div class="genre">
-        <h2>Krimi</h2>
-        <div class="books-container" style="display: flex">
-            <!-- Platz 1 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="1. Krimi">
-                <div class="book-title">1. Platz</div>
-            </div>
-            <!-- Platz 2 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/im-wald.jpg" alt="2. Krimi">
-                <div class="book-title">2. Platz</div>
-            </div>
-            <!-- Platz 3 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="3. Krimi">
-                <div class="book-title">3. Platz</div>
+        <div class="genre">
+            <h2>Krimi</h2>
+            <div class="books-container" style="display: flex">
+                <!-- Platz 1 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="1. Krimi">
+                    <div class="book-title">1. Platz</div>
+                </div>
+                <!-- Platz 2 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/im-wald.jpg" alt="2. Krimi">
+                    <div class="book-title">2. Platz</div>
+                </div>
+                <!-- Platz 3 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="3. Krimi">
+                    <div class="book-title">3. Platz</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="genre">
-        <h2>Kochbücher</h2>
-        <div class="books-container" style="display: flex">
-            <!-- Platz 1 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/71y+wiFaIRL._AC_UF1000,1000_QL80_.jpg" alt="1. Kochbuch" height="285px"/>
-                <div class="book-title">1. Platz</div>
-            </div>
-            <!-- Platz 2 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/Rezeptbuch-selbst-gemacht-Hardcover-17x24r-sw-Kalligrafie-DIY-Rezepte-COVER-Rosa.jpg" alt="2. Kochbuch">
-                <div class="book-title">2. Platz</div>
-            </div>
-            <!-- Platz 3 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/8454.jpg" alt="3. Kochbuch">
-                <div class="book-title">3. Platz</div>
+        <div class="genre">
+            <h2>Kochbücher</h2>
+            <div class="books-container" style="display: flex">
+                <!-- Platz 1 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/71y+wiFaIRL._AC_UF1000,1000_QL80_.jpg" alt="1. Kochbuch"
+                         height="285px"/>
+                    <div class="book-title">1. Platz</div>
+                    <h4>Backen für Anfänger</h4><br>
+                </div>
+                <!-- Platz 2 -->
+                <div class="book">
+                    <img class="img-books"
+                         src="pic/buecher/Rezeptbuch-selbst-gemacht-Hardcover-17x24r-sw-Kalligrafie-DIY-Rezepte-COVER-Rosa.jpg"
+                         alt="2. Kochbuch">
+                    <div class="book-title">2. Platz</div>
+                </div>
+                <!-- Platz 3 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/8454.jpg" alt="3. Kochbuch">
+                    <div class="book-title">3. Platz</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="genre">
-        <h2>Romane</h2>
-        <div class="books-container" style="display: flex">
-            <!-- Platz 1 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/images (1).jpg" alt="1. Roman">
-                <div class="book-title">1. Platz</div>
-            </div>
-            <!-- Platz 2 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/20220803_224434.jpg" alt="2. Roman">
-                <div class="book-title">2. Platz</div>
-            </div>
-            <!-- Platz 3 -->
-            <div class="book">
-                <img class="img-books" src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="3. Roman">
-                <div class="book-title">3. Platz</div>
+        <div class="genre">
+            <h2>Romane</h2>
+            <div class="books-container" style="display: flex">
+                <!-- Platz 1 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/images (1).jpg" alt="1. Roman">
+                    <div class="book-title">1. Platz</div>
+                </div>
+                <!-- Platz 2 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/20220803_224434.jpg" alt="2. Roman">
+                    <div class="book-title">2. Platz</div>
+                </div>
+                <!-- Platz 3 -->
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="3. Roman">
+                    <div class="book-title">3. Platz</div>
+                </div>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="social-icons">
-            <!-- Links zu den Sozialen Medien mit Bildern -->
-            <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
-            <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png" alt="YouTube" class="sozial-icon"></a>
-            <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png" alt="Instagram" class="sozial-icon"></a>
-        </div>
-        <br>
-        <!-- Link zum Datenschutz und Impressum -->
-        <div id="footer-links" style="text-align: left">
-            <div id="footer-links" style="text-align: left; align-items: center">
-                <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
-                <div class="footer-container" id="left-footer-container">
-                    <a href="mainpage.html">Startseite</a><br>
-                    <a href="AboutUs.html">Über Uns</a><br>
-                    <a href="#">Kontakt</a><br>
-                    <a href="#">FAQ</a>
-                </div>
-                <div class="footer-container">
-                    <a href="datenschutz.html">Datenschutz</a><br>
-                    <a href="impressum.html">Impressum</a><br>
-                    <a onclick="print()">Drucken</a><br>
-                    <a href="#">AGB</a>
-                </div>
-                <div class="footer-container">
-                    <a href="login.html"><img src="pic/login-weiss.png" style="width: 45px; height: 45px; margin: 8px;"></a><br>
-                    <a href="#"><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px" onclick="toggleSearchMenu()"></a>
-                </div>
+</div>
+
+<footer>
+    <div class="social-icons">
+        <!-- Links zu den Sozialen Medien mit Bildern -->
+        <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png"
+                                                                           alt="Facebook"
+                                                                           class="sozial-icon"></a>
+        <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png"
+                                                                          alt="YouTube" class="sozial-icon"></a>
+        <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png"
+                                                                            alt="Instagram" class="sozial-icon"></a>
+    </div>
+    <br>
+    <!-- Link zum Datenschutz und Impressum -->
+    <div id="footer-links" style="text-align: left">
+        <div id="footer-links" style="text-align: left; align-items: center">
+            <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
+            <div class="footer-container" id="left-footer-container">
+                <a href="mainpage.html">Startseite</a><br>
+                <a href="AboutUs.html">Über Uns</a><br>
+                <a href="#">Kontakt</a><br>
+                <a href="#">FAQ</a>
             </div>
-    </footer>
-</div>
-</div>
+            <div class="footer-container">
+                <a href="datenschutz.html">Datenschutz</a><br>
+                <a href="impressum.html">Impressum</a><br>
+                <a onclick="print()">Drucken</a><br>
+                <a href="#">AGB</a>
+            </div>
+            <div class="footer-container">
+                <a href="login.html"><img src="pic/login-weiss.png"
+                                          style="width: 45px; height: 45px; margin: 8px;"></a><br>
+                <a href="#"><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px"
+                                 onclick="toggleSearchMenu()"></a>
+            </div>
+        </div>
+</footer>
 </body>
 </html>
