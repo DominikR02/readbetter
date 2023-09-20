@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+
 </head>
 <body>
 <h1>Header</h1>
@@ -33,7 +34,11 @@
         <p>Email</p>
         <input placeholder="Email">
         <p>Passwort</p>
-        <input placeholder="Passwort" type="password">
+        <input id="password1" placeholder="Passwort" type="password">
+        <p>Passwort wiederholen</p>
+        <input id="password2" placeholder="Passwort" type="password">
+        <p id="passwordMatchMessage" style="color: red;"></p>
+        <p id="passwordCriteriaMessage" style="color: red;"></p>
         <br><br><br>
         <button>Registrieren</button>
     </div>
@@ -45,5 +50,55 @@
 </div>
 
 <h1>Footer</h1>
+
+<script>
+    var password1Field = document.getElementById("password1");
+    var password2Field = document.getElementById("password2");
+    var passwordMatchMessage = document.getElementById("passwordMatchMessage");
+    var passwordCriteriaMessage = document.getElementById("passwordCriteriaMessage");
+
+    password1Field.addEventListener("input", validatePassword);
+    password2Field.addEventListener("input", checkPasswordMatch);
+
+    function validatePassword() {
+        var password1 = password1Field.value;
+        var password2 = password2Field.value;
+
+        var minLength = 8;
+        var hasUppercase = /[A-Z]/.test(password1);
+        var hasLowercase = /[a-z]/.test(password1);
+        var hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password1);
+        var hasNumber = /\d/.test(password1);
+
+        var isPasswordValid = password1.length >= minLength &&
+            hasUppercase &&
+            hasLowercase &&
+            hasSpecialChar &&
+            hasNumber;
+
+        if (isPasswordValid) {
+            passwordCriteriaMessage.textContent = "Passwort erfüllt die Kriterien.";
+            passwordCriteriaMessage.style.color = "green";
+        } else {
+            passwordCriteriaMessage.textContent = "Passwort muss mindestens 8 Zeichen lang sein, Groß- und Kleinbuchstaben, Sonderzeichen und Zahlen enthalten.";
+            passwordCriteriaMessage.style.color = "red";
+        }
+
+        checkPasswordMatch();
+    }
+
+    function checkPasswordMatch() {
+        var password1 = password1Field.value;
+        var password2 = password2Field.value;
+
+        if (password1 === password2) {
+            passwordMatchMessage.textContent = "Passwörter stimmen überein.";
+            passwordMatchMessage.style.color = "green";
+        } else {
+            passwordMatchMessage.textContent = "Passwörter stimmen nicht überein.";
+            passwordMatchMessage.style.color = "red";
+        }
+    }
+</script>
 </body>
 </html>
