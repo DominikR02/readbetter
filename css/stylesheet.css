@@ -25,7 +25,7 @@ button:hover {
 .rating {
   font-size: 24px;
   color: black;
-  margin-left: 10px; /* Adjust the spacing between title and rating */
+  margin-left: 25px; /* Adjust the spacing between title and rating */
 }
 
 .star {
@@ -34,5 +34,33 @@ button:hover {
 
 .empty-star {
   display: inline-block;
-  color: white;
+  color: black;
 }
+
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+.star {
+    margin: 0 5px;
+    cursor: pointer;
+}
+ .rating {
+     display: flex;
+     align-items: center;
+     font-size: 24px;
+     color: black;
+ }
+
+ .ratstar {
+     margin: 0 5px;
+     cursor: pointer;
+ }
+
+ .ratstar:hover::before {
+     content: "\2605";
+     color: #4A5F47;
+ }
