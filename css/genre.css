@@ -1,0 +1,25 @@
+.trends {
+    width: 98%;
+    margin: 20px 1% 0 1%;
+    border: 2px solid #4A5F47; /* #ddd*/
+    border-radius: 30px;
+    box-shadow: 0 8px 8px rgba(74, 95, 71, 1);
+    text-align: center;
+}
+
+.img-books {
+    height: 285px;
+    width: 190px;
+}
+
+.toppicks-books {
+    width: 14%;
+    padding: 2%;
+    text-align: center;
+}
+
+.ranking {
+    width: 50px;
+    height: 75px;
+    margin-bottom: 20px;
+}
