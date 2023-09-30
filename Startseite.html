@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite | readbetter</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/aboutUs.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <style>
+        /* CSS zur Zentrierung des großen Bildes */
+        .large-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .large-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .large-image button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px; /* Anpassen Sie den Abstand vom rechten Rand nach Bedarf */
+        }
+
+        /* CSS für die Schaltfläche "Mehr anzeigen" */
+        .show-more-button {
+            text-align: right;
+        }
+
+        /* CSS für die Bilder mit Titel */
+        .image-row {
+            text-align: center;
+        }
+
+        .image img {
+            margin: 0 10px; /* Abstand zwischen den Bildern */
+        }
+    </style>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</head>
+<body>
+<header>
+    <h1>Header</h1>
+    <h2>Startseite</h2>
+</header>
+<div class="container">
+    <div class="large-image">
+        <img id="mainImage" src="largeImage1.jpg" alt="Hauptbild 1">
+        <button onclick="changeMainImage('next')">Nächstes Bild</button>
+    </div>
+    <div class="section" id="forYouSection">
+        <h2>For you</h2>
+        <div class="image-row">
+            <div class="image">
+                <img src="bild1.jpg" alt="Titel 1">
+                <img src="bild2.jpg" alt="Titel 2">
+                <img src="bild3.jpg" alt="Titel 3">
+                <img src="bild4.jpg" alt="Titel 4">
+                <img src="bild5.jpg" alt="Titel 5">
+            </div>
+        </div>
+        <div class="show-more-button">
+            <button onclick="showMoreBooks('forYouBooks')">Mehr anzeigen</button>
+        </div>
+    </div>
+    <div class="section">
+        <h2>New</h2>
+        <div class="image-row">
+            <div class="image">
+                <img src="bild1.jpg" alt="Titel 1">
+                <img src="bild2.jpg" alt="Titel 2">
+                <img src="bild3.jpg" alt="Titel 3">
+                <img src="bild4.jpg" alt="Titel 4">
+                <img src="bild5.jpg" alt="Titel 5">
+            </div>
+        </div>
+        <div class="show-more-button">
+            <button onclick="showMoreBooks('newBooks')">Mehr anzeigen</button>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Trends</h2>
+        <div class="image-row">
+            <div class="image">
+                <img src="bild1.jpg" alt="Titel 1">
+                <img src="bild2.jpg" alt="Titel 2">
+                <img src="bild3.jpg" alt="Titel 3">
+                <img src="bild4.jpg" alt="Titel 4">
+                <img src="bild5.jpg" alt="Titel 5">
+            </div>
+        </div>
+        <div class="show-more-button">
+            <button onclick="showMoreBooks('trendsBooks')">Mehr anzeigen</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const mainImages = ["largeImage1.jpg", "largeImage2.jpg", "largeImage3.jpg"];
+    let currentMainImageIndex = 0;
+
+    function changeMainImage(direction) {
+        if (direction === 'next') {
+            currentMainImageIndex++;
+            if (currentMainImageIndex >= mainImages.length) {
+                currentMainImageIndex = 0;
+            }
+        } else if (direction === 'previous') {
+            currentMainImageIndex--;
+            if (currentMainImageIndex < 0) {
+                currentMainImageIndex = mainImages.length - 1;
+            }
+        }
+
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = mainImages[currentMainImageIndex];
+    }
+
+    // Beispiel-Daten für Bücher
+    const books = [
+        "Buch 1",
+        "Buch 2",
+        "Buch 3",
+        "Buch 4",
+        "Buch 5",
+        "Buch 6",
+        "Buch 7",
+        "Buch 8",
+        "Buch 9",
+        "Buch 10"
+    ];
+
+    // Funktion zum Anzeigen von 5 weiteren Büchern
+    function showMoreBooks(containerId) {
+        const container = document.getElementById(containerId);
+        const bookList = container.querySelector('div');
+        const currentBooks = bookList.children.length;
+        const remainingBooks = books.slice(currentBooks, currentBooks + 5);
+
+        for (const book of remainingBooks) {
+            const bookElement = document.createElement('p');
+            bookElement.textContent = book;
+            bookList.appendChild(bookElement);
+        }
+    }
+
+    // Initial 5 Bücher anzeigen
+    showMoreBooks('forYouBooks');
+    showMoreBooks('newBooks');
+    showMoreBooks('trendsBooks');
+</script>
+<h1>Footer</h1>
+</body>
+</html>
