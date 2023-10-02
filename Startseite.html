@@ -16,7 +16,7 @@
         }
 
         .large-image img {
-            max-width: 100%;
+            width: 1000px;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -53,7 +53,7 @@
 </header>
 <div class="container">
     <div class="large-image">
-        <img id="mainImage" src="largeImage1.jpg" alt="Hauptbild 1">
+        <img id="mainImage" src="pic/buecher/csm_2022_Bibliothek_029_6d424155b9.jpg" alt="Hauptbild 1">
         <button onclick="changeMainImage('next')">Nächstes Bild</button>
     </div>
     <div class="section" id="forYouSection">
@@ -90,9 +90,9 @@
         <h2>Trends</h2>
         <div class="image-row">
             <div class="image">
-                <img src="bild1.jpg" alt="Titel 1">
-                <img src="bild2.jpg" alt="Titel 2">
-                <img src="bild3.jpg" alt="Titel 3">
+                <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" height="200px">
+                <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 2" height="200px">
+                <img src="pic/buecher/8454.jpg" alt="Titel 3" height="200px">
                 <img src="bild4.jpg" alt="Titel 4">
                 <img src="bild5.jpg" alt="Titel 5">
             </div>
@@ -104,7 +104,8 @@
 </div>
 
 <script>
-    const mainImages = ["largeImage1.jpg", "largeImage2.jpg", "largeImage3.jpg"];
+    const mainImages = ["pic/buecher/csm_2022_Bibliothek_029_6d424155b9.jpg",
+        "pic/buecher/Ausleihen.jpg", "pic/buecher/tausch.jpg"];
     let currentMainImageIndex = 0;
 
     function changeMainImage(direction) {
