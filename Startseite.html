@@ -42,6 +42,16 @@
         .image img {
             margin: 0 10px; /* Abstand zwischen den Bildern */
         }
+
+        /* CSS für den ausführlichen Text */
+        #detailedText {
+            display: none;
+        }
+
+        /* CSS für den "Weniger anzeigen"-Abschnitt */
+        #showLessSection {
+            display: none;
+        }
     </style>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
@@ -52,10 +62,40 @@
     <h2>Startseite</h2>
 </header>
 <div class="container">
-    <div class="large-image">
-        <img id="mainImage" src="pic/buecher/csm_2022_Bibliothek_029_6d424155b9.jpg" alt="Hauptbild 1">
-        <button onclick="changeMainImage('next')">Nächstes Bild</button>
+    <div class="section">
+        <h2>Hauptbild 1</h2>
+        <div class="large-image">
+            <img id="mainImage" src="Bild 1.jpg" alt="Hauptbild 1">
+            <button onclick="changeMainImage('next')">Nächstes Bild</button>
+        </div>
     </div>
+
+    <!-- Hier wird der neue Abschnitt "Was ist readbetter?" eingefügt -->
+    <div class="section" id="aboutUsSection" style="text-align: left; max-width: 50%; margin: 0 auto;">
+        <h2>Was ist readbetter?</h2>
+        <p>
+            Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
+            <br>
+            <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier endlosen Auswahl an…
+        </p>
+        <button id="showMoreButton" onclick="toggleAboutUsText()">Weiterlesen</button>
+    </div>
+
+    <!-- Hier wird der ausführliche Text eingefügt -->
+    <div class="section" id="detailedText" style="text-align: left; max-width: 50%; margin: 0 auto;">
+        <p>
+            Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
+            <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der Auswahl ihres nächsten Buchs zu helfen.
+            <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen. Gemeinschaftliches Lesen war noch nie so zugänglich.
+            <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare Geld und Ressourcen mit ReadBetter.
+            Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0 wie nie zuvor.
+        </p>
+    </div>
+
+    <div class="section" id="showLessSection">
+        <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
+    </div>
+
     <div class="section" id="forYouSection">
         <h2>For you</h2>
         <div class="image-row">
@@ -71,41 +111,34 @@
             <button onclick="showMoreBooks('forYouBooks')">Mehr anzeigen</button>
         </div>
     </div>
-    <div class="section">
-        <h2>New</h2>
-        <div class="image-row">
-            <div class="image">
-                <img src="bild1.jpg" alt="Titel 1">
-                <img src="bild2.jpg" alt="Titel 2">
-                <img src="bild3.jpg" alt="Titel 3">
-                <img src="bild4.jpg" alt="Titel 4">
-                <img src="bild5.jpg" alt="Titel 5">
-            </div>
-        </div>
-        <div class="show-more-button">
-            <button onclick="showMoreBooks('newBooks')">Mehr anzeigen</button>
-        </div>
-    </div>
-    <div class="section">
-        <h2>Trends</h2>
-        <div class="image-row">
-            <div class="image">
-                <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" height="200px">
-                <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 2" height="200px">
-                <img src="pic/buecher/8454.jpg" alt="Titel 3" height="200px">
-                <img src="bild4.jpg" alt="Titel 4">
-                <img src="bild5.jpg" alt="Titel 5">
-            </div>
-        </div>
-        <div class="show-more-button">
-            <button onclick="showMoreBooks('trendsBooks')">Mehr anzeigen</button>
-        </div>
-    </div>
+
+    <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
+    <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
 </div>
 
+<!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
 <script>
-    const mainImages = ["pic/buecher/csm_2022_Bibliothek_029_6d424155b9.jpg",
-        "pic/buecher/Ausleihen.jpg", "pic/buecher/tausch.jpg"];
+    let aboutUsTextVisible = false;
+
+    // Funktion zum Anzeigen und Verbergen des ausführlichen Textes
+    function toggleAboutUsText() {
+        const aboutUsText = document.getElementById('detailedText');
+        const showMoreButton = document.getElementById('showMoreButton');
+        const showLessSection = document.getElementById('showLessSection');
+
+        if (!aboutUsTextVisible) {
+            aboutUsText.style.display = 'block';
+            showMoreButton.textContent = 'Weniger anzeigen';
+            showLessSection.style.display = 'block'; // "Weniger anzeigen"-Abschnitt anzeigen
+        } else {
+            aboutUsText.style.display = 'none';
+            showMoreButton.textContent = 'Weiterlesen';
+            showLessSection.style.display = 'none'; // "Weniger anzeigen"-Abschnitt ausblenden
+        }
+
+        aboutUsTextVisible = !aboutUsTextVisible;
+    }
+    const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
     let currentMainImageIndex = 0;
 
     function changeMainImage(direction) {
@@ -155,9 +188,6 @@
 
     // Initial 5 Bücher anzeigen
     showMoreBooks('forYouBooks');
-    showMoreBooks('newBooks');
-    showMoreBooks('trendsBooks');
 </script>
-<h1>Footer</h1>
 </body>
 </html>
