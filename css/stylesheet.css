@@ -1,6 +1,14 @@
 a {
-    color: white;
+    color: #000;
     text-decoration: unset;
+}
+
+header a {
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
 }
 
 a:hover {
