@@ -52,7 +52,35 @@
         #showLessSection {
             display: none;
         }
+        .calendar {
+            text-align: center;
+            float: right;
+            margin-left: 20px;
+            max-width: 30%;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .calendar h2 {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar th,
+        .calendar td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
     </style>
+
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
 </head>
@@ -114,80 +142,195 @@
 
     <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
     <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
-</div>
+    <div class="calendar">
+        <h2 id="calendarMonth">Oktober</h2>
+        <button onclick="changeMonth('previous')">&#8249;</button>
+        <button onclick="changeMonth('next')">&#8250;</button>
+        <table>
+            <thead>
+            <tr>
+                <th>Mo</th>
+                <th>Di</th>
+                <th>Mi</th>
+                <th>Do</th>
+                <th>Fr</th>
+                <th>Sa</th>
+                <th>So</th>
+            </tr>
+            </thead>
+            <tbody id="calendarBody">
+            <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
+            <!-- Zum Beispiel: -->
+            <tr>
+                <td>01</td>
+                <td>02</td>
+                <td>03</td>
+                <td>04</td>
+                <td>05</td>
+                <td>06</td>
+                <td>07</td>
+            </tr>
+            </tr>
+            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+            </tbody>
+            <tr>
+                <td>08</td>
+                <td>09</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
 
-<!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
-<script>
-    let aboutUsTextVisible = false;
+            </tr>
+            </tbody>
+            <tr>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
 
-    // Funktion zum Anzeigen und Verbergen des ausführlichen Textes
-    function toggleAboutUsText() {
-        const aboutUsText = document.getElementById('detailedText');
-        const showMoreButton = document.getElementById('showMoreButton');
-        const showLessSection = document.getElementById('showLessSection');
+            </tr>
+            </tbody>
+            <tr>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
 
-        if (!aboutUsTextVisible) {
-            aboutUsText.style.display = 'block';
-            showMoreButton.textContent = 'Weniger anzeigen';
-            showLessSection.style.display = 'block'; // "Weniger anzeigen"-Abschnitt anzeigen
-        } else {
-            aboutUsText.style.display = 'none';
-            showMoreButton.textContent = 'Weiterlesen';
-            showLessSection.style.display = 'none'; // "Weniger anzeigen"-Abschnitt ausblenden
-        }
+            </tr>
+            </tbody>
+            <tr>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td>01</td>
+                <td>02</td>
+                <td>03</td>
+                <td>04</td>
 
-        aboutUsTextVisible = !aboutUsTextVisible;
-    }
-    const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
-    let currentMainImageIndex = 0;
+            </tr>
+        </table>
+            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+    </div>
 
-    function changeMainImage(direction) {
-        if (direction === 'next') {
-            currentMainImageIndex++;
-            if (currentMainImageIndex >= mainImages.length) {
-                currentMainImageIndex = 0;
+    <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
+    <script>
+        let aboutUsTextVisible = false;
+
+        // Funktion zum Anzeigen und Verbergen des ausführlichen Textes
+        function toggleAboutUsText() {
+            const aboutUsText = document.getElementById('detailedText');
+            const showMoreButton = document.getElementById('showMoreButton');
+            const showLessSection = document.getElementById('showLessSection');
+
+            if (!aboutUsTextVisible) {
+                aboutUsText.style.display = 'block';
+                showMoreButton.textContent = 'Weniger anzeigen';
+                showLessSection.style.display = 'block'; // "Weniger anzeigen"-Abschnitt anzeigen
+            } else {
+                aboutUsText.style.display = 'none';
+                showMoreButton.textContent = 'Weiterlesen';
+                showLessSection.style.display = 'none'; // "Weniger anzeigen"-Abschnitt ausblenden
             }
-        } else if (direction === 'previous') {
-            currentMainImageIndex--;
-            if (currentMainImageIndex < 0) {
-                currentMainImageIndex = mainImages.length - 1;
+
+            aboutUsTextVisible = !aboutUsTextVisible;
+        }
+
+        const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
+        let currentMainImageIndex = 0;
+
+        function changeMainImage(direction) {
+            if (direction === 'next') {
+                currentMainImageIndex++;
+                if (currentMainImageIndex >= mainImages.length) {
+                    currentMainImageIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMainImageIndex--;
+                if (currentMainImageIndex < 0) {
+                    currentMainImageIndex = mainImages.length - 1;
+                }
+            }
+
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = mainImages[currentMainImageIndex];
+        }
+
+        // Beispiel-Daten für Bücher
+        const books = [
+            "Buch 1",
+            "Buch 2",
+            "Buch 3",
+            "Buch 4",
+            "Buch 5",
+            "Buch 6",
+            "Buch 7",
+            "Buch 8",
+            "Buch 9",
+            "Buch 10"
+        ];
+
+        // Funktion zum Anzeigen von 5 weiteren Büchern
+        function showMoreBooks(containerId) {
+            const container = document.getElementById(containerId);
+            const bookList = container.querySelector('div');
+            const currentBooks = bookList.children.length;
+            const remainingBooks = books.slice(currentBooks, currentBooks + 5);
+
+            for (const book of remainingBooks) {
+                const bookElement = document.createElement('p');
+                bookElement.textContent = book;
+                bookList.appendChild(bookElement);
             }
         }
 
-        const mainImage = document.getElementById('mainImage');
-        mainImage.src = mainImages[currentMainImageIndex];
-    }
+        // Initial 5 Bücher anzeigen
+        showMoreBooks('forYouBooks');
 
-    // Beispiel-Daten für Bücher
-    const books = [
-        "Buch 1",
-        "Buch 2",
-        "Buch 3",
-        "Buch 4",
-        "Buch 5",
-        "Buch 6",
-        "Buch 7",
-        "Buch 8",
-        "Buch 9",
-        "Buch 10"
-    ];
+        // Kalender-Funktionen
+        const months = [
+            "Januar", "Februar", "März", "April", "Mai", "Juni",
+            "Juli", "August", "September", "Oktober", "November", "Dezember"
+        ];
+        let currentMonthIndex = 10; // Start mit Oktober
 
-    // Funktion zum Anzeigen von 5 weiteren Büchern
-    function showMoreBooks(containerId) {
-        const container = document.getElementById(containerId);
-        const bookList = container.querySelector('div');
-        const currentBooks = bookList.children.length;
-        const remainingBooks = books.slice(currentBooks, currentBooks + 5);
+        function changeMonth(direction) {
+            if (direction === 'next') {
+                currentMonthIndex++;
+                if (currentMonthIndex >= months.length) {
+                    currentMonthIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMonthIndex--;
+                if (currentMonthIndex < 0) {
+                    currentMonthIndex = months.length - 1;
+                }
+            }
 
-        for (const book of remainingBooks) {
-            const bookElement = document.createElement('p');
-            bookElement.textContent = book;
-            bookList.appendChild(bookElement);
+            // Tage für den ausgewählten Monat generieren
+            generateCalendarDays();
         }
-    }
 
-    // Initial 5 Bücher anzeigen
-    showMoreBooks('forYouBooks');
-</script>
+        function generateCalendarDays() {
+            const calendarMonth = document.getElementById('calendarMonth');
+            const calendarBody = document.getElementById('calendarBody');
+            calendarMonth.textContent = months[currentMonthIndex];
+            calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
+
+            // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
+            // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
+            // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
+        }
+
+        // Initialen Kalender für Oktober generieren
+        generateCalendarDays();
+    </script>
 </body>
 </html>
