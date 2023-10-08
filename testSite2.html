@@ -2,106 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Verleih | readbetter</title>
+    <title>test Verleih | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/verleih.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
+    <script src="js/verleih.js"></script>
     <script src="js/footer.js"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #f1f1f1;
-        }
-
-        #regForm {
-            background-color: #ffffff;
-            margin: 100px auto;
-            padding: 40px;
-            width: 70%;
-            min-width: 300px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        input {
-            padding: 10px;
-            width: 100%;
-            font-size: 17px;
-            border: 1px solid #aaaaaa;
-        }
-
-        /* Mark input boxes that get an error on validation: */
-        input.invalid {
-            background-color: #ffdddd;
-        }
-
-        input[type="checkbox"] {
-            width: 30px;
-            height: 30px;
-            margin: 5px 20px 5px 0;
-        }
-
-        /* Hide all steps by default: */
-        .tab {
-            display: none;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 17px;
-            font-family: Raleway;
-            cursor: pointer;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        #prevBtn {
-            background-color: #bbbbbb;
-        }
-
-        /* Make circles that indicate the steps of the form: */
-        .step {
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbbbbb;
-            border: none;
-            border-radius: 50%;
-            display: inline-block;
-            opacity: 0.5;
-        }
-
-        .step.active {
-            opacity: 1;
-        }
-
-        /* Mark the steps that are finished and valid: */
-        .step.finish {
-            background-color: #4CAF50;
-        }
-
-        span.price {
-            float: right;
-            color: black;
-        }
-
-        #hint-checkbox-first,
-        #hint-checkbox-fourth {
-            color: red;
-            display: none;
-        }
-    </style>
 </head>
 <body>
 <h1>Header</h1>
@@ -116,14 +25,107 @@
         <hr>
         <p><b>Total</b><span class="price"><b>16,50€</b></span></p>
     </div>
-    <div class="tab">Contact Info:
-        <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-        <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+    <div class="tab">
+        <div style="display: flex">
+            <div class="payments">
+                <h2>Hinterlegte Zahlungsmethoden</h2>
+                <div style="display: flex">
+                    <input type="radio" name="payments" value="paypal" id="radio-paypal" onclick="showNothing()"
+                           checked="checked">
+                    <div style="margin-bottom: 20px">
+                        <img src="pic/payments/PayPal.png" class="img-payments"><br>
+                        rainer.zufall@gmail.com
+                    </div>
+                </div>
+                <div style="display: flex">
+                    <input type="radio" name="payments" value="lastschrift" id="radio-lastschrift"
+                           onclick="showNothing()">
+                    <div>
+                        <img src="pic/payments/lastschrift.png" class="img-payments"><br>
+                        DExx xxxx xxxx xxxx xx11 11
+                    </div>
+                </div>
+            </div>
+            <div class="payments">
+                <h2>Neue Zahlungsmethoden</h2>
+                <div style="display: flex">
+                    <input type="radio" name="payments" value="paypal-new" id="radio-paypal-new" onclick="showPaypal()">
+                    <img src="pic/payments/PayPal.png" class="img-payments">
+                </div>
+                <div class="zusatzinfos" id="zusatz-paypal">
+                    <button>Mit Paypal verbinden</button>
+                </div>
+                <div style="display: flex">
+                    <input type="radio" name="payments" value="lastschrift-new" id="radio-lastschrift-new"
+                           onclick="showLastschrift()">
+                    <img src="pic/payments/lastschrift.png" class="img-payments">
+                </div>
+                <div class="zusatzinfos" id="zusatz-lastschrift">
+                    <p><input placeholder="Kontoinhaber" oninput="this.className = ''" name="Kontoinhaber"></p>
+                    <p><input placeholder="IBAN" oninput="this.className = ''" name="IBAN"></p>
+                </div>
+                <div style="display: flex">
+                    <input type="radio" name="payments" value="visa-new" id="radio-visa-new" onclick="showVisa()">
+                    <img src="pic/payments/Visa.svg" class="img-payments">
+                </div>
+                <div class="zusatzinfos" id="zusatz-visa">
+                    <p><input placeholder="Kartennummer" name="Kartennummer"></p>
+                    <p><input placeholder="Name auf der Karte" name="Kartenname"></p>
+                    <p><input placeholder="Ablaufmonat" name="Monat"></p>
+                    <p><input placeholder="Ablaufjahr" name="Jahr"></p>
+                    <p><input placeholder="CVV" type="password" name="CVV"></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="tab">Birthday:
-        <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-        <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-        <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+    <div class="tab">
+        <div style="display: flex">
+            <div class="payments">
+                <h2>Hinterlegte Rechnungsadressen</h2>
+                <div style="display: flex">
+                    <input type="radio" name="adress" value="adress1" id="radio-adress1" onclick="showNothingAdress()"
+                           checked="checked">
+                    <div style="margin-bottom: 20px">
+                        Rainer zufall<br>
+                        Zufallstraße 1<br>
+                        12345 Zufallstadt
+                    </div>
+                </div>
+                <div style="display: flex">
+                    <input type="radio" name="adress" value="adress2" id="radio-adress2"
+                           onclick="showNothingAdress()">
+                    <div>
+                        Max Mustermann
+                        Musterstraße 1<br>
+                        54321 Musterstadt
+                    </div>
+                </div>
+            </div>
+            <div class="payments">
+                <h2>Neue Rechnungsadresse</h2>
+                <div style="display: flex">
+                    <input type="radio" name="adress" value="newAdress" id="radio-newAdress"
+                           onclick="showNewAdress()">
+                    <label for="radio-newAdress">Ich wohne jetzt wo anders</label>
+                </div>
+                <div class="zusatzinfos" id="zusatz-newAdress">
+                    <p><input placeholder="Dein Name..." name="Personenname"></p>
+                    <p><input placeholder="Straße" name="Strasse"></p>
+                    <p><input placeholder="Hausnummer" name="Hausnummer"></p>
+                    <p><input placeholder="Postleitzahl" name="PLZ"></p>
+                    <p><input placeholder="Stadt" type="password" name="Stadt"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <h4>Termine auswählen:</h4>
+        <p id="hint-dates">Bitte wähle ein Datum von und ein Datum bis.</p>
+        <label for="dateFrom">Übergabetermin</label>
+        <p><input type="date" id="dateFrom" name="dateFrom"></p>
+
+        <label for="dateTo">Rückgabetermin</label>
+        <p><input type="date" id="dateTo" name="dateTo"></p>
     </div>
     <div class="tab">
         <br>
@@ -163,12 +165,13 @@
     </div>
     <div style="overflow:auto;">
         <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <button type="button" id="prevBtn" onclick="Prev(-1)">Zurück</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Weiter</button>
         </div>
     </div>
     <!-- Circles which indicates the steps of the form: -->
     <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
@@ -193,20 +196,36 @@
             document.getElementById("prevBtn").style.display = "inline";
         }
         if (n == (x.length - 1)) {
-            document.getElementById("nextBtn").innerHTML = "Submit";
+            document.getElementById("nextBtn").innerHTML = "Leihen";
         } else {
-            document.getElementById("nextBtn").innerHTML = "Next";
+            document.getElementById("nextBtn").innerHTML = "Weiter";
         }
         //... and run a function that will display the correct step indicator:
         fixStepIndicator(n)
+    }
+
+    function Prev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName("tab");
+        // Hide the current tab:
+        x[currentTab].style.display = "none";
+        // Increase or decrease the current tab by 1:
+        currentTab = currentTab + n;
+        // if you have reached the end of the form...
+        if (currentTab >= x.length) {
+            // ... the form gets submitted:
+            document.getElementById("regForm").submit();
+            return false;
+        }
+        // Otherwise, display the correct tab:
+        showTab(currentTab);
     }
 
     function nextPrev(n) {
         // This function will figure out which tab to display
         var x = document.getElementsByClassName("tab");
 
-        // Exit the function if any field in the current tab is invalid
-        if (n === 1 && !validateForm()) return false;
+        document.getElementsByClassName("step")[currentTab].className += " finish";
 
         // If on the last page, check if all checkboxes are selected
         if (currentTab === x.length - 1) {
@@ -236,28 +255,6 @@
         showTab(currentTab);
     }
 
-    function validateForm() {
-        // This function deals with validation of the form fields
-        var x, y, i, valid = true;
-        x = document.getElementsByClassName("tab");
-        y = x[currentTab].getElementsByTagName("input");
-        // A loop that checks every input field in the current tab:
-        for (i = 0; i < y.length; i++) {
-            // If a field is empty...
-            if (y[i].value == "") {
-                // add an "invalid" class to the field:
-                y[i].className += " invalid";
-                // and set the current valid status to false
-                valid = false;
-            }
-        }
-        // If the valid status is true, mark the step as finished and valid:
-        if (valid) {
-            document.getElementsByClassName("step")[currentTab].className += " finish";
-        }
-        return valid; // return the valid status
-    }
-
     function fixStepIndicator(n) {
         // This function removes the "active" class of all steps...
         var i, x = document.getElementsByClassName("step");
@@ -268,7 +265,5 @@
         x[n].className += " active";
     }
 </script>
-
-
 </body>
 </html>
