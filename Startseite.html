@@ -94,31 +94,28 @@
         <h2>Hauptbild 1</h2>
         <div class="large-image">
             <img id="mainImage" src="Bild 1.jpg" alt="Hauptbild 1">
-            <button onclick="changeMainImage('next')">Nächstes Bild</button>
         </div>
     </div>
 
     <!-- Hier wird der neue Abschnitt "Was ist readbetter?" eingefügt -->
     <div class="section" id="aboutUsSection" style="text-align: left; max-width: 50%; margin: 0 auto;">
         <h2>Was ist readbetter?</h2>
-        <p>
-            Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
+        <p>Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
             <br>
             <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier endlosen Auswahl an…
         </p>
-        <button id="showMoreButton" onclick="toggleAboutUsText()">Weiterlesen</button>
+        <button id="weiterlesen-button">Weiterlesen</button>
+        <div id="hidden-text" style="display: none;">
+            <p>Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
+                <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der Auswahl ihres nächsten Buchs zu helfen.
+                <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen. Gemeinschaftliches Lesen war noch nie so zugänglich.
+                <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare Geld und Ressourcen mit ReadBetter.
+                Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0 wie nie zuvor.
+            </p>
+        </div>
+        <button id="zuklappen-button" style="display: none;">Zuklappen</button>
     </div>
-
-    <!-- Hier wird der ausführliche Text eingefügt -->
-    <div class="section" id="detailedText" style="text-align: left; max-width: 50%; margin: 0 auto;">
-        <p>
-            Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
-            <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der Auswahl ihres nächsten Buchs zu helfen.
-            <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen. Gemeinschaftliches Lesen war noch nie so zugänglich.
-            <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare Geld und Ressourcen mit ReadBetter.
-            Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0 wie nie zuvor.
-        </p>
-    </div>
+</div>
 
     <div class="section" id="showLessSection">
         <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
@@ -143,7 +140,7 @@
     <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
     <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
     <div class="calendar">
-        <h2 id="calendarMonth">Oktober</h2>
+        <h2 id="calendarMonth">Oktober 2023</h2>
         <button onclick="changeMonth('previous')">&#8249;</button>
         <button onclick="changeMonth('next')">&#8250;</button>
         <table>
@@ -222,27 +219,25 @@
 
     <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
     <script>
-        let aboutUsTextVisible = false;
+        const weiterlesenButton = document.getElementById('weiterlesen-button');
+        const zuklappenButton = document.getElementById('zuklappen-button');
+        const hiddenText = document.getElementById('hidden-text');
 
-        // Funktion zum Anzeigen und Verbergen des ausführlichen Textes
-        function toggleAboutUsText() {
-            const aboutUsText = document.getElementById('detailedText');
-            const showMoreButton = document.getElementById('showMoreButton');
-            const showLessSection = document.getElementById('showLessSection');
-
-            if (!aboutUsTextVisible) {
-                aboutUsText.style.display = 'block';
-                showMoreButton.textContent = 'Weniger anzeigen';
-                showLessSection.style.display = 'block'; // "Weniger anzeigen"-Abschnitt anzeigen
-            } else {
-                aboutUsText.style.display = 'none';
-                showMoreButton.textContent = 'Weiterlesen';
-                showLessSection.style.display = 'none'; // "Weniger anzeigen"-Abschnitt ausblenden
+        weiterlesenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'none') {
+                hiddenText.style.display = 'block';
+                weiterlesenButton.style.display = 'none';
+                zuklappenButton.style.display = 'block';
             }
+        });
 
-            aboutUsTextVisible = !aboutUsTextVisible;
-        }
-
+        zuklappenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'block') {
+                hiddenText.style.display = 'none';
+                weiterlesenButton.style.display = 'block';
+                zuklappenButton.style.display = 'none';
+            }
+        });
         const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
         let currentMainImageIndex = 0;
 
