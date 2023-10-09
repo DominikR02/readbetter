@@ -4,266 +4,107 @@
     <meta charset="UTF-8">
     <title>test Verleih | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/verleih.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
-    <script src="js/verleih.js"></script>
     <script src="js/footer.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .columns {
+            float: left;
+            width: 33.3%;
+            padding: 8px;
+        }
+
+        .price {
+            list-style-type: none;
+            border: 1px solid #eee;
+            margin: 0;
+            padding: 0;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+        }
+
+        .price:hover {
+            box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2)
+        }
+
+        .price .header-pricing {
+            background-color: #111;
+            color: white;
+            font-size: 25px;
+        }
+
+        .price li {
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .price .grey {
+            background-color: #eee;
+            font-size: 20px;
+        }
+
+        .button {
+            background-color: #4A5F47;
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            /*text-align: center;
+            text-decoration: none;*/
+            font-size: 18px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .columns {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 <h1>Header</h1>
 
-<form id="regForm" action="Startseite.html">
-    <h1>Der Fall Bruno</h1>
-    <!-- One "tab" for each step in the form: -->
-    <div class="tab">
-        <h4>Allgemeine Informationen:</h4>
-        <p>Leihgebühr<span class="price">1,50€</span></p>
-        <p>Pfand<span class="price">15,00€</span></p>
-        <hr>
-        <p><b>Total</b><span class="price"><b>16,50€</b></span></p>
-    </div>
-    <div class="tab">
-        <div style="display: flex">
-            <div class="payments">
-                <h2>Hinterlegte Zahlungsmethoden</h2>
-                <div style="display: flex">
-                    <input type="radio" name="payments" value="paypal" id="radio-paypal" onclick="showNothing()"
-                           checked="checked">
-                    <div style="margin-bottom: 20px">
-                        <img src="pic/payments/PayPal.png" class="img-payments"><br>
-                        rainer.zufall@gmail.com
-                    </div>
-                </div>
-                <div style="display: flex">
-                    <input type="radio" name="payments" value="lastschrift" id="radio-lastschrift"
-                           onclick="showNothing()">
-                    <div>
-                        <img src="pic/payments/lastschrift.png" class="img-payments"><br>
-                        DExx xxxx xxxx xxxx xx11 11
-                    </div>
-                </div>
-            </div>
-            <div class="payments">
-                <h2>Neue Zahlungsmethoden</h2>
-                <div style="display: flex">
-                    <input type="radio" name="payments" value="paypal-new" id="radio-paypal-new" onclick="showPaypal()">
-                    <img src="pic/payments/PayPal.png" class="img-payments">
-                </div>
-                <div class="zusatzinfos" id="zusatz-paypal">
-                    <button>Mit Paypal verbinden</button>
-                </div>
-                <div style="display: flex">
-                    <input type="radio" name="payments" value="lastschrift-new" id="radio-lastschrift-new"
-                           onclick="showLastschrift()">
-                    <img src="pic/payments/lastschrift.png" class="img-payments">
-                </div>
-                <div class="zusatzinfos" id="zusatz-lastschrift">
-                    <p><input placeholder="Kontoinhaber" oninput="this.className = ''" name="Kontoinhaber"></p>
-                    <p><input placeholder="IBAN" oninput="this.className = ''" name="IBAN"></p>
-                </div>
-                <div style="display: flex">
-                    <input type="radio" name="payments" value="visa-new" id="radio-visa-new" onclick="showVisa()">
-                    <img src="pic/payments/Visa.svg" class="img-payments">
-                </div>
-                <div class="zusatzinfos" id="zusatz-visa">
-                    <p><input placeholder="Kartennummer" name="Kartennummer"></p>
-                    <p><input placeholder="Name auf der Karte" name="Kartenname"></p>
-                    <p><input placeholder="Ablaufmonat" name="Monat"></p>
-                    <p><input placeholder="Ablaufjahr" name="Jahr"></p>
-                    <p><input placeholder="CVV" type="password" name="CVV"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tab">
-        <div style="display: flex">
-            <div class="payments">
-                <h2>Hinterlegte Rechnungsadressen</h2>
-                <div style="display: flex">
-                    <input type="radio" name="adress" value="adress1" id="radio-adress1" onclick="showNothingAdress()"
-                           checked="checked">
-                    <div style="margin-bottom: 20px">
-                        Rainer zufall<br>
-                        Zufallstraße 1<br>
-                        12345 Zufallstadt
-                    </div>
-                </div>
-                <div style="display: flex">
-                    <input type="radio" name="adress" value="adress2" id="radio-adress2"
-                           onclick="showNothingAdress()">
-                    <div>
-                        Max Mustermann
-                        Musterstraße 1<br>
-                        54321 Musterstadt
-                    </div>
-                </div>
-            </div>
-            <div class="payments">
-                <h2>Neue Rechnungsadresse</h2>
-                <div style="display: flex">
-                    <input type="radio" name="adress" value="newAdress" id="radio-newAdress"
-                           onclick="showNewAdress()">
-                    <label for="radio-newAdress">Ich wohne jetzt wo anders</label>
-                </div>
-                <div class="zusatzinfos" id="zusatz-newAdress">
-                    <p><input placeholder="Dein Name..." name="Personenname"></p>
-                    <p><input placeholder="Straße" name="Strasse"></p>
-                    <p><input placeholder="Hausnummer" name="Hausnummer"></p>
-                    <p><input placeholder="Postleitzahl" name="PLZ"></p>
-                    <p><input placeholder="Stadt" type="password" name="Stadt"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tab">
-        <h4>Termine auswählen:</h4>
-        <p id="hint-dates">Bitte wähle ein Datum von und ein Datum bis.</p>
-        <label for="dateFrom">Übergabetermin</label>
-        <p><input type="date" id="dateFrom" name="dateFrom"></p>
+<div class="columns">
+    <ul class="price">
+        <li class="header-pricing">Basic</li>
+        <li class="grey">$ 9.99 / year</li>
+        <li>10GB Storage</li>
+        <li>10 Emails</li>
+        <li>10 Domains</li>
+        <li>1GB Bandwidth</li>
+        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+</div>
 
-        <label for="dateTo">Rückgabetermin</label>
-        <p><input type="date" id="dateTo" name="dateTo"></p>
-    </div>
-    <div class="tab">
-        <br>
+<div class="columns">
+    <ul class="price">
+        <li class="header-pricing" style="background-color:#4CAF50">Pro</li>
+        <li class="grey">$ 24.99 / year</li>
+        <li>25GB Storage</li>
+        <li>25 Emails</li>
+        <li>25 Domains</li>
+        <li>2GB Bandwidth</li>
+        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+</div>
 
-        <p style="text-align: center">Mit dem Klick auf Leihen ist der Verleih bestätigt.</p>
-        <p style="text-align: center">In deiner persönlichen Bibliothek siehst du das Buch in der Rubrik "geliehene
-            Bücher". An dieser Stelle musst du die Übergabe des Buches bestätigen und kannst nach der Rückgabe auch den
-            Verleiher bewerten.</p>
-
-        <br><br>
-
-        <p id="hint-checkbox-fourth">Bitte wähle alle Checkboxen aus.</p>
-
-        <div style="display: flex; align-items: center;">
-            <input type="checkbox" id="checkbox1" name="checkbox1">
-            <label for="checkbox1">Ich stimme den <a href="#">AGB</a> von readbetter zu.</label>
-        </div>
-
-        <div style="display: flex; align-items: center;">
-            <input type="checkbox" id="checkbox2" name="checkbox2">
-            <label for="checkbox2">Ich stimme den <a href="datenschutz.html">Datenschutzbedingungen</a> von readbetter
-                zu. </label>
-        </div>
-        <h3>Ich versichere, dass ich...</h3>
-        <div style="display: flex; align-items: center;">
-            <input type="checkbox" id="checkbox3" name="checkbox3">
-            <label for="checkbox3">...die angegebene Summe zahlen werde.</label>
-        </div>
-        <div style="display: flex; align-items: center;">
-            <input type="checkbox" id="checkbox4" name="checkbox4">
-            <label for="checkbox4">...das Buch pfleglich behandeln werde.</label>
-        </div>
-        <div style="display: flex; align-items: center;">
-            <input type="checkbox" id="checkbox5" name="checkbox5">
-            <label for="checkbox5">...das Buch fristgerecht zurückgeben werde.</label>
-        </div>
-    </div>
-    <div style="overflow:auto;">
-        <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="Prev(-1)">Zurück</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Weiter</button>
-        </div>
-    </div>
-    <!-- Circles which indicates the steps of the form: -->
-    <div style="text-align:center;margin-top:40px;">
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-    </div>
-</form>
+<div class="columns">
+    <ul class="price">
+        <li class="header-pricing">Premium</li>
+        <li class="grey">$ 49.99 / year</li>
+        <li>50GB Storage</li>
+        <li>50 Emails</li>
+        <li>50 Domains</li>
+        <li>5GB Bandwidth</li>
+        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+</div>
 
 <h1>Footer</h1>
-
-<script>
-    var currentTab = 0; // Current tab is set to be the first tab (0)
-    showTab(currentTab); // Display the crurrent tab
-
-    function showTab(n) {
-        // This function will display the specified tab of the form...
-        var x = document.getElementsByClassName("tab");
-        x[n].style.display = "block";
-        //... and fix the Previous/Next buttons:
-        if (n == 0) {
-            document.getElementById("prevBtn").style.display = "none";
-        } else {
-            document.getElementById("prevBtn").style.display = "inline";
-        }
-        if (n == (x.length - 1)) {
-            document.getElementById("nextBtn").innerHTML = "Leihen";
-        } else {
-            document.getElementById("nextBtn").innerHTML = "Weiter";
-        }
-        //... and run a function that will display the correct step indicator:
-        fixStepIndicator(n)
-    }
-
-    function Prev(n) {
-        // This function will figure out which tab to display
-        var x = document.getElementsByClassName("tab");
-        // Hide the current tab:
-        x[currentTab].style.display = "none";
-        // Increase or decrease the current tab by 1:
-        currentTab = currentTab + n;
-        // if you have reached the end of the form...
-        if (currentTab >= x.length) {
-            // ... the form gets submitted:
-            document.getElementById("regForm").submit();
-            return false;
-        }
-        // Otherwise, display the correct tab:
-        showTab(currentTab);
-    }
-
-    function nextPrev(n) {
-        // This function will figure out which tab to display
-        var x = document.getElementsByClassName("tab");
-
-        document.getElementsByClassName("step")[currentTab].className += " finish";
-
-        // If on the last page, check if all checkboxes are selected
-        if (currentTab === x.length - 1) {
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            var allCheckboxesSelected = Array.from(checkboxes).every(checkbox => checkbox.checked);
-
-            if (!allCheckboxesSelected) {
-                document.getElementById("hint-checkbox-fourth").style.display = "block";
-                return false;
-            }
-        }
-
-        // Hide the current tab
-        x[currentTab].style.display = "none";
-
-        // Increase or decrease the current tab by 1
-        currentTab = currentTab + n;
-
-        // If you have reached the end of the form
-        if (currentTab >= x.length) {
-            // The form gets submitted
-            document.getElementById("regForm").submit();
-            return false;
-        }
-
-        // Otherwise, display the correct tab
-        showTab(currentTab);
-    }
-
-    function fixStepIndicator(n) {
-        // This function removes the "active" class of all steps...
-        var i, x = document.getElementsByClassName("step");
-        for (i = 0; i < x.length; i++) {
-            x[i].className = x[i].className.replace(" active", "");
-        }
-        //... and adds the "active" class on the current step:
-        x[n].className += " active";
-    }
-</script>
 </body>
 </html>
