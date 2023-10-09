@@ -1,10 +1,26 @@
 
 a {
-    color: white;
+    color: #4A5F47;
     text-decoration: unset;
+    font-weight: bold;
 }
 
-a:hover {
+header a {
+    color: #fff;
+}
+
+footer a {
+    color: #fff;
+}
+
+a:hover,
+a:hover h1,
+a:hover h2,
+a:hover h3,
+a:hover h4,
+a:hover h5,
+a:hover h6,
+a:hover button {
     text-decoration: underline;
 }
 
@@ -65,4 +81,9 @@ button:hover {
  .ratstar:hover::before {
      content: "\2605";
      color: #4A5F47;
+ }
+
+ input[type="checkbox"],
+ input[type="radio"] {
+     accent-color: #4A5F47;
  }

@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test Verleih | readbetter</title>
+    <title>Verleih | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/verleih.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
@@ -122,10 +121,13 @@
         <h4>Termine auswählen:</h4>
         <p id="hint-dates">Bitte wähle ein Datum von und ein Datum bis.</p>
         <label for="dateFrom">Übergabetermin</label>
-        <p><input type="date" id="dateFrom" name="dateFrom"></p>
+        <p><input type="datetime-local" id="dateFrom" name="dateFrom"></p>
 
         <label for="dateTo">Rückgabetermin</label>
-        <p><input type="date" id="dateTo" name="dateTo"></p>
+        <p><input type="datetime-local" id="dateTo" name="dateTo"></p>
+
+        <label for="place">Übergabeort</label>
+        <p><input placeholder="Mannheim" id="place" name="place"></p>
     </div>
     <div class="tab">
         <br>

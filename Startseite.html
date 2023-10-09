@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite | readbetter</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/aboutUs.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <style>
+        /* CSS zur Zentrierung des großen Bildes */
+        .large-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .large-image img {
+            width: 1000px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .large-image button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px; /* Anpassen Sie den Abstand vom rechten Rand nach Bedarf */
+        }
+
+        /* CSS für die Schaltfläche "Mehr anzeigen" */
+        .show-more-button {
+            text-align: right;
+        }
+
+        /* CSS für die Bilder mit Titel */
+        .image-row {
+            text-align: center;
+        }
+
+        .image img {
+            margin: 0 10px; /* Abstand zwischen den Bildern */
+        }
+
+        /* CSS für den ausführlichen Text */
+        #detailedText {
+            display: none;
+        }
+
+        /* CSS für den "Weniger anzeigen"-Abschnitt */
+        #showLessSection {
+            display: none;
+        }
+        .calendar {
+            text-align: center;
+            float: right;
+            margin-left: 20px;
+            max-width: 30%;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .calendar h2 {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar th,
+        .calendar td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+</head>
+<body>
+<header>
+    <h1>Header</h1>
+    <h2>Startseite</h2>
+</header>
+<div class="container">
+    <div class="section">
+        <h2>Hauptbild 1</h2>
+        <div class="large-image">
+            <img id="mainImage" src="Bild 1.jpg" alt="Hauptbild 1">
+            <button onclick="changeMainImage('next')">Nächstes Bild</button>
+        </div>
+    </div>
+
+    <!-- Hier wird der neue Abschnitt "Was ist readbetter?" eingefügt -->
+    <div class="section" id="aboutUsSection" style="text-align: left; max-width: 50%; margin: 0 auto;">
+        <h2>Was ist readbetter?</h2>
+        <p>
+            Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
+            <br>
+            <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier endlosen Auswahl an…
+        </p>
+        <button id="showMoreButton" onclick="toggleAboutUsText()">Weiterlesen</button>
+    </div>
+
+    <!-- Hier wird der ausführliche Text eingefügt -->
+    <div class="section" id="detailedText" style="text-align: left; max-width: 50%; margin: 0 auto;">
+        <p>
+            Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
+            <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der Auswahl ihres nächsten Buchs zu helfen.
+            <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen. Gemeinschaftliches Lesen war noch nie so zugänglich.
+            <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare Geld und Ressourcen mit ReadBetter.
+            Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0 wie nie zuvor.
+        </p>
+    </div>
+
+    <div class="section" id="showLessSection">
+        <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
+    </div>
+
+    <div class="section" id="forYouSection">
+        <h2>For you</h2>
+        <div class="image-row">
+            <div class="image">
+                <img src="bild1.jpg" alt="Titel 1">
+                <img src="bild2.jpg" alt="Titel 2">
+                <img src="bild3.jpg" alt="Titel 3">
+                <img src="bild4.jpg" alt="Titel 4">
+                <img src="bild5.jpg" alt="Titel 5">
+            </div>
+        </div>
+        <div class="show-more-button">
+            <button onclick="showMoreBooks('forYouBooks')">Mehr anzeigen</button>
+        </div>
+    </div>
+
+    <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
+    <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
+    <div class="calendar">
+        <h2 id="calendarMonth">Oktober</h2>
+        <button onclick="changeMonth('previous')">&#8249;</button>
+        <button onclick="changeMonth('next')">&#8250;</button>
+        <table>
+            <thead>
+            <tr>
+                <th>Mo</th>
+                <th>Di</th>
+                <th>Mi</th>
+                <th>Do</th>
+                <th>Fr</th>
+                <th>Sa</th>
+                <th>So</th>
+            </tr>
+            </thead>
+            <tbody id="calendarBody">
+            <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
+            <!-- Zum Beispiel: -->
+            <tr>
+                <td>01</td>
+                <td>02</td>
+                <td>03</td>
+                <td>04</td>
+                <td>05</td>
+                <td>06</td>
+                <td>07</td>
+            </tr>
+            </tr>
+            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+            </tbody>
+            <tr>
+                <td>08</td>
+                <td>09</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+
+            </tr>
+            </tbody>
+            <tr>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+
+            </tr>
+            </tbody>
+            <tr>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+
+            </tr>
+            </tbody>
+            <tr>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td>01</td>
+                <td>02</td>
+                <td>03</td>
+                <td>04</td>
+
+            </tr>
+        </table>
+            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+    </div>
+
+    <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
+    <script>
+        let aboutUsTextVisible = false;
+
+        // Funktion zum Anzeigen und Verbergen des ausführlichen Textes
+        function toggleAboutUsText() {
+            const aboutUsText = document.getElementById('detailedText');
+            const showMoreButton = document.getElementById('showMoreButton');
+            const showLessSection = document.getElementById('showLessSection');
+
+            if (!aboutUsTextVisible) {
+                aboutUsText.style.display = 'block';
+                showMoreButton.textContent = 'Weniger anzeigen';
+                showLessSection.style.display = 'block'; // "Weniger anzeigen"-Abschnitt anzeigen
+            } else {
+                aboutUsText.style.display = 'none';
+                showMoreButton.textContent = 'Weiterlesen';
+                showLessSection.style.display = 'none'; // "Weniger anzeigen"-Abschnitt ausblenden
+            }
+
+            aboutUsTextVisible = !aboutUsTextVisible;
+        }
+
+        const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
+        let currentMainImageIndex = 0;
+
+        function changeMainImage(direction) {
+            if (direction === 'next') {
+                currentMainImageIndex++;
+                if (currentMainImageIndex >= mainImages.length) {
+                    currentMainImageIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMainImageIndex--;
+                if (currentMainImageIndex < 0) {
+                    currentMainImageIndex = mainImages.length - 1;
+                }
+            }
+
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = mainImages[currentMainImageIndex];
+        }
+
+        // Beispiel-Daten für Bücher
+        const books = [
+            "Buch 1",
+            "Buch 2",
+            "Buch 3",
+            "Buch 4",
+            "Buch 5",
+            "Buch 6",
+            "Buch 7",
+            "Buch 8",
+            "Buch 9",
+            "Buch 10"
+        ];
+
+        // Funktion zum Anzeigen von 5 weiteren Büchern
+        function showMoreBooks(containerId) {
+            const container = document.getElementById(containerId);
+            const bookList = container.querySelector('div');
+            const currentBooks = bookList.children.length;
+            const remainingBooks = books.slice(currentBooks, currentBooks + 5);
+
+            for (const book of remainingBooks) {
+                const bookElement = document.createElement('p');
+                bookElement.textContent = book;
+                bookList.appendChild(bookElement);
+            }
+        }
+
+        // Initial 5 Bücher anzeigen
+        showMoreBooks('forYouBooks');
+
+        // Kalender-Funktionen
+        const months = [
+            "Januar", "Februar", "März", "April", "Mai", "Juni",
+            "Juli", "August", "September", "Oktober", "November", "Dezember"
+        ];
+        let currentMonthIndex = 10; // Start mit Oktober
+
+        function changeMonth(direction) {
+            if (direction === 'next') {
+                currentMonthIndex++;
+                if (currentMonthIndex >= months.length) {
+                    currentMonthIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMonthIndex--;
+                if (currentMonthIndex < 0) {
+                    currentMonthIndex = months.length - 1;
+                }
+            }
+
+            // Tage für den ausgewählten Monat generieren
+            generateCalendarDays();
+        }
+
+        function generateCalendarDays() {
+            const calendarMonth = document.getElementById('calendarMonth');
+            const calendarBody = document.getElementById('calendarBody');
+            calendarMonth.textContent = months[currentMonthIndex];
+            calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
+
+            // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
+            // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
+            // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
+        }
+
+        // Initialen Kalender für Oktober generieren
+        generateCalendarDays();
+    </script>
+</body>
+</html>
