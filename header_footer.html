@@ -11,22 +11,21 @@
 </head>
 <body>
 <header class="header">
-    <a href="mainpage.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
+    <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
     <div class="menü" style="margin-left: 0">
-        <a href="mainpage.html"><p class="p-menu">Startseite</p></a>
+        <a href="Startseite.html"><p class="p-menu">Startseite</p></a>
     </div>
     <div class="menü">
         <a href="trends.html"><p class="p-menu">Trending</p></a>
     </div>
     <div class="menü">
-        <p class="p-menu">Neu</p>
+        <a href="#"><p class="p-menu">Neu</p></a>
     </div>
     <div class="menü" id="genremenü">
-        <p class="p-menu">Genre</p>
+        <a><p class="p-menu">Genre</p></a>
         <div class="genre-dropdown">
-            <div class="dropdown-item">Comics
-            </div>
-            <div class="dropdown-item">Kochbücher</div>
+            <div class="dropdown-item">Comics</div>
+            <a href="genre/kochbuecher.html"><div class="dropdown-item">Kochbücher</div></a>
             <div class="dropdown-item">Krimis</div>
             <div class="dropdown-item">Romane</div>
         </div>
@@ -39,15 +38,11 @@
             <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
         </div>
         <div class="burgermenu">
-            <!-- Hier können Sie das Burger-Menü einfügen -->
-            <!-- Zum Beispiel: -->
             <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
                  onclick="toggleBurgerMenu()">
         </div>
         <div class="search-icon">
-            <!-- Hier können Sie das Suchbild einfügen -->
-            <!-- Zum Beispiel: -->
-            <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+            <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
                              onclick="toggleSearchMenu()"></a>
         </div>
     </div>
@@ -59,14 +54,14 @@
         <!-- Schließen-Button oben links -->
         <button class="popup-close-button" onclick="closePopupMenu()">X</button>
         <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <a href="mainpage.html"><div class="popup-item">Startseite</div></a>
+        <a href="Startseite.html"><div class="popup-item">Startseite</div></a>
         <a href="trends.html"><div class="popup-item">Trending</div></a>
-        <div class="popup-item">Neu</div>
+        <a href="#"><div class="popup-item">Neu</div></a>
         <div class="popup-item" id="genreItem">
-            Genre
+            <a>Genre</a>
             <div class="genre-submenu">
                 <div class="sub-item">Comics</div>
-                <div class="sub-item">Kochbücher</div>
+                <a href="genre/kochbuecher.html"><div class="sub-item">Kochbücher</div></a>
                 <div class="sub-item">Krimis</div>
                 <div class="sub-item">Romane</div>
             </div>
@@ -77,7 +72,7 @@
                 <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
             </div>
             <div class="popup-icon">
-                <a href="#"><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
+                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
             </div>
         </div>
         <div class="popup-item">
@@ -99,6 +94,8 @@
         <input style="text-align: center" placeholder="Titel" type="text">
         <div class="popup-item">Autor</div>
         <input style="text-align: center" placeholder="Autor" type="text">
+        <div class="popup-item">Genre</div>
+        <input style="text-align: center" placeholder="Genre" type="text">
         <div class="popup-item">Ort</div>
         <input style="text-align: center" placeholder="Ort" type="text">
         <button class="searchButton">Suchen</button>

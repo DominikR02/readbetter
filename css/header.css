@@ -50,8 +50,8 @@
 .popup-menu {
     position: fixed;
     top: 0;
-    right: -300px; /* Startet ausgeblendet */
-    width: 300px;
+    right: -350px; /* Startet ausgeblendet */
+    width: 350px;
     height: 100%;
     background-color: #fff;
     z-index: 1000;
