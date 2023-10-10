@@ -12,27 +12,24 @@
 <body>
 <header class="header">
     <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
-    <div class="menü" style="margin-left: 0">
-        <a href="Startseite.html"><p class="p-menu">Startseite</p></a>
-    </div>
-    <div class="menü">
-        <a href="trends.html"><p class="p-menu">Trending</p></a>
-    </div>
-    <div class="menü">
-        <a href="#"><p class="p-menu">Neu</p></a>
-    </div>
-    <div class="menü" id="genremenü">
-        <a><p class="p-menu">Genre</p></a>
-        <div class="genre-dropdown">
-            <a><div class="dropdown-item">Comics</div></a>
-            <a href="genre/kochbuecher.html"><div class="dropdown-item">Kochbücher</div></a>
-            <a><div class="dropdown-item">Krimis</div></a>
-            <a><div class="dropdown-item">Romane</div></a>
-        </div>
-    </div>
-    <div class="menü">
-        <a href="abos.html"><p class="p-menu" style="color: red">Abos</p></a>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="Startseite.html">Startseite</a></li>
+            <li><a href="trends.html">Trending</a></li>
+            <li><a href="neu.html">Neu</a></li>
+            <li>
+                <a href="#">Genre</a>
+                <ul>
+                    <li><a href="#">Comics</a></li>
+                    <li><a href="genre/kochbuecher.html">Kochbücher</a></li>
+                    <li><a href="#">Krimis</a></li>
+                    <li><a href="#">Romane</a></li>
+                </ul>
+            </li>
+            <li><a href="abos.html" style="color: red">Abos</a></li>
+        </ul>
+    </nav>
+
     <div class="navigation">
         <div>
             <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
@@ -43,7 +40,7 @@
         </div>
         <div class="search-icon">
             <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
-                             onclick="toggleSearchMenu()"></a>
+                    onclick="toggleSearchMenu()"></a>
         </div>
     </div>
 
@@ -57,8 +54,8 @@
         <a href="Startseite.html"><div class="popup-item">Startseite</div></a>
         <a href="trends.html"><div class="popup-item">Trending</div></a>
         <a href="#"><div class="popup-item">Neu</div></a>
-        <div class="popup-item" id="genreItem">
-            <a>Genre</a>
+        <div class="popup-item">
+            <a onclick="toggleGenreSubmenu()">Genre</a>
             <div class="genre-submenu">
                 <a><div class="sub-item">Comics</div></a>
                 <a href="genre/kochbuecher.html"><div class="sub-item">Kochbücher</div></a>
@@ -76,7 +73,7 @@
             </div>
         </div>
         <div class="popup-item">
-            <a href="datenschutz.html">Datenschutz</a> | <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
         </div>
     </div>
 
