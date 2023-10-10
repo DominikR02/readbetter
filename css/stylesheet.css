@@ -1,3 +1,6 @@
+* {
+    font-family: Verdana;
+}
 
 a {
     color: #4A5F47;
@@ -19,8 +22,7 @@ a:hover h2,
 a:hover h3,
 a:hover h4,
 a:hover h5,
-a:hover h6,
-a:hover button {
+a:hover h6 {
     text-decoration: underline;
 }
 
@@ -32,27 +34,27 @@ button {
 }
 
 button:hover {
-    color: white;
-    /* text-decoration: underline; */
+    text-decoration: underline;
 }
+
 .title-container {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .rating {
-  font-size: 24px;
-  color: black;
-  margin-left: 25px; /* Adjust the spacing between title and rating */
+    font-size: 24px;
+    color: black;
+    margin-left: 25px; /* Adjust the spacing between title and rating */
 }
 
 .star {
-  display: inline-block;
+    display: inline-block;
 }
 
 .empty-star {
-  display: inline-block;
-  color: black;
+    display: inline-block;
+    color: black;
 }
 
 .rating {
@@ -66,24 +68,25 @@ button:hover {
     margin: 0 5px;
     cursor: pointer;
 }
- .rating {
-     display: flex;
-     align-items: center;
-     font-size: 24px;
-     color: black;
- }
 
- .ratstar {
-     margin: 0 5px;
-     cursor: pointer;
- }
+.rating {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+}
 
- .ratstar:hover::before {
-     content: "\2605";
-     color: #4A5F47;
- }
+.ratstar {
+    margin: 0 5px;
+    cursor: pointer;
+}
 
- input[type="checkbox"],
- input[type="radio"] {
-     accent-color: #4A5F47;
- }
+.ratstar:hover::before {
+    content: "\2605";
+    color: #4A5F47;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #4A5F47;
+}

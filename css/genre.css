@@ -16,6 +16,10 @@
     text-align: center;
 }
 
+.rubriken a {
+    color: #000;
+}
+
 .img-books {
     height: 285px;
     width: 190px;

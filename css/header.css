@@ -5,27 +5,12 @@
     align-items: center;
 }
 
-.menü {
-    font-size: 20px;
-    font-family: Bahnschrift;
-    margin: 40px;
-    color: #fff;
-}
-
-.p-menu:hover {
-    text-decoration: underline; /* Text unterstreichen bei Hover */
-}
-
 .burgermenu {
     text-align: right;
 }
 
 /* Media Query für schmale Bildschirme (z.B. Mobilgeräte) 920 */
-@media (max-width: 1045px) {
-    .menü {
-        display: none; /* Verberge Menüpunkte */
-    }
-
+@media (max-width: 1000px) {
     .burgermenu {
         display: block; /* Zeige Burger-Menü */
     }
@@ -33,10 +18,14 @@
     .search-icon {
         display: none; /* Verberge das Suchbild */
     }
+
+    header nav {
+        display: none;
+    }
 }
 
 /* Media Query für ausreichend breite Bildschirme */
-@media (min-width: 1046px) {
+@media (min-width: 1001px) {
     .search-icon {
         display: inline-block; /* Zeige das Suchbild */
     }
@@ -44,14 +33,18 @@
     .burgermenu {
         display: none;
     }
+
+    header nav {
+        display: flex;
+    }
 }
 
 /* Pop-up-Menü-Styling */
 .popup-menu {
     position: fixed;
     top: 0;
-    right: -300px; /* Startet ausgeblendet */
-    width: 300px;
+    right: -350px; /* Startet ausgeblendet */
+    width: 350px;
     height: 100%;
     background-color: #fff;
     z-index: 1000;
@@ -117,17 +110,6 @@
     color: #4A5F47; /* Grüne Textfarbe */
 }
 
-.genre-dropdown {
-    display: none;
-    font-size: 12px; /* Kleinere Schriftgröße */
-    font-weight: bold; /* Fetter Text */
-    color: #fff; /* Grüne Textfarbe */
-}
-#genremenü {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 #genremenü:hover .genre-dropdown {
     display: block;
 }
@@ -160,4 +142,35 @@
     text-align: center; /* Text mittig ausrichten */
     display: block; /* Element als Blockelement behandeln, um die horizontale Zentrierung zu ermöglichen */
     background-color: #4A5F47;
+}
+
+/*--------------------------------------------------------------------*/
+header nav {
+    width: 40%;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+header nav li {
+    margin-right: 50px;
+}
+
+header nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #4A5F47;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+header nav ul li:hover > ul {
+    display: inherit;
+}
+
+header nav ul ul li {
+    margin-top: 10px;
 }

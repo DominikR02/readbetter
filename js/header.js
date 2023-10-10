@@ -4,12 +4,12 @@ function toggleBurgerMenu() {
     var popupOverlay = document.getElementById('popupOverlay');
 
     // Wenn das Pop-up-Menü ausgeblendet ist, öffne es und zeige das Overlay
-    if (popupMenu.style.right === '-300px' || popupMenu.style.right === '') {
+    if (popupMenu.style.right === '-350px' || popupMenu.style.right === '') {
         popupMenu.style.right = '0';
         popupOverlay.style.display = 'block';
     } else {
         // Andernfalls, wenn das Pop-up-Menü sichtbar ist, schließe es und verberge das Overlay
-        popupMenu.style.right = '-300px';
+        popupMenu.style.right = '-350px';
         popupOverlay.style.display = 'none';
     }
 }
@@ -20,7 +20,7 @@ function closePopupMenu() {
     var popupOverlay = document.getElementById('popupOverlay');
 
     // Schließe das Pop-up-Menü und verberge das Overlay
-    popupMenu.style.right = '-300px';
+    popupMenu.style.right = '-350px';
     popupOverlay.style.display = 'none';
 }
 
@@ -38,12 +38,12 @@ function toggleSearchMenu() {
     var popupOverlay = document.getElementById('popupOverlaySearch');
 
     // Wenn das Pop-up-Menü ausgeblendet ist, öffne es und zeige das Overlay
-    if (popupMenu.style.right === '-300px' || popupMenu.style.right === '') {
+    if (popupMenu.style.right === '-350px' || popupMenu.style.right === '') {
         popupMenu.style.right = '0';
         popupOverlay.style.display = 'block';
     } else {
         // Andernfalls, wenn das Pop-up-Menü sichtbar ist, schließe es und verberge das Overlay
-        popupMenu.style.right = '-300px';
+        popupMenu.style.right = '-350px';
         popupOverlay.style.display = 'none';
     }
 }
@@ -54,6 +54,6 @@ function closePopupMenuSearch() {
     var popupOverlay = document.getElementById('popupOverlaySearch');
 
     // Schließe das Pop-up-Menü und verberge das Overlay
-    popupMenu.style.right = '-300px';
+    popupMenu.style.right = '-350px';
     popupOverlay.style.display = 'none';
 }
