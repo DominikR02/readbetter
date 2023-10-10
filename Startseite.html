@@ -2,12 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startseite | readbetter</title>
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/aboutUs.css">
-    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <title>Der Fall Bruno | readbetter</title>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+</head>
+
+<header class="header">
+    <a href="../mainpage.html"><img src="../pic/logo.jpeg" style="width: 100px; height: 100px"></a>
+    <a href="../mainpage.html"><img src="../pic/logoText.png" style="height: 100px; width: 200px;"></a>
+    <div class="menü" style="margin-left: 0">
+        <p class="p-menu">Startseite</p>
+    </div>
+    <div class="menü">
+        <p class="p-menu">Trending</p>
+    </div>
+    <div class="menü">
+        <p class="p-menu">Neu</p>
+    </div>
+    <div class="menü" id="genremenü">
+        <p class="p-menu">Genre</p>
+        <div class="genre-dropdown">
+            <div class="dropdown-item">Komödien</div>
+            <div class="dropdown-item">Krimis</div>
+            <div class="dropdown-item">Romane</div>
+        </div>
+    </div>
+    <div class="menü">
+        <a href="../abos.html"><p class="p-menu" style="color: red">Abos</p></a>
+    </div>
+    <div class="navigation">
+        <div>
+            <a href="../login.html"><img src="../pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <!-- Hier können Sie das Burger-Menü einfügen -->
+            <!-- Zum Beispiel: -->
+            <img src="../pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <!-- Hier können Sie das Suchbild einfügen -->
+            <!-- Zum Beispiel: -->
+            <a href="#"><img src="../pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenu">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">Startseite</div>
+        <div class="popup-item">Trending</div>
+        <div class="popup-item">Neu</div>
+        <div class="popup-item" id="genreItem">
+            Genre
+            <div class="genre-submenu">
+                <div class="sub-item">Komödien</div>
+                <div class="sub-item">Krimis</div>
+                <div class="sub-item">Romane</div>
+            </div>
+        </div>
+        <div class="popup-item" style="color: red"><a href="../abos.html">Abos</a></div>
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="../login.html"><img src="../pic/login.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a href="#"><img src="../pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
+            </div>
+        </div>
+        <div class="popup-item">
+            <a href="../datenschutz.html">Datenschutz</a> | <a href="../impressum.html">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">
+            <h4>Suche</h4>
+        </div>
+        <div class="popup-item">Titel</div>
+        <input style="text-align: center" placeholder="Titel" type="text">
+        <div class="popup-item">Autor</div>
+        <input style="text-align: center" placeholder="Autor" type="text">
+        <div class="popup-item">Ort</div>
+        <input style="text-align: center" placeholder="Ort" type="text">
+        <button class="searchButton">Suchen</button>
+    </div>
+</header>
     <style>
         /* CSS zur Zentrierung des großen Bildes */
         .large-image {
@@ -85,40 +177,33 @@
     <script src="js/footer.js"></script>
 </head>
 <body>
-<header>
-    <h1>Header</h1>
-    <h2>Startseite</h2>
-</header>
+
 <div class="container">
     <div class="section">
-        <h2>Hauptbild 1</h2>
         <div class="large-image">
-            <img id="mainImage" src="Bild 1.jpg" alt="Hauptbild 1">
-            <button onclick="changeMainImage('next')">Nächstes Bild</button>
+            <img id="mainImage" src="pic/buecher/Startseite.jpg" alt="Hauptbild 1" style="width: 800px; margin-top: 10px">
         </div>
     </div>
 
     <!-- Hier wird der neue Abschnitt "Was ist readbetter?" eingefügt -->
-    <div class="section" id="aboutUsSection" style="text-align: left; max-width: 50%; margin: 0 auto;">
+    <div class="section" id="aboutUsSection" style="font-size: 20px;text-align: left; max-width: 50%; margin: 0 auto;" >
         <h2>Was ist readbetter?</h2>
-        <p>
-            Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
+        <p>Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
             <br>
             <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier endlosen Auswahl an…
         </p>
-        <button id="showMoreButton" onclick="toggleAboutUsText()">Weiterlesen</button>
+        <button id="weiterlesen-button">Weiterlesen</button>
+        <div id="hidden-text" style="display: none;">
+            <p>Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
+                <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der Auswahl ihres nächsten Buchs zu helfen.
+                <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen. Gemeinschaftliches Lesen war noch nie so zugänglich.
+                <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare Geld und Ressourcen mit ReadBetter.
+                Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0 wie nie zuvor.
+            </p>
+        </div>
+        <button id="zuklappen-button" style="display: none;">Zuklappen</button>
     </div>
-
-    <!-- Hier wird der ausführliche Text eingefügt -->
-    <div class="section" id="detailedText" style="text-align: left; max-width: 50%; margin: 0 auto;">
-        <p>
-            Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
-            <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der Auswahl ihres nächsten Buchs zu helfen.
-            <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen. Gemeinschaftliches Lesen war noch nie so zugänglich.
-            <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare Geld und Ressourcen mit ReadBetter.
-            Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0 wie nie zuvor.
-        </p>
-    </div>
+</div>
 
     <div class="section" id="showLessSection">
         <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
@@ -128,22 +213,21 @@
         <h2>For you</h2>
         <div class="image-row">
             <div class="image">
-                <img src="bild1.jpg" alt="Titel 1">
-                <img src="bild2.jpg" alt="Titel 2">
-                <img src="bild3.jpg" alt="Titel 3">
-                <img src="bild4.jpg" alt="Titel 4">
-                <img src="bild5.jpg" alt="Titel 5">
+                <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px" height="283px">
+                <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="283px">
+                <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
+                <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
+                <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px" height="283px">
+
             </div>
         </div>
-        <div class="show-more-button">
-            <button onclick="showMoreBooks('forYouBooks')">Mehr anzeigen</button>
-        </div>
+
     </div>
 
     <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
     <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
-    <div class="calendar">
-        <h2 id="calendarMonth">Oktober</h2>
+    <div class="calendar" style="margin-top: 100px">
+        <h2 id="calendarMonth">Oktober 2023</h2>
         <button onclick="changeMonth('previous')">&#8249;</button>
         <button onclick="changeMonth('next')">&#8250;</button>
         <table>
@@ -162,58 +246,58 @@
             <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
             <!-- Zum Beispiel: -->
             <tr>
-                <td>01</td>
                 <td>02</td>
                 <td>03</td>
                 <td>04</td>
                 <td>05</td>
                 <td>06</td>
                 <td>07</td>
+                <td>08</td>
             </tr>
             </tr>
             <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
             </tbody>
             <tr>
-                <td>08</td>
                 <td>09</td>
                 <td>10</td>
                 <td>11</td>
                 <td>12</td>
                 <td>13</td>
                 <td>14</td>
+                <td>15</td>
 
             </tr>
             </tbody>
             <tr>
-                <td>15</td>
                 <td>16</td>
                 <td>17</td>
                 <td>18</td>
                 <td>19</td>
                 <td>20</td>
                 <td>21</td>
+                <td>22</td>
 
             </tr>
             </tbody>
             <tr>
-                <td>22</td>
                 <td>23</td>
                 <td>24</td>
                 <td>25</td>
                 <td>26</td>
                 <td>27</td>
                 <td>28</td>
+                <td>29</td>
 
             </tr>
             </tbody>
             <tr>
-                <td>29</td>
                 <td>30</td>
                 <td>31</td>
                 <td>01</td>
                 <td>02</td>
                 <td>03</td>
                 <td>04</td>
+                <td>05</td>
 
             </tr>
         </table>
@@ -222,27 +306,25 @@
 
     <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
     <script>
-        let aboutUsTextVisible = false;
+        const weiterlesenButton = document.getElementById('weiterlesen-button');
+        const zuklappenButton = document.getElementById('zuklappen-button');
+        const hiddenText = document.getElementById('hidden-text');
 
-        // Funktion zum Anzeigen und Verbergen des ausführlichen Textes
-        function toggleAboutUsText() {
-            const aboutUsText = document.getElementById('detailedText');
-            const showMoreButton = document.getElementById('showMoreButton');
-            const showLessSection = document.getElementById('showLessSection');
-
-            if (!aboutUsTextVisible) {
-                aboutUsText.style.display = 'block';
-                showMoreButton.textContent = 'Weniger anzeigen';
-                showLessSection.style.display = 'block'; // "Weniger anzeigen"-Abschnitt anzeigen
-            } else {
-                aboutUsText.style.display = 'none';
-                showMoreButton.textContent = 'Weiterlesen';
-                showLessSection.style.display = 'none'; // "Weniger anzeigen"-Abschnitt ausblenden
+        weiterlesenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'none') {
+                hiddenText.style.display = 'block';
+                weiterlesenButton.style.display = 'none';
+                zuklappenButton.style.display = 'block';
             }
+        });
 
-            aboutUsTextVisible = !aboutUsTextVisible;
-        }
-
+        zuklappenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'block') {
+                hiddenText.style.display = 'none';
+                weiterlesenButton.style.display = 'block';
+                zuklappenButton.style.display = 'none';
+            }
+        });
         const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
         let currentMainImageIndex = 0;
 
