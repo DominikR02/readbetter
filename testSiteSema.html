@@ -13,125 +13,125 @@
 
     <style>
 
-    .bewerten-button {
-        background-color: #4A5F47;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-    .
-    }
+        .bewerten-button {
+            background-color: #4A5F47;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        .
+        }
 
-    .star {
-        font-size: 24px;
-    }
+        .star {
+            font-size: 24px;
+        }
 
-    .star:hover {
-        cursor: pointer;
-        content: "\2605";
-    }
+        .star:hover {
+            cursor: pointer;
+            content: "\2605";
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
 
-    .tab-menu {
-        display: flex;
-        background-color: #4A5F47;
-        border-radius: 10px;
-        overflow: hidden;
-        color: white;
-        margin-bottom: 20px;
-    }
+        .tab-menu {
+            display: flex;
+            background-color: #4A5F47;
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            margin-bottom: 20px;
+        }
 
-    .tab-item {
-        flex: 1;
-        text-align: center;
-        padding: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+        .tab-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    .tab-item:hover {
-        background-color: #35483E;
-    }
+        .tab-item:hover {
+            background-color: #35483E;
+        }
 
-    .tab-content {
-        padding: 20px;
-        background-color: white;
-        border-radius: 10px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
+        .tab-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
 
-    .hidden {
-        display: none;
-    }
+        .hidden {
+            display: none;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
+        }
 
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ccc;
-    }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
 
-    th {
-        color: black; /* Schriftfarbe für Header-Zellen */
-        font-weight: bold; /* Fettschrift für Header-Zellen */
-        background-color: transparent; /* Hintergrundfarbe für Header-Zellen entfernen */
-    }
+        th {
+            color: black; /* Schriftfarbe für Header-Zellen */
+            font-weight: bold; /* Fettschrift für Header-Zellen */
+            background-color: transparent; /* Hintergrundfarbe für Header-Zellen entfernen */
+        }
 
-    td {
-        background-color: white; /* Hintergrundfarbe für Datenzellen */
-        color: black; /* Schriftfarbe für Datenzellen */
-        transition: background-color 0.3s; /* Animation beim Hover-Effekt */
-    }
+        td {
+            background-color: white; /* Hintergrundfarbe für Datenzellen */
+            color: black; /* Schriftfarbe für Datenzellen */
+            transition: background-color 0.3s; /* Animation beim Hover-Effekt */
+        }
 
-    tr:nth-child(even) {
-        background-color: #f2f2f2; /* Hintergrundfarbe für gerade Zeilen */
-    }
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Hintergrundfarbe für gerade Zeilen */
+        }
 
-    /* Hover-Effekt */
-    tr:hover td {
-        background-color: #A5F47; /* Hintergrundfarbe für Datenzellen beim Hover */
-    }
+        /* Hover-Effekt */
+        tr:hover td {
+            background-color: #A5F47; /* Hintergrundfarbe für Datenzellen beim Hover */
+        }
 
-    .button {
-        display: inline-block;
-        padding: 8px 16px;
-        background-color: #4A5F47;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: background-color 0.3s, text-decoration 0.3s;
-    }
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4A5F47;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, text-decoration 0.3s;
+        }
 
-    .green-button:hover {
-        background-color: #35483E;
-        text-decoration: underline;
-    }
+        .green-button:hover {
+            background-color: #35483E;
+            text-decoration: underline;
+        }
 
-    .grey-button:hover {
-        background-color: #999;
-        text-decoration: none;
-    }
+        .grey-button:hover {
+            background-color: #999;
+            text-decoration: none;
+        }
 
-    /* Stil für den grünen Button "Jetzt ausleihen" */
-    .green-button {
-        background-color: #4A5F47;
-    }
+        /* Stil für den grünen Button "Jetzt ausleihen" */
+        .green-button {
+            background-color: #4A5F47;
+        }
 
-    /* Stil für den grauen Button "Jetzt ausleihen" */
-    .grey-button {
-        background-color: #999;
-    }
+        /* Stil für den grauen Button "Jetzt ausleihen" */
+        .grey-button {
+            background-color: #999;
+        }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -181,7 +181,6 @@
             height: 150px; /* Ändern Sie die Höhe nach Ihren Wünschen */
 
         }
-
 
 
     </style>
@@ -343,7 +342,6 @@
     });
 
 
-
     function showTab(tabName) {
         var tabs = document.getElementsByClassName('tab-content');
         for (var i = 0; i < tabs.length; i++) {
@@ -379,12 +377,11 @@
     }
 
 
-
 </script>
 
 
 <footer>
-   <h1>Footer</h1>
+    <h1>Footer</h1>
 </footer>
 </body>
 </html>
