@@ -12,16 +12,6 @@
     <script src="../js/footer.js"></script>
 
     <style>
-
-        .bewerten-button {
-            background-color: #4A5F47;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        .
-        }
-
         .star {
             font-size: 24px;
         }
@@ -94,13 +84,9 @@
             transition: background-color 0.3s; /* Animation beim Hover-Effekt */
         }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2; /* Hintergrundfarbe für gerade Zeilen */
-        }
-
         /* Hover-Effekt */
         tr:hover td {
-            background-color: #A5F47; /* Hintergrundfarbe für Datenzellen beim Hover */
+            background-color: #f2f2f2; /* Hintergrundfarbe für Datenzellen beim Hover */
         }
 
         .button {
@@ -245,9 +231,7 @@
                 <p>Genre: Krimis</p>
                 <p>Veröffentlichung: 14.01.2013</p>
                 <p>ISBN: 9784040101194</p>
-                <a href="../books/Leseproben/lp-derFallBruno.html">
-                    <img src="../pic/leseprobe.png" alt="Leseprobe-Bild" style="width: 50px; height: 50px;">
-                </a>
+                <img src="../pic/leseprobe.png" alt="Leseprobe-Bild" style="width: 50px; height: 50px;" onclick="openWin()">
                 <p><a
                         class="button green-button">Verleihen</a>
                 </p>
@@ -256,7 +240,7 @@
                 <h4>Inhalt</h4>
                 <p>„Und dann hat er sie tot gemacht…“ Bruno, ein aufgeweckter zwölfjähriger Junge mit Downsyndrom, wird
                     Zeuge eines Mordes.</p>
-                <button id="weiterlesen-button">Weiterlesen</button>
+                <a id="weiterlesen-button">Weiterlesen...</a>
                 <div id="hidden-text" style="display: none;">
                     <p>Die Idylle des Bayerischen Waldes, offenbart ein verstörendes Mosaik von Inzest und Tod.
                         Obwohl eine Leiche nicht zu finden ist und trotz seiner Zweifel nimmt Kommissar Geißler die
@@ -264,7 +248,7 @@
                         Er glaubt sich der Lösung schon nahe, als ein fundamentaler Irrtum beinahe zur Katastrophe
                         führt.</p>
                 </div>
-                <button id="zuklappen-button" style="display: none;">Zuklappen</button>
+                <a id="zuklappen-button" style="display: none;">Zuklappen</a>
             </div>
         </div>
     </div>
@@ -375,7 +359,6 @@
             modal.style.display = "none";
         }
     }
-
 
 </script>
 

@@ -12,6 +12,113 @@
     <script src="../js/footer.js"></script>
 
     <style>
+        .star {
+            font-size: 24px;
+        }
+
+        .star:hover {
+            cursor: pointer;
+            content: "\2605";
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .tab-menu {
+            display: flex;
+            background-color: #4A5F47;
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .tab-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab-item:hover {
+            background-color: #35483E;
+        }
+
+        .tab-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            color: black; /* Schriftfarbe für Header-Zellen */
+            font-weight: bold; /* Fettschrift für Header-Zellen */
+            background-color: transparent; /* Hintergrundfarbe für Header-Zellen entfernen */
+        }
+
+        td {
+            background-color: white; /* Hintergrundfarbe für Datenzellen */
+            color: black; /* Schriftfarbe für Datenzellen */
+            transition: background-color 0.3s; /* Animation beim Hover-Effekt */
+        }
+
+        /* Hover-Effekt */
+        tr:hover td {
+            background-color: #f2f2f2; /* Hintergrundfarbe für Datenzellen beim Hover */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4A5F47;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, text-decoration 0.3s;
+        }
+
+        .green-button:hover {
+            background-color: #35483E;
+            text-decoration: underline;
+        }
+
+        .grey-button:hover {
+            background-color: #999;
+            text-decoration: none;
+        }
+
+        /* Stil für den grünen Button "Jetzt ausleihen" */
+        .green-button {
+            background-color: #4A5F47;
+        }
+
+        /* Stil für den grauen Button "Jetzt ausleihen" */
+        .grey-button {
+            background-color: #999;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
@@ -61,105 +168,16 @@
 
         }
 
+
     </style>
 
 </head>
 
-<header class="header">
-    <a href="../mainpage.html"><img src="../pic/logo.jpeg" style="width: 100px; height: 100px"></a>
-    <a href="../mainpage.html"><img src="../pic/logoText.png" style="height: 100px; width: 200px;"></a>
-    <div class="menü" style="margin-left: 0">
-        <p class="p-menu">Startseite</p>
-    </div>
-    <div class="menü">
-        <p class="p-menu">Trending</p>
-    </div>
-    <div class="menü">
-        <p class="p-menu">Neu</p>
-    </div>
-    <div class="menü" id="genremenü">
-        <p class="p-menu">Genre</p>
-        <div class="genre-dropdown">
-            <div class="dropdown-item">Komödien</div>
-            <div class="dropdown-item">Krimis</div>
-            <div class="dropdown-item">Romane</div>
-        </div>
-    </div>
-    <div class="menü">
-        <a href="../abos.html"><p class="p-menu" style="color: red">Abos</p></a>
-    </div>
-    <div class="navigation">
-        <div>
-            <a href="../login.html"><img src="../pic/login-weiss.png"
-                                         style="width: 30px; height: 30px; margin: 8px"></a><br>
-        </div>
-        <div class="burgermenu">
-            <!-- Hier können Sie das Burger-Menü einfügen -->
-            <!-- Zum Beispiel: -->
-            <img src="../pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
-                 onclick="toggleBurgerMenu()">
-        </div>
-        <div class="search-icon">
-            <!-- Hier können Sie das Suchbild einfügen -->
-            <!-- Zum Beispiel: -->
-            <a href="#"><img src="../pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
-                             onclick="toggleSearchMenu()"></a>
-        </div>
-    </div>
+<body>
 
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlay"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenu">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">Startseite</div>
-        <div class="popup-item">Trending</div>
-        <div class="popup-item">Neu</div>
-        <div class="popup-item" id="genreItem">
-            Genre
-            <div class="genre-submenu">
-                <div class="sub-item">Komödien</div>
-                <div class="sub-item">Krimis</div>
-                <div class="sub-item">Romane</div>
-            </div>
-        </div>
-        <div class="popup-item" style="color: red"><a href="../abos.html">Abos</a></div>
-        <div class="popup-item popup-icons">
-            <div class="popup-icon">
-                <a href="../login.html"><img src="../pic/login.png"
-                                             style="width: 30px; height: 30px; margin: 8px"></a><br>
-            </div>
-            <div class="popup-icon">
-                <a href="#"><img src="../pic/search.svg" style="width: 30px; height: 30px; margin: 8px"
-                                 onclick="toggleSearchMenu(); closePopupMenu()"></a>
-            </div>
-        </div>
-        <div class="popup-item">
-            <a href="../datenschutz.html">Datenschutz</a> | <a href="../impressum.html">Impressum</a>
-        </div>
-    </div>
+<h1>Header</h1>
 
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlaySearch"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenuSearch">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">
-            <h4>Suche</h4>
-        </div>
-        <div class="popup-item">Titel</div>
-        <input style="text-align: center" placeholder="Titel" type="text">
-        <div class="popup-item">Autor</div>
-        <input style="text-align: center" placeholder="Autor" type="text">
-        <div class="popup-item">Ort</div>
-        <input style="text-align: center" placeholder="Ort" type="text">
-        <button class="searchButton">Suchen</button>
-    </div>
-</header>
+
 <div style="display: flex; margin: 20px;">
     <img src="../pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" style="width: 20%">
     <div style="margin: 0 20px">
@@ -213,7 +231,7 @@
                 <p>Genre: Krimis</p>
                 <p>Veröffentlichung: 14.01.2013</p>
                 <p>ISBN: 9784040101194</p>
-                <a href="../books/Leseproben/lp-derFallBruno.html">
+                <a href="Leseproben/lp-derFallBruno.html" target="_blank">
                     <img src="../pic/leseprobe.png" alt="Leseprobe-Bild" style="width: 50px; height: 50px;">
                 </a>
                 <p><a
@@ -224,7 +242,7 @@
                 <h4>Inhalt</h4>
                 <p>„Und dann hat er sie tot gemacht…“ Bruno, ein aufgeweckter zwölfjähriger Junge mit Downsyndrom, wird
                     Zeuge eines Mordes.</p>
-                <button id="weiterlesen-button">Weiterlesen</button>
+                <a id="weiterlesen-button">Weiterlesen...</a>
                 <div id="hidden-text" style="display: none;">
                     <p>Die Idylle des Bayerischen Waldes, offenbart ein verstörendes Mosaik von Inzest und Tod.
                         Obwohl eine Leiche nicht zu finden ist und trotz seiner Zweifel nimmt Kommissar Geißler die
@@ -232,165 +250,13 @@
                         Er glaubt sich der Lösung schon nahe, als ein fundamentaler Irrtum beinahe zur Katastrophe
                         führt.</p>
                 </div>
-                <button id="zuklappen-button" style="display: none;">Zuklappen</button>
+                <a id="zuklappen-button" style="display: none;">Zuklappen</a>
             </div>
         </div>
     </div>
 </div>
-<script>
-    // JavaScript to show/hide the hidden text and toggle buttons
-    const weiterlesenButton = document.getElementById('weiterlesen-button');
-    const zuklappenButton = document.getElementById('zuklappen-button');
-    const hiddenText = document.getElementById('hidden-text');
-
-    // JavaScript to show/hide the hidden text and toggle buttons
-    const weiterlesenButton = document.getElementById('weiterlesen-button');
-    const zuklappenButton = document.getElementById('zuklappen-button');
-    const hiddenText = document.getElementById('hidden-text');
-
-    weiterlesenButton.addEventListener('click', () => {
-        if (hiddenText.style.display === 'none') {
-            hiddenText.style.display = 'block';
-            weiterlesenButton.style.display = 'none';
-            zuklappenButton.style.display = 'block';
-        }
-    });
-
-    zuklappenButton.addEventListener('click', () => {
-        if (hiddenText.style.display === 'block') {
-            hiddenText.style.display = 'none';
-            weiterlesenButton.style.display = 'block';
-            zuklappenButton.style.display = 'none';
-        }
-    });
-</script>
-
-<style>
-
-    .bewerten-button {
-        background-color: #4A5F47;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-    .
-    }
-
-    .star {
-        font-size: 24px;
-    }
-
-    .star:hover {
-        cursor: pointer;
-        content: "\2605";
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-    }
-
-    .tab-menu {
-        display: flex;
-        background-color: #4A5F47;
-        border-radius: 10px;
-        overflow: hidden;
-        color: white;
-        margin-bottom: 20px;
-    }
-
-    .tab-item {
-        flex: 1;
-        text-align: center;
-        padding: 10px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .tab-item:hover {
-        background-color: #35483E;
-    }
-
-    .tab-content {
-        padding: 20px;
-        background-color: white;
-        border-radius: 10px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
-    }
-
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ccc;
-    }
-
-    th {
-        color: black; /* Schriftfarbe für Header-Zellen */
-        font-weight: bold; /* Fettschrift für Header-Zellen */
-        background-color: transparent; /* Hintergrundfarbe für Header-Zellen entfernen */
-    }
-
-    td {
-        background-color: white; /* Hintergrundfarbe für Datenzellen */
-        color: black; /* Schriftfarbe für Datenzellen */
-        transition: background-color 0.3s; /* Animation beim Hover-Effekt */
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2; /* Hintergrundfarbe für gerade Zeilen */
-    }
-
-    /* Hover-Effekt */
-    tr:hover td {
-        background-color: #A5F47; /* Hintergrundfarbe für Datenzellen beim Hover */
-    }
-
-    .button {
-        display: inline-block;
-        padding: 8px 16px;
-        background-color: #4A5F47;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: background-color 0.3s, text-decoration 0.3s;
-    }
-
-    .green-button:hover {
-        background-color: #35483E;
-        text-decoration: underline;
-    }
-
-    .grey-button:hover {
-        background-color: #999;
-        text-decoration: none;
-    }
-
-    /* Stil für den grünen Button "Jetzt ausleihen" */
-    .green-button {
-        background-color: #4A5F47;
-    }
-
-    /* Stil für den grauen Button "Jetzt ausleihen" */
-    .grey-button {
-        background-color: #999;
-    }
 
 
-</style>
-</head>
-<body>
 <div class="tab-menu">
     <div class="tab-item" onclick="showTab('exemplare')">Exemplare</div>
     <div class="tab-item" onclick="showTab('bewertung')">Bewertung</div>
@@ -415,7 +281,7 @@
             <td>Semanur Özdemir</td>
             <td>Frankfurt am Main</td>
             <td>Verfügbar</td>
-            <td><a href="" class="button green-button">Jetzt ausleihen</a></td>
+            <td><a href="../ausleihe.html" class="button green-button">Jetzt ausleihen</a></td>
         </tr>
         <tr>
             <td>67890</td>
@@ -438,10 +304,30 @@
 
 </div>
 
-</div>
-
 
 <script>
+    // JavaScript to show/hide the hidden text and toggle buttons
+    const weiterlesenButton = document.getElementById('weiterlesen-button');
+    const zuklappenButton = document.getElementById('zuklappen-button');
+    const hiddenText = document.getElementById('hidden-text');
+
+    weiterlesenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'none') {
+            hiddenText.style.display = 'block';
+            weiterlesenButton.style.display = 'none';
+            zuklappenButton.style.display = 'block';
+        }
+    });
+
+    zuklappenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'block') {
+            hiddenText.style.display = 'none';
+            weiterlesenButton.style.display = 'block';
+            zuklappenButton.style.display = 'none';
+        }
+    });
+
+
     function showTab(tabName) {
         var tabs = document.getElementsByClassName('tab-content');
         for (var i = 0; i < tabs.length; i++) {
@@ -480,42 +366,7 @@
 
 
 <footer>
-    <div class="social-icons">
-        <!-- Links zu den Sozialen Medien mit Bildern -->
-        <a href="https://www.facebook.com/readbetter" target="_blank"> <img src="../pic/Socials/facebook.png"
-                                                                            alt="Facebook" class="sozial-icon"></a>
-        <a href="https://www.youtube.com/readbetter" target="_blank"><img src="../pic/Socials/youtube.png" alt="YouTube"
-                                                                          class="sozial-icon"></a>
-        <a href="https://www.instagram.com/readbetter" target="_blank"><img src="../pic/Socials/instagram.png"
-                                                                            alt="Instagram" class="sozial-icon"></a>
-    </div>
-    </div>
-    <br>
-    <!-- Link zum Datenschutz und Impressum -->
-    <div id="footer-links" style="text-align: left">
-
-        <img src="../pic/logoText.png" id="footer-logo" style="width: 25%;">
-        <div class="footer-container" id="left-footer-container">
-            <a href="../mainpage.html">Startseite</a><br>
-            <a href="../AboutUs.html">Über Uns</a><br>
-            <a href="#">Kontakt</a><br>
-            <a href="#">FAQ</a>
-        </div>
-        <div class="footer-container">
-            <a href="../datenschutz.html">Datenschutz</a><br>
-            <a href="../impressum.html">Impressum</a><br>
-            <a onclick="print()">Drucken</a><br>
-            <a href="#">AGB</a>
-        </div>
-        <div class="footer-container">
-            <a href="../login.html"><img src="../pic/login-weiss.png"
-                                         style="width: 45px; height: 45px; margin: 8px;"></a><br>
-            <a href="#"><img src="../pic/lupe.png" style="height: 45px; width: 45px; margin: 8px"
-                             onclick="toggleSearchMenu()"></a>
-        </div>
-    </div>
+    <h1>Footer</h1>
 </footer>
-<!-- "nach oben"-Button -->
-<button class="scroll-top" onclick="scrollToTop()">↑</button>
 </body>
 </html>
