@@ -43,7 +43,7 @@ footer {
     color: #ffffff;
 }
 
-@media (min-width: 500px){
+@media (min-width: 600px){
     #footer-links {
         display: flex;
     }
@@ -61,12 +61,16 @@ footer {
     }
 }
 
-@media (max-width: 501px){
+@media (max-width: 601px){
     .footer-container{
         text-align: left;
     }
 
     #footer-logo {
         display: none;
+    }
+
+    #footer-links{
+        width: 90%;
     }
 }
