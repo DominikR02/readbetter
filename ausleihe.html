@@ -5,6 +5,7 @@
     <title>Ausleihe | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/verleih.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
@@ -19,10 +20,10 @@
     <!-- One "tab" for each step in the form: -->
     <div class="tab">
         <h4>Allgemeine Informationen:</h4>
-        <p>Leihgebühr<span class="price">1,50€</span></p>
+        <p>Leihgebühr<span class="price">2,00€</span></p>
         <p>Pfand<span class="price">15,00€</span></p>
         <hr>
-        <p><b>Total</b><span class="price"><b>16,50€</b></span></p>
+        <p><b>Total</b><span class="price"><b>17,00€</b></span></p>
         <br><br>
         <a href="mailto:payments@readbetter.de?subject=Gebühren%20stimmen%20nicht&body=Hallo,%20bei%20meinem%20Abo%20fallen%20keine%20Leihgebühren%20an.">
             &#9993; Gebühren stimmen nicht
@@ -98,7 +99,7 @@
                     <input type="radio" name="adress" value="adress2" id="radio-adress2"
                            onclick="showNothingAdress()">
                     <div>
-                        Max Mustermann
+                        Max Mustermann<br>
                         Musterstraße 1<br>
                         54321 Musterstadt
                     </div>
@@ -185,6 +186,32 @@
     </div>
 </form>
 
+<div id="confirmModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" style="text-align: center">
+        <h1>Vielen Dank für deine Leihe</h1>
+
+        <div style="display: flex; text-align: left;">
+            <div style="width: 50%">
+                <p><b>Buchtitel:</b> Der Fall Bruno</p>
+                <p><b>Verleiher:</b> Semanur Özdemir</p>
+                <p><b>Übergabeort:</b> <span id="confirmPlace"></span></p>
+                <p><b>Übergabedatum:</b> <span id="confirmDateFrom"></span></p>
+                <p><b>Rückgabedatum:</b> <span id="confirmDateTo"></span></p>
+            </div>
+            <div style="width: 50%; text-align: center">
+                <img src="pic/QR%20Rechnung.png" alt="QR-Code Rechnung" style="height: 200px; height: 200px">
+                <br>
+                <a href="Rechnung.pdf" target="_blank">Rechnung</a>
+            </div>
+        </div>
+
+        <a href="Startseite.html"><button>Schließen</button></a>
+    </div>
+
+</div>
+
 <h1>Footer</h1>
 
 <script>
@@ -228,7 +255,6 @@
     }
 
     function nextPrev(n) {
-        // This function will figure out which tab to display
         var x = document.getElementsByClassName("tab");
 
         document.getElementsByClassName("step")[currentTab].className += " finish";
@@ -242,6 +268,21 @@
                 document.getElementById("hint-checkbox-fourth").style.display = "block";
                 return false;
             }
+
+            // Extract values from form
+            var place = document.getElementById("place").value;
+            var dateFrom = formatDate(document.getElementById("dateFrom").value);
+            var dateTo = formatDate(document.getElementById("dateTo").value);
+
+            // Show the confirmation modal
+            document.getElementById("confirmModal").style.display = "block";
+
+            // Display values in the confirmation modal
+            document.getElementById("confirmPlace").innerText = place;
+            document.getElementById("confirmDateFrom").innerText = dateFrom;
+            document.getElementById("confirmDateTo").innerText = dateTo;
+
+            return false;
         }
 
         // Hide the current tab
@@ -259,6 +300,19 @@
 
         // Otherwise, display the correct tab
         showTab(currentTab);
+    }
+
+    // Helper function to format date
+    function formatDate(dateString) {
+        var options = {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit"
+        };
+        var formattedDate = new Date(dateString).toLocaleDateString("de-DE", options);
+        return formattedDate;
     }
 
     function fixStepIndicator(n) {
