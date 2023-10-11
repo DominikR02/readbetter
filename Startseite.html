@@ -8,98 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
-</head>
-
-<header class="header">
-    <a href="../mainpage.html"><img src="../pic/logo.jpeg" style="width: 100px; height: 100px"></a>
-    <a href="../mainpage.html"><img src="../pic/logoText.png" style="height: 100px; width: 200px;"></a>
-    <div class="menü" style="margin-left: 0">
-        <p class="p-menu">Startseite</p>
-    </div>
-    <div class="menü">
-        <p class="p-menu">Trending</p>
-    </div>
-    <div class="menü">
-        <p class="p-menu">Neu</p>
-    </div>
-    <div class="menü" id="genremenü">
-        <p class="p-menu">Genre</p>
-        <div class="genre-dropdown">
-            <div class="dropdown-item">Komödien</div>
-            <div class="dropdown-item">Krimis</div>
-            <div class="dropdown-item">Romane</div>
-        </div>
-    </div>
-    <div class="menü">
-        <a href="../abos.html"><p class="p-menu" style="color: red">Abos</p></a>
-    </div>
-    <div class="navigation">
-        <div>
-            <a href="../login.html"><img src="../pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
-        </div>
-        <div class="burgermenu">
-            <!-- Hier können Sie das Burger-Menü einfügen -->
-            <!-- Zum Beispiel: -->
-            <img src="../pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
-        </div>
-        <div class="search-icon">
-            <!-- Hier können Sie das Suchbild einfügen -->
-            <!-- Zum Beispiel: -->
-            <a href="#"><img src="../pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()"></a>
-        </div>
-    </div>
-
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlay"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenu">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">Startseite</div>
-        <div class="popup-item">Trending</div>
-        <div class="popup-item">Neu</div>
-        <div class="popup-item" id="genreItem">
-            Genre
-            <div class="genre-submenu">
-                <div class="sub-item">Komödien</div>
-                <div class="sub-item">Krimis</div>
-                <div class="sub-item">Romane</div>
-            </div>
-        </div>
-        <div class="popup-item" style="color: red"><a href="../abos.html">Abos</a></div>
-        <div class="popup-item popup-icons">
-            <div class="popup-icon">
-                <a href="../login.html"><img src="../pic/login.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
-            </div>
-            <div class="popup-icon">
-                <a href="#"><img src="../pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
-            </div>
-        </div>
-        <div class="popup-item">
-            <a href="../datenschutz.html">Datenschutz</a> | <a href="../impressum.html">Impressum</a>
-        </div>
-    </div>
-
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlaySearch"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenuSearch">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">
-            <h4>Suche</h4>
-        </div>
-        <div class="popup-item">Titel</div>
-        <input style="text-align: center" placeholder="Titel" type="text">
-        <div class="popup-item">Autor</div>
-        <input style="text-align: center" placeholder="Autor" type="text">
-        <div class="popup-item">Ort</div>
-        <input style="text-align: center" placeholder="Ort" type="text">
-        <button class="searchButton">Suchen</button>
-    </div>
-</header>
     <style>
         /* CSS zur Zentrierung des großen Bildes */
         .large-image {
@@ -144,6 +52,7 @@
         #showLessSection {
             display: none;
         }
+
         .calendar {
             text-align: center;
             float: right;
@@ -172,247 +81,344 @@
             border: 1px solid #ccc;
         }
     </style>
-
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
 </head>
 <body>
+<header class="header">
+    <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
+    <nav>
+        <ul>
+            <li><a href="Startseite.html">Startseite</a></li>
+            <li><a href="trends.html">Trending</a></li>
+            <li><a href="neu.html">Neu</a></li>
+            <li>
+                <a href="#">Genre</a>
+                <ul>
+                    <li><a href="#">Comics</a></li>
+                    <li><a href="genre/kochbuecher.html">Kochbücher</a></li>
+                    <li><a href="#">Krimis</a></li>
+                    <li><a href="#">Romane</a></li>
+                </ul>
+            </li>
+            <li><a href="abos.html" style="color: red">Abos</a></li>
+        </ul>
+    </nav>
+
+    <div class="navigation">
+        <div>
+            <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
+                 onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <a href="Startseite.html"><div class="popup-item">Startseite</div></a>
+        <a href="trends.html"><div class="popup-item">Trending</div></a>
+        <a href="#"><div class="popup-item">Neu</div></a>
+        <div class="popup-item">
+            <a onclick="toggleGenreSubmenu()">Genre</a>
+            <div class="genre-submenu">
+                <a><div class="sub-item">Comics</div></a>
+                <a href="genre/kochbuecher.html"><div class="sub-item">Kochbücher</div></a>
+                <a><div class="sub-item">Krimis</div></a>
+                <a><div class="sub-item">Romane</div></a>
+            </div>
+        </div>
+        <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
+            </div>
+        </div>
+        <div class="popup-item">
+            <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">
+            <h4>Suche</h4>
+        </div>
+        <div class="popup-item">Titel</div>
+        <input style="text-align: center" placeholder="Titel" type="text">
+        <div class="popup-item">Autor</div>
+        <input style="text-align: center" placeholder="Autor" type="text">
+        <div class="popup-item">Genre</div>
+        <input style="text-align: center" placeholder="Genre" type="text">
+        <div class="popup-item">Ort</div>
+        <input style="text-align: center" placeholder="Ort" type="text">
+        <button class="searchButton">Suchen</button>
+    </div>
+</header>
 
 <div class="container">
     <div class="section">
         <div class="large-image">
-            <img id="mainImage" src="pic/buecher/Startseite.jpg" alt="Hauptbild 1" style="width: 800px; margin-top: 10px">
+            <img id="mainImage" src="pic/buecher/Startseite.jpg" alt="Hauptbild 1"
+                 style="width: 800px; margin-top: 10px">
         </div>
     </div>
 
     <!-- Hier wird der neue Abschnitt "Was ist readbetter?" eingefügt -->
-    <div class="section" id="aboutUsSection" style="font-size: 20px;text-align: left; max-width: 50%; margin: 0 auto;" >
+    <div class="section" id="aboutUsSection" style="font-size: 20px;text-align: left; max-width: 50%; margin: 0 auto;">
         <h2>Was ist readbetter?</h2>
-        <p>Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
+        <p>Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen
+            revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
             <br>
-            <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier endlosen Auswahl an…
+            <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier
+            endlosen Auswahl an…
         </p>
-        <button id="weiterlesen-button">Weiterlesen</button>
+        <a id="weiterlesen-button">Weiterlesen...</a>
         <div id="hidden-text" style="display: none;">
-            <p>Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
-                <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der Auswahl ihres nächsten Buchs zu helfen.
-                <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen. Gemeinschaftliches Lesen war noch nie so zugänglich.
-                <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare Geld und Ressourcen mit ReadBetter.
-                Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0 wie nie zuvor.
+            <p>Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst
+                du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
+                <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder
+                verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der
+                Auswahl ihres nächsten Buchs zu helfen.
+                <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so
+                einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen.
+                Gemeinschaftliches Lesen war noch nie so zugänglich.
+                <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche
+                Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare
+                Geld und Ressourcen mit ReadBetter.
+                Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0
+                wie nie zuvor.
             </p>
         </div>
-        <button id="zuklappen-button" style="display: none;">Zuklappen</button>
+        <a id="zuklappen-button" style="display: none;">Zuklappen</a>
     </div>
 </div>
 
-    <div class="section" id="showLessSection">
-        <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
-    </div>
+<div class="section" id="showLessSection">
+    <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
+</div>
 
-    <div class="section" id="forYouSection">
-        <h2>For you</h2>
-        <div class="image-row">
-            <div class="image">
-                <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px" height="283px">
-                <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="283px">
-                <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
-                <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
-                <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px" height="283px">
+<div class="section" id="forYouSection">
+    <h2>For you</h2>
+    <div class="image-row">
+        <div class="image">
+            <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px"
+                 height="283px">
+            <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="283px">
+            <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
+            <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
+            <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px" height="283px">
 
-            </div>
         </div>
-
     </div>
 
-    <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
-    <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
-    <div class="calendar" style="margin-top: 100px">
-        <h2 id="calendarMonth">Oktober 2023</h2>
-        <button onclick="changeMonth('previous')">&#8249;</button>
-        <button onclick="changeMonth('next')">&#8250;</button>
-        <table>
-            <thead>
-            <tr>
-                <th>Mo</th>
-                <th>Di</th>
-                <th>Mi</th>
-                <th>Do</th>
-                <th>Fr</th>
-                <th>Sa</th>
-                <th>So</th>
-            </tr>
-            </thead>
-            <tbody id="calendarBody">
-            <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
-            <!-- Zum Beispiel: -->
-            <tr>
-                <td>02</td>
-                <td>03</td>
-                <td>04</td>
-                <td>05</td>
-                <td>06</td>
-                <td>07</td>
-                <td>08</td>
-            </tr>
-            </tr>
-            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
-            </tbody>
-            <tr>
-                <td>09</td>
-                <td>10</td>
-                <td>11</td>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
+</div>
 
-            </tr>
-            </tbody>
-            <tr>
-                <td>16</td>
-                <td>17</td>
-                <td>18</td>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
+<!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
+<!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
+<div class="calendar" style="margin-top: 100px">
+    <h2 id="calendarMonth">Oktober 2023</h2>
+    <button onclick="changeMonth('previous')">&#8249;</button>
+    <button onclick="changeMonth('next')">&#8250;</button>
+    <table>
+        <thead>
+        <tr>
+            <th>Mo</th>
+            <th>Di</th>
+            <th>Mi</th>
+            <th>Do</th>
+            <th>Fr</th>
+            <th>Sa</th>
+            <th>So</th>
+        </tr>
+        </thead>
+        <tbody id="calendarBody">
+        <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
+        <!-- Zum Beispiel: -->
+        <tr>
+            <td>02</td>
+            <td>03</td>
+            <td>04</td>
+            <td>05</td>
+            <td>06</td>
+            <td>07</td>
+            <td>08</td>
+        </tr>
+        </tr>
+        <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+        </tbody>
+        <tr>
+            <td>09</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
 
-            </tr>
-            </tbody>
-            <tr>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
+        </tr>
+        </tbody>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
 
-            </tr>
-            </tbody>
-            <tr>
-                <td>30</td>
-                <td>31</td>
-                <td>01</td>
-                <td>02</td>
-                <td>03</td>
-                <td>04</td>
-                <td>05</td>
+        </tr>
+        </tbody>
+        <tr>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
 
-            </tr>
-        </table>
-            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
-    </div>
+        </tr>
+        </tbody>
+        <tr>
+            <td>30</td>
+            <td>31</td>
+            <td>01</td>
+            <td>02</td>
+            <td>03</td>
+            <td>04</td>
+            <td>05</td>
 
-    <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
-    <script>
-        const weiterlesenButton = document.getElementById('weiterlesen-button');
-        const zuklappenButton = document.getElementById('zuklappen-button');
-        const hiddenText = document.getElementById('hidden-text');
+        </tr>
+    </table>
+    <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+</div>
 
-        weiterlesenButton.addEventListener('click', () => {
-            if (hiddenText.style.display === 'none') {
-                hiddenText.style.display = 'block';
-                weiterlesenButton.style.display = 'none';
-                zuklappenButton.style.display = 'block';
-            }
-        });
+<!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
+<script>
+    const weiterlesenButton = document.getElementById('weiterlesen-button');
+    const zuklappenButton = document.getElementById('zuklappen-button');
+    const hiddenText = document.getElementById('hidden-text');
 
-        zuklappenButton.addEventListener('click', () => {
-            if (hiddenText.style.display === 'block') {
-                hiddenText.style.display = 'none';
-                weiterlesenButton.style.display = 'block';
-                zuklappenButton.style.display = 'none';
-            }
-        });
-        const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
-        let currentMainImageIndex = 0;
-
-        function changeMainImage(direction) {
-            if (direction === 'next') {
-                currentMainImageIndex++;
-                if (currentMainImageIndex >= mainImages.length) {
-                    currentMainImageIndex = 0;
-                }
-            } else if (direction === 'previous') {
-                currentMainImageIndex--;
-                if (currentMainImageIndex < 0) {
-                    currentMainImageIndex = mainImages.length - 1;
-                }
-            }
-
-            const mainImage = document.getElementById('mainImage');
-            mainImage.src = mainImages[currentMainImageIndex];
+    weiterlesenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'none') {
+            hiddenText.style.display = 'block';
+            weiterlesenButton.style.display = 'none';
+            zuklappenButton.style.display = 'block';
         }
+    });
 
-        // Beispiel-Daten für Bücher
-        const books = [
-            "Buch 1",
-            "Buch 2",
-            "Buch 3",
-            "Buch 4",
-            "Buch 5",
-            "Buch 6",
-            "Buch 7",
-            "Buch 8",
-            "Buch 9",
-            "Buch 10"
-        ];
+    zuklappenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'block') {
+            hiddenText.style.display = 'none';
+            weiterlesenButton.style.display = 'block';
+            zuklappenButton.style.display = 'none';
+        }
+    });
+    const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
+    let currentMainImageIndex = 0;
 
-        // Funktion zum Anzeigen von 5 weiteren Büchern
-        function showMoreBooks(containerId) {
-            const container = document.getElementById(containerId);
-            const bookList = container.querySelector('div');
-            const currentBooks = bookList.children.length;
-            const remainingBooks = books.slice(currentBooks, currentBooks + 5);
-
-            for (const book of remainingBooks) {
-                const bookElement = document.createElement('p');
-                bookElement.textContent = book;
-                bookList.appendChild(bookElement);
+    function changeMainImage(direction) {
+        if (direction === 'next') {
+            currentMainImageIndex++;
+            if (currentMainImageIndex >= mainImages.length) {
+                currentMainImageIndex = 0;
+            }
+        } else if (direction === 'previous') {
+            currentMainImageIndex--;
+            if (currentMainImageIndex < 0) {
+                currentMainImageIndex = mainImages.length - 1;
             }
         }
 
-        // Initial 5 Bücher anzeigen
-        showMoreBooks('forYouBooks');
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = mainImages[currentMainImageIndex];
+    }
 
-        // Kalender-Funktionen
-        const months = [
-            "Januar", "Februar", "März", "April", "Mai", "Juni",
-            "Juli", "August", "September", "Oktober", "November", "Dezember"
-        ];
-        let currentMonthIndex = 10; // Start mit Oktober
+    // Beispiel-Daten für Bücher
+    const books = [
+        "Buch 1",
+        "Buch 2",
+        "Buch 3",
+        "Buch 4",
+        "Buch 5",
+        "Buch 6",
+        "Buch 7",
+        "Buch 8",
+        "Buch 9",
+        "Buch 10"
+    ];
 
-        function changeMonth(direction) {
-            if (direction === 'next') {
-                currentMonthIndex++;
-                if (currentMonthIndex >= months.length) {
-                    currentMonthIndex = 0;
-                }
-            } else if (direction === 'previous') {
-                currentMonthIndex--;
-                if (currentMonthIndex < 0) {
-                    currentMonthIndex = months.length - 1;
-                }
+    // Funktion zum Anzeigen von 5 weiteren Büchern
+    function showMoreBooks(containerId) {
+        const container = document.getElementById(containerId);
+        const bookList = container.querySelector('div');
+        const currentBooks = bookList.children.length;
+        const remainingBooks = books.slice(currentBooks, currentBooks + 5);
+
+        for (const book of remainingBooks) {
+            const bookElement = document.createElement('p');
+            bookElement.textContent = book;
+            bookList.appendChild(bookElement);
+        }
+    }
+
+    // Initial 5 Bücher anzeigen
+    showMoreBooks('forYouBooks');
+
+    // Kalender-Funktionen
+    const months = [
+        "Januar", "Februar", "März", "April", "Mai", "Juni",
+        "Juli", "August", "September", "Oktober", "November", "Dezember"
+    ];
+    let currentMonthIndex = 10; // Start mit Oktober
+
+    function changeMonth(direction) {
+        if (direction === 'next') {
+            currentMonthIndex++;
+            if (currentMonthIndex >= months.length) {
+                currentMonthIndex = 0;
             }
-
-            // Tage für den ausgewählten Monat generieren
-            generateCalendarDays();
+        } else if (direction === 'previous') {
+            currentMonthIndex--;
+            if (currentMonthIndex < 0) {
+                currentMonthIndex = months.length - 1;
+            }
         }
 
-        function generateCalendarDays() {
-            const calendarMonth = document.getElementById('calendarMonth');
-            const calendarBody = document.getElementById('calendarBody');
-            calendarMonth.textContent = months[currentMonthIndex];
-            calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
-
-            // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
-            // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
-            // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
-        }
-
-        // Initialen Kalender für Oktober generieren
+        // Tage für den ausgewählten Monat generieren
         generateCalendarDays();
-    </script>
+    }
+
+    function generateCalendarDays() {
+        const calendarMonth = document.getElementById('calendarMonth');
+        const calendarBody = document.getElementById('calendarBody');
+        calendarMonth.textContent = months[currentMonthIndex];
+        calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
+
+        // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
+        // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
+        // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
+    }
+
+    // Initialen Kalender für Oktober generieren
+    generateCalendarDays();
+</script>
 </body>
 </html>

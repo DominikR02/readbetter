@@ -165,6 +165,7 @@ header nav ul ul {
     background-color: #4A5F47;
     padding: 10px;
     border-radius: 0 0 10px 10px;
+    z-index: 99;
 }
 
 header nav ul li:hover > ul {
