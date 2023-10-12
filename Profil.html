@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mein Profil | readbetter</title>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <style>
+        .header {
+            /* Ihr Header-Styling wie zuvor */
+        }
+
+        .profile-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-picture {
+            width: 100px; /* Breite des runden Profilbilds */
+            height: 100px; /* Höhe des runden Profilbilds */
+            border-radius: 50%; /* Macht das Bild rund */
+        }
+
+        .calendar {
+            text-align: center;
+            float: right;
+            margin-left: 20px;
+            max-width: 30%;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .calendar h2 {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar th,
+        .calendar td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-toggle-label {
+            display: block;
+            width: 50px; /* Breite des Hamburger-Symbols */
+            height: 50px; /* Höhe des Hamburger-Symbols */
+            background-color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            line-height: 30px;
+            position: absolute;
+            top: 120px; /* Anpassen Sie die Position nach Bedarf */
+            left: 10px; /* Anpassen Sie die Position nach Bedarf */
+        }
+
+        .menu-toggle-label::before {
+            content: "\2261"; /* Hamburger-Symbol (Unicode) */
+            color: #4A5F47;
+            font-size: 24px;
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px; /* Breite des Menüs */
+            height: 100%;
+            background-color: #4A5F47;
+            color: #fff;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .menu-toggle:checked + .menu-toggle-label + .menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
+    <nav>
+        <ul>
+            <li><a href="Startseite.html">Startseite</a></li>
+            <li><a href="trends.html">Trending</a></li>
+            <li><a href="neu.html">Neu</a></li>
+            <li>
+                <a href="#">Genre</a>
+                <ul>
+                    <li><a href="#">Comics</a></li>
+                    <li><a href="genre/kochbuecher.html">Kochbücher</a></li>
+                    <li><a href="#">Krimis</a></li>
+                    <li><a href="#">Romane</a></li>
+                </ul>
+            </li>
+            <li><a href="abos.html" style="color: red">Abos</a></li>
+        </ul>
+    </nav>
+
+    <div class="navigation">
+        <div>
+            <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
+                 onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <a href="Startseite.html">
+            <div class="popup-item">Startseite</div>
+        </a>
+        <a href="trends.html">
+            <div class="popup-item">Trending</div>
+        </a>
+        <a href="#">
+            <div class="popup-item">Neu</div>
+        </a>
+        <div class="popup-item">
+            <a onclick="toggleGenreSubmenu()">Genre</a>
+            <div class="genre-submenu">
+                <a>
+                    <div class="sub-item">Comics</div>
+                </a>
+                <a href="genre/kochbuecher.html">
+                    <div class="sub-item">Kochbücher</div>
+                </a>
+                <a>
+                    <div class="sub-item">Krimis</div>
+                </a>
+                <a>
+                    <div class="sub-item">Romane</div>
+                </a>
+            </div>
+        </div>
+        <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="login.html"><img src="pic/login-weiss.png"
+                                          style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                        onclick="toggleSearchMenu(); closePopupMenu()"></a>
+            </div>
+        </div>
+        <div class="popup-item">
+            <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">
+            <h4>Suche</h4>
+        </div>
+        <div class="popup-item">Titel</div>
+        <input style="text-align: center" placeholder="Titel" type="text">
+        <div class="popup-item">Autor</div>
+        <input style="text-align: center" placeholder="Autor" type="text">
+        <div class="popup-item">Genre</div>
+        <input style="text-align: center" placeholder="Genre" type="text">
+        <div class="popup-item">Ort</div>
+        <input style="text-align: center" placeholder="Ort" type="text">
+        <button class="searchButton">Suchen</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="section">
+        <!-- Inhalt Ihrer Profilseite -->
+    </div>
+</div>
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="menu-toggle-label"></label>
+<div class="menu" id="menu">
+    <div style="margin-bottom: 200px;background-color: #4A5F47"><input type="checkbox" id="menu-toggle-after" class="menu-toggle">
+        <label for="menu-toggle" class="menu-toggle-label"></label>
+    </div>
+    <a href="#">Mein Profil</a>
+    <a href="#">Verliehen</a>
+    <a href="#">Ausgeliehen</a>
+    <a href="#">Transaktion</a>
+    <a href="#">Tarif</a>
+
+</div>
+
+<div class="container">
+    <div class="section profile-section">
+        <!-- Hier können Sie Informationen über den Benutzer anzeigen -->
+        <div class="user-info">
+            <!-- Weitere Benutzerdetails, Vorlieben, Statistiken, usw. -->
+        </div>
+        <!-- Rundes Profilbild (rechts) -->
+        <img src="pic/Profilbilder/rainerzufall.jpg" alt="Profilbild" class="profile-picture"
+             style="width: 100px; margin-right: 50px">
+    </div>
+
+
+    <!-- Weitere Inhalte für das Profil, z.B. Benutzerdetails, Vorlieben, Statistiken, usw. -->
+
+</div>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('change', () => {
+        if (menuToggle.checked) {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
+<footer>
+    <h1>Footer</h1>
+</footer>
