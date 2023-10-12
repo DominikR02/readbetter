@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Ausleihe | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/verleih.css">
+    <link rel="stylesheet" type="text/css" href="css/ausleihe.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -191,23 +191,25 @@
     <!-- Modal content -->
     <div class="modal-content" style="text-align: center">
         <h1>Vielen Dank für deine Leihe</h1>
-
-        <div style="display: flex; text-align: left;">
-            <div style="width: 50%">
+        <br>
+        <div id="container-confirmmodal">
+            <div id="div-container1-confirmmodal">
                 <p><b>Buchtitel:</b> Der Fall Bruno</p>
                 <p><b>Verleiher:</b> Semanur Özdemir</p>
                 <p><b>Übergabeort:</b> <span id="confirmPlace"></span></p>
                 <p><b>Übergabedatum:</b> <span id="confirmDateFrom"></span></p>
                 <p><b>Rückgabedatum:</b> <span id="confirmDateTo"></span></p>
             </div>
-            <div style="width: 50%; text-align: center">
+            <div id="div-container2-confirmmodal">
                 <img src="pic/QR%20Rechnung.png" alt="QR-Code Rechnung" style="height: 200px; height: 200px">
                 <br>
                 <a href="Rechnung.pdf" target="_blank">Rechnung</a>
             </div>
         </div>
 
-        <a href="Startseite.html"><button>Schließen</button></a>
+        <a href="Startseite.html">
+            <button>Schließen</button>
+        </a>
     </div>
 
 </div>

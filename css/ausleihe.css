@@ -114,3 +114,35 @@ span.price {
 .img-payments {
     height: 20px;
 }
+
+/* Media Query für schmale Bildschirme (z.B. Mobilgeräte) 920 */
+@media (max-width: 920px) {
+    #container-confirmmodal {
+        display: block;
+        text-align: center;
+    }
+    #div-container1-confirmmodal,
+    #div-container2-confirmmodal {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Media Query für ausreichend breite Bildschirme */
+@media (min-width: 921px) {
+    #container-confirmmodal {
+        display: flex;
+        text-align: left;
+    }
+    #div-container1-confirmmodal,
+    #div-container2-confirmmodal {
+        width: 50%;
+        margin-bottom: 0;
+    }
+    #div-container1-confirmmodal {
+        padding-left: 5%;
+    }
+    #div-container2-confirmmodal {
+        text-align: center;
+    }
+}
