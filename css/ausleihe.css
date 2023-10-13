@@ -102,10 +102,6 @@ span.price {
     display: none;
 }
 
-.payments {
-    width: 50%;
-}
-
 .zusatzinfos {
     margin: 0 0 20px 35px;
     display: none;
@@ -126,6 +122,12 @@ span.price {
         width: 100%;
         margin-bottom: 20px;
     }
+    .twoColumns {
+        display: block;
+    }
+    .payments {
+        width: 100%;
+    }
 }
 
 /* Media Query für ausreichend breite Bildschirme */
@@ -144,5 +146,11 @@ span.price {
     }
     #div-container2-confirmmodal {
         text-align: center;
+    }
+    .twoColumns {
+        display: flex;
+    }
+    .payments {
+        width: 50%;
     }
 }
