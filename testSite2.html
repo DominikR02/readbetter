@@ -5,11 +5,15 @@
     <title>test Verleih | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/footer.css">-->
-    <script src="js/header.js"></script>
-    <script src="js/footer.js"></script>
     <style>
+        #Profilmenu nav ul {
+            list-style: none;
+            color: #fff;
+        }
 
+        #Profilmenu nav ul li {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -32,7 +36,7 @@
 </div>
 
 <script>
-    function toggleProfilMenu () {
+    function toggleProfilMenu() {
         if (document.getElementById('menu-toggle').style.display === "block") {
             document.getElementById('menu-toggle').style.display = "none";
             document.getElementById('Profilmenu').style.backgroundColor = "#fff";
