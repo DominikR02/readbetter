@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mein Profil | readbetter</title>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <script src="../js/header.js"></script>
+    <script src="../js/footer.js"></script>
+    <style>
+        .header {
+            /* Ihr Header-Styling wie zuvor */
+        }
+
+        .profile-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-picture {
+            width: 100px; /* Breite des runden Profilbilds */
+            height: 100px; /* Höhe des runden Profilbilds */
+            border-radius: 50%; /* Macht das Bild rund */
+        }
+
+        .calendar {
+            text-align: center;
+            float: right;
+            margin-left: 20px;
+            max-width: 30%;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .calendar h2 {
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar th,
+        .calendar td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #Profilmenu nav ul {
+            list-style: none;
+            color: #fff;
+        }
+
+        #Profilmenu nav ul li {
+            margin-bottom: 10px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
+    <nav>
+        <ul>
+            <li><a href="Startseite.html">Startseite</a></li>
+            <li><a href="trends.html">Trending</a></li>
+            <li><a href="neu.html">Neu</a></li>
+            <li>
+                <a href="#">Genre</a>
+                <ul>
+                    <li><a href="#">Comics</a></li>
+                    <li><a href="genre/kochbuecher.html">Kochbücher</a></li>
+                    <li><a href="#">Krimis</a></li>
+                    <li><a href="#">Romane</a></li>
+                </ul>
+            </li>
+            <li><a href="abos.html" style="color: red">Abos</a></li>
+        </ul>
+    </nav>
+
+    <div class="navigation">
+        <div>
+            <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
+                 onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <a href="Startseite.html">
+            <div class="popup-item">Startseite</div>
+        </a>
+        <a href="trends.html">
+            <div class="popup-item">Trending</div>
+        </a>
+        <a href="#">
+            <div class="popup-item">Neu</div>
+        </a>
+        <div class="popup-item">
+            <a onclick="toggleGenreSubmenu()">Genre</a>
+            <div class="genre-submenu">
+                <a>
+                    <div class="sub-item">Comics</div>
+                </a>
+                <a href="genre/kochbuecher.html">
+                    <div class="sub-item">Kochbücher</div>
+                </a>
+                <a>
+                    <div class="sub-item">Krimis</div>
+                </a>
+                <a>
+                    <div class="sub-item">Romane</div>
+                </a>
+            </div>
+        </div>
+        <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="login.html"><img src="pic/login-weiss.png"
+                                          style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                        onclick="toggleSearchMenu(); closePopupMenu()"></a>
+            </div>
+        </div>
+        <div class="popup-item">
+            <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Overlay für das Pop-up-Menü -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <!-- Pop-up-Menü -->
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
+        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <div class="popup-item">
+            <h4>Suche</h4>
+        </div>
+        <div class="popup-item">Titel</div>
+        <input style="text-align: center" placeholder="Titel" type="text">
+        <div class="popup-item">Autor</div>
+        <input style="text-align: center" placeholder="Autor" type="text">
+        <div class="popup-item">Genre</div>
+        <input style="text-align: center" placeholder="Genre" type="text">
+        <div class="popup-item">Ort</div>
+        <input style="text-align: center" placeholder="Ort" type="text">
+        <button class="searchButton">Suchen</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="section">
+        <!-- Inhalt Ihrer Profilseite -->
+    </div>
+</div>
+
+<div style="display: flex ">
+    <div id="Profilmenu" style="width: 200px;">
+        <img src="pic/menu.png" style="width: 30px; margin: 10px 0 0 10px" onclick="toggleProfilMenu()">
+        <div class="section profile-section">
+            <img src="pic/Profilbilder/rainerzufall.jpg" alt="Profilbild" class="profile-picture"
+                 style="margin-left:1300px">
+        </div>
+        <nav id="menu-toggle" style="display: none">
+            <ul>
+                <li>Mein Profil</li>
+                <li>Verliehen</li>
+                <li>Ausgeliehen</li>
+                <li>Transaktionen</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="profilInhalt" style="margin-left: 500px; margin-top: 50px">
+        <p>Benurtzername</p>
+        <input type="text" id="username" name="username" placeholder="Benutzername eingeben">
+        <p>Biographie</p>
+        <textarea id="biography" name="biography" placeholder="Biographie eingeben" rows="10" cols="50"></textarea>
+        <p>Geburtstag</p>
+        <div>
+            <label for="day"> Tag:</label>
+            <select id="day" name="day">
+                <option value="day">01</option>
+                <option value="day">02</option>
+                <option value="day">03</option>
+                <option value="day">04</option>
+                <option value="day">05</option>
+                <option value="day">06</option>
+                <option value="day">07</option>
+                <option value="day">09</option>
+                <option value="day">10</option>
+                <option value="day">11</option>
+                <option value="day">12</option>
+                <option value="day">13</option>
+                <option value="day">14</option>
+                <option value="day">15</option>
+                <option value="day">16</option>
+                <option value="day">17</option>
+                <option value="day">18</option>
+                <option value="day">19</option>
+                <option value="day">20</option>
+                <option value="day">21</option>
+                <option value="day">22</option>
+                <option value="day">23</option>
+                <option value="day">24</option>
+                <option value="day">25</option>
+                <option value="day">26</option>
+                <option value="day">27</option>
+                <option value="day">28</option>
+                <option value="day">29</option>
+                <option value="day">30</option>
+                <option value="day">31</option>
+            </select>
+            <label for="month"> Monat:</label>
+            <select id="month" name="day">
+                <option value="day">Januar</option>
+                <option value="day">Februar</option>
+                <option value="day">März</option>
+                <option value="day">April</option>
+                <option value="day">Mai</option>
+                <option value="day">Juni</option>
+                <option value="day">Juli</option>
+                <option value="day">August</option>
+                <option value="day">September</option>
+                <option value="day">Oktober</option>
+                <option value="day">November</option>
+                <option value="day">Dezember</option>
+            </select>
+                <label for="year">Jahr:</label>
+                <input type="text" id="year" name="year" placeholder="Jahr" style="width: 40px;">
+        </div>
+        <p>E-Mail</p>
+        <input type="text" id="e-mail" name="e-mail" placeholder="E-mail eingeben">
+        <p>Rechnungsadresse</p>
+        <input type="text" id="zip" name="zip" placeholder="PLZ">
+        <label for="city">Stadt:</label>
+        <input type="text" id="city" name="city" placeholder="Stadt">
+        <label for="street">Straße:</label>
+        <input type="text" id="street" name="street" placeholder="Straße">
+        <p>Zahlungsmethode</p>
+        <select id="payment-method" name="payment-method" style="margin-bottom: 50px">
+            <option value="paypal">PayPal</option>
+            <option value="visa">Visa</option>
+            <option value="other">Sepa Lastschrift</option>
+        </select>
+    </div>
+    <!-- Weitere Inhalte für das Profil, z.B. Benutzerdetails, Vorlieben, Statistiken, usw. -->
+</div>
+<script>
+    function toggleProfilMenu() {
+        var menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle.style.display === "block") {
+            menuToggle.style.display = "none";
+            document.getElementById('Profilmenu').style.backgroundColor = "#fff";
+            document.getElementById('Profilmenu').style.width = "50px";
+        } else {
+            menuToggle.style.display = "block";
+            document.getElementById('Profilmenu').style.backgroundColor = "#4A5F47";
+            document.getElementById('Profilmenu').style.width = "200px";
+        }
+    }
+</script>
+
+</body>
+</html>
+<footer>
+    <h1>Footer</h1>
+</footer>

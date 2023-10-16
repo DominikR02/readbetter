@@ -49,11 +49,11 @@
     <!-- Pop-up-Menü -->
     <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
         <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
+        <button class="popup-close-button" onclick="closePopupMenu()"><a>X</a></button>
         <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <a href="Startseite.html"><div class="popup-item">Startseite</div></a>
+        <a href="Startseite.html"><div class="popup-item" style="margin-top: 50px;">Startseite</div></a>
         <a href="trends.html"><div class="popup-item">Trending</div></a>
-        <a href="#"><div class="popup-item">Neu</div></a>
+        <a href="neu.html"><div class="popup-item">Neu</div></a>
         <div class="popup-item">
             <a onclick="toggleGenreSubmenu()">Genre</a>
             <div class="genre-submenu">
@@ -82,19 +82,27 @@
     <!-- Pop-up-Menü -->
     <div class="popup-menu" id="popupMenuSearch">
         <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
+        <button class="popup-close-button" onclick="closePopupMenuSearch()"><b>X</b></button>
         <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
         <div class="popup-item">
             <h4>Suche</h4>
         </div>
-        <div class="popup-item">Titel</div>
-        <input style="text-align: center" placeholder="Titel" type="text">
-        <div class="popup-item">Autor</div>
-        <input style="text-align: center" placeholder="Autor" type="text">
-        <div class="popup-item">Genre</div>
-        <input style="text-align: center" placeholder="Genre" type="text">
-        <div class="popup-item">Ort</div>
-        <input style="text-align: center" placeholder="Ort" type="text">
+        <div class="popup-item">
+            Titel
+            <input style="text-align: center" placeholder="Titel" type="text">
+        </div>
+        <div class="popup-item">
+            Autor
+            <input style="text-align: center" placeholder="Autor" type="text">
+        </div>
+        <div class="popup-item">
+            Genre
+            <input style="text-align: center" placeholder="Genre" type="text">
+        </div>
+        <div class="popup-item">
+            Ort
+            <input style="text-align: center" placeholder="Ort" type="text">
+        </div>
         <button class="searchButton">Suchen</button>
     </div>
 </header>
@@ -120,7 +128,7 @@
                 <a href="Startseite.html">Startseite</a><br>
                 <a href="AboutUs.html">Über Uns</a><br>
                 <a href="kontakt.html">Kontakt</a><br>
-                <a href="#">FAQ</a>
+                <a href="faq.html">FAQ</a>
             </div>
             <div class="footer-container">
                 <a href="datenschutz.html">Datenschutz</a><br>
