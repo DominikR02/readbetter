@@ -66,7 +66,7 @@
 
 /* Stil für Menüpunkte im Pop-up-Menü */
 .popup-menu .popup-item {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     font-size: 18px;
     text-align: center;
 }
