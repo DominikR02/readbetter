@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <title>Abos | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/abos.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
+    <script src="js/abos.js"></script>
+    <script src="js/ausleihe.js"></script>
     <script src="js/footer.js"></script>
     <style>
         * {
@@ -84,7 +88,7 @@
         <li>max. 2 Wochen leihen</li>
         <li>nicht selbst verleihen</li>
         <li>0€ möglicher Umsatz</li>
-        <li class="grey"><a href="#" class="button">Upgrade</a></li>
+        <li class="grey"><a onclick="openUpgradeModalBasic()" class="button">Upgrade</a></li>
     </ul>
 </div>
 
@@ -98,7 +102,7 @@
         <li>max. 3 Wochen leihen</li>
         <li>2 Bücher pro Monat verleihen</li>
         <li>2€ möglicher Umsatz</li>
-        <li class="grey"><a href="#" class="button">Upgrade</a></li>
+        <li class="grey"><a onclick="openUpgradeModalPro()" class="button">Upgrade</a></li>
     </ul>
 </div>
 
@@ -112,8 +116,88 @@
         <li>max. 4 Wochen leihen</li>
         <li>20 Bücher pro Monat verleihen</li>
         <li>20€ möglicher Umsatz</li>
-        <li class="grey"><a href="#" class="button">Upgrade</a></li>
+        <li class="grey"><a onclick="openUpgradeModalProReader()" class="button">Upgrade</a></li>
     </ul>
+</div>
+
+<!-- The Modal -->
+<div id="abo-upgrade" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeUpgradeModal()">&times;</span>
+        <div id="basic-upgrade" style="display: none">
+            <h1>Upgrade auf Basic</h1>
+        </div>
+        <div id="pro-upgrade" style="display: none">
+            <h1>Upgrade auf Pro</h1>
+        </div>
+        <div id="proReader-upgrade" style="display: none">
+            <h1>Upgrade auf ProReader</h1>
+        </div>
+        <div id="payment-info">
+            <div class="twoColumns">
+                <div class="payments">
+                    <h2>Hinterlegte Zahlungsmethoden</h2>
+                    <div style="display: flex">
+                        <input type="radio" name="payments" value="paypal" id="radio-paypal" onclick="showNothing()"
+                               checked="checked">
+                        <div style="margin-bottom: 20px">
+                            <img src="pic/payments/PayPal.png" class="img-payments"><br>
+                            rainer.zufall@gmail.com
+                        </div>
+                    </div>
+                    <div style="display: flex">
+                        <input type="radio" name="payments" value="lastschrift" id="radio-lastschrift"
+                               onclick="showNothing()">
+                        <div>
+                            <img src="pic/payments/lastschrift.png" class="img-payments"><br>
+                            DExx xxxx xxxx xxxx xx11 11
+                        </div>
+                    </div>
+                </div>
+                <div class="payments">
+                    <h2>Neue Zahlungsmethoden</h2>
+                    <div style="display: flex">
+                        <input type="radio" name="payments" value="paypal-new" id="radio-paypal-new"
+                               onclick="showPaypal()">
+                        <img src="pic/payments/PayPal.png" class="img-payments">
+                    </div>
+                    <div class="zusatzinfos" id="zusatz-paypal">
+                        <a>Mit Paypal verbinden</a>
+                    </div>
+                    <div style="display: flex">
+                        <input type="radio" name="payments" value="lastschrift-new" id="radio-lastschrift-new"
+                               onclick="showLastschrift()">
+                        <img src="pic/payments/lastschrift.png" class="img-payments">
+                    </div>
+                    <div class="zusatzinfos" id="zusatz-lastschrift">
+                        <p><input placeholder="Kontoinhaber" oninput="this.className = ''" name="Kontoinhaber"></p>
+                        <p><input placeholder="IBAN" oninput="this.className = ''" name="IBAN"></p>
+                    </div>
+                    <div style="display: flex">
+                        <input type="radio" name="payments" value="visa-new" id="radio-visa-new" onclick="showVisa()">
+                        <img src="pic/payments/Visa.svg" class="img-payments">
+                    </div>
+                    <div class="zusatzinfos" id="zusatz-visa">
+                        <p><input placeholder="Kartennummer" name="Kartennummer"></p>
+                        <p><input placeholder="Name auf der Karte" name="Kartenname"></p>
+                        <p><input placeholder="Ablaufmonat" name="Monat"></p>
+                        <p><input placeholder="Ablaufjahr" name="Jahr"></p>
+                        <p><input placeholder="CVV" type="password" name="CVV"></p>
+                    </div>
+                </div>
+            </div>
+            <button onclick="savePayment()" style="margin-top: 30px; border-radius: 25px">Bestätigen</button>
+        </div>
+        <div id="abo-confirm" style="text-align: center; display: none">
+            <h4>Herzlichen Glückwunsch zu deinem Abo-Upgrade</h4>
+            <a href="Startseite.html">
+                <button style="margin-top: 30px; border-radius: 25px">Schließen</button>
+            </a>
+        </div>
+    </div>
+
 </div>
 
 <h1><a href="abos.html">Footer</a></h1>
