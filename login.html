@@ -6,6 +6,7 @@
     <title>Login/Registrierung | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
@@ -22,7 +23,9 @@
         <p>Passwort</p>
         <input placeholder="Passwort" type="password">
         <br><br><br>
-        <button>Login</button>
+        <a href="Startseite.html">
+            <button>Login</button>
+        </a>
     </div>
     <div id="trennerLoginSignUp"></div>
     <div id="signUp">
@@ -39,13 +42,33 @@
         <p id="passwordMatchMessage" style="color: red;"></p>
         <p id="passwordCriteriaMessage" style="color: red;"></p>
         <br><br><br>
-        <button>Registrieren</button>
+        <button onclick="openAboQuestion()">Registrieren</button>
     </div>
 </div>
 
-<div style="background-color: lightcoral; border-radius: 50px; color: #fff; margin: 0 40%; text-align: center; padding: 5px">
-    <p>Bist du eine Leseratte?</p>
-    <p>Schau dir unsere <a href="abos.html">Abos</a> an</p>
+<div id="abo-question" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" style="text-align: center">
+        <h4>Vielen Dank für deine Registrierung</h4>
+        <br>
+        <h1>Bist du eine Leseratte?</h1>
+        <h4>Schau dir unsere <a href="abos.html">Abos</a> an.</h4>
+        <br>
+        <div style="display: flex; margin: 0 25%;">
+            <div style="width: 50%; text-align: center">
+                <a href="abos.html">
+                    <button style="width: 90px; border-radius: 25px">Abos</button>
+                </a>
+            </div>
+            <div style="width: 50%; text-align: center">
+                <a href="Startseite.html">
+                    <button style="width: 90px; border-radius: 25px; background-color: gray">Schließen</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <h1>Footer</h1>
@@ -97,6 +120,10 @@
             passwordMatchMessage.textContent = "Passwörter stimmen nicht überein.";
             passwordMatchMessage.style.color = "red";
         }
+    }
+
+    function openAboQuestion() {
+        document.getElementById('abo-question').style.display = "block";
     }
 </script>
 </body>
