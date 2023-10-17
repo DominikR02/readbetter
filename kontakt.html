@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta-Daten und Titel der Seite -->
     <meta charset="UTF-8">
     <title>Kontakt | readbetter</title>
+
+    <!-- Verknüpfungen zu den CSS-Dateien -->
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+
+    <!-- Verknüpfung zur JavaScript-Datei für den Header -->
     <script src="js/header.js"></script>
+
+    <!-- Inline CSS-Stile für das Formular -->
     <style>
         * {
             box-sizing: border-box;
         }
 
+        /* Stil für verschiedene Formularelemente */
         input[type=text],
         input[type=email],
         select,
@@ -27,6 +35,7 @@
             background-color: #fff;
         }
 
+        /* Stil für den Formularcontainer */
         .container {
             border-radius: 15px;
             background-color: #f2f2f2;
@@ -36,10 +45,13 @@
     </style>
 </head>
 <body>
+<!-- Überschriften für Header und Kontaktabschnitt -->
 <h1>Header</h1>
 <h2 style="text-align: center">Kontakt</h2>
 
+<!-- Container für das Kontaktformular -->
 <div class="container">
+    <!-- Formularelemente für Anrede, Vorname, Nachname, etc. -->
     <form>
         <label for="anrede">Anrede</label>
         <select id="anrede" name="anrede">
@@ -55,7 +67,7 @@
         <label for="lname">Nachname</label>
         <input type="text" id="lname" name="lastname" placeholder="Dein Nachname...">
 
-        <label for="email">Nachname</label>
+        <label for="email">E-Mail</label>
         <input type="email" id="email" name="email" placeholder="Deine Email...">
 
         <label for="anliegen">Anliegen</label>
@@ -68,25 +80,26 @@
             <option value="sonstiges">Sonstiges</option>
         </select>
 
-
         <label for="subject">Deine Nachricht</label>
         <textarea id="subject" name="subject" placeholder="Schildere uns dein Anliegen."
                   style="height:200px"></textarea>
 
+        <!-- Button zum Absenden des Formulars mit Aufruf der validateForm-Funktion -->
         <div style="text-align: center">
             <button onclick="validateForm(event)" style="border-radius: 25px">Senden</button>
         </div>
     </form>
 </div>
 
+<!-- Modal für die Bestätigungsnachricht nach dem Absenden des Formulars -->
 <div id="send-completed" class="modal">
-
-    <!-- Modal content -->
+    <!-- Modalinhalt mit Dankesnachricht und Links -->
     <div class="modal-content" style="text-align: center">
         <h1>Vielen Dank für deine Nachricht.</h1>
         <br>
         <h4>Wir werden uns in Kürze bei dir melden.</h4>
         <br>
+        <!-- Links zu den Seiten "Kontakt" und "Startseite" -->
         <div style="display: flex; margin: 0 25%;">
             <div style="width: 50%; text-align: center">
                 <a href="kontakt.html">
@@ -100,13 +113,16 @@
             </div>
         </div>
     </div>
-
 </div>
 
+<!-- JavaScript-Code für die Formularvalidierung und Anzeige des Modal -->
 <script>
+    // Funktion zur Validierung des Formulars
     function validateForm(event) {
+        // Verhindert das Standardverhalten des Formulars (automatisches Absenden)
         event.preventDefault();
 
+        // Abrufen der Formularelemente
         var anrede = document.getElementById('anrede');
         var fname = document.getElementById('fname');
         var lname = document.getElementById('lname');
@@ -116,6 +132,7 @@
 
         var isValid = true;
 
+        // Überprüfen der Eingaben und Anpassen der Stile
         if (anrede.value === 'none') {
             document.getElementById('anrede').style.backgroundColor = '#ef9a9a';
             document.getElementById('anrede').style.border = '1px solid #f44336';
@@ -170,11 +187,13 @@
             document.getElementById('subject').style.border = '1px solid #4caf50';
         }
 
+        // Öffnen des Modal, wenn die Eingaben gültig sind
         if (isValid) {
             openSendModal();
         }
     }
 
+    // Funktion zum Öffnen des Modal
     function openSendModal() {
         document.getElementById('send-completed').style.display = 'block';
     }
