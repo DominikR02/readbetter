@@ -55,10 +55,10 @@
         </ul>
     </nav>
 
-    <!-- Navigations-Icons (Login, Burgermenu, Suche) -->
+    <!-- Navigations-Icons (Profil, Burgermenu, Suche) -->
     <div class="navigation">
         <div>
-            <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+            <a href="Profil.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
         </div>
         <div class="burgermenu">
             <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
@@ -86,31 +86,33 @@
             <h5 class="popup-item">Neu</h5>
         </a>
         <!-- Untermenü für Genre -->
-        <div class="popup-item">
-            <a onclick="toggleGenreSubmenu()"><h5>Genre</h5></a>
-            <div class="genre-submenu">
-                <a>
-                    <h5 class="sub-item">Comics</h5>
-                </a>
-                <a href="genre/kochbuecher.html">
-                    <h5 class="sub-item">Kochbücher</h5>
-                </a>
-                <a>
-                    <h5 class="sub-item">Krimis</h5>
-                </a>
-                <a>
-                    <h5 class="sub-item">Romane</h5>
-                </a>
-            </div>
+
+        <a onclick="toggleGenreSubmenu()">
+            <h5 class="popup-item">Genre</h5>
+        </a>
+        <div class="genre-submenu">
+            <a>
+                <h5 class="sub-item">Comics</h5>
+            </a>
+            <a href="genre/kochbuecher.html">
+                <h5 class="sub-item">Kochbücher</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Krimis</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Romane</h5>
+            </a>
         </div>
+
         <a href="abos.html">
             <h5 class="popup-item" style="color: red">Abos</h5>
         </a>
         <!-- Icons im Pop-up-Menü -->
         <div class="popup-item popup-icons">
             <div class="popup-icon">
-                <a href="login.html"><img src="pic/login-weiss.png"
-                                          style="width: 30px; height: 30px; margin: 8px"></a><br>
+                <a href="Profil.html"><img src="pic/login-weiss.png"
+                                           style="width: 30px; height: 30px; margin: 8px"></a><br>
             </div>
             <div class="popup-icon">
                 <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
@@ -188,7 +190,8 @@
         </div>
         <!-- Icons für Suche und Login -->
         <div>
-            <a href="login.html"><img src="pic/login-weiss.png" style="width: 45px; height: 45px; margin: 8px;"></a><br>
+            <a href="Profil.html"><img src="pic/login-weiss.png"
+                                       style="width: 45px; height: 45px; margin: 8px;"></a><br>
             <a><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px"
                     onclick="toggleSearchMenu()"></a>
         </div>
