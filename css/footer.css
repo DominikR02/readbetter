@@ -52,6 +52,10 @@ footer {
         width: 33%;
     }
 
+    .footer-container h5{
+        margin: 0 0 10px 0;
+    }
+
     #left-footer-container {
         margin-left: 10%;
     }
