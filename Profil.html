@@ -134,16 +134,8 @@
             </div>
         </div>
         <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
-        <div class="popup-item popup-icons">
-            <div class="popup-icon">
-                <a href="login.html"><img src="pic/login-weiss.png"
-                                          style="width: 30px; height: 30px; margin: 8px"></a><br>
-            </div>
-            <div class="popup-icon">
-                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
-                        onclick="toggleSearchMenu(); closePopupMenu()"></a>
-            </div>
-        </div>
+        <span style="font-size: 30px;cursor:pointer" onclick="openNav()">☰ open
+        </span>
         <div class="popup-item">
             <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
         </div>
@@ -178,21 +170,17 @@
 </div>
 
 <div style="display: flex ">
-    <div id="Profilmenu" style="width: 200px;">
-        <img src="pic/menu.png" style="width: 30px; margin: 10px 0 0 10px" onclick="toggleProfilMenu()">
-        <div class="section profile-section">
-            <img src="pic/Profilbilder/rainerzufall.jpg" alt="Profilbild" class="profile-picture"
-                 style="margin-left:1300px">
+    <div id="myNav" class="overlay" style="width: 0%;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+        <div class="overlay-content"> == $0
+            <a href="#">Mein Profil</a>
+            <a href="#">Ausgeliehen</a>
+            <a href="#">Verliehen</a>
+            <a href="#">Transaktion</a>
         </div>
-        <nav id="menu-toggle" style="display: none">
-            <ul>
-                <li>Mein Profil</li>
-                <li>Verliehen</li>
-                <li>Ausgeliehen</li>
-                <li>Transaktionen</li>
-            </ul>
-        </nav>
     </div>
+    <span style="font-size: 30px;cursor:pointer" onclick="openNav()">☰ open
+        </span>
     <div class="profilInhalt" style="margin-left: 500px; margin-top: 50px">
         <p>Benurtzername</p>
         <input type="text" id="username" name="username" placeholder="Benutzername eingeben">
@@ -269,17 +257,13 @@
     <!-- Weitere Inhalte für das Profil, z.B. Benutzerdetails, Vorlieben, Statistiken, usw. -->
 </div>
 <script>
-    function toggleProfilMenu() {
-        var menuToggle = document.getElementById('menu-toggle');
-        if (menuToggle.style.display === "block") {
-            menuToggle.style.display = "none";
-            document.getElementById('Profilmenu').style.backgroundColor = "#fff";
-            document.getElementById('Profilmenu').style.width = "50px";
-        } else {
-            menuToggle.style.display = "block";
-            document.getElementById('Profilmenu').style.backgroundColor = "#4A5F47";
-            document.getElementById('Profilmenu').style.width = "200px";
-        }
+    function openNav()
+    {
+        document.getElementById("myNav").style.width = "100%";
+    }
+    function closeNav() {
+        document.getElementbyId("myNav").stye.width= "0%";
+
     }
 </script>
 
