@@ -188,8 +188,7 @@
             </div>
         </div>
         <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
-        <span style="font-size: 30px;cursor:pointer" onclick="openNav()">☰ open
-        </span>
+        <span style="font-size: 30px;cursor:pointer" onclick="openNav()">☰</span>
         <div class="popup-item">
             <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
         </div>
@@ -216,13 +215,6 @@
         <button class="searchButton">Suchen</button>
     </div>
 </header>
-
-<div class="container">
-    <div class="section">
-        <!-- Inhalt Ihrer Profilseite -->
-    </div>
-</div>
-
 <div style="display: flex ">
     <div id="myNav" class="overlay" style="width: 0%;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
@@ -233,7 +225,11 @@
             <a href="#">Transaktion</a>
         </div>
     </div>
+    </div>
     <span style="font-size: 30px;cursor:pointer" onclick="openNav()">☰ open</span>
+<div class="profile-picture" style="position: absolute; top: 30px; right: 20px;margin-top: 90px">
+    <img src="pic/Profilbilder/rainerzufall.jpg" style="width: 100px">
+</div>
     <div class="profilInhalt" style="margin-left: 500px; margin-top: 50px">
         <p>Benurtzername</p>
         <input type="text" id="username" name="username" placeholder="Benutzername eingeben">
@@ -306,11 +302,54 @@
             <option value="visa">Visa</option>
             <option value="other">Sepa Lastschrift</option>
         </select>
+        <button id="saveButton" onclick="saveChanges()" style="position:absolute; margin-left: 700px; margin-top: 20px">Speichern</button>
+    </div>
     </div>
     <!-- Weitere Inhalte für das Profil, z.B. Benutzerdetails, Vorlieben, Statistiken, usw. -->
 </div>
 <script>
-    function openNav()
+    function saveChanges() {
+        // Benutzername, Biographie, Geburtstag, E-Mail und andere Felder speichern
+        var newUsername = document.getElementById("username").value;
+        var newBiography = document.getElementById("biography").value;
+        var newBirthday = document.getElementById("day").value + "-" + document.getElementById("month").value + "-" + document.getElementById("year").value;
+        var newEmail = document.getElementById("e-mail").value;
+        var newZip = document.getElementById("zip").value;
+        var newCity = document.getElementById("city").value;
+        var newStreet = document.getElementById("street").value;
+        var newPaymentMethod = document.getElementById("payment-method").value;
+
+        // Speichere die Änderungen im localStorage
+        localStorage.setItem("userUsername", newUsername);
+        localStorage.setItem("userBiography", newBiography);
+        localStorage.setItem("userBirthday", newBirthday);
+        localStorage.setItem("userEmail", newEmail);
+        localStorage.setItem("userZip", newZip);
+        localStorage.setItem("userCity", newCity);
+        localStorage.setItem("userStreet", newStreet);
+        localStorage.setItem("userPaymentMethod", newPaymentMethod);
+
+        // Benachrichtigung, dass die Änderungen gespeichert wurden (optional)
+        alert("Änderungen wurden gespeichert.");
+    }
+
+    // Wiederherstellen der gespeicherten Daten beim Laden der Seite
+    window.addEventListener("load", function() {
+        // Benutzername, Biographie, Geburtstag, E-Mail und andere Felder wiederherstellen
+        document.getElementById("username").value = localStorage.getItem("userUsername") || "";
+        document.getElementById("biography").value = localStorage.getItem("userBiography") || "";
+        var savedBirthday = localStorage.getItem("userBirthday") || "01-Januar-Jahr";
+        var birthdayParts = savedBirthday.split("-");
+        document.getElementById("day").value = birthdayParts[0];
+        document.getElementById("month").value = birthdayParts[1];
+        document.getElementById("year").value = birthdayParts[2];
+        document.getElementById("e-mail").value = localStorage.getItem("userEmail") || "";
+        document.getElementById("zip").value = localStorage.getItem("userZip") || "";
+        document.getElementById("city").value = localStorage.getItem("userCity") || "";
+        document.getElementById("street").value = localStorage.getItem("userStreet") || "";
+        document.getElementById("payment-method").value = localStorage.getItem("userPaymentMethod") || "";
+    });
+        function openNav()
     {
         document.getElementById("myNav").style.width = "100%";
     }
