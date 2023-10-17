@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <title>Kontakt | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <script src="js/header.js"></script>
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
         * {
             box-sizing: border-box;
         }
 
-        input[type=text], select, textarea {
+        input[type=text],
+        input[type=email],
+        select,
+        textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -24,7 +24,7 @@
             margin-top: 6px;
             margin-bottom: 16px;
             resize: vertical;
-            background-color: #D8E9D7;
+            background-color: #fff;
         }
 
         .container {
@@ -32,11 +32,6 @@
             background-color: #f2f2f2;
             padding: 20px;
             margin: 0 10%;
-        }
-
-        .hint {
-            color: red;
-            display: none;
         }
     </style>
 </head>
@@ -46,9 +41,9 @@
 
 <div class="container">
     <form>
-        <h4 class="hint">Bitte fülle alle Felder aus!</h4>
         <label for="anrede">Anrede</label>
         <select id="anrede" name="anrede">
+            <option value="none">--Bitte auswählen--</option>
             <option value="Herr">Herr</option>
             <option value="Frau">Frau</option>
             <option value="Keine Angabe">Keine Angabe</option>
@@ -60,8 +55,12 @@
         <label for="lname">Nachname</label>
         <input type="text" id="lname" name="lastname" placeholder="Dein Nachname...">
 
+        <label for="email">Nachname</label>
+        <input type="email" id="email" name="email" placeholder="Deine Email...">
+
         <label for="anliegen">Anliegen</label>
         <select id="anliegen" name="anliegen">
+            <option value="none">--Bitte auswählen--</option>
             <option value="verleih">Verleih</option>
             <option value="ausleih">Ausleih</option>
             <option value="tp">Technisches Problem</option>
@@ -69,15 +68,117 @@
             <option value="sonstiges">Sonstiges</option>
         </select>
 
+
         <label for="subject">Deine Nachricht</label>
         <textarea id="subject" name="subject" placeholder="Schildere uns dein Anliegen."
                   style="height:200px"></textarea>
 
         <div style="text-align: center">
-            <button>Senden</button>
+            <button onclick="validateForm(event)" style="border-radius: 25px">Senden</button>
         </div>
     </form>
 </div>
+
+<div id="send-completed" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" style="text-align: center">
+        <h1>Vielen Dank für deine Nachricht.</h1>
+        <br>
+        <h4>Wir werden uns in Kürze bei dir melden.</h4>
+        <br>
+        <div style="display: flex; margin: 0 25%;">
+            <div style="width: 50%; text-align: center">
+                <a href="kontakt.html">
+                    <button style="width: 90px; border-radius: 25px; background-color: gray">Kontakt</button>
+                </a>
+            </div>
+            <div style="width: 50%; text-align: center">
+                <a href="Startseite.html">
+                    <button style="width: 90px; border-radius: 25px;">Schließen</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function validateForm(event) {
+        event.preventDefault();
+
+        var anrede = document.getElementById('anrede');
+        var fname = document.getElementById('fname');
+        var lname = document.getElementById('lname');
+        var email = document.getElementById('email');
+        var anliegen = document.getElementById('anliegen');
+        var subject = document.getElementById('subject');
+
+        var isValid = true;
+
+        if (anrede.value === 'none') {
+            document.getElementById('anrede').style.backgroundColor = '#ef9a9a';
+            document.getElementById('anrede').style.border = '1px solid #f44336';
+            isValid = false;
+        } else {
+            document.getElementById('anrede').style.backgroundColor = '#a5d6a7';
+            document.getElementById('anrede').style.border = '1px solid #4caf50';
+        }
+
+        if (fname.value.trim() === '') {
+            document.getElementById('fname').style.backgroundColor = '#ef9a9a';
+            document.getElementById('fname').style.border = '1px solid #f44336';
+            isValid = false;
+        } else {
+            document.getElementById('fname').style.backgroundColor = '#a5d6a7';
+            document.getElementById('fname').style.border = '1px solid #4caf50';
+        }
+
+        if (lname.value.trim() === '') {
+            document.getElementById('lname').style.backgroundColor = '#ef9a9a';
+            document.getElementById('lname').style.border = '1px solid #f44336';
+            isValid = false;
+        } else {
+            document.getElementById('lname').style.backgroundColor = '#a5d6a7';
+            document.getElementById('lname').style.border = '1px solid #4caf50';
+        }
+
+        if (email.value.trim() === '') {
+            document.getElementById('email').style.backgroundColor = '#ef9a9a';
+            document.getElementById('email').style.border = '1px solid #f44336';
+            isValid = false;
+        } else {
+            document.getElementById('email').style.backgroundColor = '#a5d6a7';
+            document.getElementById('email').style.border = '1px solid #4caf50';
+        }
+
+        if (anliegen.value === 'none') {
+            document.getElementById('anliegen').style.backgroundColor = '#ef9a9a';
+            document.getElementById('anliegen').style.border = '1px solid #f44336';
+            isValid = false;
+        } else {
+            document.getElementById('anliegen').style.backgroundColor = '#a5d6a7';
+            document.getElementById('anliegen').style.border = '1px solid #4caf50';
+        }
+
+        if (subject.value.trim() === '') {
+            document.getElementById('subject').style.backgroundColor = '#ef9a9a';
+            document.getElementById('subject').style.border = '1px solid #f44336';
+            isValid = false;
+        } else {
+            document.getElementById('subject').style.backgroundColor = '#a5d6a7';
+            document.getElementById('subject').style.border = '1px solid #4caf50';
+        }
+
+        if (isValid) {
+            openSendModal();
+        }
+    }
+
+    function openSendModal() {
+        document.getElementById('send-completed').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
