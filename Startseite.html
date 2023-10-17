@@ -155,7 +155,6 @@
             padding: 5px;
             border: 1px solid #ccc;
         }
-
     </style>
 </head>
 <body>
@@ -290,7 +289,7 @@
 </div>
 
 <div class="section" id="forYouSection">
-    <h2>For you</h2>
+    <h2 style="margin-left: 200px">For you</h2>
     <div class="image-row">
         <div class="image">
             <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px"
@@ -304,8 +303,10 @@
     </div>
 <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
 <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
-<div class="calendar" style="margin-top: 100px">
-    <h2 id="calendarMonth" style="margin-left:50px ">Oktober 2023</h2>
+    <div class="section" id="calendarSection">
+        <div class="calendar" style="position: relative; top: 0; right: 0;">
+            <h2 id="calendarMonth" style="margin-left: 50px">Oktober 2023</h2>
+
     <button onclick="changeMonth('previous')">&#8249;</button>
     <button onclick="changeMonth('next')">&#8250;</button>
     <table>
@@ -511,3 +512,6 @@
 </script>
 </body>
 </html>
+<footer>
+    <h1>Footer</h1>
+</footer>
