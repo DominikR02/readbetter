@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Startseite | readbetter</title>
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
     <style>
         /* CSS zur Zentrierung des großen Bildes */
         .large-image {
@@ -52,6 +52,7 @@
         #showLessSection {
             display: none;
         }
+
         . footer {
             background-color: #4A5F47;
             color: #fff;
@@ -96,12 +97,12 @@
             color: #ffffff;
         }
 
-        @media (min-width: 600px){
+        @media (min-width: 600px) {
             #footer-links {
                 display: flex;
             }
 
-            .footer-container{
+            .footer-container {
                 width: 33%;
             }
 
@@ -114,8 +115,8 @@
             }
         }
 
-        @media (max-width: 601px){
-            .footer-container{
+        @media (max-width: 601px) {
+            .footer-container {
                 text-align: left;
             }
 
@@ -123,7 +124,7 @@
                 display: none;
             }
 
-            #footer-links{
+            #footer-links {
                 width: 90%;
             }
         }
@@ -158,93 +159,8 @@
     </style>
 </head>
 <body>
-<header class="header">
-    <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
-    <nav>
-        <ul>
-            <li><a href="Startseite.html">Startseite</a></li>
-            <li><a href="trends.html">Trending</a></li>
-            <li><a href="neu.html">Neu</a></li>
-            <li>
-                <a href="#">Genre</a>
-                <ul>
-                    <li><a href="#">Comics</a></li>
-                    <li><a href="genre/kochbuecher.html">Kochbücher</a></li>
-                    <li><a href="#">Krimis</a></li>
-                    <li><a href="#">Romane</a></li>
-                </ul>
-            </li>
-            <li><a href="abos.html" style="color: red">Abos</a></li>
-        </ul>
-    </nav>
-
-    <div class="navigation">
-        <div>
-            <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
-        </div>
-        <div class="burgermenu">
-            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
-                 onclick="toggleBurgerMenu()">
-        </div>
-        <div class="search-icon">
-            <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
-                    onclick="toggleSearchMenu()"></a>
-        </div>
-    </div>
-
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlay"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <a href="Startseite.html"><div class="popup-item">Startseite</div></a>
-        <a href="trends.html"><div class="popup-item">Trending</div></a>
-        <a href="#"><div class="popup-item">Neu</div></a>
-        <div class="popup-item">
-            <a onclick="toggleGenreSubmenu()">Genre</a>
-            <div class="genre-submenu">
-                <a><div class="sub-item">Comics</div></a>
-                <a href="genre/kochbuecher.html"><div class="sub-item">Kochbücher</div></a>
-                <a><div class="sub-item">Krimis</div></a>
-                <a><div class="sub-item">Romane</div></a>
-            </div>
-        </div>
-        <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
-        <div class="popup-item popup-icons">
-            <div class="popup-icon">
-                <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
-            </div>
-            <div class="popup-icon">
-                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
-            </div>
-        </div>
-        <div class="popup-item">
-            <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
-        </div>
-    </div>
-
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlaySearch"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenuSearch">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">
-            <h4>Suche</h4>
-        </div>
-        <div class="popup-item">Titel</div>
-        <input style="text-align: center" placeholder="Titel" type="text">
-        <div class="popup-item">Autor</div>
-        <input style="text-align: center" placeholder="Autor" type="text">
-        <div class="popup-item">Genre</div>
-        <input style="text-align: center" placeholder="Genre" type="text">
-        <div class="popup-item">Ort</div>
-        <input style="text-align: center" placeholder="Ort" type="text">
-        <button class="searchButton">Suchen</button>
-    </div>
+<header>
+    <h1>Header</h1>
 </header>
 
 <div class="container">
@@ -301,215 +217,215 @@
 
         </div>
     </div>
-<!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
-<!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
+    <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
+    <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
     <div class="section" id="calendarSection">
         <div class="calendar" style="position: relative; top: 0; right: 0;">
             <h2 id="calendarMonth" style="margin-left: 50px">Oktober 2023</h2>
 
-    <button onclick="changeMonth('previous')">&#8249;</button>
-    <button onclick="changeMonth('next')">&#8250;</button>
-    <table>
-        <thead>
-        <tr>
-            <th>Mo</th>
-            <th>Di</th>
-            <th>Mi</th>
-            <th>Do</th>
-            <th>Fr</th>
-            <th>Sa</th>
-            <th>So</th>
-        </tr>
-        </thead>
-        <tbody id="calendarBody">
-        <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
-        <!-- Zum Beispiel: -->
-        <tr>
-            <td>02</td>
-            <td>03</td>
-            <td>04</td>
-            <td>05</td>
-            <td>06</td>
-            <td>07</td>
-            <td>08</td>
-        </tr>
-        </tr>
-        <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
-        </tbody>
-        <tr>
-            <td>09</td>
-            <td>10</td>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-            <td>15</td>
+            <button onclick="changeMonth('previous')">&#8249;</button>
+            <button onclick="changeMonth('next')">&#8250;</button>
+            <table>
+                <thead>
+                <tr>
+                    <th>Mo</th>
+                    <th>Di</th>
+                    <th>Mi</th>
+                    <th>Do</th>
+                    <th>Fr</th>
+                    <th>Sa</th>
+                    <th>So</th>
+                </tr>
+                </thead>
+                <tbody id="calendarBody">
+                <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
+                <!-- Zum Beispiel: -->
+                <tr>
+                    <td>02</td>
+                    <td>03</td>
+                    <td>04</td>
+                    <td>05</td>
+                    <td>06</td>
+                    <td>07</td>
+                    <td>08</td>
+                </tr>
+                </tr>
+                <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+                </tbody>
+                <tr>
+                    <td>09</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
 
-        </tr>
-        </tbody>
-        <tr>
-            <td>16</td>
-            <td>17</td>
-            <td>18</td>
-            <td>19</td>
-            <td>20</td>
-            <td>21</td>
-            <td>22</td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
 
-        </tr>
-        </tbody>
-        <tr>
-            <td>23</td>
-            <td>24</td>
-            <td>25</td>
-            <td>26</td>
-            <td>27</td>
-            <td>28</td>
-            <td>29</td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
 
-        </tr>
-        </tbody>
-        <tr>
-            <td>30</td>
-            <td>31</td>
-            <td>01</td>
-            <td>02</td>
-            <td>03</td>
-            <td>04</td>
-            <td>05</td>
+                </tr>
+                </tbody>
+                <tr>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>01</td>
+                    <td>02</td>
+                    <td>03</td>
+                    <td>04</td>
+                    <td>05</td>
 
-        </tr>
-    </table>
-    <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
-</div>
-</div>
-<!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
-<script>
-    const weiterlesenButton = document.getElementById('weiterlesen-button');
-    const zuklappenButton = document.getElementById('zuklappen-button');
-    const hiddenText = document.getElementById('hidden-text');
+                </tr>
+            </table>
+            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
+        </div>
+    </div>
+    <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
+    <script>
+        const weiterlesenButton = document.getElementById('weiterlesen-button');
+        const zuklappenButton = document.getElementById('zuklappen-button');
+        const hiddenText = document.getElementById('hidden-text');
 
-    weiterlesenButton.addEventListener('click', () => {
-        if (hiddenText.style.display === 'none') {
-            hiddenText.style.display = 'block';
-            weiterlesenButton.style.display = 'none';
-            zuklappenButton.style.display = 'block';
-        }
-    });
-
-    zuklappenButton.addEventListener('click', () => {
-        if (hiddenText.style.display === 'block') {
-            hiddenText.style.display = 'none';
-            weiterlesenButton.style.display = 'block';
-            zuklappenButton.style.display = 'none';
-        }
-    });
-    const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
-    let currentMainImageIndex = 0;
-
-    function changeMainImage(direction) {
-        if (direction === 'next') {
-            currentMainImageIndex++;
-            if (currentMainImageIndex >= mainImages.length) {
-                currentMainImageIndex = 0;
+        weiterlesenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'none') {
+                hiddenText.style.display = 'block';
+                weiterlesenButton.style.display = 'none';
+                zuklappenButton.style.display = 'block';
             }
-        } else if (direction === 'previous') {
-            currentMainImageIndex--;
-            if (currentMainImageIndex < 0) {
-                currentMainImageIndex = mainImages.length - 1;
+        });
+
+        zuklappenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'block') {
+                hiddenText.style.display = 'none';
+                weiterlesenButton.style.display = 'block';
+                zuklappenButton.style.display = 'none';
             }
+        });
+        const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
+        let currentMainImageIndex = 0;
+
+        function changeMainImage(direction) {
+            if (direction === 'next') {
+                currentMainImageIndex++;
+                if (currentMainImageIndex >= mainImages.length) {
+                    currentMainImageIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMainImageIndex--;
+                if (currentMainImageIndex < 0) {
+                    currentMainImageIndex = mainImages.length - 1;
+                }
+            }
+
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = mainImages[currentMainImageIndex];
         }
 
-        const mainImage = document.getElementById('mainImage');
-        mainImage.src = mainImages[currentMainImageIndex];
-    }
+        // Beispiel-Daten für Bücher
+        const books = [
+            "Buch 1",
+            "Buch 2",
+            "Buch 3",
+            "Buch 4",
+            "Buch 5",
+            "Buch 6",
+            "Buch 7",
+            "Buch 8",
+            "Buch 9",
+            "Buch 10"
+        ];
 
-    // Beispiel-Daten für Bücher
-    const books = [
-        "Buch 1",
-        "Buch 2",
-        "Buch 3",
-        "Buch 4",
-        "Buch 5",
-        "Buch 6",
-        "Buch 7",
-        "Buch 8",
-        "Buch 9",
-        "Buch 10"
-    ];
+        // Funktion zum Anzeigen von 5 weiteren Büchern
+        function showMoreBooks(containerId) {
+            const container = document.getElementById(containerId);
+            const bookList = container.querySelector('div');
+            const currentBooks = bookList.children.length;
+            const remainingBooks = books.slice(currentBooks, currentBooks + 5);
 
-    // Funktion zum Anzeigen von 5 weiteren Büchern
-    function showMoreBooks(containerId) {
-        const container = document.getElementById(containerId);
-        const bookList = container.querySelector('div');
-        const currentBooks = bookList.children.length;
-        const remainingBooks = books.slice(currentBooks, currentBooks + 5);
-
-        for (const book of remainingBooks) {
-            const bookElement = document.createElement('p');
-            bookElement.textContent = book;
-            bookList.appendChild(bookElement);
-        }
-    }
-
-    // Initial 5 Bücher anzeigen
-    showMoreBooks('forYouBooks');
-
-    // Kalender-Funktionen
-    const months = [
-        "Januar", "Februar", "März", "April", "Mai", "Juni",
-        "Juli", "August", "September", "Oktober", "November", "Dezember"
-    ];
-    let currentMonthIndex = 10; // Start mit Oktober
-
-    function changeMonth(direction) {
-        if (direction === 'next') {
-            currentMonthIndex++;
-            if (currentMonthIndex >= months.length) {
-                currentMonthIndex = 0;
-            }
-        } else if (direction === 'previous') {
-            currentMonthIndex--;
-            if (currentMonthIndex < 0) {
-                currentMonthIndex = months.length - 1;
+            for (const book of remainingBooks) {
+                const bookElement = document.createElement('p');
+                bookElement.textContent = book;
+                bookList.appendChild(bookElement);
             }
         }
 
-        // Tage für den ausgewählten Monat generieren
+        // Initial 5 Bücher anzeigen
+        showMoreBooks('forYouBooks');
+
+        // Kalender-Funktionen
+        const months = [
+            "Januar", "Februar", "März", "April", "Mai", "Juni",
+            "Juli", "August", "September", "Oktober", "November", "Dezember"
+        ];
+        let currentMonthIndex = 10; // Start mit Oktober
+
+        function changeMonth(direction) {
+            if (direction === 'next') {
+                currentMonthIndex++;
+                if (currentMonthIndex >= months.length) {
+                    currentMonthIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMonthIndex--;
+                if (currentMonthIndex < 0) {
+                    currentMonthIndex = months.length - 1;
+                }
+            }
+
+            // Tage für den ausgewählten Monat generieren
+            generateCalendarDays();
+        }
+
+        function generateCalendarDays() {
+            const calendarMonth = document.getElementById('calendarMonth');
+            const calendarBody = document.getElementById('calendarBody');
+            calendarMonth.textContent = months[currentMonthIndex];
+            calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
+
+            // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
+            // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
+            // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
+        }
+
+        // Initialen Kalender für Oktober generieren
         generateCalendarDays();
-    }
+        const mainImage = document.getElementById('mainImage');
+        const slideshowImages = [
+            'pic/buecher/Startseite.jpg',
+            'pic/buecher/diashow.jpg',
+            'pic/buecher/diashow2.jpg'
+        ];
+        let currentSlide = 0;
 
-    function generateCalendarDays() {
-        const calendarMonth = document.getElementById('calendarMonth');
-        const calendarBody = document.getElementById('calendarBody');
-        calendarMonth.textContent = months[currentMonthIndex];
-        calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
+        function startSlideshow() {
+            setInterval(function () {
+                currentSlide = (currentSlide + 1) % slideshowImages.length;
+                mainImage.src = slideshowImages[currentSlide];
+            }, 6000); // Wechsel alle 6 Sekunden (6000 Millisekunden)
+        }
 
-        // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
-        // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
-        // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
-    }
-
-    // Initialen Kalender für Oktober generieren
-    generateCalendarDays();
-    const mainImage = document.getElementById('mainImage');
-    const slideshowImages = [
-        'pic/buecher/Startseite.jpg',
-        'pic/buecher/diashow.jpg',
-        'pic/buecher/diashow2.jpg'
-    ];
-    let currentSlide = 0;
-
-    function startSlideshow() {
-        setInterval(function () {
-            currentSlide = (currentSlide + 1) % slideshowImages.length;
-            mainImage.src = slideshowImages[currentSlide];
-        }, 6000); // Wechsel alle 6 Sekunden (6000 Millisekunden)
-    }
-
-    // Die Diashow starten, wenn die Seite geladen ist
-    window.addEventListener('load', startSlideshow);
-</script>
+        // Die Diashow starten, wenn die Seite geladen ist
+        window.addEventListener('load', startSlideshow);
+    </script>
 </body>
 </html>
 <footer>

@@ -1,3 +1,72 @@
+.columns {
+    padding: 8px;
+}
+
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.price:hover .header-pricing {
+    background-color: #4A5F47;
+}
+
+
+.price .header-pricing {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+.price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
+
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #4A5F47;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    /*text-align: center;
+    text-decoration: none;*/
+    font-size: 18px;
+}
+
+/* Media Query für schmale Bildschirme (z.B. Mobilgeräte) 920 */
+@media (max-width: 1000px) {
+    .content {
+        display: block;
+    }
+    .columns {
+        width: 100%;
+    }
+}
+
+/* Media Query für ausreichend breite Bildschirme */
+@media (min-width: 1001px) {
+    .content {
+        display: flex;
+    }
+    .columns {
+        width: 33.33%;
+    }
+}
+
 .modal-content {
     text-align: center;
 }
@@ -11,8 +80,9 @@
 }
 
 input {
-    padding: 10px;
-    width: 100%;
+    padding: 5px;
+    width: 95%;
+    margin-right: 5%;
     font-size: 17px;
     border: 1px solid #aaaaaa;
 }
