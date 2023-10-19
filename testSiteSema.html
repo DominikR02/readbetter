@@ -5,6 +5,7 @@
     <title>Der Fall Bruno | readbetter</title>
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/ratingstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/modal.css">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
 
@@ -12,161 +13,26 @@
     <script src="../js/footer.js"></script>
 
     <style>
-        .star {
-            font-size: 24px;
-        }
+    .wrapper {
+	position: relative;
+	height: 100px;
+	width: 100%;
+}
+.rock {
+	position: absolute;
+	top:0; left:0;
+	width: 100%;
+	transition: left 3s 3s;
+}
 
-        .star:hover {
-            cursor: pointer;
-            content: "\2605";
-        }
+.slideright {
+	left: 100%;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        .tab-menu {
-            display: flex;
-            background-color: #4A5F47;
-            border-radius: 10px;
-            overflow: hidden;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .tab-item {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .tab-item:hover {
-            background-color: #35483E;
-        }
-
-        .tab-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ccc;
-        }
-
-        th {
-            color: black; /* Schriftfarbe für Header-Zellen */
-            font-weight: bold; /* Fettschrift für Header-Zellen */
-            background-color: transparent; /* Hintergrundfarbe für Header-Zellen entfernen */
-        }
-
-        td {
-            background-color: white; /* Hintergrundfarbe für Datenzellen */
-            color: black; /* Schriftfarbe für Datenzellen */
-            transition: background-color 0.3s; /* Animation beim Hover-Effekt */
-        }
-
-        /* Hover-Effekt */
-        tr:hover td {
-            background-color: #f2f2f2; /* Hintergrundfarbe für Datenzellen beim Hover */
-        }
-
-        .button {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #4A5F47;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s, text-decoration 0.3s;
-        }
-
-        .green-button:hover {
-            background-color: #35483E;
-            text-decoration: underline;
-        }
-
-        .grey-button:hover {
-            background-color: #999;
-            text-decoration: none;
-        }
-
-        /* Stil für den grünen Button "Jetzt ausleihen" */
-        .green-button {
-            background-color: #4A5F47;
-        }
-
-        /* Stil für den grauen Button "Jetzt ausleihen" */
-        .grey-button {
-            background-color: #999;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0); /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-        }
-
-        /* Modal Content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-        /* The Close Button */
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        #comment {
-            width: 500px; /* Ändern Sie die Breite nach Ihren Wünschen */
-            height: 150px; /* Ändern Sie die Höhe nach Ihren Wünschen */
-
-        }
+.rock img {
+	position: absolute;
+	left:-200px;
+}
 
 
     </style>
@@ -175,197 +41,38 @@
 
 <body>
 
-<h1>Header</h1>
-
-
-<div style="display: flex; margin: 20px;">
-    <img src="../pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" style="width: 20%">
-    <div style="margin: 0 20px">
-        <div class="title-container">
-            <h1>Der Fall Bruno</h1>
-            <div class="rating">
-                <span class="star">⭐️</span>
-                <span class="star">⭐️</span>
-                <span class="star">⭐️</span>
-                <span class="star">⭐️</span>
-                <span class="empty.star">&#9734;️</span>
-            </div>
-
-            <!-- Trigger/Open The Modal -->
-            <a style="margin-left:20px" id="myBtn"><h4>Hier bewerten</h4></a>
-
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h4>Schreibe jetzt deine Bewertung:</h4>
-                    <div class="rate">
-                        <input type="radio" id="star5" name="rate" value="5"/>
-                        <label for="star5" title="text">5 stars</label>
-                        <input type="radio" id="star4" name="rate" value="4"/>
-                        <label for="star4" title="text">4 stars</label>
-                        <input type="radio" id="star3" name="rate" value="3"/>
-                        <label for="star3" title="text">3 stars</label>
-                        <input type="radio" id="star2" name="rate" value="2"/>
-                        <label for="star2" title="text">2 stars</label>
-                        <input type="radio" id="star1" name="rate" value="1"/>
-                        <label for="star1" title="text">1 star</label>
-                    </div>
-                    <img src="../pic/Profilbilder/rainerzufall.jpg"
-                         width="200" height="200" alt="Beschreibung des Bildes">
-
-                    <textarea id="comment" placeholder="Dein Kommentar"></textarea>
-
-                    <button id="send">Senden</button>
-
-                </div>
-
-            </div>
-        </div>
-
-
-        <div style="display: flex">
-            <div style="width: 300px">
-                <p>Autor: Günter Macher</p>
-                <p>Genre: Krimis</p>
-                <p>Veröffentlichung: 14.01.2013</p>
-                <p>ISBN: 9784040101194</p>
-                <img src="../pic/leseprobe.png" alt="Leseprobe-Bild" style="width: 50px; height: 50px;" onclick="openWin()">
-                <p><a
-                        class="button green-button">Verleihen</a>
-                </p>
-            </div>
-            <div style="max-width: 800px">
-                <h4>Inhalt</h4>
-                <p>„Und dann hat er sie tot gemacht…“ Bruno, ein aufgeweckter zwölfjähriger Junge mit Downsyndrom, wird
-                    Zeuge eines Mordes.</p>
-                <a id="weiterlesen-button">Weiterlesen...</a>
-                <div id="hidden-text" style="display: none;">
-                    <p>Die Idylle des Bayerischen Waldes, offenbart ein verstörendes Mosaik von Inzest und Tod.
-                        Obwohl eine Leiche nicht zu finden ist und trotz seiner Zweifel nimmt Kommissar Geißler die
-                        Ermittlungen auf.
-                        Er glaubt sich der Lösung schon nahe, als ein fundamentaler Irrtum beinahe zur Katastrophe
-                        führt.</p>
-                </div>
-                <a id="zuklappen-button" style="display: none;">Zuklappen</a>
-            </div>
-        </div>
+<div class="wrapper">
+    <div class="rock">
+        <img src="../pic/Neu.png" width="180" height="100" alt="Blaue Rakete">
     </div>
 </div>
 
 
-<div class="tab-menu">
-    <div class="tab-item" onclick="showTab('exemplare')">Exemplare</div>
-    <div class="tab-item" onclick="showTab('bewertung')">Bewertung</div>
-</div>
-
-<div id="exemplare-content" class="tab-content">
-
-    <table>
-
-        <thead>
-        <tr>
-            <th>Mediennummer</th>
-            <th>Verleiher</th>
-            <th>Standort</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>12345</td>
-            <td>Semanur Özdemir</td>
-            <td>Frankfurt am Main</td>
-            <td>Verfügbar</td>
-            <td><a href="" class="button green-button">Jetzt ausleihen</a></td>
-        </tr>
-        <tr>
-            <td>67890</td>
-            <td>Dominik Richter</td>
-            <td>Mannheim</td>
-            <td>Ausgeliehen</td>
-            <td><a class="button grey-button">Jetzt ausleihen</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-<div id="bewertung-content" class="tab-content hidden">
-
-    <h4>
-        Rainer Zufall
-    </h4>
-    <img src="../pic/Profilbilder/rainerzufall.jpg"
-         width="200" height="200" alt="Beschreibung des Bildes">
-
-</div>
-
-
 <script>
-    // JavaScript to show/hide the hidden text and toggle buttons
-    const weiterlesenButton = document.getElementById('weiterlesen-button');
-    const zuklappenButton = document.getElementById('zuklappen-button');
-    const hiddenText = document.getElementById('hidden-text');
+let flyIn = document.querySelector(".rock");
 
-    weiterlesenButton.addEventListener('click', () => {
-        if (hiddenText.style.display === 'none') {
-            hiddenText.style.display = 'block';
-            weiterlesenButton.style.display = 'none';
-            zuklappenButton.style.display = 'block';
-        }
-    });
+const options = {
+	root: null,
+	rootMargin: "0px",
+	threshold: 0.7,
+};
 
-    zuklappenButton.addEventListener('click', () => {
-        if (hiddenText.style.display === 'block') {
-            hiddenText.style.display = 'none';
-            weiterlesenButton.style.display = 'block';
-            zuklappenButton.style.display = 'none';
-        }
-    });
+const callback = function (entries, observer) {
+	let observed = entries[0];
+	if (observed.isIntersecting) {
+		flyIn.classList.add ("slideright");
+	}
+}
 
+const observer = new IntersectionObserver (callback, options);
 
-    function showTab(tabName) {
-        var tabs = document.getElementsByClassName('tab-content');
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.add('hidden');
-        }
-        document.getElementById(tabName + '-content').classList.remove('hidden');
-    }
-
-    // Get the modal
-    var modal = document.getElementById('myModal');
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+if (flyIn) {
+	observer.observe (flyIn);
+}
 
 </script>
-
-
+</body>
+</html>
 <footer>
     <h1>Footer</h1>
 </footer>
-</body>
-</html>
