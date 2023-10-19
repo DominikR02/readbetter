@@ -21,8 +21,12 @@ body {
 
 #login input,
 #signUp input {
-    width: 30%;
+    width: 50%;
     text-align: center;
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid #aaaaaa;
+    border-radius: 25px;
 }
 
 #login button,
