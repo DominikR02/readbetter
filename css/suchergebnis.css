@@ -1,0 +1,82 @@
+/* Füge deine bestehenden CSS-Stile hier ein */
+
+.filter-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    text-align: left;
+    padding: 1rem;
+    background-color: rgba(74, 95, 71, 0.5);
+}
+
+#genreFilter button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#genreFilter button:hover,
+#genreFilter button.selected:hover {
+    background-color: #4A7F47;
+    color: #fff;
+    text-decoration: unset;
+}
+
+#genreFilter button.selected {
+    background-color: #4A5F47;
+    color: white;
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+main a {
+    color: #000;
+}
+
+.book {
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    max-width: 350px;
+    display: flex;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.book:hover {
+    background-color: #f0f0f0;
+}
+
+img {
+    max-width: 30%;
+    height: auto;
+}
+
+.beschreibung {
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* ------------ Sterne --------------*/
+
+.star-full {
+    margin-right: 5px;
+    color: #ffd700; /* Gelbe Farbe für Sterne */
+    font-size: 24px;
+}
+
+.star-empty {
+    margin-right: 5px;
+    font-size: 24px;
+}

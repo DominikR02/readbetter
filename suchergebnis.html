@@ -2,9 +2,211 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suchergebnisse | readbetter</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/suchergebnis.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
 <body>
+<div class="filter-container">
+    <div id="genreFilter">
+        <button onclick="filterBooks('all')" data-genre="all" class="selected">Alle Genre</button>
+        <button onclick="filterBooks('comic')" data-genre="comic">Comic</button>
+        <button onclick="filterBooks('kochbuecher')" data-genre="kochbuecher">Kochbücher</button>
+        <button onclick="filterBooks('krimi')" data-genre="krimi">Krimi</button>
+        <button onclick="filterBooks('romane')" data-genre="romane">Romane</button>
+        <!-- Füge hier weitere Genres hinzu -->
+    </div>
+</div>
 
+<main>
+    <a href="books/derFallBruno.html">
+        <div class="book krimi" id="book1">
+            <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Buchcover 1">
+            <div class="beschreibung">
+                <h2>Der Fall Bruno</h2>
+                <h4>Günter Macher</h4>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-empty">★</span>
+            </div>
+        </div>
+    </a>
+
+    <a href="books/meinKochbuch.html">
+        <div class="book kochbuecher" id="book2">
+            <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover 2">
+            <div class="beschreibung">
+                <h2>Mein Kochbuch</h2>
+                <h4>Bruno Walters</h4>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-empty">★</span>
+                <span class="star-empty">★</span>
+            </div>
+        </div>
+    </a>
+
+    <a>
+        <div class="book krimi" id="book3">
+            <img src="pic/buecher/im-wald.jpg" alt="Buchcover 3">
+            <div class="beschreibung">
+                <h2>Im Wald</h2>
+                <h4>Nele Neuhaus</h4>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+            </div>
+        </div>
+    </a>
+
+    <a>
+        <div class="book romane" id="book4">
+            <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Buchcover 4">
+            <div class="beschreibung">
+                <h2>The Armour of Light</h2>
+                <h4>Ken Follet</h4>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-empty">★</span>
+                <span class="star-empty">★</span>
+            </div>
+        </div>
+    </a>
+
+    <a>
+    <div class="book kochbuecher" id="book5">
+        <img src="pic/buecher/kochbuecher/dasGrosseGemüseKochbuch.jpg" alt="Buchcover 5">
+        <div class="beschreibung">
+            <h2>Das große Gemüsekochbuch</h2>
+            <h4>Bruno Walters</h4>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-empty">★</span>
+        </div>
+    </div>
+    </a>
+
+    <a>
+    <div class="book comic" id="book6">
+        <img src="pic/buecher/images.jpg" alt="Buchcover 6">
+        <div class="beschreibung">
+            <h2>Invaders</h2>
+            <h4>Roy Buscema</h4>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-empty">★</span>
+            <span class="star-empty">★</span>
+            <span class="star-empty">★</span>
+        </div>
+    </div>
+    </a>
+
+    <a>
+    <div class="book romane" id="book7">
+        <img src="pic/buecher/20220803_224434.jpg" alt="Buchcover 7">
+        <div class="beschreibung">
+            <h2>Am Hof des Königs</h2>
+            <h4>Bruno Mars</h4>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-empty">★</span>
+            <span class="star-empty">★</span>
+        </div>
+    </div>
+    </a>
+
+    <a>
+    <div class="book krimi" id="book8">
+        <img src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="Buchcover 8">
+        <div class="beschreibung">
+            <h2>Stinkender Verdacht</h2>
+            <h4>Ann-Kathrin Zellner</h4>
+            <span class="star-full">★</span>
+            <span class="star-empty">★</span>
+            <span class="star-empty">★</span>
+            <span class="star-empty">★</span>
+            <span class="star-empty">★</span>
+        </div>
+    </div>
+    </a>
+
+    <a>
+    <div class="book kochbuecher" id="book9">
+        <img src="pic/buecher/kochbuecher/Rezeptbuch-selbst-gemacht-Hardcover-17x24r-sw-Kalligrafie-DIY-Rezepte-COVER-Rosa.jpg"
+             alt="Buchcover 9">
+        <div class="beschreibung">
+            <h2>Selbst Gemacht</h2>
+            <h4>Anna-Marie Zimmer</h4>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+        </div>
+    </div>
+    </a>
+
+    <a>
+    <div class="book comic" id="book10">
+        <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Buchcover 10">
+        <div class="beschreibung">
+            <h2>Spiderman - no way home</h2>
+            <h4>Marvel Comics Group</h4>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-empty">★</span>
+        </div>
+    </div>
+    </a>
+
+    <a>
+        <div class="book romane" id="book11">
+            <img src="pic/buecher/images%20(1).jpg"
+                 alt="Buchcover 11">
+            <div class="beschreibung">
+                <h2>Die Dame</h2>
+                <h4>Westwood Hall</h4>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-empty">★</span>
+                <span class="star-empty">★</span>
+            </div>
+        </div>
+    </a>
+
+    <a>
+        <div class="book kochbuecher" id="book12">
+            <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Buchcover 12">
+            <div class="beschreibung">
+                <h2>Zwei in der Küche</h2>
+                <h4>Annalena Bokmeier</h4>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-empty">★</span>
+                <span class="star-empty">★</span>
+                <span class="star-empty">★</span>
+            </div>
+        </div>
+    </a>
+    <!-- Füge hier weitere Bücher hinzu -->
+
+</main>
+
+<script src="js/suchergebnis.js"></script>
 </body>
 </html>
