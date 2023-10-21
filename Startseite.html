@@ -36,6 +36,28 @@
 
         /* CSS für die Bilder mit Titel */
         .image-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .book {
+            text-align: center;
+            flex: 0 0 calc(20% - 20px); /* Fünf Bücher pro Reihe (20% Breite) mit 20px Abstand */
+            margin-bottom: 20px;
+        }
+        .book-link {
+            text-decoration: none; /* Entfernt die unterstrichene Link-Dekoration */
+            color: #000; /* Ändert die Farbe des Links, um sie sichtbar zu machen */
+            display: block; /* Macht den Link zu einem Blockelement, um das Layout nicht zu beeinflussen */
+        }
+
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .book-info {
             text-align: center;
         }
 
@@ -88,62 +110,23 @@
             width: 50px;
         }
 
-        .footer-container {
-            font-size: 20px;
-            margin: 20px;
-        }
-
-        .footer-container a {
-            color: #ffffff;
-        }
-
-        @media (min-width: 600px) {
-            #footer-links {
-                display: flex;
-            }
-
-            .footer-container {
-                width: 33%;
-            }
-
-            #left-footer-container {
-                margin-left: 10%;
-            }
-
-            #footer-logo {
-                display: flex;
-            }
-        }
-
-        @media (max-width: 601px) {
-            .footer-container {
-                text-align: left;
-            }
-
-            #footer-logo {
-                display: none;
-            }
-
-            #footer-links {
-                width: 90%;
-            }
-        }
 
         .calendar {
             text-align: center;
             float: right;
-            margin-left: 20px;
-            max-width: 30%;
+            max-width: 25%; /* Reduziere die Breite des Kalenders */
             background-color: #f5f5f5;
-            padding: 10px;
+            padding: 5px; /* Reduziere den Innenabstand des Kalenders */
             border: 1px solid #ccc;
+            margin: 10px; /* Füge einen äußeren Abstand um den Kalender hinzu */
         }
 
         .calendar h2 {
-            font-size: 18px;
+            font-size: 16px; /* Reduziere die Schriftgröße des Monats */
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin: 0; /* Entferne den oberen und unteren Abstand des Monats */
         }
 
         .calendar table {
@@ -152,9 +135,37 @@
         }
 
         .calendar th,
+            /* Stil für die Kalenderzellen (Tage) */
         .calendar td {
-            padding: 5px;
+            padding: 2px; /* Reduzieren Sie den Abstand zwischen den Zellen */
             border: 1px solid #ccc;
+            font-size: 14px; /* Reduzieren Sie die Schriftgröße in den Zellen */
+            transition: transform 0.2s; /* Fügen Sie einen Übergang für den Zoom-Effekt hinzu */
+        }
+
+        /* Zoom-Effekt bei Hover */
+        .calendar td:hover {
+            transform: scale(1.1); /* Leichte Vergrößerung */
+        }
+        /* Stil für den runden Kasten um die Bücher */
+        .book-container {
+            border: 2px solid #4A5F47; /* Grüne Linien */
+            background-color: #fff; /* Weißer Hintergrund */
+            border-radius: 10px; /* Runde Ecken, je nach Bedarf anpassen */
+            margin: 10px; /* Abstand um die Bücher herum, je nach Bedarf anpassen */
+            padding: 10px; /* Innenabstand im Kasten, je nach Bedarf anpassen */
+        }
+
+        /* Stil für die Bücher */
+        .book {
+            margin: 10px;
+            transition: box-shadow 0.3s, transform 0.3s; /* Sanfter Übergang für Schatten und Zoom */
+        }
+
+        /* Schatten- und Zoom-Effekt bei Hover */
+        .book:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten hinzufügen */
+            transform: scale(1.05); /* Leichte Vergrößerung */
         }
     </style>
 </head>
@@ -173,7 +184,7 @@
     <!-- Hier wird der neue Abschnitt "Was ist readbetter?" eingefügt -->
     <div class="section" id="aboutUsSection" style="font-size: 20px;text-align: left; max-width: 50%; margin: 0 auto;">
         <h2>Was ist readbetter?</h2>
-        <p>Tauche ein in die Zukunft des Lesens! Bei ReadBetter bieten wir dir eine innovative Plattform, die das Lesen
+        <p>Tauche ein in die Zukunft des Lesens! Bei readbetter bieten wir dir eine innovative Plattform, die das Lesen
             revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
             <br>
             <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier
@@ -186,13 +197,13 @@
                 <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder
                 verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der
                 Auswahl ihres nächsten Buchs zu helfen.
-                <br> <strong>Teile und Verleihe: </strong> Mit ReadBetter wird das Teilen und Verleihen von Büchern so
+                <br> <strong>Teile und Verleihe: </strong> Mit readbetter wird das Teilen und Verleihen von Büchern so
                 einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen.
                 Gemeinschaftliches Lesen war noch nie so zugänglich.
                 <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche
                 Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare
-                Geld und Ressourcen mit ReadBetter.
-                Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit ReadBetter und erlebe Lesen 4.0
+                Geld und Ressourcen mit readbetter.
+                Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit readbetter und erlebe Lesen 4.0
                 wie nie zuvor.
             </p>
         </div>
@@ -204,24 +215,52 @@
     <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
 </div>
 
-<div class="section" id="forYouSection">
-    <h2 style="margin-left: 200px">For you</h2>
-    <div class="image-row">
-        <div class="image">
-            <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px"
-                 height="283px">
-            <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="283px">
+<div class="section" id="forYouSection" style="margin-top: 60px;">
+    <div class="book-container">
+        <h2 style="margin-left: 40px">Für dich empfohlen</h2>
+        <div class="image-row">
+            <div class="book">
+            <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px" height="283px">
+            <div class="book-info">
+                <div class="book-title">Der Fall Bruno</div>
+                <div class="book-author">Günter Macher</div>
+            </div>
+        </div>
+        <div class="book">
+            <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="300px">
+            <div class="book-info">
+                <div class="book-title">The Armour of Light</div>
+                <div class="book-author">Ken Follett</div>
+            </div>
+        </div>
+        <div class="book">
             <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
+            <div class="book-info">
+                <div class="book-title">Spider-Man no way home</div>
+                <div class="book-author">Marvel</div>
+            </div>
+        </div>
+        <div class="book">
             <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
+            <div class="book-info">
+                <div class="book-title">Mein Kochbuch</div>
+                <div class="book-author">Laura Newman</div>
+            </div>
+        </div>
+        <div class="book">
             <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px" height="283px">
-
+            <div class="book-info">
+                <div class="book-title">Zwei in der Küche: Das Kochbuch für glückliche Paare</div>
+                <div class="book-author">Annalena Bokmeier </div>
+            </div>
         </div>
     </div>
+</div>
     <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
     <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
     <div class="section" id="calendarSection">
         <div class="calendar" style="position: relative; top: 0; right: 0;">
-            <h2 id="calendarMonth" style="margin-left: 50px">Oktober 2023</h2>
+            <h2 id="calendarMonth" style="margin-left: 20px">Oktober 2023</h2>
 
             <button onclick="changeMonth('previous')">&#8249;</button>
             <button onclick="changeMonth('next')">&#8250;</button>
@@ -405,6 +444,19 @@
             // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
             // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
         }
+        // JavaScript-Code für den Zoom-Effekt im Kalender
+        const calendarCells = document.querySelectorAll('.calendar td');
+
+        // Eventlistener hinzufügen, um den Zoom-Effekt bei Hover auszulösen
+        calendarCells.forEach((cell) => {
+            cell.addEventListener('mouseenter', () => {
+                cell.style.transform = 'scale(1.1)';
+            });
+
+            cell.addEventListener('mouseleave', () => {
+                cell.style.transform = 'scale(1)';
+            });
+        });
 
         // Initialen Kalender für Oktober generieren
         generateCalendarDays();
@@ -428,6 +480,4 @@
     </script>
 </body>
 </html>
-<footer>
-    <h1>Footer</h1>
-</footer>
+
