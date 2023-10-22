@@ -1,10 +1,8 @@
 .trends {
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .toppicks-books {
-    width: 33%;
     padding: 2%;
     text-align: center;
 }
@@ -32,8 +30,6 @@
 }
 
 .books-container {
-    padding: 20px;
-    display: flex;
     align-items: center; /* Zentrieren Sie die Inhalte horizontal */
     text-align: center;
 }
@@ -49,7 +45,6 @@
     border: 2px solid #4A5F47; /* #ddd*/
     border-radius: 30px;
     box-shadow: 0 8px 8px rgba(74, 95, 71, 1);
-    display: flex;
 }
 
 .img-books {
@@ -63,7 +58,9 @@
     margin-bottom: 20px;
 }
 
-@media (min-width: 1500px) {
+/* Media-Query Genre
+/* Breite Bildschirme*/
+@media (min-width: 1400px) {
     .trends {
         display: flex;
     }
@@ -71,14 +68,99 @@
     .genre {
         width: 48%;
     }
+
+    .books-container {
+        display: flex;
+    }
+
+    .books-container a {
+        width: 33.33%;
+    }
 }
 
-@media (max-width: 1501px) {
+/*schmale Bildschirme*/
+@media (max-width: 1400px) {
     .trends {
         display: block;
     }
 
     .genre {
         width: 98%;
+    }
+
+    .books-container {
+        display: flex;
+    }
+
+    .books-container a {
+        width: 33.33%;
+    }
+}
+
+/*noch schmalere Bildschirme*/
+@media (max-width: 700px) {
+    .trends {
+        display: block;
+    }
+
+    .genre {
+        width: 98%;
+    }
+
+    .books-container {
+        display: block;
+    }
+
+    .books-container a {
+        width: 100%;
+    }
+}
+
+/* Media-Query Top-books
+/* Breite Bildschirme*/
+@media (min-width: 1400px) {
+    .general-trends {
+        display: flex;
+    }
+
+    .toppicks-books {
+        width: 33.33%;
+    }
+
+    .book-info-top {
+        display: flex;
+        text-align: left;
+    }
+}
+
+/*schmale Bildschirme*/
+@media (max-width: 1401px) {
+    .general-trends {
+        display: flex;
+    }
+
+    .toppicks-books {
+        width: 33.33%;
+    }
+
+    .book-info-top {
+        display: block;
+        text-align: center;
+    }
+}
+
+/*noch schmalere Bildschirme*/
+@media (max-width: 800px) {
+    .general-trends {
+        display: block;
+    }
+
+    .toppicks-books {
+        width: 100%;
+    }
+
+    .book-info-top {
+        display: flex;
+        text-align: left;
     }
 }

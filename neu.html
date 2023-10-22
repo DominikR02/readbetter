@@ -9,203 +9,84 @@
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
-    <script src="js/trends.js"></script>
     <script src="js/footer.js"></script>
-    <script>
-let flyIn = document.querySelector(".rock");
-
-const options = {
-	root: null,
-	rootMargin: "0px",
-	threshold: 0.7,
-};
-
-const callback = function (entries, observer) {
-	let observed = entries[0];
-	if (observed.isIntersecting) {
-		flyIn.classList.add ("slideright");
-	}
-}
-
-const observer = new IntersectionObserver (callback, options);
-
-if (flyIn) {
-	observer.observe (flyIn);
-}
-</script>
 </head>
 <body>
 <h1>Header</h1>
-
-
-<div class="wrapper">
-    <div class="rock">
-        <img src="../pic/buecher/4c9fd7c5a67ce9fa.jpg" width="180" height="100" alt="Blaue Rakete">
+<div class="trends">
+    <div class="genre">
+        <h2>Neu seid dieser Woche</h2>
+        <div class="books-container">
+            <a href="#">
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/f97mmxdvd4781.jpg" alt="1. Comic">
+                    <h4>Spiderman</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/images.jpg" alt="2. Comic">
+                    <h4>Invaders</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/30101546860.jpg" alt="3. Comic">
+                    <h4>The Mighty Avengers</h4>
+                </div>
+            </a>
+        </div>
+        <a href="#">
+            <button style="border-radius: 20px">Mehr anzeigen</button>
+        </a>
+    </div>
+    <div class="genre">
+        <h2>Unsere Neulinge im Herbst</h2>
+        <div class="books-container">
+            <a href="books/derFallBruno.html">
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg"
+                         alt="1. Krimi">
+                    <h4>Der Fall Bruno</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/im-wald.jpg" alt="2. Krimi">
+                    <h4>Im Wald</h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="book">
+                    <img class="img-books" src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="3. Krimi">
+                    <h4>Stinkender Verdacht</h4>
+                </div>
+            </a>
+        </div>
+        <a href="#">
+            <button style="border-radius: 20px">Mehr anzeigen</button>
+        </a>
     </div>
 </div>
-
-
-
-
-
-
 <div class="trends">
     <div class="genre">
-        <h2>Unsere Neulinge des Herbst</h2>
+        <h2>Neu im Oktober</h2>
         <div class="books-container">
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/f97mmxdvd4781.jpg" alt="1. Comic">
-                    <h4>Spiderman</h4>
-                </div>
-            </a>
-            <!-- Platz 2 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/images.jpg" alt="2. Comic">
-                    <h4>Invaders</h4>
-                </div>
-            </a>
-            <!-- Platz 3 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/30101546860.jpg" alt="3. Comic">
-                    <h4>The Mighty Avengers</h4>
-                </div>
-            </a>
-        </div>
-        <a href="#">
-            <button style="border-radius: 20px">Mehr anzeigen</button>
-        </a>
-    </div>
-    <div class="genre">
-        <h2>Krimi</h2>
-        <div class="books-container">
-            <!-- Platz 1 -->
-            <a href="books/derFallBruno.html">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg"
-                         alt="1. Krimi">
-                    <h4>Der Fall Bruno</h4>
-                </div>
-            </a>
-            <!-- Platz 2 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/im-wald.jpg" alt="2. Krimi">
-                    <h4>Im Wald</h4>
-                </div>
-            </a>
-            <!-- Platz 3 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="3. Krimi">
-                    <h4>Stinkender Verdacht</h4>
-                </div>
-            </a>
-        </div>
-        <a href="#">
-            <button style="border-radius: 20px">Mehr anzeigen</button>
-        </a>
-    </div>
-
-<div class="trends">
-    <div class="genre">
-        <h2>Comics</h2>
-        <div class="books-container">
-            <!-- Platz 1 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/f97mmxdvd4781.jpg" alt="1. Comic">
-                    <h4>Spiderman</h4>
-                </div>
-            </a>
-            <!-- Platz 2 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/images.jpg" alt="2. Comic">
-                    <h4>Invaders</h4>
-                </div>
-            </a>
-            <!-- Platz 3 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/30101546860.jpg" alt="3. Comic">
-                    <h4>The Mighty Avengers</h4>
-                </div>
-            </a>
-        </div>
-        <a href="#">
-            <button style="border-radius: 20px">Mehr anzeigen</button>
-        </a>
-    </div>
-    <div class="genre">
-        <h2>Krimi</h2>
-        <div class="books-container">
-            <!-- Platz 1 -->
-            <a href="books/derFallBruno.html">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg"
-                         alt="1. Krimi">
-                    <h4>Der Fall Bruno</h4>
-                </div>
-            </a>
-            <!-- Platz 2 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/im-wald.jpg" alt="2. Krimi">
-                    <h4>Im Wald</h4>
-                </div>
-            </a>
-            <!-- Platz 3 -->
-            <a href="#">
-                <div class="book">
-
-                    <img class="img-books" src="pic/buecher/Krimi-Thriller-Cover-1.jpg" alt="3. Krimi">
-                    <h4>Stinkender Verdacht</h4>
-                </div>
-            </a>
-        </div>
-        <a href="#">
-            <button style="border-radius: 20px">Mehr anzeigen</button>
-        </a>
-    </div>
-
-    <div class="genre">
-        <h2>Kochbücher</h2>
-        <div class="books-container">
-            <!-- Platz 1 -->
             <a href="books/meinKochbuch.html">
                 <div class="book">
-
                     <img class="img-books" src="pic/buecher/kochbuecher/8454.jpg"
                          alt="1. Kochbuch">
                     <h4>Mein Kochbuch</h4>
                 </div>
             </a>
-            <!-- Platz 2 -->
             <a href="#">
                 <div class="book">
-
                     <img class="img-books" src="pic/buecher/kochbuecher/71y+wiFaIRL._AC_UF1000,1000_QL80_.jpg" alt="2. Kochbuch">
                     <h4>Lieblingsrezepte</h4>
                 </div>
             </a>
-            <!-- Platz 3 -->
             <a href="#">
                 <div class="book">
-
                     <img class="img-books"
                          src="pic/buecher/kochbuecher/Rezeptbuch-selbst-gemacht-Hardcover-17x24r-sw-Kalligrafie-DIY-Rezepte-COVER-Rosa.jpg"
                          alt="3. Kochbuch">
@@ -219,28 +100,23 @@ if (flyIn) {
     </div>
 
     <div class="genre">
-        <h2>Romane</h2>
+        <h2>Neu in 2023</h2>
         <div class="books-container">
-            <!-- Platz 1 -->
+
             <a href="#">
                 <div class="book">
-
                     <img class="img-books" src="pic/buecher/images (1).jpg" alt="1. Roman">
                     <h4>Die Dame</h4>
                 </div>
             </a>
-            <!-- Platz 2 -->
             <a href="#">
                 <div class="book">
-
                     <img class="img-books" src="pic/buecher/20220803_224434.jpg" alt="2. Roman">
                     <h4>Am Hof des Königs</h4>
                 </div>
             </a>
-            <!-- Platz 3 -->
             <a href="#">
                 <div class="book">
-
                     <img class="img-books" src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="3. Roman">
                     <h4>The Armour of Light</h4>
                 </div>
@@ -252,25 +128,4 @@ if (flyIn) {
     </div>
 </div>
 </body>
-<style>.wrapper {
-	position: relative;
-	height: 100px;
-	width: 100%;
-}
-.rock {
-	position: absolute;
-	top:0; left:0;
-	width: 100%;
-	transition: left 3s 3s;
-}
-
-.slideright {
-	left: 100%;
-}
-
-.rock img {
-	position: absolute;
-	left:-200px;
-}
-</style>
 </html>
