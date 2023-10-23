@@ -26,7 +26,6 @@
 }
 
 .toppicks-books {
-    width: 14.66%;
     padding: 1%;
     text-align: center;
 }
@@ -35,4 +34,118 @@
     width: 50px;
     height: 75px;
     margin-bottom: 20px;
+}
+
+
+/* Media-Query Top-books
+/* Breite Bildschirme*/
+@media (min-width: 1300px) {
+    .toppicks {
+        display: flex;
+    }
+
+    .toppicks-line {
+        display: flex;
+        width: 50%;
+    }
+
+    .toppicks-books {
+        width: 31.33%;
+    }
+}
+
+/*schmale Bildschirme*/
+@media (max-width: 1300px) {
+    .toppicks {
+        display: block;
+    }
+
+    .toppicks-line {
+        display: flex;
+        width: 100%;
+    }
+
+    .toppicks-books {
+        width: 31.33%;
+    }
+}
+
+/*noch schmalere Bildschirme*/
+@media (max-width: 650px) {
+    .toppicks {
+        display: block;
+    }
+
+    .toppicks-line {
+        display: block;
+        width: 100%;
+    }
+
+    .toppicks-books {
+        width: 98%;
+    }
+}
+
+/* Media-Query Top-books
+/* Breite Bildschirme*/
+@media (min-width: 1375px) {
+    .book-line {
+        display: flex;
+    }
+
+    .book {
+        width: 29.33%;
+        margin: 15px 2%;
+    }
+
+    .book-content {
+        display: flex;
+    }
+
+    .book-detail {
+        margin-left: 20px;
+        text-align: left;
+    }
+}
+
+/*schmale Bildschirme*/
+@media (max-width: 1375px) {
+    .book-line {
+        display: flex;
+    }
+
+    .book {
+        width: 29.33%;
+        margin: 15px 2%;
+    }
+
+    .book-content {
+        display: block;
+    }
+
+    .book-detail {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/*noch schmalere Bildschirme*/
+@media (max-width: 750px) {
+    .book-line {
+        display: block;
+    }
+
+    .book {
+        width: 96%;
+        margin: 15px 2%;
+    }
+
+    .book-content {
+        display: flex;
+    }
+
+    .book-detail {
+        margin-left: 20px;
+        text-align: left;
+    }
 }
