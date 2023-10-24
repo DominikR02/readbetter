@@ -167,6 +167,65 @@
             display: inline-block; /* Damit die Überschrift inline mit dem Text ist */
             margin-bottom: 5px; /* Abstand nach unten */
         }
+        #changeProfilePictureButton {
+            background-color: #008800; /* Dunkelgrüner Hintergrund */
+            color: #fff; /* Weiße Schriftfarbe */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px; /* Runde die Ecken */
+            margin-top: 10px; /* Abstand nach oben */
+            display: inline-block;
+        }
+
+        #changeProfilePictureButton:hover {
+            background-color: #006600; /* Noch dunkleres Grün beim Hover-Effekt */
+        }
+
+        #profile-picture-upload {
+            display: none; /* Verstecke das Upload-Feld */
+        }
+        /* Stil für das Pop-Up-Fenster */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .popup h2 {
+            font-size: 24px;
+        }
+
+        .popup-close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
     </style>
 </head>
@@ -266,6 +325,14 @@
         <button class="searchButton">Suchen</button>
     </div>
 </header>
+<div id="imageUploadPopup" class="popup">
+    <div class="popup-content">
+        <span class="popup-close-button" id="closeImageUploadPopup">&times;</span>
+        <h2>Profilbild ändern</h2>
+        <button id="chooseFromGalleryButton">Aus Galerie auswählen</button>
+        <button id="captureFromCameraButton">Mit Kamera aufnehmen</button>
+    </div>
+</div>
 <div style="display: flex ">
     <div id="myNav" class="overlay" style="width: 0%;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
@@ -280,6 +347,12 @@
 <span style="font-size: 35px;cursor:pointer" onclick="openNav()">☰</span>
 <div class="profile-picture" style="position: absolute; top: 30px; right: 20px;margin-top: 90px">
     <img src="pic/Profilbilder/rainerzufall.png" style="width: 100px">
+    <div>
+        <input type="file" id="profile-picture-upload" accept="image/*">
+        <button id="changeProfilePictureButton">
+            Profilbild ändern
+        </button>
+    </div>
 </div>
 <div style="width: 100%; text-align: center;">
     <div class="profilInhalt; section-heading" style="margin: 50px 20%; text-align: left;">
@@ -415,6 +488,46 @@
         document.getElementById("myNav").style.width = "0%";
 
     }
+    document.getElementById('changeProfilePictureButton').addEventListener('click', function() {
+        document.getElementById('imageUploadPopup').style.display = 'block';
+    });
+
+    document.getElementById('closeImageUploadPopup').addEventListener('click', function() {
+        document.getElementById('imageUploadPopup').style.display = 'none';
+    });
+
+    document.getElementById('chooseFromGalleryButton').addEventListener('click', function() {
+        // Hier kannst du den Code für die Auswahl eines Bildes aus der Galerie einfügen
+        // Zum Beispiel: document.getElementById('profile-picture-upload').click();
+        // Du kannst auch eine JavaScript-Bibliothek oder ein Framework für die Bildauswahl verwenden.
+    });
+
+    document.getElementById('captureFromCameraButton').addEventListener('click', function() {
+        // Hier kannst du den Code für das Aufnehmen eines neuen Bildes mit der Kamera einfügen
+        // Zum Beispiel: Implementiere die Logik für die Kameraaufnahme
+    });
+    document.getElementById("chooseFromGalleryButton").addEventListener("click", function () {
+        // Das input[type="file"]-Element auswählen
+        var fileInput = document.getElementById("profile-picture-upload");
+
+        // Einen Klick auf das Datei-Eingabefeld auslösen
+        fileInput.click();
+    });
+    document.getElementById("profile-picture-upload").addEventListener("change", function (e) {
+        // Das ausgewählte Bild
+        var selectedImage = e.target.files[0];
+
+        if (selectedImage) {
+            // Das ausgewählte Bild anzeigen
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var profilePicture = document.querySelector(".profile-picture img");
+                profilePicture.src = event.target.result;
+            };
+
+            reader.readAsDataURL(selectedImage);
+        }
+    });
 </script>
 
 </body>
