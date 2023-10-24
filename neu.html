@@ -12,7 +12,147 @@
     <script src="js/footer.js"></script>
 </head>
 <body>
-<h1>Header</h1>
+<!-- Header-Bereich mit Logo, Navigation und Popup-Menü -->
+<header class="header">
+    <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
+
+    <!-- Hauptnavigation -->
+    <nav>
+        <ul>
+            <a href="Startseite.html">
+                <li>Startseite</li>
+            </a>
+            <a href="trends.html">
+                <li>Trending</li>
+            </a>
+            <a href="neu.html">
+                <li>Neu</li>
+            </a>
+            <a>
+                <li>
+                    Genre
+                    <!-- Unternavigation für Genre -->
+                    <ul>
+                        <a href="#">
+                            <li>Comics</li>
+                        </a>
+                        <a href="genre/kochbuecher.html">
+                            <li>Kochbücher</li>
+                        </a>
+                        <a href="#">
+                            <li>Krimis</li>
+                        </a>
+                        <a href="#">
+                            <li>Romane</li>
+                        </a>
+                    </ul>
+                </li>
+            </a>
+            <a href="abos.html" style="color: red">
+                <li>Abos</li>
+            </a>
+        </ul>
+    </nav>
+
+    <!-- Navigations-Icons (Profil, Burgermenu, Suche) -->
+    <div class="navigation">
+        <div>
+            <a href="Profil.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
+                 onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+
+    <!-- Overlay und Pop-up-Menü für das Burgermenü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()"><a>X</a></button>
+        <!-- Menüpunkte im Pop-up-Menü -->
+        <a href="Startseite.html">
+            <h5 class="popup-item" style="margin-top: 50px;">Startseite</h5>
+        </a>
+        <a href="trends.html">
+            <h5 class="popup-item">Trending</h5>
+        </a>
+        <a href="neu.html">
+            <h5 class="popup-item">Neu</h5>
+        </a>
+        <!-- Untermenü für Genre -->
+
+        <a onclick="toggleGenreSubmenu()">
+            <h5 class="popup-item">Genre</h5>
+        </a>
+        <div class="genre-submenu">
+            <a>
+                <h5 class="sub-item">Comics</h5>
+            </a>
+            <a href="genre/kochbuecher.html">
+                <h5 class="sub-item">Kochbücher</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Krimis</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Romane</h5>
+            </a>
+        </div>
+
+        <a href="abos.html">
+            <h5 class="popup-item" style="color: red">Abos</h5>
+        </a>
+        <!-- Icons im Pop-up-Menü -->
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="Profil.html"><img src="pic/login-weiss.png"
+                                           style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                        onclick="toggleSearchMenu(); closePopupMenu()"></a>
+            </div>
+        </div>
+        <!-- Footer-Links im Pop-up-Menü -->
+        <div class="popup-item">
+            <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Overlay und Pop-up-Menü für die Suche -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()"><b>X</b></button>
+        <!-- Suchfelder im Pop-up-Menü -->
+        <div class="popup-item">
+            <h4>Suche</h4>
+        </div>
+        <div class="popup-item">
+            Titel
+            <input style="text-align: center" placeholder="Titel" type="text">
+        </div>
+        <div class="popup-item">
+            Autor
+            <input style="text-align: center" placeholder="Autor" type="text">
+        </div>
+        <div class="popup-item">
+            Genre
+            <input style="text-align: center" placeholder="Genre" type="text">
+        </div>
+        <div class="popup-item">
+            Ort
+            <input style="text-align: center" placeholder="Ort" type="text">
+        </div>
+        <a href="suchergebnis.html"><button class="searchButton">Suchen</button></a>
+    </div>
+</header>
+
 <div class="trends">
     <div class="genre">
         <h2>Neu seit dieser Woche</h2>
@@ -127,5 +267,49 @@
         </a>
     </div>
 </div>
+
+<!-- Footer-Bereich mit sozialen Icons, Links und Such-/Login-Icons -->
+<footer>
+    <!-- Soziale Icons -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook"
+                                                                           class="sozial-icon"></a>
+        <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png" alt="YouTube"
+                                                                          class="sozial-icon"></a>
+        <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png"
+                                                                            alt="Instagram" class="sozial-icon"></a>
+    </div>
+    <br>
+    <!-- Links zu Datenschutz, Impressum und weiteren Seiten -->
+    <div style="text-align: left; display: flex">
+        <!-- Linke Fußzeile mit Links -->
+        <div id="footer-links" style="text-align: left; align-items: center">
+            <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
+            <div class="footer-container" id="left-footer-container">
+                <a href="Startseite.html"><h5>Startseite</h5></a>
+                <a href="AboutUs.html"><h5>Über Uns</h5></a>
+                <a href="kontakt.html"><h5>Kontakt</h5></a>
+                <a href="faq.html"><h5>FAQ</h5></a>
+            </div>
+            <!-- Rechte Fußzeile mit Links -->
+            <div class="footer-container">
+                <a href="datenschutz.html"><h5>Datenschutz</h5></a>
+                <a href="impressum.html"><h5>Impressum</h5></a>
+                <a onclick="print()"><h5>Drucken</h5></a>
+                <a href="agb.html"><h5>AGB</h5></a>
+            </div>
+        </div>
+        <!-- Icons für Suche und Login -->
+        <div>
+            <a href="Profil.html"><img src="pic/login-weiss.png"
+                                       style="width: 45px; height: 45px; margin: 8px;"></a><br>
+            <a><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+</footer>
+
+<!-- "Nach oben"-Button -->
+<button class="scroll-top" onclick="scrollToTop()">↑</button>
 </body>
 </html>
