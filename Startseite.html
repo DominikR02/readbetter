@@ -37,8 +37,7 @@
         /* CSS für die Bilder mit Titel */
         .image-row {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
         }
 
         .book {
@@ -156,6 +155,7 @@
             border-radius: 10px; /* Runde Ecken, je nach Bedarf anpassen */
             margin: 10px; /* Abstand um die Bücher herum, je nach Bedarf anpassen */
             padding: 10px; /* Innenabstand im Kasten, je nach Bedarf anpassen */
+            text-align: center;
         }
 
         /* Stil für die Bücher */
@@ -219,279 +219,273 @@
 
 <div class="section" id="forYouSection" style="margin-top: 60px;">
     <div class="book-container">
-        <h2 style="margin-left: 40px">Für dich empfohlen</h2>
+        <h2>Für dich empfohlen</h2>
         <div class="image-row">
             <div class="book">
-                <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px"
-                     height="283px">
-                <div class="book-info">
-                    <div class="book-title">Der Fall Bruno</div>
-                    <div class="book-author">Günter Macher</div>
-                    <a href="books/derFallBruno.html">
-                        <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1"
-                             style="width:200px"
-                             height="283px">
-                        <div class="book-info">
-                            <div class="book-title">Der Fall Bruno</div>
-                            <div class="book-author">Günter Macher</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="book">
-                    <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="300px">
-                    <div class="book-info">
-                        <div class="book-title">The Armour of Light</div>
-                        <div class="book-author">Ken Follett</div>
-                    </div>
-                </div>
-                <div class="book">
-                    <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
-                    <div class="book-info">
-                        <div class="book-title">Spider-Man no way home</div>
-                        <div class="book-author">Marvel</div>
-                    </div>
-                </div>
-                <div class="book">
-                    <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
-                    <div class="book-info">
-                        <div class="book-title">Mein Kochbuch</div>
-                        <div class="book-author">Laura Newman</div>
-                    </div>
-                </div>
-                <div class="book">
-                    <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px"
+                <a href="books/derFallBruno.html">
+                    <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1"
+                         style="width:200px"
                          height="283px">
                     <div class="book-info">
-                        <div class="book-title">Zwei in der Küche: Das Kochbuch für glückliche Paare</div>
-                        <div class="book-author">Annalena Bokmeier</div>
+                        <div class="book-title">Der Fall Bruno</div>
+                        <div class="book-author">Günter Macher</div>
                     </div>
+                </a>
+            </div>
+            <div class="book">
+                <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="300px">
+                <div class="book-info">
+                    <div class="book-title">The Armour of Light</div>
+                    <div class="book-author">Ken Follett</div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
+                <div class="book-info">
+                    <div class="book-title">Spider-Man no way home</div>
+                    <div class="book-author">Marvel</div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
+                <div class="book-info">
+                    <div class="book-title">Mein Kochbuch</div>
+                    <div class="book-author">Laura Newman</div>
+                </div>
+            </div>
+            <div class="book">
+                <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px"
+                     height="283px">
+                <div class="book-info">
+                    <div class="book-title">Zwei in der Küche</div>
+                    <div class="book-author">Annalena Bokmeier</div>
                 </div>
             </div>
         </div>
-        <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
-        <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
-        <div class="section" id="calendarSection">
-            <div class="calendar" style="position: relative; top: 0; right: 0;">
-                <h2 id="calendarMonth" style="margin-left: 20px">Oktober 2023</h2>
+    </div>
+    <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
+    <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
+    <div class="section" id="calendarSection">
+        <div class="calendar" style="position: relative; top: 0; right: 0;">
+            <h2 id="calendarMonth" style="margin-left: 20px">Oktober 2023</h2>
 
-                <button onclick="changeMonth('previous')">&#8249;</button>
-                <button onclick="changeMonth('next')">&#8250;</button>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Mo</th>
-                        <th>Di</th>
-                        <th>Mi</th>
-                        <th>Do</th>
-                        <th>Fr</th>
-                        <th>Sa</th>
-                        <th>So</th>
-                    </tr>
-                    </thead>
-                    <tbody id="calendarBody">
-                    <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
-                    <!-- Zum Beispiel: -->
-                    <tr>
-                        <td>02</td>
-                        <td>03</td>
-                        <td>04</td>
-                        <td>05</td>
-                        <td>06</td>
-                        <td>07</td>
-                        <td>08</td>
-                    </tr>
-                    </tr>
-                    <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
-                    </tbody>
-                    <tr>
-                        <td>09</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-
-                    </tr>
-                    </tbody>
-                    <tr>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-
-                    </tr>
-                    </tbody>
-                    <tr>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-
-                    </tr>
-                    </tbody>
-                    <tr>
-                        <td>30</td>
-                        <td>31</td>
-                        <td>01</td>
-                        <td>02</td>
-                        <td>03</td>
-                        <td>04</td>
-                        <td>05</td>
-
-                    </tr>
-                </table>
+            <button onclick="changeMonth('previous')">&#8249;</button>
+            <button onclick="changeMonth('next')">&#8250;</button>
+            <table>
+                <thead>
+                <tr>
+                    <th>Mo</th>
+                    <th>Di</th>
+                    <th>Mi</th>
+                    <th>Do</th>
+                    <th>Fr</th>
+                    <th>Sa</th>
+                    <th>So</th>
+                </tr>
+                </thead>
+                <tbody id="calendarBody">
+                <!-- Hier können Sie den Inhalt des Kalenders für jeden Tag einfügen -->
+                <!-- Zum Beispiel: -->
+                <tr>
+                    <td>02</td>
+                    <td>03</td>
+                    <td>04</td>
+                    <td>05</td>
+                    <td>06</td>
+                    <td>07</td>
+                    <td>08</td>
+                </tr>
+                </tr>
                 <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
-            </div>
+                </tbody>
+                <tr>
+                    <td>09</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+
+                </tr>
+                </tbody>
+                <tr>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+
+                </tr>
+                </tbody>
+                <tr>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+
+                </tr>
+                </tbody>
+                <tr>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>01</td>
+                    <td>02</td>
+                    <td>03</td>
+                    <td>04</td>
+                    <td>05</td>
+
+                </tr>
+            </table>
+            <!-- Fortfahren, um die Tage des Monats anzuzeigen -->
         </div>
-        <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
-        <script>
-            const weiterlesenButton = document.getElementById('weiterlesen-button');
-            const zuklappenButton = document.getElementById('zuklappen-button');
-            const hiddenText = document.getElementById('hidden-text');
+    </div>
+    <!-- Hier wird der JavaScript-Code für Bildwechsel und Bücheranzeige eingefügt -->
+    <script>
+        const weiterlesenButton = document.getElementById('weiterlesen-button');
+        const zuklappenButton = document.getElementById('zuklappen-button');
+        const hiddenText = document.getElementById('hidden-text');
 
-            weiterlesenButton.addEventListener('click', () => {
-                if (hiddenText.style.display === 'none') {
-                    hiddenText.style.display = 'block';
-                    weiterlesenButton.style.display = 'none';
-                    zuklappenButton.style.display = 'block';
-                }
-            });
-
-            zuklappenButton.addEventListener('click', () => {
-                if (hiddenText.style.display === 'block') {
-                    hiddenText.style.display = 'none';
-                    weiterlesenButton.style.display = 'block';
-                    zuklappenButton.style.display = 'none';
-                }
-            });
-            const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
-            let currentMainImageIndex = 0;
-
-            function changeMainImage(direction) {
-                if (direction === 'next') {
-                    currentMainImageIndex++;
-                    if (currentMainImageIndex >= mainImages.length) {
-                        currentMainImageIndex = 0;
-                    }
-                } else if (direction === 'previous') {
-                    currentMainImageIndex--;
-                    if (currentMainImageIndex < 0) {
-                        currentMainImageIndex = mainImages.length - 1;
-                    }
-                }
-
-                const mainImage = document.getElementById('mainImage');
-                mainImage.src = mainImages[currentMainImageIndex];
+        weiterlesenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'none') {
+                hiddenText.style.display = 'block';
+                weiterlesenButton.style.display = 'none';
+                zuklappenButton.style.display = 'block';
             }
+        });
 
-            // Beispiel-Daten für Bücher
-            const books = [
-                "Buch 1",
-                "Buch 2",
-                "Buch 3",
-                "Buch 4",
-                "Buch 5",
-                "Buch 6",
-                "Buch 7",
-                "Buch 8",
-                "Buch 9",
-                "Buch 10"
-            ];
+        zuklappenButton.addEventListener('click', () => {
+            if (hiddenText.style.display === 'block') {
+                hiddenText.style.display = 'none';
+                weiterlesenButton.style.display = 'block';
+                zuklappenButton.style.display = 'none';
+            }
+        });
+        const mainImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg"];
+        let currentMainImageIndex = 0;
 
-            // Funktion zum Anzeigen von 5 weiteren Büchern
-            function showMoreBooks(containerId) {
-                const container = document.getElementById(containerId);
-                const bookList = container.querySelector('div');
-                const currentBooks = bookList.children.length;
-                const remainingBooks = books.slice(currentBooks, currentBooks + 5);
-
-                for (const book of remainingBooks) {
-                    const bookElement = document.createElement('p');
-                    bookElement.textContent = book;
-                    bookList.appendChild(bookElement);
+        function changeMainImage(direction) {
+            if (direction === 'next') {
+                currentMainImageIndex++;
+                if (currentMainImageIndex >= mainImages.length) {
+                    currentMainImageIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMainImageIndex--;
+                if (currentMainImageIndex < 0) {
+                    currentMainImageIndex = mainImages.length - 1;
                 }
             }
 
-            // Initial 5 Bücher anzeigen
-            showMoreBooks('forYouBooks');
-
-            // Kalender-Funktionen
-            const months = [
-                "Januar", "Februar", "März", "April", "Mai", "Juni",
-                "Juli", "August", "September", "Oktober", "November", "Dezember"
-            ];
-            let currentMonthIndex = 10; // Start mit Oktober
-
-            function changeMonth(direction) {
-                if (direction === 'next') {
-                    currentMonthIndex++;
-                    if (currentMonthIndex >= months.length) {
-                        currentMonthIndex = 0;
-                    }
-                } else if (direction === 'previous') {
-                    currentMonthIndex--;
-                    if (currentMonthIndex < 0) {
-                        currentMonthIndex = months.length - 1;
-                    }
-                }
-
-                // Tage für den ausgewählten Monat generieren
-                generateCalendarDays();
-            }
-
-            function generateCalendarDays() {
-                const calendarMonth = document.getElementById('calendarMonth');
-                const calendarBody = document.getElementById('calendarBody');
-                calendarMonth.textContent = months[currentMonthIndex];
-                calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
-
-                // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
-                // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
-                // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
-            }
-
-            // JavaScript-Code für den Zoom-Effekt im Kalender
-            const calendarCells = document.querySelectorAll('.calendar td');
-
-            // Eventlistener hinzufügen, um den Zoom-Effekt bei Hover auszulösen
-            calendarCells.forEach((cell) => {
-                cell.addEventListener('mouseenter', () => {
-                    cell.style.transform = 'scale(1.1)';
-                });
-
-                cell.addEventListener('mouseleave', () => {
-                    cell.style.transform = 'scale(1)';
-                });
-            });
-
-            // Initialen Kalender für Oktober generieren
-            generateCalendarDays();
             const mainImage = document.getElementById('mainImage');
-            const slideshowImages = [
-                'pic/buecher/Startseite.jpg',
-                'pic/buecher/diashow.jpg',
-                'pic/buecher/diashow2.jpg'
-            ];
-            let currentSlide = 0;
+            mainImage.src = mainImages[currentMainImageIndex];
+        }
 
-            function startSlideshow() {
-                setInterval(function () {
-                    currentSlide = (currentSlide + 1) % slideshowImages.length;
-                    mainImage.src = slideshowImages[currentSlide];
-                }, 6000); // Wechsel alle 6 Sekunden (6000 Millisekunden)
+        // Beispiel-Daten für Bücher
+        const books = [
+            "Buch 1",
+            "Buch 2",
+            "Buch 3",
+            "Buch 4",
+            "Buch 5",
+            "Buch 6",
+            "Buch 7",
+            "Buch 8",
+            "Buch 9",
+            "Buch 10"
+        ];
+
+        // Funktion zum Anzeigen von 5 weiteren Büchern
+        function showMoreBooks(containerId) {
+            const container = document.getElementById(containerId);
+            const bookList = container.querySelector('div');
+            const currentBooks = bookList.children.length;
+            const remainingBooks = books.slice(currentBooks, currentBooks + 5);
+
+            for (const book of remainingBooks) {
+                const bookElement = document.createElement('p');
+                bookElement.textContent = book;
+                bookList.appendChild(bookElement);
+            }
+        }
+
+        // Initial 5 Bücher anzeigen
+        showMoreBooks('forYouBooks');
+
+        // Kalender-Funktionen
+        const months = [
+            "Januar", "Februar", "März", "April", "Mai", "Juni",
+            "Juli", "August", "September", "Oktober", "November", "Dezember"
+        ];
+        let currentMonthIndex = 10; // Start mit Oktober
+
+        function changeMonth(direction) {
+            if (direction === 'next') {
+                currentMonthIndex++;
+                if (currentMonthIndex >= months.length) {
+                    currentMonthIndex = 0;
+                }
+            } else if (direction === 'previous') {
+                currentMonthIndex--;
+                if (currentMonthIndex < 0) {
+                    currentMonthIndex = months.length - 1;
+                }
             }
 
-            // Die Diashow starten, wenn die Seite geladen ist
-            window.addEventListener('load', startSlideshow);
-        </script>
+            // Tage für den ausgewählten Monat generieren
+            generateCalendarDays();
+        }
+
+        function generateCalendarDays() {
+            const calendarMonth = document.getElementById('calendarMonth');
+            const calendarBody = document.getElementById('calendarBody');
+            calendarMonth.textContent = months[currentMonthIndex];
+            calendarBody.innerHTML = ''; // Leeren Sie den aktuellen Kalender
+
+            // Logik zum Generieren der Tage für den ausgewählten Monat hier implementieren
+            // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
+            // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
+        }
+
+        // JavaScript-Code für den Zoom-Effekt im Kalender
+        const calendarCells = document.querySelectorAll('.calendar td');
+
+        // Eventlistener hinzufügen, um den Zoom-Effekt bei Hover auszulösen
+        calendarCells.forEach((cell) => {
+            cell.addEventListener('mouseenter', () => {
+                cell.style.transform = 'scale(1.1)';
+            });
+
+            cell.addEventListener('mouseleave', () => {
+                cell.style.transform = 'scale(1)';
+            });
+        });
+
+        // Initialen Kalender für Oktober generieren
+        generateCalendarDays();
+        const mainImage = document.getElementById('mainImage');
+        const slideshowImages = [
+            'pic/buecher/Startseite.jpg',
+            'pic/buecher/diashow.jpg',
+            'pic/buecher/diashow2.jpg'
+        ];
+        let currentSlide = 0;
+
+        function startSlideshow() {
+            setInterval(function () {
+                currentSlide = (currentSlide + 1) % slideshowImages.length;
+                mainImage.src = slideshowImages[currentSlide];
+            }, 6000); // Wechsel alle 6 Sekunden (6000 Millisekunden)
+        }
+
+        // Die Diashow starten, wenn die Seite geladen ist
+        window.addEventListener('load', startSlideshow);
+    </script>
 </body>
 </html>
 
