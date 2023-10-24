@@ -207,7 +207,7 @@
 
     <!-- Modal content -->
     <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" onclick="closeVerleihModal()">&times;</span>
         <div style="text-align: center">
             <h3>Zu welchen Zeiten kann man Verleihtermine vereinbaren</h3>
             <div style="display: flex">
@@ -290,6 +290,10 @@
 
     function openVerleihModal() {
         document.getElementById('verleihModal').style.display = "block";
+    }
+
+    function closeVerleihModal(){
+        document.getElementById('verleihModal').style.display = "none";
     }
 </script>
 </body>
