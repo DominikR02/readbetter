@@ -46,6 +46,7 @@
             flex: 0 0 calc(20% - 20px); /* Fünf Bücher pro Reihe (20% Breite) mit 20px Abstand */
             margin-bottom: 20px;
         }
+
         .book-link {
             text-decoration: none; /* Entfernt die unterstrichene Link-Dekoration */
             color: #000; /* Ändert die Farbe des Links, um sie sichtbar zu machen */
@@ -147,6 +148,7 @@
         .calendar td:hover {
             transform: scale(1.1); /* Leichte Vergrößerung */
         }
+
         /* Stil für den runden Kasten um die Bücher */
         .book-container {
             border: 2px solid #4A5F47; /* Grüne Linien */
@@ -220,42 +222,53 @@
         <h2 style="margin-left: 40px">Für dich empfohlen</h2>
         <div class="image-row">
             <div class="book">
+<<<<<<< HEAD
             <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px" height="283px">
             <div class="book-info">
                 <div class="book-title">Der Fall Bruno</div>
                 <div class="book-author">Günter Macher</div>
+=======
+                <a href="books/derFallBruno.html">
+                    <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1" style="width:200px"
+                         height="283px">
+                    <div class="book-info">
+                        <div class="book-title">Der Fall Bruno</div>
+                        <div class="book-author">Günter Macher</div>
+                    </div>
+                </a>
+>>>>>>> 063f59d6194213ef488f92d52099bfccf1b4eec7
             </div>
-        </div>
-        <div class="book">
-            <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="300px">
-            <div class="book-info">
-                <div class="book-title">The Armour of Light</div>
-                <div class="book-author">Ken Follett</div>
+
+            <div class="book">
+                <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="300px">
+                <div class="book-info">
+                    <div class="book-title">The Armour of Light</div>
+                    <div class="book-author">Ken Follett</div>
+                </div>
             </div>
-        </div>
-        <div class="book">
-            <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
-            <div class="book-info">
-                <div class="book-title">Spider-Man no way home</div>
-                <div class="book-author">Marvel</div>
+            <div class="book">
+                <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
+                <div class="book-info">
+                    <div class="book-title">Spider-Man no way home</div>
+                    <div class="book-author">Marvel</div>
+                </div>
             </div>
-        </div>
-        <div class="book">
-            <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
-            <div class="book-info">
-                <div class="book-title">Mein Kochbuch</div>
-                <div class="book-author">Laura Newman</div>
+            <div class="book">
+                <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
+                <div class="book-info">
+                    <div class="book-title">Mein Kochbuch</div>
+                    <div class="book-author">Laura Newman</div>
+                </div>
             </div>
-        </div>
-        <div class="book">
-            <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px" height="283px">
-            <div class="book-info">
-                <div class="book-title">Zwei in der Küche: Das Kochbuch für glückliche Paare</div>
-                <div class="book-author">Annalena Bokmeier </div>
+            <div class="book">
+                <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px" height="283px">
+                <div class="book-info">
+                    <div class="book-title">Zwei in der Küche: Das Kochbuch für glückliche Paare</div>
+                    <div class="book-author">Annalena Bokmeier</div>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <!-- Hier wird der HTML-Code für "News" und "Trends" eingefügt -->
     <!-- ... (Ihr bestehender HTML-Code für "News" und "Trends") ... -->
     <div class="section" id="calendarSection">
@@ -444,6 +457,7 @@
             // Sie müssen die Anzahl der Tage im Monat (28, 30 oder 31) berechnen und die Tabellenzellen entsprechend füllen
             // Achten Sie auf den Wochentag, an dem der Monat beginnt (z. B. Montag, Dienstag, etc.).
         }
+
         // JavaScript-Code für den Zoom-Effekt im Kalender
         const calendarCells = document.querySelectorAll('.calendar td');
 
