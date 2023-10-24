@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
     <script src="../js/header.js"></script>
+    <script src="js/profil.js"></script>
     <script src="../js/footer.js"></script>
     <style>
 
@@ -167,6 +168,7 @@
             display: inline-block; /* Damit die Überschrift inline mit dem Text ist */
             margin-bottom: 5px; /* Abstand nach unten */
         }
+
         #changeProfilePictureButton {
             background-color: #008800; /* Dunkelgrüner Hintergrund */
             color: #fff; /* Weiße Schriftfarbe */
@@ -185,6 +187,7 @@
         #profile-picture-upload {
             display: none; /* Verstecke das Upload-Feld */
         }
+
         /* Stil für das Pop-Up-Fenster */
         .popup {
             display: none;
@@ -230,29 +233,52 @@
     </style>
 </head>
 <body>
+<!-- Header-Bereich mit Logo, Navigation und Popup-Menü -->
 <header class="header">
     <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
+
+    <!-- Hauptnavigation -->
     <nav>
         <ul>
-            <li><a href="Startseite.html">Startseite</a></li>
-            <li><a href="trends.html">Trending</a></li>
-            <li><a href="neu.html">Neu</a></li>
-            <li>
-                <a href="#">Genre</a>
-                <ul>
-                    <li><a href="#">Comics</a></li>
-                    <li><a href="genre/kochbuecher.html">Kochbücher</a></li>
-                    <li><a href="#">Krimis</a></li>
-                    <li><a href="#">Romane</a></li>
-                </ul>
-            </li>
-            <li><a href="abos.html" style="color: red">Abos</a></li>
+            <a href="Startseite.html">
+                <li>Startseite</li>
+            </a>
+            <a href="trends.html">
+                <li>Trending</li>
+            </a>
+            <a href="neu.html">
+                <li>Neu</li>
+            </a>
+            <a>
+                <li>
+                    Genre
+                    <!-- Unternavigation für Genre -->
+                    <ul>
+                        <a href="#">
+                            <li>Comics</li>
+                        </a>
+                        <a href="genre/kochbuecher.html">
+                            <li>Kochbücher</li>
+                        </a>
+                        <a href="#">
+                            <li>Krimis</li>
+                        </a>
+                        <a href="#">
+                            <li>Romane</li>
+                        </a>
+                    </ul>
+                </li>
+            </a>
+            <a href="abos.html" style="color: red">
+                <li>Abos</li>
+            </a>
         </ul>
     </nav>
 
+    <!-- Navigations-Icons (Profil, Burgermenu, Suche) -->
     <div class="navigation">
         <div>
-            <a href="login.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+            <a href="Profil.html"><img src="pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
         </div>
         <div class="burgermenu">
             <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
@@ -264,67 +290,90 @@
         </div>
     </div>
 
-    <!-- Overlay für das Pop-up-Menü -->
+    <!-- Overlay und Pop-up-Menü für das Burgermenü -->
     <div class="popup-overlay" id="popupOverlay"></div>
-    <!-- Pop-up-Menü -->
     <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
         <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <button class="popup-close-button" onclick="closePopupMenu()"><a>X</a></button>
+        <!-- Menüpunkte im Pop-up-Menü -->
         <a href="Startseite.html">
-            <div class="popup-item">Startseite</div>
+            <h5 class="popup-item" style="margin-top: 50px;">Startseite</h5>
         </a>
         <a href="trends.html">
-            <div class="popup-item">Trending</div>
+            <h5 class="popup-item">Trending</h5>
         </a>
-        <a href="#">
-            <div class="popup-item">Neu</div>
+        <a href="neu.html">
+            <h5 class="popup-item">Neu</h5>
         </a>
-        <div class="popup-item">
-            <a onclick="toggleGenreSubmenu()">Genre</a>
-            <div class="genre-submenu">
-                <a>
-                    <div class="sub-item">Comics</div>
-                </a>
-                <a href="genre/kochbuecher.html">
-                    <div class="sub-item">Kochbücher</div>
-                </a>
-                <a>
-                    <div class="sub-item">Krimis</div>
-                </a>
-                <a>
-                    <div class="sub-item">Romane</div>
-                </a>
+        <!-- Untermenü für Genre -->
+
+        <a onclick="toggleGenreSubmenu()">
+            <h5 class="popup-item">Genre</h5>
+        </a>
+        <div class="genre-submenu">
+            <a>
+                <h5 class="sub-item">Comics</h5>
+            </a>
+            <a href="genre/kochbuecher.html">
+                <h5 class="sub-item">Kochbücher</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Krimis</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Romane</h5>
+            </a>
+        </div>
+
+        <a href="abos.html">
+            <h5 class="popup-item" style="color: red">Abos</h5>
+        </a>
+        <!-- Icons im Pop-up-Menü -->
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="Profil.html"><img src="pic/login-weiss.png"
+                                           style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                        onclick="toggleSearchMenu(); closePopupMenu()"></a>
             </div>
         </div>
-        <div class="popup-item" style="color: red"><a href="abos.html">Abos</a></div>
-        <span style="font-size: 30px; cursor: pointer" onclick="openNav()">☰</span>
+        <!-- Footer-Links im Pop-up-Menü -->
         <div class="popup-item">
             <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
         </div>
     </div>
 
-    <!-- Overlay für das Pop-up-Menü -->
+    <!-- Overlay und Pop-up-Menü für die Suche -->
     <div class="popup-overlay" id="popupOverlaySearch"></div>
-    <!-- Pop-up-Menü -->
     <div class="popup-menu" id="popupMenuSearch">
         <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()"><b>X</b></button>
+        <!-- Suchfelder im Pop-up-Menü -->
         <div class="popup-item">
             <h4>Suche</h4>
         </div>
-        <div class="popup-item">Titel</div>
-        <input style="text-align: center" placeholder="Titel" type="text">
-        <div class="popup-item">Autor</div>
-        <input style="text-align: center" placeholder="Autor" type="text">
-        <div class="popup-item">Genre</div>
-        <input style="text-align: center" placeholder="Genre" type="text">
-        <div class="popup-item">Ort</div>
-        <input style="text-align: center" placeholder="Ort" type="text">
-        <button class="searchButton">Suchen</button>
+        <div class="popup-item">
+            Titel
+            <input style="text-align: center" placeholder="Titel" type="text">
+        </div>
+        <div class="popup-item">
+            Autor
+            <input style="text-align: center" placeholder="Autor" type="text">
+        </div>
+        <div class="popup-item">
+            Genre
+            <input style="text-align: center" placeholder="Genre" type="text">
+        </div>
+        <div class="popup-item">
+            Ort
+            <input style="text-align: center" placeholder="Ort" type="text">
+        </div>
+        <a href="suchergebnis.html"><button class="searchButton">Suchen</button></a>
     </div>
 </header>
+
 <div id="imageUploadPopup" class="popup">
     <div class="popup-content">
         <span class="popup-close-button" id="closeImageUploadPopup">&times;</span>
@@ -337,24 +386,24 @@
     <div id="myNav" class="overlay" style="width: 0%;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
         <div class="overlay-content">
-            <a href="#">Mein Profil</a>
-            <a href="#">Ausgeliehen</a>
-            <a href="#">Verliehen</a>
-            <a href="#">Transaktion</a>
+            <a onclick="openMyProfil()">Mein Profil</a>
+            <a onclick="openAusgeliehen()">Ausgeliehene Bücher</a>
+            <a onclick="openMyBooks()">Meine Bücher</a>
+            <a onclick="openTransaction()">Transaktion</a>
         </div>
     </div>
 </div>
 <span style="font-size: 35px;cursor:pointer" onclick="openNav()">☰</span>
-<div class="profile-picture" style="position: absolute; top: 30px; right: 20px;margin-top: 90px">
-    <img src="pic/Profilbilder/rainerzufall.png" style="width: 100px">
-    <div>
-        <input type="file" id="profile-picture-upload" accept="image/*">
-        <button id="changeProfilePictureButton">
-            Profilbild ändern
-        </button>
+<div id="profilSite" style="width: 100%; text-align: center;">
+    <div class="profile-picture" style="position: absolute; top: 100px; right: 100px;margin-top: 90px">
+        <img src="pic/Profilbilder/rainerzufall.png" style="width: 100px">
+        <div>
+            <input type="file" id="profile-picture-upload" accept="image/*">
+            <button id="changeProfilePictureButton">
+                Profilbild ändern
+            </button>
+        </div>
     </div>
-</div>
-<div style="width: 100%; text-align: center;">
     <div class="profilInhalt; section-heading" style="margin: 50px 20%; text-align: left;">
         <p class="section-heading">Benutzername</p>
         <input type="text" id="username" name="username" placeholder="Benutzername eingeben">
@@ -434,8 +483,14 @@
         </div>
     </div>
 </div>
+<div id="ausgeliehenSite" style="display: none">
+    <h1>Ausgeliehene Bücher</h1>
 </div>
-<!-- Weitere Inhalte für das Profil, z.B. Benutzerdetails, Vorlieben, Statistiken, usw. -->
+<div id="meineBuecherSite" style="display: none">
+    <h1>Meine Bücher</h1>
+</div>
+<div id="transaktionSite" style="display: none">
+    <h1>Transaktionen</h1>
 </div>
 <script>
     function saveChanges() {
@@ -488,21 +543,22 @@
         document.getElementById("myNav").style.width = "0%";
 
     }
-    document.getElementById('changeProfilePictureButton').addEventListener('click', function() {
+
+    document.getElementById('changeProfilePictureButton').addEventListener('click', function () {
         document.getElementById('imageUploadPopup').style.display = 'block';
     });
 
-    document.getElementById('closeImageUploadPopup').addEventListener('click', function() {
+    document.getElementById('closeImageUploadPopup').addEventListener('click', function () {
         document.getElementById('imageUploadPopup').style.display = 'none';
     });
 
-    document.getElementById('chooseFromGalleryButton').addEventListener('click', function() {
+    document.getElementById('chooseFromGalleryButton').addEventListener('click', function () {
         // Hier kannst du den Code für die Auswahl eines Bildes aus der Galerie einfügen
         // Zum Beispiel: document.getElementById('profile-picture-upload').click();
         // Du kannst auch eine JavaScript-Bibliothek oder ein Framework für die Bildauswahl verwenden.
     });
 
-    document.getElementById('captureFromCameraButton').addEventListener('click', function() {
+    document.getElementById('captureFromCameraButton').addEventListener('click', function () {
         // Hier kannst du den Code für das Aufnehmen eines neuen Bildes mit der Kamera einfügen
         // Zum Beispiel: Implementiere die Logik für die Kameraaufnahme
     });
@@ -532,6 +588,3 @@
 
 </body>
 </html>
-<footer>
-    <h1>Footer</h1>
-</footer>
