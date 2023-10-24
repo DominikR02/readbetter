@@ -114,11 +114,12 @@
         .calendar {
             text-align: center;
             float: right;
-            max-width: 25%; /* Reduziere die Breite des Kalenders */
+            margin-left: 20px;
+            max-width: 30%;
             background-color: #f5f5f5;
-            padding: 5px; /* Reduziere den Innenabstand des Kalenders */
+            padding: 10px;
             border: 1px solid #ccc;
-            margin: 10px; /* Füge einen äußeren Abstand um den Kalender hinzu */
+            border-radius: 10px; /* Runde Ecken hinzugefügt */
         }
 
         .calendar h2 {
@@ -164,11 +165,18 @@
             transition: box-shadow 0.3s, transform 0.3s; /* Sanfter Übergang für Schatten und Zoom */
         }
 
+        /* Alle Bücher auf die Größe des ersten Buchs (Der Fall Bruno) festlegen */
+        .book img {
+            width: 200px;
+            height: 283px;
+        }
+
         /* Schatten- und Zoom-Effekt bei Hover */
         .book:hover {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten hinzufügen */
             transform: scale(1.05); /* Leichte Vergrößerung */
         }
+
     </style>
 </head>
 <body>
@@ -482,6 +490,7 @@
                 mainImage.src = slideshowImages[currentSlide];
             }, 6000); // Wechsel alle 6 Sekunden (6000 Millisekunden)
         }
+        
 
         // Die Diashow starten, wenn die Seite geladen ist
         window.addEventListener('load', startSlideshow);

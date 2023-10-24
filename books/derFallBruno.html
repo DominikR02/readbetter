@@ -26,7 +26,7 @@
             <span class="star-full">★</span>
             <span class="star-full">★</span>
             <span class="star-full">★</span>
-            <span class="star-full" >★</span>
+            <span class="star-full">★</span>
             <span class="star-empty">★</span>
             <!-- Trigger/Open The Modal -->
             <a style="margin-left: 20px" id="myBtn"><h4>Hier bewerten</h4></a>
@@ -46,7 +46,7 @@
                     <a>
                         <img src="../pic/zuBib.jpeg" alt="Zur Bibliothek hinzufügen"
                              title="Zur Bibliothek hinzufügen"
-                             style="height: 30px; margin-left: 20px">
+                             style="height: 30px; margin-left: 20px" onclick="openVerleihModal()">
                     </a>
                 </div>
                 <p>
@@ -195,6 +195,27 @@
     </div>
 </div>
 
+<div id="verleihModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div style="text-align: center">
+            <h3>Zu welchen Zeiten kann man Verleihtermine vereinbaren</h3>
+            <div style="display: flex">
+                <div>
+                    <input type="checkbox" name="Montag" id="montag">
+                    <label for="montag">Montag</label>
+                    <div>
+                    <input type="time" name="MontagVon" id="montagVon" placeholder="Von">
+                    <input type="time" name="MontagBis" id="montagBis" placeholder="Bis">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     // JavaScript to show/hide the hidden text and toggle buttons
@@ -257,6 +278,10 @@
         modal.style.display = "none";
         document.getElementById('bewertung').innerText = document.getElementById('comment').value;
         document.getElementById('comment').value = '';
+    }
+
+    function openVerleihModal() {
+        document.getElementById('verleihModal').style.display = "block";
     }
 </script>
 </body>
