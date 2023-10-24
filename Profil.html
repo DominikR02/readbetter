@@ -56,8 +56,8 @@
             z-index: 1;
             top: 0;
             left: 0;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0, 0.9);
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
             overflow-x: hidden;
             transition: 0.5s;
         }
@@ -91,13 +91,17 @@
         }
 
         @media screen and (max-height: 450px) {
-            .overlay a {font-size: 20px}
+            .overlay a {
+                font-size: 20px
+            }
+
             .overlay .closebtn {
                 font-size: 40px;
                 top: 15px;
                 right: 35px;
             }
         }
+
         .header {
             /* Ihr Header-Styling wie zuvor */
         }
@@ -271,12 +275,13 @@
             <a href="#">Transaktion</a>
         </div>
     </div>
-    </div>
-    <span style="font-size: 35px;cursor:pointer" onclick="openNav()">☰</span>
+</div>
+<span style="font-size: 35px;cursor:pointer" onclick="openNav()">☰</span>
 <div class="profile-picture" style="position: absolute; top: 30px; right: 20px;margin-top: 90px">
     <img src="pic/Profilbilder/rainerzufall.jpg" style="width: 100px">
 </div>
-    <div class="profilInhalt; section-heading"  style="margin-left: 500px; margin-top: 50px">
+<div style="width: 100%; text-align: center;">
+    <div class="profilInhalt; section-heading" style="margin: 50px 20%; text-align: left;">
         <p class="section-heading">Benutzername</p>
         <input type="text" id="username" name="username" placeholder="Benutzername eingeben">
         <p class="section-heading">Biographie</p>
@@ -331,8 +336,8 @@
                 <option value="day">November</option>
                 <option value="day">Dezember</option>
             </select>
-                <label for="year">Jahr:</label>
-                <input type="text" id="year" name="year" placeholder="Jahr" style="width: 40px;">
+            <label for="year">Jahr:</label>
+            <input type="text" id="year" name="year" placeholder="Jahr" style="width: 40px;">
         </div>
         <p class="section-heading">E-Mail</p>
         <input type="text" id="e-mail" name="e-mail" placeholder="E-mail eingeben">
@@ -343,15 +348,20 @@
         <label for="street">Straße:</label>
         <input type="text" id="street" name="street" placeholder="Straße">
         <p class="section-heading">Zahlungsmethode</p>
-        <select id="payment-method" name="payment-method" style="margin-bottom: 50px">
+        <select id="payment-method" name="payment-method">
             <option value="paypal">PayPal</option>
             <option value="visa">Visa</option>
             <option value="other">Sepa Lastschrift</option>
         </select>
-        <button id="saveButton" onclick="saveChanges()" style="position:absolute; margin-left: 700px; margin-top: 20px">Speichern</button>
+        <div style="width: 100%; text-align: right">
+            <button id="saveButton" onclick="saveChanges()">
+                Speichern
+            </button>
+        </div>
     </div>
-    </div>
-    <!-- Weitere Inhalte für das Profil, z.B. Benutzerdetails, Vorlieben, Statistiken, usw. -->
+</div>
+</div>
+<!-- Weitere Inhalte für das Profil, z.B. Benutzerdetails, Vorlieben, Statistiken, usw. -->
 </div>
 <script>
     function saveChanges() {
@@ -380,7 +390,7 @@
     }
 
     // Wiederherstellen der gespeicherten Daten beim Laden der Seite
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
         // Benutzername, Biographie, Geburtstag, E-Mail und andere Felder wiederherstellen
         document.getElementById("username").value = localStorage.getItem("userUsername") || "";
         document.getElementById("biography").value = localStorage.getItem("userBiography") || "";
@@ -395,12 +405,13 @@
         document.getElementById("street").value = localStorage.getItem("userStreet") || "";
         document.getElementById("payment-method").value = localStorage.getItem("userPaymentMethod") || "";
     });
-        function openNav()
-    {
+
+    function openNav() {
         document.getElementById("myNav").style.width = "100%";
     }
+
     function closeNav() {
-        document.getElementById("myNav").style.width= "0%";
+        document.getElementById("myNav").style.width = "0%";
 
     }
 </script>
