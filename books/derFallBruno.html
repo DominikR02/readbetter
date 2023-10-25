@@ -40,15 +40,12 @@
                 <p>ISBN: 9784040101194</p>
                 <div style="display: flex">
                     <a href="Leseproben/lp-derFallBruno.html" target="_blank">
-                        <img src="../pic/Leseprobe.png" alt="Leseprobe" title="Leseprobe"
-                             style="height: 30px;">
+                        <img src="../pic/Leseprobe.png" alt="Leseprobe" title="Leseprobe" style="height: 30px;">
                     </a>
-                    <a>
-                        <img src="../pic/zuBib.jpeg.svg" alt="Zur Bibliothek hinzufügen"
-                             title="Zur Bibliothek hinzufügen"
-                             style="height: 30px; margin-left: 20px" ">
-                    </a>
+                    <img id="zuBib" src="../pic/zuBib.svg" alt="zur Bibliothek hinzufügen" onclick="changeImage()" style="height: 30px; margin-left: 20px;">
+
                 </div>
+
                 <p>
                     <a class="button green-button" onclick="openVerleihModal()">Verleihen</a>
                 </p>
@@ -334,6 +331,17 @@
 
 
 <script>
+function changeImage() {
+    var img = document.getElementById('zuBib');
+    if (img.src.endsWith('zuBib.svg')) {
+        img.src = '../pic/inBib.svg';
+        img.alt = 'zur Bibliothek hinzugefügt';
+    } else {
+        img.src = 'zuBib.svg';
+        img.alt = 'zur Bibliothek hinzufügen';
+    }
+}
+
     // JavaScript to show/hide the hidden text and toggle buttons
     const weiterlesenButton = document.getElementById('weiterlesen-button');
     const zuklappenButton = document.getElementById('zuklappen-button');
