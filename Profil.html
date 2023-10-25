@@ -517,6 +517,10 @@
         localStorage.setItem("userStreet", newStreet);
         localStorage.setItem("userPaymentMethod", newPaymentMethod);
 
+        // Profilbild speichern
+        var profilePicture = document.querySelector(".profile-picture img").src;
+        localStorage.setItem("userProfilePicture", profilePicture);
+
         // Benachrichtigung, dass die Änderungen gespeichert wurden (optional)
         alert("Änderungen wurden gespeichert.");
     }
@@ -536,6 +540,13 @@
         document.getElementById("city").value = localStorage.getItem("userCity") || "";
         document.getElementById("street").value = localStorage.getItem("userStreet") || "";
         document.getElementById("payment-method").value = localStorage.getItem("userPaymentMethod") || "";
+
+        // Profilbild wiederherstellen
+        var savedProfilePicture = localStorage.getItem("userProfilePicture");
+        if (savedProfilePicture) {
+            var profilePicture = document.querySelector(".profile-picture img");
+            profilePicture.src = savedProfilePicture;
+        }
     });
 
     function openNav() {
@@ -587,6 +598,7 @@
             reader.readAsDataURL(selectedImage);
         }
     });
+
 </script>
 
 </body>
