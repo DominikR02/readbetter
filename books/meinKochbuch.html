@@ -4,269 +4,69 @@
     <meta charset="UTF-8">
     <title>Mein Kochbuch | readbetter</title>
     <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/buch.css">
+    <link rel="stylesheet" type="text/css" href="../css/ratingstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/modal.css">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
+
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
 </head>
+<body>
 
-<header class="header">
-    <a href="../index.html"><img src="../pic/logo.jpeg" style="width: 100px; height: 100px"></a>
-    <a href="../index.html"><img src="../pic/logoText.png" style="height: 100px; width: 200px;"></a>
-    <div class="menü" style="margin-left: 0">
-        <p class="p-menu">Startseite</p>
-    </div>
-    <div class="menü">
-        <p class="p-menu">Trending</p>
-    </div>
-    <div class="menü">
-        <p class="p-menu">Neu</p>
-    </div>
-    <div class="menü" id="genremenü">
-        <p class="p-menu">Genre</p>
-        <div class="genre-dropdown">
-            <div class="dropdown-item">Komödien</div>
-            <div class="dropdown-item">Krimis</div>
-            <div class="dropdown-item">Romane</div>
-            <div class="dropdown-item">Romane</div>
-            <div class="dropdown-item">Romane</div>
-            <div class="dropdown-item">Romane</div>
-            <div class="dropdown-item">Romane</div>
-        </div>
-    </div>
-    <div class="menü">
-        <a href="../abos.html"><p class="p-menu" style="color: red">Abos</p></a>
-    </div>
-    <div class="navigation">
-        <div>
-            <a href="../login.html"><img src="../pic/login-weiss.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
-        </div>
-        <div class="burgermenu">
-            <!-- Hier können Sie das Burger-Menü einfügen -->
-            <!-- Zum Beispiel: -->
-            <img src="../pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer" onclick="toggleBurgerMenu()">
-        </div>
-        <div class="search-icon">
-            <!-- Hier können Sie das Suchbild einfügen -->
-            <!-- Zum Beispiel: -->
-            <a href="#"><img src="../pic/lupe.png" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu()"></a>
-        </div>
-    </div>
+<h1>Header</h1>
 
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlay"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenu">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenu()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">Startseite</div>
-        <div class="popup-item">Trending</div>
-        <div class="popup-item">Neu</div>
-        <div class="popup-item" id="genreItem">
-            Genre
-            <div class="genre-submenu">
-                <div class="sub-item">Komödien</div>
-                <div class="sub-item">Krimis</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-                <div class="sub-item">Romane</div>
-            </div>
-        </div>
-        <div class="popup-item" style="color: red"><a href="../abos.html">Abos</a></div>
-        <div class="popup-item popup-icons">
-            <div class="popup-icon">
-                <a href="../login.html"><img src="../pic/login.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
-            </div>
-            <div class="popup-icon">
-                <a href="#"><img src="../pic/search.svg" style="width: 30px; height: 30px; margin: 8px" onclick="toggleSearchMenu(); closePopupMenu()"></a>
-            </div>
-        </div>
-        <div class="popup-item">
-            <a href="../datenschutz.html">Datenschutz</a> | <a href="../impressum.html">Impressum</a>
-        </div>
-    </div>
 
-    <!-- Overlay für das Pop-up-Menü -->
-    <div class="popup-overlay" id="popupOverlaySearch"></div>
-    <!-- Pop-up-Menü -->
-    <div class="popup-menu" id="popupMenuSearch">
-        <!-- Schließen-Button oben links -->
-        <button class="popup-close-button" onclick="closePopupMenuSearch()">X</button>
-        <!-- Menüpunkte, die im Pop-up-Menü angezeigt werden -->
-        <div class="popup-item">
-            <h4>Suche</h4>
-        </div>
-        <div class="popup-item">Titel</div>
-        <input style="text-align: center" placeholder="Titel" type="text">
-        <div class="popup-item">Autor</div>
-        <input style="text-align: center" placeholder="Autor" type="text">
-        <div class="popup-item">Ort</div>
-        <input style="text-align: center" placeholder="Ort" type="text">
-        <button class="searchButton">Suchen</button>
-    </div>
-</header>
 <div style="display: flex; margin: 20px;">
-    <img src="../pic/buecher/kochbuecher/8454.jpg" style="width: 20%">
+    <img class="buchcover" src="../pic/buecher/kochbuecher/8454.jpg" style="height: 100%">
     <div style="margin: 0 20px">
-        <h1>Mein Kochbuch</h1>
-        <div style="display: flex">
-            <div style="width: 300px">
-                <p>Autor: Christiane Nüsslein-Volhard</p>
-                <p>Genre: Kochbücher </p>
-                <p>Veröffentlichung: 17.04.2020</p>
-                <p>ISBN: 9784040555194</p>
-            </div>
-            <div style="max-width: 800px">
-                <h4>Inhalt</h4>
-                <p>
-                    „Alle essen, viele kochen, manche besonders gut. Zu denen gehöre ich nicht. Aber ich koche leidenschaftlich gern und mag auch Gäste und Feste. Meistens habe ich schrecklich wenig Zeit. Deshalb koche ich in der Regel relativ einfache Gerichte und oft dasselbe.“</p>
-                <!-- Add the "Weiterlesen" button below the first sentence -->
-                <button id="weiterlesen-button">Weiterlesen</button>
-                <!-- Hidden text that will be displayed when the button is clicked -->
-                <div id="hidden-text" style="display: none;">
-                    <p> Bei Einladungen gilt für Christiane Nüsslein-Volhard vor allem eines: Die Gäste und nicht die Speisenfolge stehen im Mittelpunkt. Ein gutes Essen soll Spaß machen. Und ein guter Gastgeber zeichnet sich auch dadurch aus, daß er sich ausgeruht seinen Gästen widmet und nicht panisch in der Küche letzte Vorbereitungen trifft.
-                        Mit pragmatischen Ratschlägen und anschaulichen Anleitungen erleichtert Christiane Nüsslein-Volhard das Kochen von über 200 köstlichen Gerichten, viele davon aus der Küche ihrer traditionsreichen Familie, aber auch bewährte Rezepte von Freunden und
-                        einfallsreiche Abwandlungen: von Käsewindbeuteln und Tomatensuppe über Spinatauflauf, Tafelspitz und Rösti bis zu Zimtsternenund Karamelläpfeln. Tips zum Zeitmanagement in der Küche, zur Vorbereitung und Zusammenstellung des Menüs sowie viele persönliche Beobachtungen aus langjähriger Kocherfahrung vermitteln auch weniger Geübten, daß Kochen keine Zauberei ist.
-                        Die Kochphilosophie von Christiane Nüsslein-Volhard ist einfach: Mit wenigen, aber guten Zutaten und vernünftiger Zeiteinteilung kann jeder köstliche Gerichte zubereiten und als Gastgeber den Überblick behalten.</p>
+        <div class="title-container">
+            <h1 style="margin: 5px 20px 5px 0;">Mein Kochbuch</h1>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <span class="star-full">★</span>
+            <!-- Trigger/Open The Modal -->
+            <a style="margin-left: 20px" id="myBtn"><h4>Hier bewerten</h4></a>
+        </div>
+
+        <div class="book-beschreibung">
+            <div style="min-width: 300px">
+                <p>Autor: Andi Müller</p>
+                <p>Genre: Kochbücher</p>
+                <p>Veröffentlichung: 18.05.1017</p>
+                <p>ISBN: 4584040101123</p>
+                <div style="display: flex">
+                    <a href="Leseproben/lp-derFallBruno.html" target="_blank">
+                        <img src="../pic/Leseprobe.png" alt="Leseprobe" title="Leseprobe" style="height: 30px;">
+                    </a>
+                    <img id="zuBib" src="../pic/zuBib.svg" alt="zur Bibliothek hinzufügen" onclick="changeImage()" style="height: 30px; margin-left: 20px;">
+
                 </div>
-                <!-- Add the "Zuklappen" button -->
-                <button id="zuklappen-button" style="display: none;">Zuklappen</button>
+
+                <p>
+                    <a class="button green-button" onclick="openVerleihModal()">Verleihen</a>
+                </p>
+            </div>
+            <div style="margin-left: 20px;">
+                <h4>Inhalt</h4>
+                <p>"Mein Kochbuch" ist ein kulinarisches Meisterwerk des renommierten Kochs Andi Müller. Mit diesem Buch tauchen Leser in die Welt der gastronomischen Kreativität ein, wie sie nur von einem erfahrenen und angesehenen Küchenchef wie Andi Müller präsentiert werden kann.</p>
+                <a id="weiterlesen-button">Weiterlesen...</a>
+                <div id="hidden-text" style="display: none;">
+                    <p>Das Buch ist eine Sammlung von Andi Müllers persönlichen Rezepten, die von seiner Leidenschaft für gutes Essen und seiner beeindruckenden kulinarischen Karriere inspiriert sind. Von klassischen Gerichten bis hin zu innovativen Kreationen nimmt uns der Autor mit auf eine Reise durch die vielfältige Welt des Kochens.
+                        Jedes Rezept in "Mein Kochbuch" wird in einer klaren und leicht verständlichen Weise präsentiert, so dass sowohl erfahrene Köche als auch Anfänger die Freude am Zubereiten und Genießen von Gerichten finden können. Die begleitenden Geschichten und Anmerkungen des Autors vermitteln nicht nur Kochtechniken, sondern auch die Begeisterung und die Geschichten hinter den Gerichten.
+                        Andi Müllers Kochkunst ist geprägt von seiner Liebe zu frischen Zutaten, seinem Gespür für Aromen und seiner Kreativität in der Küche. Dieses Buch ist eine Inspirationsquelle für alle, die ihre kulinarischen Fähigkeiten verbessern und ihre Kochkünste verfeinern möchten.
+                        Egal, ob Sie ein passionierter Hobbykoch sind oder einfach nur auf der Suche nach neuen Ideen für die Küche, "Mein Kochbuch" bietet eine Fülle von Rezepten und kulinarischem Wissen, die Sie für viele Jahre begleiten werden. Es ist eine Hommage an die Freude des Kochens und ein Muss für alle Feinschmecker und Food-Liebhaber.</p>
+                </div>
+                <a id="zuklappen-button" style="display: none;">Zuklappen</a>
             </div>
         </div>
     </div>
 </div>
-<script>
-        // JavaScript to show/hide the hidden text and toggle buttons
-        const weiterlesenButton = document.getElementById('weiterlesen-button');
-        const zuklappenButton = document.getElementById('zuklappen-button');
-        const hiddenText = document.getElementById('hidden-text');
-
-        weiterlesenButton.addEventListener('click', () => {
-            if (hiddenText.style.display === 'none') {
-                hiddenText.style.display = 'block';
-                weiterlesenButton.style.display = 'none';
-                zuklappenButton.style.display = 'block';
-            }
-        });
-
-        zuklappenButton.addEventListener('click', () => {
-            if (hiddenText.style.display === 'block') {
-                hiddenText.style.display = 'none';
-                weiterlesenButton.style.display = 'block';
-                zuklappenButton.style.display = 'none';
-            }
-        });
-</script>
-<meta charset="UTF-8">
-<title>Tabmenü</title>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        .tab-menu {
-            display: flex;
-            background-color: #4A5F47;
-            border-radius: 10px;
-            overflow: hidden;
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .tab-item {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .tab-item:hover {
-            background-color: #35483E;
-        }
-
-        .tab-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .hidden {
-            display: none;
-        }
-            table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-left: 0; /* Kein zusätzlicher Abstand zu den Seiten */
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-}
-
-th {
-    color: black; /* Schriftfarbe für Header-Zellen */
-    font-weight: bold; /* Fettschrift für Header-Zellen */
-    background-color: transparent; /* Hintergrundfarbe für Header-Zellen entfernen */
-}
-
-td {
-    background-color: white; /* Hintergrundfarbe für Datenzellen */
-    color: black; /* Schriftfarbe für Datenzellen */
-    transition: background-color 0.3s; /* Animation beim Hover-Effekt */
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2; /* Hintergrundfarbe für gerade Zeilen */
-}
-
-/* Hover-Effekt */
-tr:hover td {
-    background-color: #A5F47; /* Hintergrundfarbe für Datenzellen beim Hover */
-}
-   .button {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #4A5F47;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s, text-decoration 0.3s;
-        }
-
-        .green-button:hover {
-            background-color: #35483E;
-            text-decoration: underline;
-        }
-
-        .grey-button:hover {
-            background-color: #999;
-            text-decoration: none;
-        }
-
-        /* Stil für den grünen Button "Jetzt ausleihen" */
-        .green-button {
-            background-color: #4A5F47;
-        }
-
-        /* Stil für den grauen Button "Jetzt ausleihen" */
-        .grey-button {
-            background-color: #999;
-        }
 
 
-    </style>
-</head>
-<body>
 <div class="tab-menu">
     <div class="tab-item" onclick="showTab('exemplare')">Exemplare</div>
     <div class="tab-item" onclick="showTab('bewertung')">Bewertung</div>
@@ -280,26 +80,25 @@ tr:hover td {
         <tr>
             <th>Mediennummer</th>
             <th>Verleiher</th>
+            <th>Standort</th>
             <th>Status</th>
-            <th> </th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>12345</td>
-            <td>Semanur Özdemir</td>
+            <td>55345</td>
+            <td>Leon Pfeffer</td>
+            <td>Eschborn</td>
             <td>Verfügbar</td>
-           <td>   <a href="" class="button green-button">Jetzt ausleihen</a></td>
+            <td><a href="../ausleihe.html" class="button green-button">Jetzt ausleihen</a></td>
         </tr>
         <tr>
-            <td>67890</td>
+            <td>34890</td>
             <td>Dominik Richter</td>
-            <td>
-                Ausgeliehen
-            </td>
-            <td>
-                <a class="button grey-button">Jetzt ausleihen</a>
-            </td>
+            <td>Mannheim</td>
+            <td>Ausgeliehen</td>
+            <td><a class="button grey-button">Jetzt ausleihen</a></td>
         </tr>
         </tbody>
     </table>
@@ -307,51 +106,310 @@ tr:hover td {
 
 <div id="bewertung-content" class="tab-content hidden">
 
+    <div class="bewertung" style="border-radius: 30px">
+        <h4 style="margin: 10px 25px; padding-top: 10px">Rainer Zufall</h4>
+        <div style="display: flex">
+            <img src="../pic/Profilbilder/rainerzufall.png"
+                 style="margin: 10px 25px; width: 200px; height: 200px; border-radius: 100px" alt="Profilbild">
+            <div style="display: block; margin-left: 20px">
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-empty">★</span>
+                <br>
+                <p><span id="bewertung"></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="bewertung" style="border-radius: 30px">
+        <h4 style="margin: 10px 25px; padding-top: 10px">Ellen Lang</h4>
+        <div style="display: flex">
+            <img src="../pic/Profilbilder/ellenLang.png"
+                 style="margin: 10px 25px; width: 200px; height: 200px; border-radius: 100px" alt="Profilbild">
+            <div style="display: block; margin-left: 20px">
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-empty">★</span>
+                <span class="star-empty">★</span>
+                <br>
+                <p>Tolle Rezepte</p>
+            </div>
+        </div>
+    </div>
+    <div class="bewertung" style="border-radius: 30px">
+        <h4 style="margin: 10px 25px; padding-top: 10px">Kai Sehr</h4>
+        <div style="display: flex">
+            <img src="../pic/Profilbilder/kaiSehr.png"
+                 style="margin: 10px 25px; width: 200px; height: 200px; border-radius: 100px" alt="Profilbild">
+            <div style="display: block; margin-left: 20px">
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <span class="star-full">★</span>
+                <br>
+                <p>Gut für Studenten, die nicht kochen können :) </p>
+            </div>
+        </div>
+    </div>
 </div>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h4>Schreibe jetzt deine Bewertung:</h4>
+        <div style="display: flex">
+            <img src="../pic/Profilbilder/rainerzufall.png"
+                 width="200" height="200" alt="Beschreibung des Bildes">
+            <div style="display: block; margin-left: 20px">
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5"/>
+                    <label for="star5" title="text">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4"/>
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3"/>
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2"/>
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1"/>
+                    <label for="star1" title="text">1 star</label>
+                </div>
+                <br>
+                <textarea id="comment" placeholder="Dein Kommentar"></textarea>
+                <button id="send" style="margin-left: 20px" onclick="sendComment()">Senden</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="verleihModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeVerleihModal()">&times;</span>
+        <div style="text-align: center">
+            <h3>Zu welchen Zeiten kann man Verleihtermine vereinbaren</h3>
+            <div style="display: flex; margin-bottom: 30px">
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Montag" id="montag" onchange="toggleZeit('montag')">
+                    <label for="montag">Montag</label>
+                    <div class="uhrzeit" id="montagZeit" style="display: none; margin-top: 20px">
+                        <label for="montagVon">Von:</label>
+                        <input type="time" name="MontagVon" id="montagVon" placeholder="Von"><br><br>
+                        <label for="montagBis">Bis:</label>
+                        <input type="time" name="MontagBis" id="montagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Dienstag" id="dienstag" onchange="toggleZeit('dienstag')">
+                    <label for="dienstag">Dienstag</label>
+                    <div class="uhrzeit" id="dienstagZeit" style="display: none; margin-top: 20px">
+                        <label for="dienstagVon">Von:</label>
+                        <input type="time" name="DienstagVon" id="dienstagVon" placeholder="Von"><br><br>
+                        <label for="dienstagBis">Bis:</label>
+                        <input type="time" name="DienstagBis" id="dienstagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Mittwoch" id="mittwoch" onchange="toggleZeit('mittwoch')">
+                    <label for="mittwoch">Dienstag</label>
+                    <div class="uhrzeit" id="mittwochZeit" style="display: none; margin-top: 20px">
+                        <label for="mittwochVon">Von:</label>
+                        <input type="time" name="MittwochVon" id="mittwochVon" placeholder="Von"><br><br>
+                        <label for="mittwochBis">Bis:</label>
+                        <input type="time" name="MittwochBis" id="mittwochBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Donnerstag" id="donnerstag" onchange="toggleZeit('donnerstag')">
+                    <label for="donnerstag">Donnerstag</label>
+                    <div class="uhrzeit" id="donnerstagZeit" style="display: none; margin-top: 20px">
+                        <label for="donnerstagVon">Von:</label>
+                        <input type="time" name="DonnerstagVon" id="donnerstagVon" placeholder="Von"><br><br>
+                        <label for="donnerstagBis">Bis:</label>
+                        <input type="time" name="DonnerstagBis" id="donnerstagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Freitag" id="freitag" onchange="toggleZeit('freitag')">
+                    <label for="freitag">Freitag</label>
+                    <div class="uhrzeit" id="freitagZeit" style="display: none; margin-top: 20px">
+                        <label for="freitagVon">Von:</label>
+                        <input type="time" name="FreitagVon" id="freitagVon" placeholder="Von"><br><br>
+                        <label for="freitagBis">Bis:</label>
+                        <input type="time" name="FreitagBis" id="freitagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Samstag" id="samstag" onchange="toggleZeit('samstag')">
+                    <label for="samstag">Samstag</label>
+                    <div class="uhrzeit" id="samstagZeit" style="display: none; margin-top: 20px">
+                        <label for="samstagVon">Von:</label>
+                        <input type="time" name="SamstagVon" id="samstagVon" placeholder="Von"><br><br>
+                        <label for="samstagBis">Bis:</label>
+                        <input type="time" name="SamstagBis" id="samstagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Sonntag" id="sonntag" onchange="toggleZeit('sonntag')">
+                    <label for="sonntag">Sonntag</label>
+                    <div class="uhrzeit" id="sonntagZeit" style="display: none; margin-top: 20px">
+                        <label for="sonntagVon">Von:</label>
+                        <input type="time" name="SonntagVon" id="sonntagVon" placeholder="Von"><br><br>
+                        <label for="sonntagBis">Bis:</label>
+                        <input type="time" name="SonntagBis" id="sonntagBis" placeholder="Bis">
+                    </div>
+                </div>
+            </div>
+
+            <label for="standort">Standort:</label>
+            <input type="text" name="Standort" id="standort" placeholder="Mannheim"><br>
+
+            <button id="saveTime" onclick="verleihModalWeiter()">Zeiten bestätigen</button>
+
+            <div id="verleihBestaetigung">
+                <p>Mit dem Klick auf Verleihen wird dein Buch zum Verleih angeboten.</p>
+                <p>In deiner persönlichen Bibliothek siehst du das Buch in der Rubrik "Meine
+                    Bücher". Du wirst von uns benachrichtigt, sobald das Buch jemand Leihen möchte.</p>
+
+                <br><br>
+
+                <p id="hint-checkboxes">Bitte wähle alle Checkboxen aus.</p>
+
+                <div>
+                    <input type="checkbox" id="agb" name="agb">
+                    <label for="agb">Ich stimme den <a href="agb.html">AGB</a> von readbetter zu.</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="datenschutz" name="datenschutz">
+                    <label for="datenschutz">Ich stimme den <a href="datenschutz.html">Datenschutzbedingungen</a> von readbetter
+                        zu. </label>
+                </div>
+
+                <button style="margin-top: 30px; border-radius: 20px" onclick="verleih()">Verleih</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script>
-        function showTab(tabName) {
-            var tabs = document.getElementsByClassName('tab-content');
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].classList.add('hidden');
-            }
-            document.getElementById(tabName + '-content').classList.remove('hidden');
+function changeImage() {
+    var img = document.getElementById('zuBib');
+    if (img.src.endsWith('zuBib.svg')) {
+        img.src = '../pic/inBib.svg';
+        img.alt = 'zur Bibliothek hinzugefügt';
+    } else {
+        img.src = 'zuBib.svg';
+        img.alt = 'zur Bibliothek hinzufügen';
+    }
+}
+
+    // JavaScript to show/hide the hidden text and toggle buttons
+    const weiterlesenButton = document.getElementById('weiterlesen-button');
+    const zuklappenButton = document.getElementById('zuklappen-button');
+    const hiddenText = document.getElementById('hidden-text');
+
+    weiterlesenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'none') {
+            hiddenText.style.display = 'block';
+            weiterlesenButton.style.display = 'none';
+            zuklappenButton.style.display = 'block';
         }
-    </script>
+    });
+
+    zuklappenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'block') {
+            hiddenText.style.display = 'none';
+            weiterlesenButton.style.display = 'block';
+            zuklappenButton.style.display = 'none';
+        }
+    });
 
 
-<footer>
-    <div class="social-icons">
-        <!-- Links zu den Sozialen Medien mit Bildern -->
-        <a href="https://www.facebook.com/readbetter" target="_blank"> <img src="../pic/Socials/facebook.png" alt="Facebook" class="sozial-icon"></a>
-        <a href="https://www.youtube.com/readbetter" target="_blank"><img src="../pic/Socials/youtube.png" alt="YouTube" class="sozial-icon"></a>
-        <a href="https://www.instagram.com/readbetter" target="_blank"><img src="../pic/Socials/instagram.png" alt="Instagram" class="sozial-icon"></a>
-    </div>
-    </div>
-    <br>
-    <!-- Link zum Datenschutz und Impressum -->
-    <div id="footer-links" style="text-align: left">
+    function showTab(tabName) {
+        var tabs = document.getElementsByClassName('tab-content');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.add('hidden');
+        }
+        document.getElementById(tabName + '-content').classList.remove('hidden');
+    }
 
-        <img src="../pic/logoText.png" id="footer-logo" style="width: 25%;">
-        <div class="footer-container" id="left-footer-container">
-            <a href="../index.html">Startseite</a><br>
-            <a href="../AboutUs.html">Über Uns</a><br>
-            <a href="#">Kontakt</a><br>
-            <a href="#">FAQ</a>
-        </div>
-        <div class="footer-container">
-            <a href="../datenschutz.html">Datenschutz</a><br>
-            <a href="../impressum.html">Impressum</a><br>
-            <a onclick="print()">Drucken</a><br>
-            <a href="#">AGB</a>
-        </div>
-        <div class="footer-container">
-            <a href="../login.html"><img src="../pic/login-weiss.png" style="width: 45px; height: 45px; margin: 8px;"></a><br>
-            <a href="#"><img src="../pic/lupe.png" style="height: 45px; width: 45px; margin: 8px" onclick="toggleSearchMenu()"></a>
-        </div>
-    </div>
-</footer>
-<!-- "nach oben"-Button -->
-<button class="scroll-top" onclick="scrollToTop()">↑</button>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    function sendComment() {
+        modal.style.display = "none";
+        document.getElementById('bewertung').innerText = document.getElementById('comment').value;
+        document.getElementById('comment').value = '';
+    }
+
+    function openVerleihModal() {
+        document.getElementById('verleihModal').style.display = "block";
+    }
+
+    function closeVerleihModal() {
+        document.getElementById('verleihModal').style.display = "none";
+    }
+
+    function toggleZeit(tag) {
+        var zeitDiv = document.getElementById(tag + 'Zeit');
+        var checkbox = document.getElementById(tag);
+
+        if (checkbox.checked) {
+            zeitDiv.style.display = 'block';
+        } else {
+            zeitDiv.style.display = 'none';
+        }
+    }
+
+    function verleihModalWeiter(){
+        document.getElementById('saveTime').style.display = "none";
+        document.getElementById('verleihBestaetigung').style.display = "block";
+    }
+
+    function verleih(){
+        var agb = document.getElementById('agb');
+        var datenschutz = document.getElementById('datenschutz');
+
+        if (agb.checked & datenschutz.checked) {
+            closeVerleihModal();
+        } else {
+            document.getElementById('hint-checkboxes').style.display = "block";
+        }
+    }
+</script>
 </body>
 </html>
+<footer>
+    <h1>Footer</h1>
+</footer>
