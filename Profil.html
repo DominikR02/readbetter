@@ -231,6 +231,7 @@
             font-size: 16px;
             cursor: pointer;
         }
+
         .transaktion {
             margin-left: 100px;
             border: 2px solid green;
@@ -438,79 +439,28 @@
     <div class="profilInhalt; section-heading" style="margin: 50px 20%; text-align: left;">
         <img src="pic/kalender.jpg" style="width: 220px; position: absolute; right: 60px; margin-top: 300px">
         <p class="section-heading">Benutzername</p>
-        <input type="text" id="username" name="username" placeholder="Benutzername eingeben">
+        <input type="text" id="username" name="username" placeholder="Benutzername eingeben" value="Rainer Zufall">
         <p class="section-heading">Biographie</p>
         <textarea id="biography" name="biography" placeholder="Biographie eingeben" rows="10" cols="50"></textarea>
         <p class="section-heading">Geburtstag</p>
-        <div>
-            <label for="day"> Tag:</label>
-            <select id="day" name="day">
-                <option value="day">01</option>
-                <option value="day">02</option>
-                <option value="day">03</option>
-                <option value="day">04</option>
-                <option value="day">05</option>
-                <option value="day">06</option>
-                <option value="day">07</option>
-                <option value="day">09</option>
-                <option value="day">10</option>
-                <option value="day">11</option>
-                <option value="day">12</option>
-                <option value="day">13</option>
-                <option value="day">14</option>
-                <option value="day">15</option>
-                <option value="day">16</option>
-                <option value="day">17</option>
-                <option value="day">18</option>
-                <option value="day">19</option>
-                <option value="day">20</option>
-                <option value="day">21</option>
-                <option value="day">22</option>
-                <option value="day">23</option>
-                <option value="day">24</option>
-                <option value="day">25</option>
-                <option value="day">26</option>
-                <option value="day">27</option>
-                <option value="day">28</option>
-                <option value="day">29</option>
-                <option value="day">30</option>
-                <option value="day">31</option>
-            </select>
-            <label for="month"> Monat:</label>
-            <select id="month" name="day">
-                <option value="day">Januar</option>
-                <option value="day">Februar</option>
-                <option value="day">März</option>
-                <option value="day">April</option>
-                <option value="day">Mai</option>
-                <option value="day">Juni</option>
-                <option value="day">Juli</option>
-                <option value="day">August</option>
-                <option value="day">September</option>
-                <option value="day">Oktober</option>
-                <option value="day">November</option>
-                <option value="day">Dezember</option>
-            </select>
-            <label for="year">Jahr:</label>
-            <input type="text" id="year" name="year" placeholder="Jahr" style="width: 40px;">
-        </div>
+        <input type="date" id="day" name="username" placeholder="Geburtstag" value="01.01.2001">
         <p class="section-heading">E-Mail</p>
-        <input type="text" id="e-mail" name="e-mail" placeholder="E-mail eingeben">
+        <input type="text" id="e-mail" name="e-mail" placeholder="E-mail eingeben" value="rainer.zufall@gmail.com">
         <p class="section-heading">Rechnungsadresse</p>
         <label for="plz">PLZ:</label>
-        <input type="text" id="plz" name="PLZ" placeholder="PLZ">
+        <input type="text" id="plz" name="PLZ" placeholder="PLZ" value="12345">
         <label for="city">Stadt:</label>
-        <input type="text" id="city" name="city" placeholder="Stadt">
+        <input type="text" id="city" name="city" placeholder="Stadt" value="Zufallstadt">
         <label for="street">Straße:</label>
-        <input type="text" id="street" name="street" placeholder="Straße">
+        <input type="text" id="street" name="street" placeholder="Straße" value="Zufallstraße 1">
         <p class="section-heading">Zahlungsmethode</p>
         <select id="payment-method" name="payment-method">
-            <option value="paypal">PayPal</option>
+            <option selected="selected" value="paypal">PayPal</option>
             <option value="visa">Visa</option>
             <option value="other">Sepa Lastschrift</option>
         </select>
         <div style="width: 100%; text-align: right">
-            <button id="saveButton" onclick="saveChanges()">
+            <button id="saveButton">
                 Speichern
             </button>
         </div>
@@ -559,7 +509,7 @@
     </div>
 
     <div id="meineMain">
-        <div  class="book V" id="mbook1">
+        <div class="book V" id="mbook1">
             <a href="books/meinKochbuch.html">
                 <div style="display: flex">
                     <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover 1">
@@ -590,7 +540,8 @@
 </div>
 <div id="transaktionSite" style="display: none; text-align: center">
     <h1>Transaktionen</h1>
-    <div class="transaktion" style="margin: 15px 15%; border: 2px solid green; border-radius: 10px; padding: 10px; display: flex; align-items: center;">
+    <div class="transaktion"
+         style="margin: 15px 15%; border: 2px solid green; border-radius: 10px; padding: 10px; display: flex; align-items: center;">
         <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover" style="width: 200px">
         <div class="transaktions-details" style="display: inline-block; margin-left: 20px; text-align: left">
             <h2> Verleihe </h2>
@@ -601,7 +552,8 @@
             <p><strong>An:</strong> Ellen Lang</p>
         </div>
     </div>
-    <div class="transaktion" style="margin: 15px 15%; border: 2px solid red; border-radius: 10px; padding: 10px; display: flex; align-items: center;">
+    <div class="transaktion"
+         style="margin: 15px 15%; border: 2px solid red; border-radius: 10px; padding: 10px; display: flex; align-items: center;">
         <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Buchcover" style="width: 200px">
         <div class="transaktions-details" style="display: inline-block; margin-left: 20px; text-align: left">
             <h2> Ausleihe </h2>
@@ -627,8 +579,12 @@
                 Leiher zurückerhalten hast. Du kannst gerne noch ein paar Bilder vom Rückgabezustand machen und anfügen.
             </p>
             <br>
-            <a href="Startseite.html"><button id="uebregabeButton">Übergabe bestätigen</button></a>
-            <a href="Startseite.html"><button id="rueckgabeButton">Rückgabe bestätigen</button></a>
+            <a href="Startseite.html">
+                <button id="uebregabeButton">Übergabe bestätigen</button>
+            </a>
+            <a href="Startseite.html">
+                <button id="rueckgabeButton">Rückgabe bestätigen</button>
+            </a>
             <br>
             <div id="upload-container" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
                 <p>Ziehe Bilder hierher oder klicke, um sie hochzuladen</p>
@@ -684,59 +640,6 @@
 <button class="scroll-top" onclick="scrollToTop()">↑</button>
 
 <script>
-    function saveChanges() {
-        // Benutzername, Biographie, Geburtstag, E-Mail und andere Felder speichern
-        var newUsername = document.getElementById("username").value;
-        var newBiography = document.getElementById("biography").value;
-        var newBirthday = document.getElementById("day").value + "-" + document.getElementById("month").value + "-" + document.getElementById("year").value;
-        var newEmail = document.getElementById("e-mail").value;
-        var newZip = document.getElementById("zip").value;
-        var newCity = document.getElementById("city").value;
-        var newStreet = document.getElementById("street").value;
-        var newPaymentMethod = document.getElementById("payment-method").value;
-
-        // Speichere die Änderungen im localStorage
-        localStorage.setItem("userUsername", newUsername);
-        localStorage.setItem("userBiography", newBiography);
-        localStorage.setItem("userBirthday", newBirthday);
-        localStorage.setItem("userEmail", newEmail);
-        localStorage.setItem("userZip", newZip);
-        localStorage.setItem("userCity", newCity);
-        localStorage.setItem("userStreet", newStreet);
-        localStorage.setItem("userPaymentMethod", newPaymentMethod);
-
-        // Profilbild speichern
-        var profilePicture = document.querySelector(".profile-picture img").src;
-        localStorage.setItem("userProfilePicture", profilePicture);
-
-        // Benachrichtigung, dass die Änderungen gespeichert wurden (optional)
-        alert("Änderungen wurden gespeichert.");
-    }
-
-    // Wiederherstellen der gespeicherten Daten beim Laden der Seite
-    window.addEventListener("load", function () {
-        // Benutzername, Biographie, Geburtstag, E-Mail und andere Felder wiederherstellen
-        document.getElementById("username").value = localStorage.getItem("userUsername") || "";
-        document.getElementById("biography").value = localStorage.getItem("userBiography") || "";
-        var savedBirthday = localStorage.getItem("userBirthday") || "01-Januar-Jahr";
-        var birthdayParts = savedBirthday.split("-");
-        document.getElementById("day").value = birthdayParts[0];
-        document.getElementById("month").value = birthdayParts[1];
-        document.getElementById("year").value = birthdayParts[2];
-        document.getElementById("e-mail").value = localStorage.getItem("userEmail") || "";
-        document.getElementById("zip").value = localStorage.getItem("userZip") || "";
-        document.getElementById("city").value = localStorage.getItem("userCity") || "";
-        document.getElementById("street").value = localStorage.getItem("userStreet") || "";
-        document.getElementById("payment-method").value = localStorage.getItem("userPaymentMethod") || "";
-
-        // Profilbild wiederherstellen
-        var savedProfilePicture = localStorage.getItem("userProfilePicture");
-        if (savedProfilePicture) {
-            var profilePicture = document.querySelector(".profile-picture img");
-            profilePicture.src = savedProfilePicture;
-        }
-    });
-
     function openNav() {
         document.getElementById("myNav").style.width = "100%";
     }
@@ -753,17 +656,7 @@
     document.getElementById('closeImageUploadPopup').addEventListener('click', function () {
         document.getElementById('imageUploadPopup').style.display = 'none';
     });
-
-    document.getElementById('chooseFromGalleryButton').addEventListener('click', function () {
-        // Hier kannst du den Code für die Auswahl eines Bildes aus der Galerie einfügen
-        // Zum Beispiel: document.getElementById('profile-picture-upload').click();
-        // Du kannst auch eine JavaScript-Bibliothek oder ein Framework für die Bildauswahl verwenden.
-    });
-
-    document.getElementById('captureFromCameraButton').addEventListener('click', function () {
-        // Hier kannst du den Code für das Aufnehmen eines neuen Bildes mit der Kamera einfügen
-        // Zum Beispiel: Implementiere die Logik für die Kameraaufnahme
-    });
+    
     document.getElementById("chooseFromGalleryButton").addEventListener("click", function () {
         // Das input[type="file"]-Element auswählen
         var fileInput = document.getElementById("profile-picture-upload");
