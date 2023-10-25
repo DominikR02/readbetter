@@ -1,5 +1,3 @@
-/* Füge deine bestehenden CSS-Stile hier ein */
-
 .filter-container {
     position: sticky;
     top: 0;
@@ -9,7 +7,14 @@
     background-color: rgba(74, 95, 71, 0.5);
 }
 
-#genreFilter button {
+#ausgeliehenFilter,
+#meineFilter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ausgeliehenFilter button,
+#meineFilter button {
     margin: 5px;
     padding: 5px 10px;
     background-color: #fff;
@@ -19,27 +24,31 @@
     cursor: pointer;
 }
 
-#genreFilter button:hover,
-#genreFilter button.selected:hover {
+#ausgeliehenFilter button:hover,
+#ausgeliehenFilter button.selected:hover,
+#meineFilter button:hover,
+#meineFilter button.selected:hover {
     background-color: #4A7F47;
     color: #fff;
     text-decoration: unset;
 }
 
-#genreFilter button.selected {
+#ausgeliehenFilter button.selected,
+#meineFilter button.selected {
     background-color: #4A5F47;
-    color: white;
+    color: #ffffff;
 }
 
-
-main {
+#ausgeliehenMain,
+#meineMain {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 2rem;
 }
 
-main a {
+#ausgeliehenMain a,
+#meineMain a {
     color: #000;
 }
 
@@ -48,7 +57,7 @@ main a {
     padding: 5px;
     margin: 10px;
     text-align: center;
-    max-width: 365px;
+    max-width: 420px;
     display: flex;
     background-color: white;
     transition: background-color 0.3s ease;
@@ -58,7 +67,8 @@ main a {
     background-color: #f0f0f0;
 }
 
-main img {
+#ausgeliehenMain img,
+#meineMain img {
     height: 175px;
 
 }
@@ -68,15 +78,7 @@ main img {
     margin-left: 10px;
 }
 
-/* ------------ Sterne --------------*/
-
-.star-full {
-    margin-right: 5px;
-    color: #ffd700; /* Gelbe Farbe für Sterne */
-    font-size: 24px;
-}
-
-.star-empty {
-    margin-right: 5px;
-    font-size: 24px;
+.beschreibung button {
+    margin: 0;
+    border-radius: 20px;
 }
