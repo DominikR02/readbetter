@@ -142,11 +142,21 @@
                 <span class="star-empty">★</span>
                 <span class="star-empty">★</span>
                 <br>
-                <p>Die Atmosphäre des Bayerischen Waldes ist meisterhaft dargestellt und verleiht der Geschichte eine düstere und geheimnisvolle Stimmung. Man kann die dichten Wälder und versteckten Dörfer förmlich vor sich sehen.
+                <p>Die Atmosphäre des Bayerischen Waldes ist meisterhaft dargestellt und verleiht der Geschichte eine
+                    düstere und geheimnisvolle Stimmung. Man kann die dichten Wälder und versteckten Dörfer förmlich vor
+                    sich sehen.
 
-                    Leider muss ich jedoch feststellen, dass die Handlung des Buches nicht immer leicht nachvollziehbar ist. Die Ermittlungen von Kommissar Geißler scheinen zuweilen sprunghaft und unlogisch zu sein, was den Leser gelegentlich verwirren kann. Dies trägt zur Unvorhersehbarkeit der Geschichte bei, führt jedoch auch dazu, dass die Auflösung des Falles in einem fundamentalen Irrtum gipfelt, der für meinen Geschmack ein wenig zu extrem ist und die Glaubwürdigkeit der Geschichte strapaziert.
+                    Leider muss ich jedoch feststellen, dass die Handlung des Buches nicht immer leicht nachvollziehbar
+                    ist. Die Ermittlungen von Kommissar Geißler scheinen zuweilen sprunghaft und unlogisch zu sein, was
+                    den Leser gelegentlich verwirren kann. Dies trägt zur Unvorhersehbarkeit der Geschichte bei, führt
+                    jedoch auch dazu, dass die Auflösung des Falles in einem fundamentalen Irrtum gipfelt, der für
+                    meinen Geschmack ein wenig zu extrem ist und die Glaubwürdigkeit der Geschichte strapaziert.
 
-                    Insgesamt ist "Der Fall Bruno" eine interessante Lektüre, die sich durch ihre ungewöhnliche Erzählweise und ihre bemerkenswerte Hauptfigur auszeichnet. Die malerische Beschreibung der Umgebung und die düstere Atmosphäre tragen zur Spannung bei. Allerdings können die verworrene Handlung und der extreme Twist am Ende einige Leser abschrecken. Es ist ein Buch, das durchaus polarisieren kann, daher vergebe ich drei Sterne.</p>
+                    Insgesamt ist "Der Fall Bruno" eine interessante Lektüre, die sich durch ihre ungewöhnliche
+                    Erzählweise und ihre bemerkenswerte Hauptfigur auszeichnet. Die malerische Beschreibung der Umgebung
+                    und die düstere Atmosphäre tragen zur Spannung bei. Allerdings können die verworrene Handlung und
+                    der extreme Twist am Ende einige Leser abschrecken. Es ist ein Buch, das durchaus polarisieren kann,
+                    daher vergebe ich drei Sterne.</p>
             </div>
         </div>
     </div>
@@ -162,11 +172,19 @@
                 <span class="star-full">★</span>
                 <span class="star-full">★</span>
                 <br>
-                <p>"Der Fall Bruno" verdient definitiv volle 5 Sterne! Dieser Krimi bricht mit Konventionen und bietet eine fesselnde Geschichte mit einer einzigartigen Hauptfigur und einer beeindruckenden Beschreibung der bayerischen Landschaft. Die einfühlsame Darstellung von Bruno und seiner Sichtweise auf die Welt ist berührend und tiefgreifend. Die düstere Atmosphäre des Bayerischen Waldes schafft eine einzigartige Kulisse, die die Spannung und das Geheimnis der Geschichte verstärkt.
+                <p>"Der Fall Bruno" verdient definitiv volle 5 Sterne! Dieser Krimi bricht mit Konventionen und bietet
+                    eine fesselnde Geschichte mit einer einzigartigen Hauptfigur und einer beeindruckenden Beschreibung
+                    der bayerischen Landschaft. Die einfühlsame Darstellung von Bruno und seiner Sichtweise auf die Welt
+                    ist berührend und tiefgreifend. Die düstere Atmosphäre des Bayerischen Waldes schafft eine
+                    einzigartige Kulisse, die die Spannung und das Geheimnis der Geschichte verstärkt.
 
-                    Die Handlung, die mitunter unvorhersehbar und sprunghaft ist, macht die Geschichte nur noch interessanter und hält den Leser in Atem. Die überraschende Wendung am Ende, die in einem fundamentalen Irrtum gipfelt, ist gewagt, aber sie sorgt für eine unvergessliche Leseerfahrung.
+                    Die Handlung, die mitunter unvorhersehbar und sprunghaft ist, macht die Geschichte nur noch
+                    interessanter und hält den Leser in Atem. Die überraschende Wendung am Ende, die in einem
+                    fundamentalen Irrtum gipfelt, ist gewagt, aber sie sorgt für eine unvergessliche Leseerfahrung.
 
-                    Insgesamt ist "Der Fall Bruno" ein herausragendes Buch, das sich von der Masse abhebt und den Leser in seinen Bann zieht. Eine absolute Empfehlung für alle, die nach einem einzigartigen Krimi suchen. Fünf Sterne!</p>
+                    Insgesamt ist "Der Fall Bruno" ein herausragendes Buch, das sich von der Masse abhebt und den Leser
+                    in seinen Bann zieht. Eine absolute Empfehlung für alle, die nach einem einzigartigen Krimi suchen.
+                    Fünf Sterne!</p>
             </div>
         </div>
     </div>
@@ -210,15 +228,105 @@
         <span class="close" onclick="closeVerleihModal()">&times;</span>
         <div style="text-align: center">
             <h3>Zu welchen Zeiten kann man Verleihtermine vereinbaren</h3>
-            <div style="display: flex">
-                <div>
-                    <input type="checkbox" name="Montag" id="montag">
+            <div style="display: flex; margin-bottom: 30px">
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Montag" id="montag" onchange="toggleZeit('montag')">
                     <label for="montag">Montag</label>
-                    <div>
-                    <input type="time" name="MontagVon" id="montagVon" placeholder="Von">
-                    <input type="time" name="MontagBis" id="montagBis" placeholder="Bis">
+                    <div class="uhrzeit" id="montagZeit" style="display: none; margin-top: 20px">
+                        <label for="montagVon">Von:</label>
+                        <input type="time" name="MontagVon" id="montagVon" placeholder="Von"><br><br>
+                        <label for="montagBis">Bis:</label>
+                        <input type="time" name="MontagBis" id="montagBis" placeholder="Bis">
                     </div>
                 </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Dienstag" id="dienstag" onchange="toggleZeit('dienstag')">
+                    <label for="dienstag">Dienstag</label>
+                    <div class="uhrzeit" id="dienstagZeit" style="display: none; margin-top: 20px">
+                        <label for="dienstagVon">Von:</label>
+                        <input type="time" name="DienstagVon" id="dienstagVon" placeholder="Von"><br><br>
+                        <label for="dienstagBis">Bis:</label>
+                        <input type="time" name="DienstagBis" id="dienstagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Mittwoch" id="mittwoch" onchange="toggleZeit('mittwoch')">
+                    <label for="mittwoch">Dienstag</label>
+                    <div class="uhrzeit" id="mittwochZeit" style="display: none; margin-top: 20px">
+                        <label for="mittwochVon">Von:</label>
+                        <input type="time" name="MittwochVon" id="mittwochVon" placeholder="Von"><br><br>
+                        <label for="mittwochBis">Bis:</label>
+                        <input type="time" name="MittwochBis" id="mittwochBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Donnerstag" id="donnerstag" onchange="toggleZeit('donnerstag')">
+                    <label for="donnerstag">Donnerstag</label>
+                    <div class="uhrzeit" id="donnerstagZeit" style="display: none; margin-top: 20px">
+                        <label for="donnerstagVon">Von:</label>
+                        <input type="time" name="DonnerstagVon" id="donnerstagVon" placeholder="Von"><br><br>
+                        <label for="donnerstagBis">Bis:</label>
+                        <input type="time" name="DonnerstagBis" id="donnerstagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Freitag" id="freitag" onchange="toggleZeit('freitag')">
+                    <label for="freitag">Freitag</label>
+                    <div class="uhrzeit" id="freitagZeit" style="display: none; margin-top: 20px">
+                        <label for="freitagVon">Von:</label>
+                        <input type="time" name="FreitagVon" id="freitagVon" placeholder="Von"><br><br>
+                        <label for="freitagBis">Bis:</label>
+                        <input type="time" name="FreitagBis" id="freitagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Samstag" id="samstag" onchange="toggleZeit('samstag')">
+                    <label for="samstag">Samstag</label>
+                    <div class="uhrzeit" id="samstagZeit" style="display: none; margin-top: 20px">
+                        <label for="samstagVon">Von:</label>
+                        <input type="time" name="SamstagVon" id="samstagVon" placeholder="Von"><br><br>
+                        <label for="samstagBis">Bis:</label>
+                        <input type="time" name="SamstagBis" id="samstagBis" placeholder="Bis">
+                    </div>
+                </div>
+                <div style="width: 14.25%; text-align: center">
+                    <input type="checkbox" name="Sonntag" id="sonntag" onchange="toggleZeit('sonntag')">
+                    <label for="sonntag">Sonntag</label>
+                    <div class="uhrzeit" id="sonntagZeit" style="display: none; margin-top: 20px">
+                        <label for="sonntagVon">Von:</label>
+                        <input type="time" name="SonntagVon" id="sonntagVon" placeholder="Von"><br><br>
+                        <label for="sonntagBis">Bis:</label>
+                        <input type="time" name="SonntagBis" id="sonntagBis" placeholder="Bis">
+                    </div>
+                </div>
+            </div>
+
+            <label for="standort">Standort:</label>
+            <input type="text" name="Standort" id="standort" placeholder="Mannheim"><br>
+
+            <button id="saveTime" onclick="verleihModalWeiter()">Zeiten bestätigen</button>
+
+            <div id="verleihBestaetigung">
+                <p>Mit dem Klick auf Verleihen wird dein Buch zum Verleih angeboten.</p>
+                <p>In deiner persönlichen Bibliothek siehst du das Buch in der Rubrik "Meine
+                    Bücher". Du wirst von uns benachrichtigt, sobald das Buch jemand Leihen möchte.</p>
+
+                <br><br>
+
+                <p id="hint-checkboxes">Bitte wähle alle Checkboxen aus.</p>
+
+                <div>
+                    <input type="checkbox" id="agb" name="agb">
+                    <label for="agb">Ich stimme den <a href="agb.html">AGB</a> von readbetter zu.</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="datenschutz" name="datenschutz">
+                    <label for="datenschutz">Ich stimme den <a href="datenschutz.html">Datenschutzbedingungen</a> von readbetter
+                        zu. </label>
+                </div>
+
+                <button style="margin-top: 30px; border-radius: 20px" onclick="verleih()">Verleih</button>
             </div>
         </div>
     </div>
@@ -292,8 +400,35 @@
         document.getElementById('verleihModal').style.display = "block";
     }
 
-    function closeVerleihModal(){
+    function closeVerleihModal() {
         document.getElementById('verleihModal').style.display = "none";
+    }
+
+    function toggleZeit(tag) {
+        var zeitDiv = document.getElementById(tag + 'Zeit');
+        var checkbox = document.getElementById(tag);
+
+        if (checkbox.checked) {
+            zeitDiv.style.display = 'block';
+        } else {
+            zeitDiv.style.display = 'none';
+        }
+    }
+
+    function verleihModalWeiter(){
+        document.getElementById('saveTime').style.display = "none";
+        document.getElementById('verleihBestaetigung').style.display = "block";
+    }
+
+    function verleih(){
+        var agb = document.getElementById('agb');
+        var datenschutz = document.getElementById('datenschutz');
+
+        if (agb.checked & datenschutz.checked) {
+            closeVerleihModal();
+        } else {
+            document.getElementById('hint-checkboxes').style.display = "block";
+        }
     }
 </script>
 </body>

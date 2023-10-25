@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Mein Profil | readbetter</title>
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
-    <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <script src="../js/header.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/profil.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <script src="js/header.js"></script>
     <script src="js/profil.js"></script>
-    <script src="../js/footer.js"></script>
+    <script src="js/footer.js"></script>
     <style>
 
         input[type="text"],
@@ -229,7 +230,6 @@
             font-size: 16px;
             cursor: pointer;
         }
-
     </style>
 </head>
 <body>
@@ -468,7 +468,8 @@
         <p class="section-heading">E-Mail</p>
         <input type="text" id="e-mail" name="e-mail" placeholder="E-mail eingeben">
         <p class="section-heading">Rechnungsadresse</p>
-        <input type="text" id="zip" name="zip" placeholder="PLZ">
+        <label for="plz">PLZ:</label>
+        <input type="text" id="plz" name="PLZ" placeholder="PLZ">
         <label for="city">Stadt:</label>
         <input type="text" id="city" name="city" placeholder="Stadt">
         <label for="street">Straße:</label>
@@ -486,11 +487,71 @@
         </div>
     </div>
 </div>
-<div id="ausgeliehenSite" style="display: none">
-    <h1>Ausgeliehene Bücher</h1>
+<div id="ausgeliehenSite" style="display: none;">
+    <div class="filter-container">
+        <h2>Ausgeliehene Bücher</h2>
+        <div id="ausgeliehenFilter">
+            <button class="selected" onclick="filterAusgeliehenBuecher('all')" data-genre="all">Alle Bücher</button>
+            <button onclick="filterAusgeliehenBuecher('AB')" data-genre="AB">Ausleihe bevorstehend</button>
+            <button onclick="filterAusgeliehenBuecher('A')" data-genre="A">Ausgeliehen</button>
+            <button onclick="filterAusgeliehenBuecher('AV')" data-genre="AV">Ausleihe vergangen</button>
+            <!-- Füge hier weitere Genres hinzu -->
+        </div>
+    </div>
+
+    <div id="ausgeliehenMain">
+        <a href="books/derFallBruno.html">
+            <div class="book AB" id="abook1">
+                <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Buchcover 1">
+                <div class="beschreibung">
+                    <h2>Der Fall Bruno</h2>
+                    <h4>Günter Macher</h4>
+                    <p>Status: Ausleihe bevorstehend</p>
+                    <p>Übergabe am 26.10.2023 15.00</p>
+                    <p>Frankfurt Römer</p>
+                    <button>Übergabe bestätigen</button>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
 <div id="meineBuecherSite" style="display: none">
-    <h1>Meine Bücher</h1>
+    <div class="filter-container">
+        <h2>Meine Bücher</h2>
+        <div id="meineFilter">
+            <button class="selected" onclick="filterMeineBuecher('all')" data-genre="all">Alle Bücher</button>
+            <button onclick="filterMeineBuecher('NA')" data-genre="NA">nicht angeboten</button>
+            <button onclick="filterMeineBuecher('A')" data-genre="A">angeboten</button>
+            <button onclick="filterMeineBuecher('V')" data-genre="V">verliehen</button>
+            <!-- Füge hier weitere Genres hinzu -->
+        </div>
+    </div>
+
+    <div id="meineMain">
+        <a href="books/meinKochbuch.html">
+            <div class="book V" id="mbook1">
+                <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover 1">
+                <div class="beschreibung">
+                    <h2>Mein Kochbuch</h2>
+                    <h4>Bruno Walters</h4>
+                    <p>Status: Verliehen</p>
+                    <p>Rückgabe am 26.10.2023 17.00</p>
+                    <p>Mannheim Paradeplatz</p>
+                    <button>Rückgabe bestätigen</button>
+                </div>
+            </div>
+        </a>
+        <a>
+            <div class="book NA" id="mbook2">
+                <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Buchcover 2">
+                <div class="beschreibung">
+                    <h2>Zwei in der Küche</h2>
+                    <h4>Annalena Bokmeier</h4>
+                    <p>Status: nicht angeboten</p>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>
 <div id="transaktionSite" style="display: none">
     <h1>Transaktionen</h1>
