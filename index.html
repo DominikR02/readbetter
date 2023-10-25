@@ -2,13 +2,468 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>readbetter</title>
+    <title>Startseite | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/slideshow.css">
     <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <style>
+
+
+        .large-image img {
+            width: 1000px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .large-image button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px; /* Anpassen Sie den Abstand vom rechten Rand nach Bedarf */
+        }
+
+        /* CSS für die Schaltfläche "Mehr anzeigen" */
+        .show-more-button {
+            text-align: right;
+        }
+
+        /* CSS für die Bilder mit Titel */
+        .image-row {
+            display: flex;
+            text-align: center;
+        }
+
+        .book {
+            text-align: center;
+            flex: 0 0 calc(20% - 20px); /* Fünf Bücher pro Reihe (20% Breite) mit 20px Abstand */
+            margin-bottom: 20px;
+        }
+
+        .book-link {
+            text-decoration: none; /* Entfernt die unterstrichene Link-Dekoration */
+            color: #000; /* Ändert die Farbe des Links, um sie sichtbar zu machen */
+            display: block; /* Macht den Link zu einem Blockelement, um das Layout nicht zu beeinflussen */
+        }
+
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .book-info {
+            text-align: center;
+        }
+
+        .image img {
+            margin: 0 10px; /* Abstand zwischen den Bildern */
+        }
+
+        /* CSS für den ausführlichen Text */
+        #detailedText {
+            display: none;
+        }
+
+        /* CSS für den "Weniger anzeigen"-Abschnitt */
+        #showLessSection {
+            display: none;
+        }
+
+        . footer {
+            background-color: #4A5F47;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Stil für die Sozialen-Medien-Icons */
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+
+        /* Stil für den "nach oben"-Button */
+        .scroll-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4A5F47;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-size: 20px;
+        }
+
+        .sozial-icon {
+            height: 50px;
+            width: 50px;
+        }
+
+
+        .calendar {
+            text-align: center;
+            float: right;
+            margin-left: 20px;
+            max-width: 30%;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Runde Ecken hinzugefügt */
+        }
+
+
+        /* Stil für den runden Kasten um die Bücher */
+        .book-container {
+            border: 2px solid #4A5F47; /* Grüne Linien */
+            background-color: #fff; /* Weißer Hintergrund */
+            border-radius: 10px; /* Runde Ecken, je nach Bedarf anpassen */
+            margin: 10px; /* Abstand um die Bücher herum, je nach Bedarf anpassen */
+            padding: 10px; /* Innenabstand im Kasten, je nach Bedarf anpassen */
+            text-align: center;
+        }
+
+        /* Stil für die Bücher */
+        .book {
+            margin: 10px;
+            transition: box-shadow 0.3s, transform 0.3s; /* Sanfter Übergang für Schatten und Zoom */
+        }
+
+        /* Alle Bücher auf die Größe des ersten Buchs (Der Fall Bruno) festlegen */
+        .book img {
+            width: 200px;
+            height: 283px;
+        }
+
+        /* Schatten- und Zoom-Effekt bei Hover */
+        .book:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten hinzufügen */
+            transform: scale(1.05); /* Leichte Vergrößerung */
+        }
+
+    </style>
 </head>
 <body>
-<a href="Startseite.html">Startseite</a>
-<a href="header_footer.html">Header/ Footer</a>
+<!-- Header-Bereich mit Logo, Navigation und Popup-Menü -->
+<header class="header">
+    <a href="Startseite.html"><img src="pic/logo-Bild-Text.png" style="height: 100px"></a>
+
+    <!-- Hauptnavigation -->
+    <nav>
+        <ul>
+            <a href="Startseite.html">
+                <li>Startseite</li>
+            </a>
+            <a href="trends.html">
+                <li>Trending</li>
+            </a>
+            <a href="neu.html">
+                <li>Neu</li>
+            </a>
+            <a>
+                <li>
+                    Genre
+                    <!-- Unternavigation für Genre -->
+                    <ul>
+                        <a href="#">
+                            <li>Comics</li>
+                        </a>
+                        <a href="genre/kochbuecher.html">
+                            <li>Kochbücher</li>
+                        </a>
+                        <a href="#">
+                            <li>Krimis</li>
+                        </a>
+                        <a href="#">
+                            <li>Romane</li>
+                        </a>
+                    </ul>
+                </li>
+            </a>
+            <a href="abos.html" style="color: red">
+                <li>Abos</li>
+            </a>
+        </ul>
+    </nav>
+
+    <!-- Navigations-Icons (Profil, Burgermenu, Suche) -->
+    <div class="navigation">
+        <div>
+            <a href="login.html"><img src="pic/login-weiß-startseite.png" style="width: 30px; height: 30px; margin: 8px"></a><br>
+        </div>
+        <div class="burgermenu">
+            <img src="pic/menu-weiß.png" style="width: 30px; height: 30px; margin: 8px; cursor: pointer"
+                 onclick="toggleBurgerMenu()">
+        </div>
+        <div class="search-icon">
+            <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+
+    <!-- Overlay und Pop-up-Menü für das Burgermenü -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="popup-menu" id="popupMenu" style="background-color: #4A5F47;">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenu()"><a>X</a></button>
+        <!-- Menüpunkte im Pop-up-Menü -->
+        <a href="Startseite.html">
+            <h5 class="popup-item" style="margin-top: 50px;">Startseite</h5>
+        </a>
+        <a href="trends.html">
+            <h5 class="popup-item">Trending</h5>
+        </a>
+        <a href="neu.html">
+            <h5 class="popup-item">Neu</h5>
+        </a>
+        <!-- Untermenü für Genre -->
+
+        <a onclick="toggleGenreSubmenu()">
+            <h5 class="popup-item">Genre</h5>
+        </a>
+        <div class="genre-submenu">
+            <a>
+                <h5 class="sub-item">Comics</h5>
+            </a>
+            <a href="genre/kochbuecher.html">
+                <h5 class="sub-item">Kochbücher</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Krimis</h5>
+            </a>
+            <a>
+                <h5 class="sub-item">Romane</h5>
+            </a>
+        </div>
+
+        <a href="abos.html">
+            <h5 class="popup-item" style="color: red">Abos</h5>
+        </a>
+        <!-- Icons im Pop-up-Menü -->
+        <div class="popup-item popup-icons">
+            <div class="popup-icon">
+                <a href="login.html"><img src="pic/login-weiß-startseite.png"
+                                           style="width: 30px; height: 30px; margin: 8px"></a><br>
+            </div>
+            <div class="popup-icon">
+                <a><img src="pic/lupe.png" style="width: 30px; height: 30px; margin: 8px"
+                        onclick="toggleSearchMenu(); closePopupMenu()"></a>
+            </div>
+        </div>
+        <!-- Footer-Links im Pop-up-Menü -->
+        <div class="popup-item">
+            <a href="datenschutz.html">Datenschutz</a> <a>|</a> <a href="impressum.html">Impressum</a>
+        </div>
+    </div>
+
+    <!-- Overlay und Pop-up-Menü für die Suche -->
+    <div class="popup-overlay" id="popupOverlaySearch"></div>
+    <div class="popup-menu" id="popupMenuSearch">
+        <!-- Schließen-Button oben links -->
+        <button class="popup-close-button" onclick="closePopupMenuSearch()"><b>X</b></button>
+        <!-- Suchfelder im Pop-up-Menü -->
+        <div class="popup-item">
+            <h4>Suche</h4>
+        </div>
+        <div class="popup-item">
+            Titel
+            <input style="text-align: center" placeholder="Titel" type="text">
+        </div>
+        <div class="popup-item">
+            Autor
+            <input style="text-align: center" placeholder="Autor" type="text">
+        </div>
+        <div class="popup-item">
+            Genre
+            <input style="text-align: center" placeholder="Genre" type="text">
+        </div>
+        <div class="popup-item">
+            Ort
+            <input style="text-align: center" placeholder="Ort" type="text">
+        </div>
+        <a href="suchergebnis.html"><button class="searchButton">Suchen</button></a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="pic/buecher/Startseite.png">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="pic/Halloween.png">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="pic/SchoolAid.png">
+        </div>
+    </div>
+
+
+    <div class="section" id="aboutUsSection" style="font-size: 20px;text-align: left; max-width: 50%; margin: 0 auto;">
+        <h2>Was ist readbetter?</h2>
+        <p>Tauche ein in die Zukunft des Lesens! Bei readbetter bieten wir dir eine innovative Plattform, die das Lesen
+            revolutioniert und dir eine Fülle von Möglichkeiten eröffnet.
+            <br>
+            <strong>Entdecke Eine Welt der Bücher:</strong> Durchstöbere unsere digitale Bibliothek mit einer schier
+            endlosen Auswahl an…
+        </p>
+        <a id="weiterlesen-button">Weiterlesen...</a>
+        <div id="hidden-text" style="display: none;">
+            <p>Büchern aus allen Genres. Egal, ob du nach Bestsellern, Klassikern oder Geheimtipps suchst, bei uns wirst
+                du fündig. Füge sie einfach zu deiner persönlichen Bibliothek.
+                <br> <strong> Bewerte und Empfehle:</strong> Lies Rezensionen von unserer engagierten Community oder
+                verfasse deine eigenen. Teile deine Gedanken, Empfehlungen und Kritiken, um anderen Lesern bei der
+                Auswahl ihres nächsten Buchs zu helfen.
+                <br> <strong>Teile und Verleihe: </strong> Mit readbetter wird das Teilen und Verleihen von Büchern so
+                einfach wie nie zuvor. Verleihe deine eigenen Bücher und entdecke neue Schätze von anderen.
+                Gemeinschaftliches Lesen war noch nie so zugänglich.
+                <br> <strong>Nachhaltig und Günstig: </strong> Wir setzen auf Nachhaltigkeit. Durch gemeinschaftliche
+                Nutzung von Büchern tragen wir zum Umweltschutz bei. Und das Beste daran? Lesen war nie günstiger! Spare
+                Geld und Ressourcen mit readbetter.
+                Willkommen in der Zukunft des Lesens. Starte noch heute deine Reise mit readbetter und erlebe Lesen 4.0
+                wie nie zuvor.
+            </p>
+        </div>
+        <a id="zuklappen-button" style="display: none;">Zuklappen</a>
+    </div>
+</div>
+
+<div class="section" id="showLessSection">
+    <button id="showLessButton" onclick="toggleAboutUsText()">Weniger anzeigen</button>
+</div>
+
+<div class="section" id="forYouSection" style="margin-top: 60px;">
+    <div class="book-container">
+        <h2>Für dich empfohlen</h2>
+        <div class="image-row">
+            <div class="book">
+                <a href="books/derFallBruno.html">
+                    <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Titel 1"
+                         style="width:200px"
+                         height="283px">
+                    <div class="book-info">
+                        <div class="book-title">Der Fall Bruno</div>
+                        <div class="book-author">Günter Macher</div>
+                    </div>
+                </a>
+            </div>
+            <div class="book">
+                <a>
+                    <img src="pic/buecher/4c9fd7c5a67ce9fa.jpg" alt="Titel 2" style="width:200px" height="300px">
+                    <div class="book-info">
+                        <div class="book-title">The Armour of Light</div>
+                        <div class="book-author">Ken Follett</div>
+                    </div>
+                </a>
+            </div>
+            <div class="book">
+                <a href="books/spiderman.html">
+                    <img src="pic/buecher/f97mmxdvd4781.jpg" alt="Titel 3" style="width:200px" height="283px">
+                    <div class="book-info">
+                        <div class="book-title">Spider-Man no way home</div>
+                        <div class="book-author">Marvel</div>
+                    </div>
+                </a>
+            </div>
+            <div class="book">
+                <a href="books/meinKochbuch.html">
+                    <img src="pic/buecher/kochbuecher/8454.jpg" alt="Titel 4" style="width:200px" height="283px">
+                    <div class="book-info">
+                        <div class="book-title">Mein Kochbuch</div>
+                        <div class="book-author">Laura Newman</div>
+                    </div>
+                </a>
+            </div>
+            <div class="book">
+                <a>
+                    <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Titel 5" style="width:200px"
+                         height="283px">
+                    <div class="book-info">
+                        <div class="book-title">Zwei in der Küche</div>
+                        <div class="book-author">Annalena Bokmeier</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer-Bereich mit sozialen Icons, Links und Such-/Login-Icons -->
+<footer>
+    <!-- Soziale Icons -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook"
+                                                                           class="sozial-icon"></a>
+        <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png" alt="YouTube"
+                                                                          class="sozial-icon"></a>
+        <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png"
+                                                                            alt="Instagram" class="sozial-icon"></a>
+    </div>
+    <br>
+    <!-- Links zu Datenschutz, Impressum und weiteren Seiten -->
+    <div style="text-align: left; display: flex">
+        <!-- Linke Fußzeile mit Links -->
+        <div id="footer-links" style="text-align: left; align-items: center">
+            <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
+            <div class="footer-container" id="left-footer-container">
+                <a href="Startseite.html"><h5>Startseite</h5></a>
+                <a href="AboutUs.html"><h5>Über Uns</h5></a>
+                <a href="kontakt.html"><h5>Kontakt</h5></a>
+                <a href="faq.html"><h5>FAQ</h5></a>
+            </div>
+            <!-- Rechte Fußzeile mit Links -->
+            <div class="footer-container">
+                <a href="datenschutz.html"><h5>Datenschutz</h5></a>
+                <a href="impressum.html"><h5>Impressum</h5></a>
+                <a onclick="print()"><h5>Drucken</h5></a>
+                <a href="agb.html"><h5>AGB</h5></a>
+            </div>
+        </div>
+        <!-- Icons für Suche und Login -->
+        <div>
+            <a href="login.html"><img src="pic/login-weiß-startseite.png"
+                                       style="width: 45px; height: 45px; margin: 8px;"></a><br>
+            <a><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+</footer>
+
+<!-- "Nach oben"-Button -->
+<button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    const weiterlesenButton = document.getElementById('weiterlesen-button');
+    const zuklappenButton = document.getElementById('zuklappen-button');
+    const hiddenText = document.getElementById('hidden-text');
+
+    weiterlesenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'none') {
+            hiddenText.style.display = 'block';
+            weiterlesenButton.style.display = 'none';
+            zuklappenButton.style.display = 'block';
+        }
+    });
+
+    zuklappenButton.addEventListener('click', () => {
+        if (hiddenText.style.display === 'block') {
+            hiddenText.style.display = 'none';
+            weiterlesenButton.style.display = 'block';
+            zuklappenButton.style.display = 'none';
+        }
+    });
+
+</script>
+<script src="js/slideshow.js"></script>
 </body>
 </html>
+
