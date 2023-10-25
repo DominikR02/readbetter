@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilderslideshow</title>
+    <style>
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
 
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="pic/buecher/kochbuecher/8454.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="pic/buecher/Krimi-Thriller-Cover-1.jpg" style="width:100%">
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 5000); // Ändere die Zeit (in Millisekunden) für Autoplay
+    }
+</script>
+</body>
+</html>
