@@ -12,5 +12,5 @@ function showSlides() {
         slideIndex = 1;
     }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000); // Ändere die Zeit (in Millisekunden) für Autoplay
+    setTimeout(showSlides, 4000); // Ändere die Zeit (in Millisekunden) für Autoplay
 }
