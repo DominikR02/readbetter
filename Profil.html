@@ -587,7 +587,7 @@
         </div>
     </div>
 </div>
-<div id="transaktionSite" style="display: none">
+<div id="transaktionSite" style="display: none; text-align: center">
     <h1>Transaktionen</h1>
     <div class="transaktion" style="margin: 15px 15%; border: 2px solid green; border-radius: 10px; padding: 10px; display: flex; align-items: center;">
         <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover" style="width: 200px">
@@ -637,6 +637,51 @@
         </div>
     </div>
 </div>
+
+<!-- Footer-Bereich mit sozialen Icons, Links und Such-/Login-Icons -->
+<footer>
+    <!-- Soziale Icons -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/readbetter" target="_blank"><img src="pic/Socials/facebook.png" alt="Facebook"
+                                                                           class="sozial-icon"></a>
+        <a href="https://www.youtube.com/readbetter" target="_blank"><img src="pic/Socials/youtube.png" alt="YouTube"
+                                                                          class="sozial-icon"></a>
+        <a href="https://www.instagram.com/readbetter" target="_blank"><img src="pic/Socials/instagram.png"
+                                                                            alt="Instagram" class="sozial-icon"></a>
+    </div>
+    <br>
+    <!-- Links zu Datenschutz, Impressum und weiteren Seiten -->
+    <div style="text-align: left; display: flex">
+        <!-- Linke Fußzeile mit Links -->
+        <div id="footer-links" style="text-align: left; align-items: center">
+            <img src="pic/logoText.png" id="footer-logo" style="width: 25%;">
+            <div class="footer-container" id="left-footer-container">
+                <a href="Startseite.html"><h5>Startseite</h5></a>
+                <a href="AboutUs.html"><h5>Über Uns</h5></a>
+                <a href="kontakt.html"><h5>Kontakt</h5></a>
+                <a href="faq.html"><h5>FAQ</h5></a>
+            </div>
+            <!-- Rechte Fußzeile mit Links -->
+            <div class="footer-container">
+                <a href="datenschutz.html"><h5>Datenschutz</h5></a>
+                <a href="impressum.html"><h5>Impressum</h5></a>
+                <a onclick="print()"><h5>Drucken</h5></a>
+                <a href="agb.html"><h5>AGB</h5></a>
+            </div>
+        </div>
+        <!-- Icons für Suche und Login -->
+        <div>
+            <a href="Profil.html"><img src="pic/login-weiss.png"
+                                       style="width: 45px; height: 45px; margin: 8px;"></a><br>
+            <a><img src="pic/lupe.png" style="height: 45px; width: 45px; margin: 8px"
+                    onclick="toggleSearchMenu()"></a>
+        </div>
+    </div>
+</footer>
+
+<!-- "Nach oben"-Button -->
+<button class="scroll-top" onclick="scrollToTop()">↑</button>
+
 <script>
     function saveChanges() {
         // Benutzername, Biographie, Geburtstag, E-Mail und andere Felder speichern
