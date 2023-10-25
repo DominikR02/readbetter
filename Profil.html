@@ -5,6 +5,7 @@
     <title>Mein Profil | readbetter</title>
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/profil.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <script src="js/header.js"></script>
@@ -370,7 +371,9 @@
             Ort
             <input style="text-align: center" placeholder="Ort" type="text">
         </div>
-        <a href="suchergebnis.html"><button class="searchButton">Suchen</button></a>
+        <a href="suchergebnis.html">
+            <button class="searchButton">Suchen</button>
+        </a>
     </div>
 </header>
 
@@ -500,19 +503,21 @@
     </div>
 
     <div id="ausgeliehenMain">
-        <a href="books/derFallBruno.html">
-            <div class="book AB" id="abook1">
-                <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Buchcover 1">
-                <div class="beschreibung">
-                    <h2>Der Fall Bruno</h2>
-                    <h4>Günter Macher</h4>
-                    <p>Status: Ausleihe bevorstehend</p>
-                    <p>Übergabe am 26.10.2023 15.00</p>
-                    <p>Frankfurt Römer</p>
-                    <button>Übergabe bestätigen</button>
+        <div class="book AB" id="abook1">
+            <a href="books/derFallBruno.html">
+                <div style="display: flex">
+                    <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Buchcover 1">
+                    <div class="beschreibung">
+                        <h2>Der Fall Bruno</h2>
+                        <h4>Günter Macher</h4>
+                        <p>Status: Ausleihe bevorstehend</p>
+                        <p>Übergabe am 26.10.2023 15.00</p>
+                        <p>Frankfurt Römer</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+            <button onclick="openUebergabeModal()">Übergabe bestätigen</button>
+        </div>
     </div>
 </div>
 <div id="meineBuecherSite" style="display: none">
@@ -528,33 +533,61 @@
     </div>
 
     <div id="meineMain">
-        <a href="books/meinKochbuch.html">
-            <div class="book V" id="mbook1">
-                <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover 1">
-                <div class="beschreibung">
-                    <h2>Mein Kochbuch</h2>
-                    <h4>Bruno Walters</h4>
-                    <p>Status: Verliehen</p>
-                    <p>Rückgabe am 26.10.2023 17.00</p>
-                    <p>Mannheim Paradeplatz</p>
-                    <button>Rückgabe bestätigen</button>
+        <div  class="book V" id="mbook1">
+            <a href="books/meinKochbuch.html">
+                <div style="display: flex">
+                    <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover 1">
+                    <div class="beschreibung">
+                        <h2>Mein Kochbuch</h2>
+                        <h4>Bruno Walters</h4>
+                        <p>Status: Verliehen</p>
+                        <p>Rückgabe am 26.10.2023 17.00</p>
+                        <p>Mannheim Paradeplatz</p>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a>
-            <div class="book NA" id="mbook2">
-                <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Buchcover 2">
-                <div class="beschreibung">
-                    <h2>Zwei in der Küche</h2>
-                    <h4>Annalena Bokmeier</h4>
-                    <p>Status: nicht angeboten</p>
+            </a>
+            <button onclick="openRueckgabeModal()">Rückgabe bestätigen</button>
+        </div>
+        <div class="book NA" id="mbook2">
+            <a>
+                <div style="display: flex">
+                    <img src="pic/buecher/kochbuecher/ZweiInDerKueche.jpg" alt="Buchcover 2">
+                    <div class="beschreibung">
+                        <h2>Zwei in der Küche</h2>
+                        <h4>Annalena Bokmeier</h4>
+                        <p>Status: nicht angeboten</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
 <div id="transaktionSite" style="display: none">
     <h1>Transaktionen</h1>
+</div>
+
+<div id="uebergabeModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeUebergabeModal()">&times;</span>
+        <div style="text-align: center">
+            <p id="uebergabeText">Mit dem Klick auf <b>"Übergabe bestätigen"</b>, bestätigst du, dass du das Buch vom
+                Verleiher erhalten hast. Du kannst gerne noch ein paar Bilder vom Übergabezustand machen und anfügen.
+            </p>
+            <p id="rueckgabeText">Mit dem Klick auf <b>"Rückgabe bestätigen"</b>, bestätigst du, dass du das Buch vom
+                Leiher zurückerhalten hast. Du kannst gerne noch ein paar Bilder vom Rückgabezustand machen und anfügen.
+            </p>
+            <br>
+            <a href="Startseite.html"><button id="uebregabeButton">Übergabe bestätigen</button></a>
+            <a href="Startseite.html"><button id="rueckgabeButton">Rückgabe bestätigen</button></a>
+            <br>
+            <div id="upload-container" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                <p>Ziehe Bilder hierher oder klicke, um sie hochzuladen</p>
+                <input type="file" id="file-input" multiple accept="image/*" onchange="handleFiles(this.files)">
+            </div>
+            <div id="uploaded-images"></div>
+        </div>
+    </div>
 </div>
 <script>
     function saveChanges() {
