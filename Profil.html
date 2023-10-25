@@ -35,7 +35,7 @@
 
         /* Stil für den "Speichern" -Button */
         #saveButton {
-            background-color: #008800; /* Dunkelgrüner Hintergrund */
+            background-color: #4A7F47; /* Dunkelgrüner Hintergrund */
             color: #fff; /* Weiße Schriftfarbe */
             border: none;
             padding: 10px 20px;
@@ -172,7 +172,7 @@
         }
 
         #changeProfilePictureButton {
-            background-color: #008800; /* Dunkelgrüner Hintergrund */
+            background-color: #4A7F47; /* Dunkelgrüner Hintergrund */
             color: #fff; /* Weiße Schriftfarbe */
             border: none;
             padding: 10px 20px;
@@ -435,7 +435,7 @@
     </div>
 
     <div class="profilInhalt; section-heading" style="margin: 50px 20%; text-align: left;">
-        <img src="pic/Kalender.png" style="width: 220px; position: absolute; right: 100px; margin-top: 300px">
+        <img src="pic/Kalender.png" style="width: 220px; position: absolute; right: 60px; margin-top: 300px">
         <p class="section-heading">Benutzername</p>
         <input type="text" id="username" name="username" placeholder="Benutzername eingeben">
         <p class="section-heading">Biographie</p>
@@ -589,15 +589,27 @@
 </div>
 <div id="transaktionSite" style="display: none">
     <h1>Transaktionen</h1>
-    <div class="transaktion" style="margin-left: 100px; border: 2px solid green; border-radius: 10px; padding: 10px; margin-right: 100px; display: flex; align-items: center;">
+    <div class="transaktion" style="margin: 15px 15%; border: 2px solid green; border-radius: 10px; padding: 10px; display: flex; align-items: center;">
+        <img src="pic/buecher/kochbuecher/8454.jpg" alt="Buchcover" style="width: 200px">
+        <div class="transaktions-details" style="display: inline-block; margin-left: 20px; text-align: left">
+            <h2> Verleihe </h2>
+            <p><strong>Buch: </strong>Mein Kochbuch</p>
+            <p><strong>Datum:</strong> 26. Oktober 2023</p>
+            <p><strong>Uhrzeit:</strong> 15:00 Uhr</p>
+            <p><strong>Einnahmen:</strong> 1€</p>
+            <p><strong>An:</strong> Ellen Lang</p>
+        </div>
+    </div>
+    <div class="transaktion" style="margin: 15px 15%; border: 2px solid red; border-radius: 10px; padding: 10px; display: flex; align-items: center;">
         <img src="pic/buecher/Der_Fall_Bruno_Krimi_Buchcover_124535.jpg" alt="Buchcover" style="width: 200px">
         <div class="transaktions-details" style="display: inline-block; margin-left: 20px; text-align: left">
+            <h2> Ausleihe </h2>
             <p><strong>Buch: </strong>Der Fall Bruno</p>
-            <p><strong>Datum:</strong> 25. Oktober 2023</p>
+            <p><strong>Datum:</strong> 26. Oktober 2023</p>
             <p><strong>Uhrzeit:</strong> 14:30 Uhr</p>
             <p><strong>Pfand:</strong> 15€</p>
-            <p><strong>Gebühren:</strong> 1€</p>
-            <p><strong>Von:</strong> Ellen Lang</p>
+            <p><strong>Gebühren:</strong> 2€</p>
+            <p><strong>Von:</strong> Semanur Özdemir</p>
         </div>
     </div>
 </div>
