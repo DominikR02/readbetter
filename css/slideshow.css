@@ -1,7 +1,7 @@
 .slideshow-container {
     max-width: 800px;
     position: relative;
-    margin: auto;
+    margin: 20px auto auto auto;
 }
 
 .mySlides {
@@ -10,4 +10,6 @@
 
 .mySlides img {
     width: 100%;
+    border: 2px solid #4A5F47;
+    border-radius: 30px;
 }
