@@ -231,6 +231,31 @@
             font-size: 16px;
             cursor: pointer;
         }
+        .transaktion {
+            margin-left: 100px;
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: 20px;
+            margin-right: 100px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s; /* Hinzugefügter Übergang */
+        }
+
+        .transaktion:hover {
+            transform: scale(1.02); /* Vergrößern des Kastens */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); /* Schatten hinzufügen */
+        }
+
+        .transaktion img {
+            width: 200px;
+        }
+
+        .transaktions-details {
+            display: inline-block;
+            margin-left: 20px;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
