@@ -403,11 +403,15 @@
     </div>
 </div>
 
-<div id="cookies" class="modal">
+<div id="cookies" class="modal" style="display: block">
 
     <!-- Modal content -->
     <div class="modal-content" style="text-align: center">
-        <!-- Hier Inhalt -->
+        <h2>Cookie-Hinweis</h2>
+        <p>Wir verwenden Cookies, um die Benutzerfreundlichkeit unserer Website zu verbessern. Durch die Nutzung unserer
+            Website stimmst du der Verwendung von Cookies zu.</p>
+        <a href="https://google.com"><button style="background-color: lightgrey; color: #000">Ablehnen</button></a>
+        <button onclick="acceptCookies()">Einverstanden</button>
     </div>
 
 </div>
@@ -477,6 +481,9 @@
         }
     });
 
+    function acceptCookies () {
+        document.getElementById('cookies').style.display = "none";
+    }
 </script>
 <script src="js/slideshow.js"></script>
 </body>
