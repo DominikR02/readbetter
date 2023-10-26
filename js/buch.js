@@ -101,6 +101,7 @@ function verleih(){
 
     if (agb.checked & datenschutz.checked) {
         closeVerleihModal();
+        document.getElementById('rainerZufallVerleih').style.display="block";
     } else {
         document.getElementById('hint-checkboxes').style.display = "block";
     }
