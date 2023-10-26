@@ -92,6 +92,7 @@ function toggleZeit(tag) {
 
 function verleihModalWeiter(){
     document.getElementById('saveTime').style.display = "none";
+    document.getElementById('verleihBestaetigung').style.display = "block";
 }
 
 function verleih(){
