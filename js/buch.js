@@ -92,7 +92,6 @@ function toggleZeit(tag) {
 
 function verleihModalWeiter(){
     document.getElementById('saveTime').style.display = "none";
-    document.getElementById('verleihBestaetigung').style.display = "block";
 }
 
 function verleih(){
@@ -101,6 +100,7 @@ function verleih(){
 
     if (agb.checked & datenschutz.checked) {
         closeVerleihModal();
+        document.getElementById('rainerZufallVerleih').style.display="block";
     } else {
         document.getElementById('hint-checkboxes').style.display = "block";
     }
